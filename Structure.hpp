@@ -42,7 +42,9 @@ class Node{
 		int real_y;
 
 		int cost;
-        bool ispin;
+        
+		// S = Slot, E = Edge, P = Pin, X = nothing
+		char type;
 		
 		void SetUp(int _x,int _y){
 			x = _x;
