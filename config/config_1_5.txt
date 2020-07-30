@@ -1,0 +1,21 @@
+FileName: 1.brd.txt
+Region_Ext_Left: 3
+Region_Ext_Right: 3
+Region_Ext_Top: 3
+Region_Ext_Bot: 3
+Skip_Net: 
+USED_LAYER: 2
+CUT_SIZE: 20
+MIN_SPACING: 300
+WIRE_WIDTH: 300
+Complex_Routing_Net: 
+MaxSAT_ub: 10
+OutputName: 1_brd
+DivideTech: 1
+DivideProcess: LEFT
+HOR_Cutline: 1617
+Top_Ver_Cutline: 3546
+Bot_Ver_Cutline: 3578
+CPU_Name: U14.
+Group_Name: U143. U144. U146. U145. U151. U147. U148. U149. U150.
+Direction: H H H H H V V V V

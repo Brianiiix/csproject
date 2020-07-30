@@ -1,0 +1,9356 @@
+7_63
+	signalRef:DRAM0_DQS0
+	signalRef:DRAM0_D1
+	signalRef:DRAM0_D0
+	signalRef:DRAM0_D2
+	signalRef:DRAM0_D3
+	signalRef:DRAM0_D4
+	signalRef:DRAM0_D5
+	signalRef:DRAM0_D6
+	signalRef:DRAM0_D7
+	signalRef:DRAM0_DQM0
+	signalRef:DRAM0_DQS#0
+78
+	signalRef:GMAC_RXD1
+77
+	signalRef:GMAC_RXD2
+76
+	signalRef:GMAC_RXDV
+75
+	signalRef:GMAC_RXD3
+74
+	signalRef:GMAC_RXD0
+73
+	signalRef:N78508537
+72
+	signalRef:N78508544
+71
+	signalRef:N78508530
+70
+	signalRef:N78508523
+6_62
+	signalRef:DRAM0_DQS3
+	signalRef:DRAM0_D24
+	signalRef:DRAM0_D25
+	signalRef:DRAM0_D26
+	signalRef:DRAM0_D27
+	signalRef:DRAM0_D28
+	signalRef:DRAM0_D29
+	signalRef:DRAM0_D30
+	signalRef:DRAM0_D31
+	signalRef:DRAM0_DQM3
+	signalRef:DRAM0_DQS#3
+69
+	signalRef:N78508516
+68
+	signalRef:GMAC_TXEN
+67
+	signalRef:GMAC_TXD3
+66
+	signalRef:GMAC_TXD2
+65
+	signalRef:GMAC_TXD1
+64
+	signalRef:GMAC_TXD0
+5_61
+	signalRef:DRAM1_DQS0
+	signalRef:DRAM1_D0
+	signalRef:DRAM1_D1
+	signalRef:DRAM1_D2
+	signalRef:DRAM1_D3
+	signalRef:DRAM1_D4
+	signalRef:DRAM1_D5
+	signalRef:DRAM1_D6
+	signalRef:DRAM1_D7
+	signalRef:DRAM1_DQM0
+	signalRef:DRAM1_DQS#0
+4_60
+	signalRef:DRAM0_DQS#1
+	signalRef:DRAM0_D10
+	signalRef:DRAM0_D11
+	signalRef:DRAM0_D12
+	signalRef:DRAM0_D13
+	signalRef:DRAM0_D14
+	signalRef:DRAM0_D15
+	signalRef:DRAM0_D8
+	signalRef:DRAM0_D9
+	signalRef:DRAM0_DQM1
+	signalRef:DRAM0_DQS1
+3_59
+	signalRef:DRAM0_DQS2
+	signalRef:DRAM0_D16
+	signalRef:DRAM0_D17
+	signalRef:DRAM0_D18
+	signalRef:DRAM0_D19
+	signalRef:DRAM0_D20
+	signalRef:DRAM0_D21
+	signalRef:DRAM0_D22
+	signalRef:DRAM0_D23
+	signalRef:DRAM0_DQM2
+	signalRef:DRAM0_DQS#2
+ObsPad : U5.L7
+	 Layer : 0
+	 Coor : 1080.84,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.E3
+	 Layer : 0
+	 Coor : 1269.82,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.P1
+	 Layer : 0
+	 Coor : 986.35,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH5
+	 Layer : 0
+	 Coor : 1950.91,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K3
+	 Layer : 0
+	 Coor : 1887.92,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V1
+	 Layer : 0
+	 Coor : 1824.93,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R80.2
+	 Layer : 3
+	 Coor : 2179.26,1672.5
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : C147.2
+	 Layer : 3
+	 Coor : 984.38,1361.48
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H21
+	 Layer : 0
+	 Coor : 2454.85,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D20
+	 Layer : 0
+	 Coor : 2423.35,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E9
+	 Layer : 0
+	 Coor : 2076.9,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH25
+	 Layer : 0
+	 Coor : 2580.83,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U3
+	 Layer : 0
+	 Coor : 1887.92,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC23
+	 Layer : 0
+	 Coor : 2517.84,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U28
+	 Layer : 0
+	 Coor : 2675.32,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C32.1
+	 Layer : 3
+	 Coor : 2223.88,2081.95
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U6.D3
+	 Layer : 0
+	 Coor : 1301.31,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C14.1
+	 Layer : 3
+	 Coor : 2293.2,1908.72
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG28
+	 Layer : 0
+	 Coor : 2675.32,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH6
+	 Layer : 0
+	 Coor : 1982.41,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA30
+	 Layer : 0
+	 Coor : 2738.31,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.H9
+	 Layer : 0
+	 Coor : 1175.33,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C10
+	 Layer : 0
+	 Coor : 2108.39,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.M9
+	 Layer : 0
+	 Coor : 1049.34,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T20
+	 Layer : 0
+	 Coor : 2423.35,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M3
+	 Layer : 0
+	 Coor : 1887.92,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K18
+	 Layer : 0
+	 Coor : 2360.36,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA9
+	 Layer : 0
+	 Coor : 2076.9,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH20
+	 Layer : 0
+	 Coor : 2423.35,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F8
+	 Layer : 0
+	 Coor : 2045.4,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.M3
+	 Layer : 0
+	 Coor : 1049.34,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U26
+	 Layer : 0
+	 Coor : 2612.33,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C152.1
+	 Layer : 3
+	 Coor : 1019.82,2373.29
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB21
+	 Layer : 0
+	 Coor : 2454.85,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C18.2
+	 Layer : 3
+	 Coor : 2229.23,1953.81
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG5
+	 Layer : 0
+	 Coor : 1950.91,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R19
+	 Layer : 0
+	 Coor : 2391.86,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF2
+	 Layer : 0
+	 Coor : 1856.42,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C27.1
+	 Layer : 3
+	 Coor : 2216.66,2113.44
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG10
+	 Layer : 0
+	 Coor : 2108.39,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.M2
+	 Layer : 0
+	 Coor : 1049.34,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C93.2
+	 Layer : 3
+	 Coor : 2069.56,1723.19
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J14
+	 Layer : 0
+	 Coor : 2234.38,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C111.2
+	 Layer : 3
+	 Coor : 2328.75,1844.84
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U6.B3
+	 Layer : 0
+	 Coor : 1364.3,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA19
+	 Layer : 0
+	 Coor : 2391.86,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V4
+	 Layer : 0
+	 Coor : 1919.42,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG26
+	 Layer : 0
+	 Coor : 2612.33,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C45.1
+	 Layer : 3
+	 Coor : 2360.36,2068.17
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B25
+	 Layer : 0
+	 Coor : 2580.83,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.P8
+	 Layer : 0
+	 Coor : 986.35,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C158.1
+	 Layer : 3
+	 Coor : 1165.48,2329.98
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U4.D7
+	 Layer : 0
+	 Coor : 1301.31,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.N8
+	 Layer : 0
+	 Coor : 1017.85,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB10
+	 Layer : 0
+	 Coor : 2108.39,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F15
+	 Layer : 0
+	 Coor : 2265.87,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE7
+	 Layer : 0
+	 Coor : 2013.9,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ17
+	 Layer : 0
+	 Coor : 2328.86,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P6
+	 Layer : 0
+	 Coor : 1982.41,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D21
+	 Layer : 0
+	 Coor : 2454.85,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U29
+	 Layer : 0
+	 Coor : 2706.82,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R25
+	 Layer : 0
+	 Coor : 2580.83,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W16
+	 Layer : 0
+	 Coor : 2297.37,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C156.2
+	 Layer : 3
+	 Coor : 939.11,2705.97
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C71.2
+	 Layer : 3
+	 Coor : 2082.8,2202.81
+	 Type : PAD14
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D6
+	 Layer : 0
+	 Coor : 1982.41,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C4.2
+	 Layer : 3
+	 Coor : 2424.16,1843.75
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF28
+	 Layer : 0
+	 Coor : 2675.32,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.A8
+	 Layer : 0
+	 Coor : 1395.8,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C73.1
+	 Layer : 3
+	 Coor : 2057.2,2050.51
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.A8
+	 Layer : 0
+	 Coor : 1395.8,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.E3
+	 Layer : 0
+	 Coor : 1269.82,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H29
+	 Layer : 0
+	 Coor : 2706.82,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C61.2
+	 Layer : 3
+	 Coor : 2126.12,1987.46
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : R130.1
+	 Layer : 3
+	 Coor : 848.55,1908.72
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U4.P1
+	 Layer : 0
+	 Coor : 986.35,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L3
+	 Layer : 0
+	 Coor : 1887.92,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K25
+	 Layer : 0
+	 Coor : 2580.83,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C30
+	 Layer : 0
+	 Coor : 2738.31,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C20.1
+	 Layer : 3
+	 Coor : 2202.97,1920.91
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U5.P1
+	 Layer : 0
+	 Coor : 986.35,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB1
+	 Layer : 0
+	 Coor : 1824.93,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C140.1
+	 Layer : 3
+	 Coor : 1399.73,1337.85
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N22
+	 Layer : 0
+	 Coor : 2486.34,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E17
+	 Layer : 0
+	 Coor : 2328.86,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB6
+	 Layer : 0
+	 Coor : 1982.41,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.R3
+	 Layer : 0
+	 Coor : 954.86,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C80.1
+	 Layer : 3
+	 Coor : 2451.8,2228.82
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y11
+	 Layer : 0
+	 Coor : 2139.89,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.J3
+	 Layer : 0
+	 Coor : 1143.83,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C31.1
+	 Layer : 3
+	 Coor : 2223.88,2144.94
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U4.L3
+	 Layer : 0
+	 Coor : 1080.84,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W5
+	 Layer : 0
+	 Coor : 1950.91,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF1
+	 Layer : 0
+	 Coor : 1824.93,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R548.2
+	 Layer : 3
+	 Coor : 2442.7,2296
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H8
+	 Layer : 0
+	 Coor : 2045.4,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T29
+	 Layer : 0
+	 Coor : 2706.82,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.N9
+	 Layer : 0
+	 Coor : 1017.85,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.E8
+	 Layer : 0
+	 Coor : 1269.82,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C114.2
+	 Layer : 3
+	 Coor : 2428.2,1719.12
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D8
+	 Layer : 0
+	 Coor : 2045.4,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.H8
+	 Layer : 0
+	 Coor : 1175.33,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B10
+	 Layer : 0
+	 Coor : 2108.39,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.E7
+	 Layer : 0
+	 Coor : 1269.82,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T11
+	 Layer : 0
+	 Coor : 2139.89,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M18
+	 Layer : 0
+	 Coor : 2360.36,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C146.1
+	 Layer : 3
+	 Coor : 937.13,1109.51
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG14
+	 Layer : 0
+	 Coor : 2234.38,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C45.2
+	 Layer : 3
+	 Coor : 2360.36,2032.73
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.N7
+	 Layer : 0
+	 Coor : 1017.85,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ24
+	 Layer : 0
+	 Coor : 2549.34,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC14
+	 Layer : 0
+	 Coor : 2234.38,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M25
+	 Layer : 0
+	 Coor : 2580.83,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N16
+	 Layer : 0
+	 Coor : 2297.37,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.T2
+	 Layer : 0
+	 Coor : 923.36,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA16
+	 Layer : 0
+	 Coor : 2297.37,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C71.1
+	 Layer : 3
+	 Coor : 2082.8,2152.81
+	 Type : PAD14
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B29
+	 Layer : 0
+	 Coor : 2706.82,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ27
+	 Layer : 0
+	 Coor : 2643.82,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V13
+	 Layer : 0
+	 Coor : 2202.88,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C52.2
+	 Layer : 3
+	 Coor : 2391.86,1969.74
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C150.2
+	 Layer : 3
+	 Coor : 1398.73,2651.55
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C85.1
+	 Layer : 3
+	 Coor : 2517.85,2194.15
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C121.1
+	 Layer : 3
+	 Coor : 2334.9,2378.9
+	 Type : PAD14
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H16
+	 Layer : 0
+	 Coor : 2297.37,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C115.2
+	 Layer : 3
+	 Coor : 2180.1,2237.48
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E29
+	 Layer : 0
+	 Coor : 2706.82,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.P7
+	 Layer : 0
+	 Coor : 986.35,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.C3
+	 Layer : 0
+	 Coor : 1332.81,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.E8
+	 Layer : 0
+	 Coor : 1269.82,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V10
+	 Layer : 0
+	 Coor : 2108.39,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C17.2
+	 Layer : 3
+	 Coor : 2092.64,1948.12
+	 Type : PAD25
+		 Width : 0
+		 Height : 0
+ObsPad : U4.T7
+	 Layer : 0
+	 Coor : 923.36,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.G7
+	 Layer : 0
+	 Coor : 1206.82,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.D9
+	 Layer : 0
+	 Coor : 1301.31,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C43.1
+	 Layer : 3
+	 Coor : 2423.36,2134.44
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : C60.1
+	 Layer : 3
+	 Coor : 2332.22,1741.54
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U6.T1
+	 Layer : 0
+	 Coor : 923.36,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.G3
+	 Layer : 0
+	 Coor : 1206.82,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.G1
+	 Layer : 0
+	 Coor : 1206.82,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C63.1
+	 Layer : 3
+	 Coor : 2159.58,2018.96
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C6
+	 Layer : 0
+	 Coor : 1982.41,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.P3
+	 Layer : 0
+	 Coor : 986.35,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.K8
+	 Layer : 0
+	 Coor : 1112.34,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.L2
+	 Layer : 0
+	 Coor : 1080.84,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C98.1
+	 Layer : 3
+	 Coor : 2295.7,2183.3
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N11
+	 Layer : 0
+	 Coor : 2139.89,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ28
+	 Layer : 0
+	 Coor : 2675.32,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C21.1
+	 Layer : 3
+	 Coor : 2192.28,1890.32
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.B7
+	 Layer : 0
+	 Coor : 1364.3,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M21
+	 Layer : 0
+	 Coor : 2454.85,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C17
+	 Layer : 0
+	 Coor : 2328.86,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D7
+	 Layer : 0
+	 Coor : 2013.9,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C12
+	 Layer : 0
+	 Coor : 2171.38,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L20
+	 Layer : 0
+	 Coor : 2423.35,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA21
+	 Layer : 0
+	 Coor : 2454.85,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B22
+	 Layer : 0
+	 Coor : 2486.34,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.J7
+	 Layer : 0
+	 Coor : 1143.83,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.R9
+	 Layer : 0
+	 Coor : 954.86,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M4
+	 Layer : 0
+	 Coor : 1919.42,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R121.1
+	 Layer : 0
+	 Coor : 1006.01,1576.04
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.G2
+	 Layer : 0
+	 Coor : 1856.42,2270.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E3
+	 Layer : 0
+	 Coor : 1887.92,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R696.2
+	 Layer : 3
+	 Coor : 2508.94,2124.89
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH27
+	 Layer : 0
+	 Coor : 2643.82,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C81.2
+	 Layer : 3
+	 Coor : 2157.61,1747.3
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C112.1
+	 Layer : 3
+	 Coor : 2139.89,1835.88
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U6.R9
+	 Layer : 0
+	 Coor : 954.86,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK30
+	 Layer : 0
+	 Coor : 2738.31,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U15
+	 Layer : 0
+	 Coor : 2265.87,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K5
+	 Layer : 0
+	 Coor : 1950.91,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.J9
+	 Layer : 0
+	 Coor : 1143.83,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB23
+	 Layer : 0
+	 Coor : 2517.84,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.G7
+	 Layer : 0
+	 Coor : 1206.82,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B23
+	 Layer : 0
+	 Coor : 2517.84,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C56.1
+	 Layer : 3
+	 Coor : 2293.2,1940.42
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : R25.1
+	 Layer : 3
+	 Coor : 2651.7,2048.48
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U4.D9
+	 Layer : 0
+	 Coor : 1301.31,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.H1
+	 Layer : 0
+	 Coor : 1175.33,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W18
+	 Layer : 0
+	 Coor : 2360.36,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P22
+	 Layer : 0
+	 Coor : 2486.34,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.B9
+	 Layer : 0
+	 Coor : 1364.3,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R132.1
+	 Layer : 3
+	 Coor : 848.55,2158.72
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE1
+	 Layer : 0
+	 Coor : 1824.93,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AD28
+	 Layer : 0
+	 Coor : 2675.32,1735.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB13
+	 Layer : 0
+	 Coor : 2202.88,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.G27
+	 Layer : 0
+	 Coor : 2643.82,2270.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R10
+	 Layer : 0
+	 Coor : 2108.39,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.L7
+	 Layer : 0
+	 Coor : 1080.84,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R130.2
+	 Layer : 3
+	 Coor : 848.55,1944.16
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U3.L8
+	 Layer : 0
+	 Coor : 1080.84,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C74.1
+	 Layer : 3
+	 Coor : 2090.68,2050.45
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG1
+	 Layer : 0
+	 Coor : 1824.93,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R78.2
+	 Layer : 3
+	 Coor : 2279.66,1564.24
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : C163.1
+	 Layer : 3
+	 Coor : 1045.4,1131.16
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH11
+	 Layer : 0
+	 Coor : 2139.89,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C164.2
+	 Layer : 3
+	 Coor : 1165.48,1335.88
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB8
+	 Layer : 0
+	 Coor : 2045.4,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH4
+	 Layer : 0
+	 Coor : 1919.42,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F27
+	 Layer : 0
+	 Coor : 2643.82,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C161.1
+	 Layer : 3
+	 Coor : 1419.42,2148.88
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.M1
+	 Layer : 0
+	 Coor : 1049.34,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG13
+	 Layer : 0
+	 Coor : 2202.88,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R13
+	 Layer : 0
+	 Coor : 2202.88,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D18
+	 Layer : 0
+	 Coor : 2360.36,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.H1
+	 Layer : 0
+	 Coor : 1175.33,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C155.2
+	 Layer : 3
+	 Coor : 1277.12,2715.74
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG30
+	 Layer : 0
+	 Coor : 2738.31,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V18
+	 Layer : 0
+	 Coor : 2360.36,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ12
+	 Layer : 0
+	 Coor : 2171.38,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C92.1
+	 Layer : 3
+	 Coor : 2036.28,1746.81
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB12
+	 Layer : 0
+	 Coor : 2171.38,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA25
+	 Layer : 0
+	 Coor : 2580.83,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M17
+	 Layer : 0
+	 Coor : 2328.86,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E16
+	 Layer : 0
+	 Coor : 2297.37,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C198.1
+	 Layer : 3
+	 Coor : 2572.07,2085.76
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A12
+	 Layer : 0
+	 Coor : 2171.38,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C54.1
+	 Layer : 3
+	 Coor : 2423.36,1928.4
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E10
+	 Layer : 0
+	 Coor : 2108.39,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.C7
+	 Layer : 0
+	 Coor : 1332.81,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C14
+	 Layer : 0
+	 Coor : 2234.38,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C157.1
+	 Layer : 3
+	 Coor : 1319.03,2328.01
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG27
+	 Layer : 0
+	 Coor : 2643.82,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.C3
+	 Layer : 0
+	 Coor : 1332.81,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H9
+	 Layer : 0
+	 Coor : 2076.9,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.J3
+	 Layer : 0
+	 Coor : 1143.83,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U9
+	 Layer : 0
+	 Coor : 2076.9,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R16
+	 Layer : 0
+	 Coor : 2297.37,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W19
+	 Layer : 0
+	 Coor : 2391.86,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R720.2
+	 Layer : 3
+	 Coor : 2342.14,1674.15
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V22
+	 Layer : 0
+	 Coor : 2486.34,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AD27
+	 Layer : 0
+	 Coor : 2643.82,1735.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.N9
+	 Layer : 0
+	 Coor : 1017.85,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y22
+	 Layer : 0
+	 Coor : 2486.34,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF8
+	 Layer : 0
+	 Coor : 2045.4,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C156.1
+	 Layer : 3
+	 Coor : 939.11,2670.53
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.G3
+	 Layer : 0
+	 Coor : 1206.82,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R67.2
+	 Layer : 3
+	 Coor : 1992.73,1760.55
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC30
+	 Layer : 0
+	 Coor : 2738.31,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R129.2
+	 Layer : 3
+	 Coor : 1156.45,2174.27
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A13
+	 Layer : 0
+	 Coor : 2202.88,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.T7
+	 Layer : 0
+	 Coor : 923.36,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C162.2
+	 Layer : 3
+	 Coor : 1185.17,1942.18
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C69.1
+	 Layer : 3
+	 Coor : 2011.46,1938.24
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.K9
+	 Layer : 0
+	 Coor : 1112.34,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H19
+	 Layer : 0
+	 Coor : 2391.86,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.M2
+	 Layer : 0
+	 Coor : 1049.34,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D14
+	 Layer : 0
+	 Coor : 2234.38,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ3
+	 Layer : 0
+	 Coor : 1887.92,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C73.2
+	 Layer : 3
+	 Coor : 2021.76,2050.51
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M19
+	 Layer : 0
+	 Coor : 2391.86,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.F2
+	 Layer : 0
+	 Coor : 1238.32,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B27
+	 Layer : 0
+	 Coor : 2643.82,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C20
+	 Layer : 0
+	 Coor : 2423.35,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.N8
+	 Layer : 0
+	 Coor : 1017.85,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE27
+	 Layer : 0
+	 Coor : 2643.82,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C29.1
+	 Layer : 3
+	 Coor : 2223.88,2207.93
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK26
+	 Layer : 0
+	 Coor : 2612.33,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C82.2
+	 Layer : 3
+	 Coor : 2124.14,2142.97
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C50.1
+	 Layer : 3
+	 Coor : 2265.28,1847.7
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.R8
+	 Layer : 0
+	 Coor : 954.86,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C66.1
+	 Layer : 3
+	 Coor : 2063.33,1885.38
+	 Type : PAD25
+		 Width : 0
+		 Height : 0
+ObsPad : U4.K2
+	 Layer : 0
+	 Coor : 1112.34,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF3
+	 Layer : 0
+	 Coor : 1887.92,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C13
+	 Layer : 0
+	 Coor : 2202.88,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA6
+	 Layer : 0
+	 Coor : 1982.41,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H26
+	 Layer : 0
+	 Coor : 2612.33,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E24
+	 Layer : 0
+	 Coor : 2549.34,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.H3
+	 Layer : 0
+	 Coor : 1175.33,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J26
+	 Layer : 0
+	 Coor : 2612.33,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U13
+	 Layer : 0
+	 Coor : 2202.88,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.K7
+	 Layer : 0
+	 Coor : 1112.34,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E12
+	 Layer : 0
+	 Coor : 2171.38,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C29
+	 Layer : 0
+	 Coor : 2706.82,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C53.1
+	 Layer : 3
+	 Coor : 2201.89,1847.7
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E30
+	 Layer : 0
+	 Coor : 2738.31,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A17
+	 Layer : 0
+	 Coor : 2328.86,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.C7
+	 Layer : 0
+	 Coor : 1332.81,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V9
+	 Layer : 0
+	 Coor : 2076.9,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE10
+	 Layer : 0
+	 Coor : 2108.39,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W13
+	 Layer : 0
+	 Coor : 2202.88,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B12
+	 Layer : 0
+	 Coor : 2171.38,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ15
+	 Layer : 0
+	 Coor : 2265.87,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C142.2
+	 Layer : 3
+	 Coor : 1299.34,1365.41
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W23
+	 Layer : 0
+	 Coor : 2517.84,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.M2
+	 Layer : 0
+	 Coor : 1049.34,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C6.1
+	 Layer : 3
+	 Coor : 2360.36,1906.75
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L19
+	 Layer : 0
+	 Coor : 2391.86,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG11
+	 Layer : 0
+	 Coor : 2139.89,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.E1
+	 Layer : 0
+	 Coor : 1269.82,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D11
+	 Layer : 0
+	 Coor : 2139.89,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C96.1
+	 Layer : 3
+	 Coor : 2145.79,1711.87
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.E3
+	 Layer : 0
+	 Coor : 1269.82,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.D8
+	 Layer : 0
+	 Coor : 1301.31,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B15
+	 Layer : 0
+	 Coor : 2265.87,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK12
+	 Layer : 0
+	 Coor : 2171.38,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.D9
+	 Layer : 0
+	 Coor : 1301.31,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R6
+	 Layer : 0
+	 Coor : 1982.41,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ30
+	 Layer : 0
+	 Coor : 2738.31,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D1
+	 Layer : 0
+	 Coor : 1824.93,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.J1
+	 Layer : 0
+	 Coor : 1143.83,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M28
+	 Layer : 0
+	 Coor : 2675.32,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.G1
+	 Layer : 0
+	 Coor : 1206.82,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J21
+	 Layer : 0
+	 Coor : 2454.85,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C167.2
+	 Layer : 3
+	 Coor : 1049.34,2654.78
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C5.1
+	 Layer : 3
+	 Coor : 2360.77,1871.97
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : C34.2
+	 Layer : 3
+	 Coor : 2155.86,2144.94
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.G7
+	 Layer : 0
+	 Coor : 1206.82,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.H8
+	 Layer : 0
+	 Coor : 1175.33,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E27
+	 Layer : 0
+	 Coor : 2643.82,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.A1
+	 Layer : 0
+	 Coor : 1395.8,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C152.2
+	 Layer : 3
+	 Coor : 984.38,2373.29
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE15
+	 Layer : 0
+	 Coor : 2265.87,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : TP31.1
+	 Layer : 3
+	 Coor : 1996.19,1688.25
+	 Type : PAD4
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C26
+	 Layer : 0
+	 Coor : 2612.33,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P29
+	 Layer : 0
+	 Coor : 2706.82,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB11
+	 Layer : 0
+	 Coor : 2139.89,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y27
+	 Layer : 0
+	 Coor : 2643.82,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.A7
+	 Layer : 0
+	 Coor : 1395.8,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.E9
+	 Layer : 0
+	 Coor : 1269.82,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C42.1
+	 Layer : 3
+	 Coor : 2289.7,2118.6
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U3.N3
+	 Layer : 0
+	 Coor : 1017.85,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG7
+	 Layer : 0
+	 Coor : 2013.9,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P14
+	 Layer : 0
+	 Coor : 2234.38,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.D1
+	 Layer : 0
+	 Coor : 1301.31,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE23
+	 Layer : 0
+	 Coor : 2517.84,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P3
+	 Layer : 0
+	 Coor : 1887.92,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.C1
+	 Layer : 0
+	 Coor : 1332.81,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.P9
+	 Layer : 0
+	 Coor : 986.35,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R20
+	 Layer : 0
+	 Coor : 2423.35,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.D1
+	 Layer : 0
+	 Coor : 1301.31,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.D9
+	 Layer : 0
+	 Coor : 1301.31,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C115.1
+	 Layer : 3
+	 Coor : 2180.1,2272.92
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M8
+	 Layer : 0
+	 Coor : 2045.4,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W28
+	 Layer : 0
+	 Coor : 2675.32,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C91.2
+	 Layer : 3
+	 Coor : 2069.89,1771.87
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE6
+	 Layer : 0
+	 Coor : 1982.41,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D4
+	 Layer : 0
+	 Coor : 1919.42,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.F2
+	 Layer : 0
+	 Coor : 1238.32,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P26
+	 Layer : 0
+	 Coor : 2612.33,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.K9
+	 Layer : 0
+	 Coor : 1112.34,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R26
+	 Layer : 0
+	 Coor : 2612.33,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C19.2
+	 Layer : 3
+	 Coor : 2220.77,1987.33
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : C110.2
+	 Layer : 3
+	 Coor : 2519.82,1782.74
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C108.2
+	 Layer : 3
+	 Coor : 2126.11,2110.45
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U6.K8
+	 Layer : 0
+	 Coor : 1112.34,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.T3
+	 Layer : 0
+	 Coor : 923.36,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.T1
+	 Layer : 0
+	 Coor : 923.36,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB29
+	 Layer : 0
+	 Coor : 2706.82,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P15
+	 Layer : 0
+	 Coor : 2265.87,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F21
+	 Layer : 0
+	 Coor : 2454.85,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C167.1
+	 Layer : 3
+	 Coor : 1049.34,2690.22
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C49.2
+	 Layer : 3
+	 Coor : 2297.37,1976.96
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : R695.2
+	 Layer : 3
+	 Coor : 2539,2085.76
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U4.N7
+	 Layer : 0
+	 Coor : 1017.85,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C117.2
+	 Layer : 3
+	 Coor : 2372.1,2224
+	 Type : PAD14
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U20
+	 Layer : 0
+	 Coor : 2423.35,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R122.1
+	 Layer : 0
+	 Coor : 938.12,2586.87
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P25
+	 Layer : 0
+	 Coor : 2580.83,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C13.1
+	 Layer : 3
+	 Coor : 2293.2,1877.22
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC9
+	 Layer : 0
+	 Coor : 2076.9,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE24
+	 Layer : 0
+	 Coor : 2549.34,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y5
+	 Layer : 0
+	 Coor : 1950.91,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V6
+	 Layer : 0
+	 Coor : 1982.41,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y6
+	 Layer : 0
+	 Coor : 1982.41,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A8
+	 Layer : 0
+	 Coor : 2045.4,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : TP32.1
+	 Layer : 3
+	 Coor : 1842.65,1680.37
+	 Type : PAD4
+		 Width : 0
+		 Height : 0
+ObsPad : C76.1
+	 Layer : 3
+	 Coor : 2129.68,2249.12
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C70.1
+	 Layer : 3
+	 Coor : 2108.19,1910.49
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG17
+	 Layer : 0
+	 Coor : 2328.86,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF24
+	 Layer : 0
+	 Coor : 2549.34,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.J8
+	 Layer : 0
+	 Coor : 1143.83,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K27
+	 Layer : 0
+	 Coor : 2643.82,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.L8
+	 Layer : 0
+	 Coor : 1080.84,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C75.2
+	 Layer : 3
+	 Coor : 2118.9,2081.95
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U4.K9
+	 Layer : 0
+	 Coor : 1112.34,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.T2
+	 Layer : 0
+	 Coor : 923.36,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H13
+	 Layer : 0
+	 Coor : 2202.88,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T22
+	 Layer : 0
+	 Coor : 2486.34,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C144.1
+	 Layer : 3
+	 Coor : 1330.83,1635.1
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C61.1
+	 Layer : 3
+	 Coor : 2090.68,1987.46
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L25
+	 Layer : 0
+	 Coor : 2580.83,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D3
+	 Layer : 0
+	 Coor : 1887.92,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T5
+	 Layer : 0
+	 Coor : 1950.91,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C94.1
+	 Layer : 3
+	 Coor : 2299.54,1743.39
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U4.M1
+	 Layer : 0
+	 Coor : 1049.34,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C143.1
+	 Layer : 3
+	 Coor : 1004.07,1938.25
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W22
+	 Layer : 0
+	 Coor : 2486.34,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.B1
+	 Layer : 0
+	 Coor : 1364.3,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.C9
+	 Layer : 0
+	 Coor : 1332.81,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C19.1
+	 Layer : 3
+	 Coor : 2199.77,1987.33
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF30
+	 Layer : 0
+	 Coor : 2738.31,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J19
+	 Layer : 0
+	 Coor : 2391.86,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.F3
+	 Layer : 0
+	 Coor : 1238.32,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF10
+	 Layer : 0
+	 Coor : 2108.39,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C164.1
+	 Layer : 3
+	 Coor : 1165.48,1371.32
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P5
+	 Layer : 0
+	 Coor : 1950.91,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE19
+	 Layer : 0
+	 Coor : 2391.86,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.G8
+	 Layer : 0
+	 Coor : 1206.82,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B20
+	 Layer : 0
+	 Coor : 2423.35,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C158.2
+	 Layer : 3
+	 Coor : 1165.48,2294.54
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C8
+	 Layer : 0
+	 Coor : 2045.4,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB17
+	 Layer : 0
+	 Coor : 2328.86,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U14
+	 Layer : 0
+	 Coor : 2234.38,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C106.2
+	 Layer : 3
+	 Coor : 2061.15,2265.02
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.T1
+	 Layer : 0
+	 Coor : 923.36,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.L2
+	 Layer : 0
+	 Coor : 1080.84,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W17
+	 Layer : 0
+	 Coor : 2328.86,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH29
+	 Layer : 0
+	 Coor : 2706.82,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF13
+	 Layer : 0
+	 Coor : 2202.88,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA14
+	 Layer : 0
+	 Coor : 2234.38,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.R8
+	 Layer : 0
+	 Coor : 954.86,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H11
+	 Layer : 0
+	 Coor : 2139.89,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C28
+	 Layer : 0
+	 Coor : 2675.32,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AD30
+	 Layer : 0
+	 Coor : 2738.31,1735.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R83.1
+	 Layer : 3
+	 Coor : 2211.6,2237.48
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A3
+	 Layer : 0
+	 Coor : 1887.92,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U16
+	 Layer : 0
+	 Coor : 2297.37,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C52.1
+	 Layer : 3
+	 Coor : 2391.86,2005.18
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L9
+	 Layer : 0
+	 Coor : 2076.9,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.L3
+	 Layer : 0
+	 Coor : 1080.84,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N27
+	 Layer : 0
+	 Coor : 2643.82,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N3
+	 Layer : 0
+	 Coor : 1887.92,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C145.2
+	 Layer : 3
+	 Coor : 1126.11,1068.17
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.M9
+	 Layer : 0
+	 Coor : 1049.34,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M6
+	 Layer : 0
+	 Coor : 1982.41,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.K3
+	 Layer : 0
+	 Coor : 1112.34,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A22
+	 Layer : 0
+	 Coor : 2486.34,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC2
+	 Layer : 0
+	 Coor : 1856.42,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE26
+	 Layer : 0
+	 Coor : 2612.33,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F28
+	 Layer : 0
+	 Coor : 2675.32,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C18
+	 Layer : 0
+	 Coor : 2360.36,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH9
+	 Layer : 0
+	 Coor : 2076.9,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W10
+	 Layer : 0
+	 Coor : 2108.39,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V3
+	 Layer : 0
+	 Coor : 1887.92,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF29
+	 Layer : 0
+	 Coor : 2706.82,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE29
+	 Layer : 0
+	 Coor : 2706.82,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A14
+	 Layer : 0
+	 Coor : 2234.38,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J2
+	 Layer : 0
+	 Coor : 1856.42,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.D8
+	 Layer : 0
+	 Coor : 1301.31,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E26
+	 Layer : 0
+	 Coor : 2612.33,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK8
+	 Layer : 0
+	 Coor : 2045.4,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC6
+	 Layer : 0
+	 Coor : 1982.41,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH7
+	 Layer : 0
+	 Coor : 2013.9,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.F8
+	 Layer : 0
+	 Coor : 1238.32,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.F9
+	 Layer : 0
+	 Coor : 1238.32,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R77.1
+	 Layer : 3
+	 Coor : 2214.69,1640.81
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U3.E2
+	 Layer : 0
+	 Coor : 1269.82,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N12
+	 Layer : 0
+	 Coor : 2171.38,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.J2
+	 Layer : 0
+	 Coor : 1143.83,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C41.2
+	 Layer : 3
+	 Coor : 2328.87,2039.95
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U6.J2
+	 Layer : 0
+	 Coor : 1143.83,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T15
+	 Layer : 0
+	 Coor : 2265.87,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C66.2
+	 Layer : 3
+	 Coor : 2063.33,1826.32
+	 Type : PAD25
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D2
+	 Layer : 0
+	 Coor : 1856.42,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K30
+	 Layer : 0
+	 Coor : 2738.31,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.A3
+	 Layer : 0
+	 Coor : 1395.8,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK19
+	 Layer : 0
+	 Coor : 2391.86,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E5
+	 Layer : 0
+	 Coor : 1950.91,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C97.1
+	 Layer : 3
+	 Coor : 2214.97,1741.81
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N29
+	 Layer : 0
+	 Coor : 2706.82,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C68.2
+	 Layer : 3
+	 Coor : 2021.78,1859.5
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L10
+	 Layer : 0
+	 Coor : 2108.39,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C44.1
+	 Layer : 3
+	 Coor : 2360.36,2134.44
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U5.D7
+	 Layer : 0
+	 Coor : 1301.31,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C106.1
+	 Layer : 3
+	 Coor : 2061.15,2300.46
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C24.1
+	 Layer : 3
+	 Coor : 2207.41,2042.58
+	 Type : PAD14
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC27
+	 Layer : 0
+	 Coor : 2643.82,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.J8
+	 Layer : 0
+	 Coor : 1143.83,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ29
+	 Layer : 0
+	 Coor : 2706.82,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y2
+	 Layer : 0
+	 Coor : 1856.42,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.E9
+	 Layer : 0
+	 Coor : 1269.82,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.R2
+	 Layer : 0
+	 Coor : 954.86,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C160.2
+	 Layer : 3
+	 Coor : 1275.72,2879.19
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF5
+	 Layer : 0
+	 Coor : 1950.91,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B13
+	 Layer : 0
+	 Coor : 2202.88,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V16
+	 Layer : 0
+	 Coor : 2297.37,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.G2
+	 Layer : 0
+	 Coor : 1206.82,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C2
+	 Layer : 0
+	 Coor : 1856.42,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J6
+	 Layer : 0
+	 Coor : 1982.41,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H30
+	 Layer : 0
+	 Coor : 2738.31,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P10
+	 Layer : 0
+	 Coor : 2108.39,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C25
+	 Layer : 0
+	 Coor : 2580.83,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK24
+	 Layer : 0
+	 Coor : 2549.34,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R127.2
+	 Layer : 3
+	 Coor : 1149.74,1753.21
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D15
+	 Layer : 0
+	 Coor : 2265.87,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B9
+	 Layer : 0
+	 Coor : 2076.9,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B28
+	 Layer : 0
+	 Coor : 2675.32,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.F1
+	 Layer : 0
+	 Coor : 1238.32,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA29
+	 Layer : 0
+	 Coor : 2706.82,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M2
+	 Layer : 0
+	 Coor : 1856.42,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T28
+	 Layer : 0
+	 Coor : 2675.32,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D9
+	 Layer : 0
+	 Coor : 2076.9,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J1
+	 Layer : 0
+	 Coor : 1824.93,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.A9
+	 Layer : 0
+	 Coor : 1395.8,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.C2
+	 Layer : 0
+	 Coor : 1332.81,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R67.1
+	 Layer : 3
+	 Coor : 1992.73,1795.99
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U3.P3
+	 Layer : 0
+	 Coor : 986.35,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.M2
+	 Layer : 0
+	 Coor : 1049.34,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE12
+	 Layer : 0
+	 Coor : 2171.38,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.J3
+	 Layer : 0
+	 Coor : 1143.83,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.H3
+	 Layer : 0
+	 Coor : 1175.33,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R5
+	 Layer : 0
+	 Coor : 1950.91,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R547.2
+	 Layer : 3
+	 Coor : 2413.6,2296.1
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : C81.1
+	 Layer : 3
+	 Coor : 2157.61,1782.74
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C89.1
+	 Layer : 3
+	 Coor : 2539.5,1957.93
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.C3
+	 Layer : 0
+	 Coor : 1332.81,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.E2
+	 Layer : 0
+	 Coor : 1269.82,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.B2
+	 Layer : 0
+	 Coor : 1364.3,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R548.1
+	 Layer : 3
+	 Coor : 2442.7,2275
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K16
+	 Layer : 0
+	 Coor : 2297.37,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R123.1
+	 Layer : 0
+	 Coor : 1033.59,2038.64
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB22
+	 Layer : 0
+	 Coor : 2486.34,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P16
+	 Layer : 0
+	 Coor : 2297.37,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH23
+	 Layer : 0
+	 Coor : 2517.84,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D17
+	 Layer : 0
+	 Coor : 2328.86,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C100.2
+	 Layer : 3
+	 Coor : 2467.12,1918.96
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.N1
+	 Layer : 0
+	 Coor : 1017.85,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.L1
+	 Layer : 0
+	 Coor : 1080.84,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C55.1
+	 Layer : 3
+	 Coor : 2328.86,2008.18
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.N3
+	 Layer : 0
+	 Coor : 1017.85,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V20
+	 Layer : 0
+	 Coor : 2423.35,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C77.2
+	 Layer : 3
+	 Coor : 2437.13,2081.95
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U6.N8
+	 Layer : 0
+	 Coor : 1017.85,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB9
+	 Layer : 0
+	 Coor : 2076.9,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J10
+	 Layer : 0
+	 Coor : 2108.39,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C198.2
+	 Layer : 3
+	 Coor : 2572.07,2050.32
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U8
+	 Layer : 0
+	 Coor : 2045.4,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H6
+	 Layer : 0
+	 Coor : 1982.41,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C107.2
+	 Layer : 3
+	 Coor : 2558.73,1908.72
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C139.2
+	 Layer : 3
+	 Coor : 1366.27,1081.95
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.G25
+	 Layer : 0
+	 Coor : 2580.83,2270.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC10
+	 Layer : 0
+	 Coor : 2108.39,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.N3
+	 Layer : 0
+	 Coor : 1017.85,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.C7
+	 Layer : 0
+	 Coor : 1332.81,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C40.1
+	 Layer : 3
+	 Coor : 2297.37,2068.17
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D28
+	 Layer : 0
+	 Coor : 2675.32,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.E7
+	 Layer : 0
+	 Coor : 1269.82,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C153.1
+	 Layer : 3
+	 Coor : 941.08,2133.13
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A26
+	 Layer : 0
+	 Coor : 2612.33,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C25.2
+	 Layer : 3
+	 Coor : 2153.66,2205.73
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : R126.1
+	 Layer : 3
+	 Coor : 1124.14,1168.56
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T14
+	 Layer : 0
+	 Coor : 2234.38,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C143.2
+	 Layer : 3
+	 Coor : 968.63,1938.25
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A24
+	 Layer : 0
+	 Coor : 2549.34,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.P2
+	 Layer : 0
+	 Coor : 986.35,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C44.2
+	 Layer : 3
+	 Coor : 2360.36,2155.44
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B6
+	 Layer : 0
+	 Coor : 1982.41,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.L3
+	 Layer : 0
+	 Coor : 1080.84,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R129.1
+	 Layer : 3
+	 Coor : 1121.01,2174.27
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F18
+	 Layer : 0
+	 Coor : 2360.36,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK6
+	 Layer : 0
+	 Coor : 1982.41,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.L2
+	 Layer : 0
+	 Coor : 1080.84,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A27
+	 Layer : 0
+	 Coor : 2643.82,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F11
+	 Layer : 0
+	 Coor : 2139.89,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C9.1
+	 Layer : 3
+	 Coor : 2391.59,1900.98
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C7
+	 Layer : 0
+	 Coor : 2013.9,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y12
+	 Layer : 0
+	 Coor : 2171.38,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L29
+	 Layer : 0
+	 Coor : 2706.82,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.M9
+	 Layer : 0
+	 Coor : 1049.34,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.H1
+	 Layer : 0
+	 Coor : 1175.33,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R720.1
+	 Layer : 3
+	 Coor : 2342.14,1709.59
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N6
+	 Layer : 0
+	 Coor : 1982.41,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y20
+	 Layer : 0
+	 Coor : 2423.35,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.K7
+	 Layer : 0
+	 Coor : 1112.34,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG8
+	 Layer : 0
+	 Coor : 2045.4,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.N7
+	 Layer : 0
+	 Coor : 1017.85,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.R2
+	 Layer : 0
+	 Coor : 954.86,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C40.2
+	 Layer : 3
+	 Coor : 2297.37,2032.73
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.P7
+	 Layer : 0
+	 Coor : 986.35,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K17
+	 Layer : 0
+	 Coor : 2328.86,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE11
+	 Layer : 0
+	 Coor : 2139.89,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.R1
+	 Layer : 0
+	 Coor : 954.86,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C151.2
+	 Layer : 3
+	 Coor : 1051.31,2920.53
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N14
+	 Layer : 0
+	 Coor : 2234.38,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE3
+	 Layer : 0
+	 Coor : 1887.92,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.E7
+	 Layer : 0
+	 Coor : 1269.82,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.K2
+	 Layer : 0
+	 Coor : 1112.34,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C26.1
+	 Layer : 3
+	 Coor : 2181.89,2113.44
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T3
+	 Layer : 0
+	 Coor : 1887.92,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.L9
+	 Layer : 0
+	 Coor : 1080.84,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA17
+	 Layer : 0
+	 Coor : 2328.86,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B7
+	 Layer : 0
+	 Coor : 2013.9,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T25
+	 Layer : 0
+	 Coor : 2580.83,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA13
+	 Layer : 0
+	 Coor : 2202.88,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R696.1
+	 Layer : 3
+	 Coor : 2508.94,2160.33
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U4.B8
+	 Layer : 0
+	 Coor : 1364.3,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.F9
+	 Layer : 0
+	 Coor : 1238.32,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG25
+	 Layer : 0
+	 Coor : 2580.83,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M12
+	 Layer : 0
+	 Coor : 2171.38,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.L1
+	 Layer : 0
+	 Coor : 1080.84,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC3
+	 Layer : 0
+	 Coor : 1887.92,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N21
+	 Layer : 0
+	 Coor : 2454.85,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.R2
+	 Layer : 0
+	 Coor : 954.86,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.H3
+	 Layer : 0
+	 Coor : 1175.33,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C33.2
+	 Layer : 3
+	 Coor : 2153.67,2081.95
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB14
+	 Layer : 0
+	 Coor : 2234.38,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P21
+	 Layer : 0
+	 Coor : 2454.85,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.T9
+	 Layer : 0
+	 Coor : 923.36,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C86.2
+	 Layer : 3
+	 Coor : 2519.82,1751.24
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C27
+	 Layer : 0
+	 Coor : 2643.82,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.M3
+	 Layer : 0
+	 Coor : 1049.34,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M9
+	 Layer : 0
+	 Coor : 2076.9,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.G9
+	 Layer : 0
+	 Coor : 1206.82,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F10
+	 Layer : 0
+	 Coor : 2108.39,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E14
+	 Layer : 0
+	 Coor : 2234.38,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A25
+	 Layer : 0
+	 Coor : 2580.83,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D30
+	 Layer : 0
+	 Coor : 2738.31,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R133.2
+	 Layer : 3
+	 Coor : 1830.84,2300.45
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ1
+	 Layer : 0
+	 Coor : 1824.93,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K6
+	 Layer : 0
+	 Coor : 1982.41,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R14
+	 Layer : 0
+	 Coor : 2234.38,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E1
+	 Layer : 0
+	 Coor : 1824.93,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C111.1
+	 Layer : 3
+	 Coor : 2328.75,1809.4
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.L3
+	 Layer : 0
+	 Coor : 1080.84,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C67.1
+	 Layer : 3
+	 Coor : 2045.4,1938.24
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U6.A9
+	 Layer : 0
+	 Coor : 1395.8,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C28.2
+	 Layer : 3
+	 Coor : 2252.1,2176.44
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J18
+	 Layer : 0
+	 Coor : 2360.36,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.G2
+	 Layer : 0
+	 Coor : 1206.82,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C154.1
+	 Layer : 3
+	 Coor : 1086.74,2936.28
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C142.1
+	 Layer : 3
+	 Coor : 1334.78,1365.41
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC8
+	 Layer : 0
+	 Coor : 2045.4,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E18
+	 Layer : 0
+	 Coor : 2360.36,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W2
+	 Layer : 0
+	 Coor : 1856.42,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N25
+	 Layer : 0
+	 Coor : 2580.83,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J15
+	 Layer : 0
+	 Coor : 2265.87,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L28
+	 Layer : 0
+	 Coor : 2675.32,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AD25
+	 Layer : 0
+	 Coor : 2580.83,1735.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C67.2
+	 Layer : 3
+	 Coor : 2045.4,1973.68
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F19
+	 Layer : 0
+	 Coor : 2391.86,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE25
+	 Layer : 0
+	 Coor : 2580.83,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P28
+	 Layer : 0
+	 Coor : 2675.32,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C49.1
+	 Layer : 3
+	 Coor : 2297.37,1997.96
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F17
+	 Layer : 0
+	 Coor : 2328.86,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C127.1
+	 Layer : 3
+	 Coor : 2132.02,1557.02
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U5.P2
+	 Layer : 0
+	 Coor : 986.35,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T9
+	 Layer : 0
+	 Coor : 2076.9,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.P9
+	 Layer : 0
+	 Coor : 986.35,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H2
+	 Layer : 0
+	 Coor : 1856.42,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ11
+	 Layer : 0
+	 Coor : 2139.89,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A5
+	 Layer : 0
+	 Coor : 1950.91,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A16
+	 Layer : 0
+	 Coor : 2297.37,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U18
+	 Layer : 0
+	 Coor : 2360.36,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R3.2
+	 Layer : 3
+	 Coor : 2171.39,1557.02
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W21
+	 Layer : 0
+	 Coor : 2454.85,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.G1
+	 Layer : 0
+	 Coor : 1206.82,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T30
+	 Layer : 0
+	 Coor : 2738.31,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG21
+	 Layer : 0
+	 Coor : 2454.85,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R25.2
+	 Layer : 3
+	 Coor : 2651.7,2083.92
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E11
+	 Layer : 0
+	 Coor : 2139.89,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.B2
+	 Layer : 0
+	 Coor : 1364.3,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A4
+	 Layer : 0
+	 Coor : 1919.42,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W25
+	 Layer : 0
+	 Coor : 2580.83,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F5
+	 Layer : 0
+	 Coor : 1950.91,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.P8
+	 Layer : 0
+	 Coor : 986.35,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.H2
+	 Layer : 0
+	 Coor : 1175.33,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C7.2
+	 Layer : 3
+	 Coor : 2392.46,1850.97
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R22
+	 Layer : 0
+	 Coor : 2486.34,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R121.2
+	 Layer : 0
+	 Coor : 1041.45,1576.04
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U3.G2
+	 Layer : 0
+	 Coor : 1206.82,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.M8
+	 Layer : 0
+	 Coor : 1049.34,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C51.1
+	 Layer : 3
+	 Coor : 2265.88,2005.18
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C38.1
+	 Layer : 3
+	 Coor : 2391.27,2122.37
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : R10.1
+	 Layer : 3
+	 Coor : 2683.71,2116.31
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U12
+	 Layer : 0
+	 Coor : 2171.38,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C160.1
+	 Layer : 3
+	 Coor : 1311.16,2879.19
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.J8
+	 Layer : 0
+	 Coor : 1143.83,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H28
+	 Layer : 0
+	 Coor : 2675.32,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.J7
+	 Layer : 0
+	 Coor : 1143.83,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A30
+	 Layer : 0
+	 Coor : 2738.31,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.G6
+	 Layer : 0
+	 Coor : 1982.41,2270.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ19
+	 Layer : 0
+	 Coor : 2391.86,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : TP51.1
+	 Layer : 3
+	 Coor : 1872.18,2288.64
+	 Type : PAD4
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ25
+	 Layer : 0
+	 Coor : 2580.83,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.R7
+	 Layer : 0
+	 Coor : 954.86,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C168.1
+	 Layer : 3
+	 Coor : 1157.61,2381.16
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U5
+	 Layer : 0
+	 Coor : 1950.91,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W4
+	 Layer : 0
+	 Coor : 1919.42,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C138.2
+	 Layer : 3
+	 Coor : 1397.77,1932.35
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C154.2
+	 Layer : 3
+	 Coor : 1122.18,2936.28
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C78.1
+	 Layer : 3
+	 Coor : 2347.98,2295.2
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C41.1
+	 Layer : 3
+	 Coor : 2328.87,2060.95
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J22
+	 Layer : 0
+	 Coor : 2486.34,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N17
+	 Layer : 0
+	 Coor : 2328.86,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.L9
+	 Layer : 0
+	 Coor : 1080.84,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C92.2
+	 Layer : 3
+	 Coor : 2036.28,1782.25
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.F8
+	 Layer : 0
+	 Coor : 1238.32,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N28
+	 Layer : 0
+	 Coor : 2675.32,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C96.2
+	 Layer : 3
+	 Coor : 2181.23,1711.87
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.M7
+	 Layer : 0
+	 Coor : 1049.34,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE21
+	 Layer : 0
+	 Coor : 2454.85,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC4
+	 Layer : 0
+	 Coor : 1919.42,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V11
+	 Layer : 0
+	 Coor : 2139.89,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.F8
+	 Layer : 0
+	 Coor : 1238.32,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P23
+	 Layer : 0
+	 Coor : 2517.84,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W6
+	 Layer : 0
+	 Coor : 1982.41,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R18
+	 Layer : 0
+	 Coor : 2360.36,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C53.2
+	 Layer : 3
+	 Coor : 2201.89,1812.26
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R29
+	 Layer : 0
+	 Coor : 2706.82,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y30
+	 Layer : 0
+	 Coor : 2738.31,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H3
+	 Layer : 0
+	 Coor : 1887.92,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U17
+	 Layer : 0
+	 Coor : 2328.86,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF20
+	 Layer : 0
+	 Coor : 2423.35,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B4
+	 Layer : 0
+	 Coor : 1919.42,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.C2
+	 Layer : 0
+	 Coor : 1332.81,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R127.1
+	 Layer : 3
+	 Coor : 1114.3,1753.21
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U6.C8
+	 Layer : 0
+	 Coor : 1332.81,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F9
+	 Layer : 0
+	 Coor : 2076.9,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H18
+	 Layer : 0
+	 Coor : 2360.36,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA8
+	 Layer : 0
+	 Coor : 2045.4,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.N1
+	 Layer : 0
+	 Coor : 1017.85,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C118.1
+	 Layer : 3
+	 Coor : 2314.6,2273.68
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V8
+	 Layer : 0
+	 Coor : 2045.4,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF6
+	 Layer : 0
+	 Coor : 1982.41,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG24
+	 Layer : 0
+	 Coor : 2549.34,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE22
+	 Layer : 0
+	 Coor : 2486.34,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH24
+	 Layer : 0
+	 Coor : 2549.34,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.J8
+	 Layer : 0
+	 Coor : 1143.83,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.C3
+	 Layer : 0
+	 Coor : 1332.81,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.N2
+	 Layer : 0
+	 Coor : 1017.85,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P12
+	 Layer : 0
+	 Coor : 2171.38,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T27
+	 Layer : 0
+	 Coor : 2643.82,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.T8
+	 Layer : 0
+	 Coor : 923.36,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C116.2
+	 Layer : 3
+	 Coor : 2267.84,1780.54
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C80.2
+	 Layer : 3
+	 Coor : 2451.8,2193.38
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U6.N7
+	 Layer : 0
+	 Coor : 1017.85,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.D7
+	 Layer : 0
+	 Coor : 1301.31,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C37.2
+	 Layer : 3
+	 Coor : 2461.68,2042.64
+	 Type : PAD25
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA18
+	 Layer : 0
+	 Coor : 2360.36,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.R2
+	 Layer : 0
+	 Coor : 954.86,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C101.2
+	 Layer : 3
+	 Coor : 2506.14,2086.06
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF17
+	 Layer : 0
+	 Coor : 2328.86,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T18
+	 Layer : 0
+	 Coor : 2360.36,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C108.1
+	 Layer : 3
+	 Coor : 2090.67,2110.45
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L17
+	 Layer : 0
+	 Coor : 2328.86,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C82.1
+	 Layer : 3
+	 Coor : 2124.14,2178.41
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C120.1
+	 Layer : 3
+	 Coor : 2254.6,2266.2
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E4
+	 Layer : 0
+	 Coor : 1919.42,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W9
+	 Layer : 0
+	 Coor : 2076.9,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C146.2
+	 Layer : 3
+	 Coor : 972.5700000000001,1109.51
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B2
+	 Layer : 0
+	 Coor : 1856.42,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK21
+	 Layer : 0
+	 Coor : 2454.85,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.K3
+	 Layer : 0
+	 Coor : 1112.34,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C157.2
+	 Layer : 3
+	 Coor : 1283.59,2328.01
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B11
+	 Layer : 0
+	 Coor : 2139.89,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.A3
+	 Layer : 0
+	 Coor : 1395.8,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.A9
+	 Layer : 0
+	 Coor : 1395.8,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK16
+	 Layer : 0
+	 Coor : 2297.37,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T19
+	 Layer : 0
+	 Coor : 2391.86,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.L2
+	 Layer : 0
+	 Coor : 1080.84,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K11
+	 Layer : 0
+	 Coor : 2139.89,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.P7
+	 Layer : 0
+	 Coor : 986.35,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.E8
+	 Layer : 0
+	 Coor : 1269.82,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L23
+	 Layer : 0
+	 Coor : 2517.84,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L18
+	 Layer : 0
+	 Coor : 2360.36,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M27
+	 Layer : 0
+	 Coor : 2643.82,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V17
+	 Layer : 0
+	 Coor : 2328.86,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.E1
+	 Layer : 0
+	 Coor : 1269.82,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C144.2
+	 Layer : 3
+	 Coor : 1366.27,1635.1
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F24
+	 Layer : 0
+	 Coor : 2549.34,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C85.2
+	 Layer : 3
+	 Coor : 2517.85,2229.59
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B21
+	 Layer : 0
+	 Coor : 2454.85,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.F7
+	 Layer : 0
+	 Coor : 1238.32,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C87.2
+	 Layer : 3
+	 Coor : 2486.35,2229.59
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : R80.1
+	 Layer : 3
+	 Coor : 2214.7,1672.5
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : C33.1
+	 Layer : 3
+	 Coor : 2189.11,2081.95
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F12
+	 Layer : 0
+	 Coor : 2171.38,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH13
+	 Layer : 0
+	 Coor : 2202.88,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W26
+	 Layer : 0
+	 Coor : 2612.33,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P2
+	 Layer : 0
+	 Coor : 1856.42,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH17
+	 Layer : 0
+	 Coor : 2328.86,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L14
+	 Layer : 0
+	 Coor : 2234.38,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AD2
+	 Layer : 0
+	 Coor : 1856.42,1735.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.R1
+	 Layer : 0
+	 Coor : 954.86,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L2
+	 Layer : 0
+	 Coor : 1856.42,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U23
+	 Layer : 0
+	 Coor : 2517.84,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V30
+	 Layer : 0
+	 Coor : 2738.31,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.D7
+	 Layer : 0
+	 Coor : 1301.31,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C95.1
+	 Layer : 3
+	 Coor : 2311.15,1564.24
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U6.F3
+	 Layer : 0
+	 Coor : 1238.32,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U4
+	 Layer : 0
+	 Coor : 1919.42,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C39.1
+	 Layer : 3
+	 Coor : 2328.87,2127.22
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF12
+	 Layer : 0
+	 Coor : 2171.38,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U2
+	 Layer : 0
+	 Coor : 1856.42,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y19
+	 Layer : 0
+	 Coor : 2391.86,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W12
+	 Layer : 0
+	 Coor : 2171.38,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N23
+	 Layer : 0
+	 Coor : 2517.84,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.G1
+	 Layer : 0
+	 Coor : 1206.82,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK4
+	 Layer : 0
+	 Coor : 1919.42,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.A2
+	 Layer : 0
+	 Coor : 1395.8,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.D1
+	 Layer : 0
+	 Coor : 1301.31,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.F2
+	 Layer : 0
+	 Coor : 1238.32,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ23
+	 Layer : 0
+	 Coor : 2517.84,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC17
+	 Layer : 0
+	 Coor : 2328.86,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.P2
+	 Layer : 0
+	 Coor : 986.35,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y21
+	 Layer : 0
+	 Coor : 2454.85,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C120.2
+	 Layer : 3
+	 Coor : 2254.6,2245.2
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U4.L7
+	 Layer : 0
+	 Coor : 1080.84,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U25
+	 Layer : 0
+	 Coor : 2580.83,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.N1
+	 Layer : 0
+	 Coor : 1017.85,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V28
+	 Layer : 0
+	 Coor : 2675.32,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R28
+	 Layer : 0
+	 Coor : 2675.32,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.E1
+	 Layer : 0
+	 Coor : 1269.82,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.T1
+	 Layer : 0
+	 Coor : 923.36,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A28
+	 Layer : 0
+	 Coor : 2675.32,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.H8
+	 Layer : 0
+	 Coor : 1175.33,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C22
+	 Layer : 0
+	 Coor : 2486.34,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.R7
+	 Layer : 0
+	 Coor : 954.86,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R70.1
+	 Layer : 0
+	 Coor : 1781.62,2546.52
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F23
+	 Layer : 0
+	 Coor : 2517.84,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M23
+	 Layer : 0
+	 Coor : 2517.84,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C165.2
+	 Layer : 3
+	 Coor : 1021.78,1711.87
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J3
+	 Layer : 0
+	 Coor : 1887.92,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C88.1
+	 Layer : 3
+	 Coor : 2605.22,2085.46
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M14
+	 Layer : 0
+	 Coor : 2234.38,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.M8
+	 Layer : 0
+	 Coor : 1049.34,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.F9
+	 Layer : 0
+	 Coor : 1238.32,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK14
+	 Layer : 0
+	 Coor : 2234.38,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P11
+	 Layer : 0
+	 Coor : 2139.89,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W8
+	 Layer : 0
+	 Coor : 2045.4,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C126.1
+	 Layer : 3
+	 Coor : 2204.85,1557.02
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U3.B9
+	 Layer : 0
+	 Coor : 1364.3,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R8
+	 Layer : 0
+	 Coor : 2045.4,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.H9
+	 Layer : 0
+	 Coor : 1175.33,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC13
+	 Layer : 0
+	 Coor : 2202.88,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE16
+	 Layer : 0
+	 Coor : 2297.37,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C76.2
+	 Layer : 3
+	 Coor : 2094.24,2249.12
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U6.J1
+	 Layer : 0
+	 Coor : 1143.83,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R85.2
+	 Layer : 3
+	 Coor : 2096.15,1665.02
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T21
+	 Layer : 0
+	 Coor : 2454.85,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V14
+	 Layer : 0
+	 Coor : 2234.38,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC25
+	 Layer : 0
+	 Coor : 2580.83,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH18
+	 Layer : 0
+	 Coor : 2360.36,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M29
+	 Layer : 0
+	 Coor : 2706.82,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P18
+	 Layer : 0
+	 Coor : 2360.36,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ20
+	 Layer : 0
+	 Coor : 2423.35,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH28
+	 Layer : 0
+	 Coor : 2675.32,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R3
+	 Layer : 0
+	 Coor : 1887.92,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C91.1
+	 Layer : 3
+	 Coor : 2105.33,1771.87
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C58.1
+	 Layer : 3
+	 Coor : 2525.72,1849.95
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C162.1
+	 Layer : 3
+	 Coor : 1149.73,1942.18
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E22
+	 Layer : 0
+	 Coor : 2486.34,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA27
+	 Layer : 0
+	 Coor : 2643.82,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA4
+	 Layer : 0
+	 Coor : 1919.42,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.C9
+	 Layer : 0
+	 Coor : 1332.81,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W20
+	 Layer : 0
+	 Coor : 2423.35,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L22
+	 Layer : 0
+	 Coor : 2486.34,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y8
+	 Layer : 0
+	 Coor : 2045.4,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E15
+	 Layer : 0
+	 Coor : 2265.87,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK9
+	 Layer : 0
+	 Coor : 2076.9,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.K7
+	 Layer : 0
+	 Coor : 1112.34,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK10
+	 Layer : 0
+	 Coor : 2108.39,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R551.2
+	 Layer : 3
+	 Coor : 2244.22,1564.24
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L15
+	 Layer : 0
+	 Coor : 2265.87,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.T9
+	 Layer : 0
+	 Coor : 923.36,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C21.2
+	 Layer : 3
+	 Coor : 2227.72,1890.32
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P20
+	 Layer : 0
+	 Coor : 2423.35,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH19
+	 Layer : 0
+	 Coor : 2391.86,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C30.2
+	 Layer : 3
+	 Coor : 2160.89,2176.44
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U5.C8
+	 Layer : 0
+	 Coor : 1332.81,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R12
+	 Layer : 0
+	 Coor : 2171.38,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R547.1
+	 Layer : 3
+	 Coor : 2413.6,2275.1
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U6.P2
+	 Layer : 0
+	 Coor : 986.35,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R131.1
+	 Layer : 0
+	 Coor : 1669.42,1757.14
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U4.J1
+	 Layer : 0
+	 Coor : 1143.83,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R717.2
+	 Layer : 3
+	 Coor : 2376.7,1718.87
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B18
+	 Layer : 0
+	 Coor : 2360.36,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R11
+	 Layer : 0
+	 Coor : 2139.89,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC5
+	 Layer : 0
+	 Coor : 1950.91,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK23
+	 Layer : 0
+	 Coor : 2517.84,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC16
+	 Layer : 0
+	 Coor : 2297.37,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W30
+	 Layer : 0
+	 Coor : 2738.31,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C90.1
+	 Layer : 3
+	 Coor : 2129.65,2285.26
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R17
+	 Layer : 0
+	 Coor : 2328.86,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.R7
+	 Layer : 0
+	 Coor : 954.86,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.H2
+	 Layer : 0
+	 Coor : 1175.33,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U21
+	 Layer : 0
+	 Coor : 2454.85,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH16
+	 Layer : 0
+	 Coor : 2297.37,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.T7
+	 Layer : 0
+	 Coor : 923.36,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.J9
+	 Layer : 0
+	 Coor : 1143.83,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R122.2
+	 Layer : 0
+	 Coor : 973.56,2586.87
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : C8.2
+	 Layer : 3
+	 Coor : 2455.86,1843.75
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB30
+	 Layer : 0
+	 Coor : 2738.31,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K14
+	 Layer : 0
+	 Coor : 2234.38,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P30
+	 Layer : 0
+	 Coor : 2738.31,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C5
+	 Layer : 0
+	 Coor : 1950.91,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J11
+	 Layer : 0
+	 Coor : 2139.89,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F13
+	 Layer : 0
+	 Coor : 2202.88,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB26
+	 Layer : 0
+	 Coor : 2612.33,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R555.2
+	 Layer : 3
+	 Coor : 2626.64,1787.82
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : C122.2
+	 Layer : 3
+	 Coor : 2251.88,2374.1
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A9
+	 Layer : 0
+	 Coor : 2076.9,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C4.1
+	 Layer : 3
+	 Coor : 2424.16,1879.19
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB15
+	 Layer : 0
+	 Coor : 2265.87,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E13
+	 Layer : 0
+	 Coor : 2202.88,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R125.2
+	 Layer : 3
+	 Coor : 813.12,2158.72
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A23
+	 Layer : 0
+	 Coor : 2517.84,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.K9
+	 Layer : 0
+	 Coor : 1112.34,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.E8
+	 Layer : 0
+	 Coor : 1269.82,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H25
+	 Layer : 0
+	 Coor : 2580.83,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK20
+	 Layer : 0
+	 Coor : 2423.35,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB4
+	 Layer : 0
+	 Coor : 1919.42,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C70.2
+	 Layer : 3
+	 Coor : 2108.19,1875.05
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D29
+	 Layer : 0
+	 Coor : 2706.82,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C159.1
+	 Layer : 3
+	 Coor : 1397.76,2322.11
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.F1
+	 Layer : 0
+	 Coor : 1238.32,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.T7
+	 Layer : 0
+	 Coor : 923.36,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D25
+	 Layer : 0
+	 Coor : 2580.83,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C165.1
+	 Layer : 3
+	 Coor : 1021.78,1676.43
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R21
+	 Layer : 0
+	 Coor : 2454.85,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B8
+	 Layer : 0
+	 Coor : 2045.4,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A21
+	 Layer : 0
+	 Coor : 2454.85,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H15
+	 Layer : 0
+	 Coor : 2265.87,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C15
+	 Layer : 0
+	 Coor : 2265.87,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AD3
+	 Layer : 0
+	 Coor : 1887.92,1735.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C8.1
+	 Layer : 3
+	 Coor : 2455.86,1879.19
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA28
+	 Layer : 0
+	 Coor : 2675.32,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y28
+	 Layer : 0
+	 Coor : 2675.32,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V25
+	 Layer : 0
+	 Coor : 2580.83,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG16
+	 Layer : 0
+	 Coor : 2297.37,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P19
+	 Layer : 0
+	 Coor : 2391.86,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.D3
+	 Layer : 0
+	 Coor : 1301.31,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F2
+	 Layer : 0
+	 Coor : 1856.42,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L21
+	 Layer : 0
+	 Coor : 2454.85,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F29
+	 Layer : 0
+	 Coor : 2706.82,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K20
+	 Layer : 0
+	 Coor : 2423.35,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.F1
+	 Layer : 0
+	 Coor : 1238.32,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF9
+	 Layer : 0
+	 Coor : 2076.9,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C64.2
+	 Layer : 3
+	 Coor : 2558.76,1805.78
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.D3
+	 Layer : 0
+	 Coor : 1301.31,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.M7
+	 Layer : 0
+	 Coor : 1049.34,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L6
+	 Layer : 0
+	 Coor : 1982.41,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.M7
+	 Layer : 0
+	 Coor : 1049.34,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.F2
+	 Layer : 0
+	 Coor : 1238.32,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C87.1
+	 Layer : 3
+	 Coor : 2486.35,2194.15
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK15
+	 Layer : 0
+	 Coor : 2265.87,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C161.2
+	 Layer : 3
+	 Coor : 1454.86,2148.88
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C55.2
+	 Layer : 3
+	 Coor : 2328.86,1972.74
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : R551.1
+	 Layer : 3
+	 Coor : 2244.22,1528.8
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : C110.1
+	 Layer : 3
+	 Coor : 2484.38,1782.74
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C97.2
+	 Layer : 3
+	 Coor : 2214.97,1706.37
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H10
+	 Layer : 0
+	 Coor : 2108.39,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C93.1
+	 Layer : 3
+	 Coor : 2105,1723.19
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : R24.1
+	 Layer : 3
+	 Coor : 2683.4,2048.48
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : C79.1
+	 Layer : 3
+	 Coor : 2251.42,2306.1
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C34.1
+	 Layer : 3
+	 Coor : 2191.3,2144.94
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE18
+	 Layer : 0
+	 Coor : 2360.36,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG18
+	 Layer : 0
+	 Coor : 2360.36,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.C7
+	 Layer : 0
+	 Coor : 1332.81,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.H1
+	 Layer : 0
+	 Coor : 1175.33,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F26
+	 Layer : 0
+	 Coor : 2612.33,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U22
+	 Layer : 0
+	 Coor : 2486.34,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D22
+	 Layer : 0
+	 Coor : 2486.34,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N15
+	 Layer : 0
+	 Coor : 2265.87,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK22
+	 Layer : 0
+	 Coor : 2486.34,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE13
+	 Layer : 0
+	 Coor : 2202.88,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C29.2
+	 Layer : 3
+	 Coor : 2244.88,2207.93
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : R120.1
+	 Layer : 3
+	 Coor : 1088.71,1095.72
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W15
+	 Layer : 0
+	 Coor : 2265.87,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D27
+	 Layer : 0
+	 Coor : 2643.82,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F7
+	 Layer : 0
+	 Coor : 2013.9,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C54.2
+	 Layer : 3
+	 Coor : 2423.36,1963.84
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ18
+	 Layer : 0
+	 Coor : 2360.36,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C58.2
+	 Layer : 3
+	 Coor : 2525.72,1814.51
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C9.2
+	 Layer : 3
+	 Coor : 2391.59,1936.42
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ14
+	 Layer : 0
+	 Coor : 2234.38,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C7.1
+	 Layer : 3
+	 Coor : 2392.46,1871.97
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : C74.2
+	 Layer : 3
+	 Coor : 2126.12,2050.45
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA15
+	 Layer : 0
+	 Coor : 2265.87,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE5
+	 Layer : 0
+	 Coor : 1950.91,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F6
+	 Layer : 0
+	 Coor : 1982.41,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE9
+	 Layer : 0
+	 Coor : 2076.9,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C4
+	 Layer : 0
+	 Coor : 1919.42,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M15
+	 Layer : 0
+	 Coor : 2265.87,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC29
+	 Layer : 0
+	 Coor : 2706.82,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C159.2
+	 Layer : 3
+	 Coor : 1433.2,2322.11
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U6.L8
+	 Layer : 0
+	 Coor : 1080.84,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.N2
+	 Layer : 0
+	 Coor : 1017.85,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P4
+	 Layer : 0
+	 Coor : 1919.42,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AD29
+	 Layer : 0
+	 Coor : 2706.82,1735.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.B3
+	 Layer : 0
+	 Coor : 1364.3,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE28
+	 Layer : 0
+	 Coor : 2675.32,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB19
+	 Layer : 0
+	 Coor : 2391.86,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.H2
+	 Layer : 0
+	 Coor : 1175.33,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.P9
+	 Layer : 0
+	 Coor : 986.35,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB27
+	 Layer : 0
+	 Coor : 2643.82,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.P9
+	 Layer : 0
+	 Coor : 986.35,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.C1
+	 Layer : 0
+	 Coor : 1332.81,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.A3
+	 Layer : 0
+	 Coor : 1395.8,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.B2
+	 Layer : 0
+	 Coor : 1364.3,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.T3
+	 Layer : 0
+	 Coor : 923.36,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH30
+	 Layer : 0
+	 Coor : 2738.31,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C89.2
+	 Layer : 3
+	 Coor : 2504.06,1957.93
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.B9
+	 Layer : 0
+	 Coor : 1364.3,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C9
+	 Layer : 0
+	 Coor : 2076.9,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y26
+	 Layer : 0
+	 Coor : 2612.33,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F1
+	 Layer : 0
+	 Coor : 1824.93,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y3
+	 Layer : 0
+	 Coor : 1887.92,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B19
+	 Layer : 0
+	 Coor : 2391.86,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T13
+	 Layer : 0
+	 Coor : 2202.88,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF19
+	 Layer : 0
+	 Coor : 2391.86,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF25
+	 Layer : 0
+	 Coor : 2580.83,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R27
+	 Layer : 0
+	 Coor : 2643.82,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C148.2
+	 Layer : 3
+	 Coor : 952.88,1692.19
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C114.1
+	 Layer : 3
+	 Coor : 2428.2,1754.56
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B24
+	 Layer : 0
+	 Coor : 2549.34,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA23
+	 Layer : 0
+	 Coor : 2517.84,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R83.2
+	 Layer : 3
+	 Coor : 2211.6,2272.92
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U3.H3
+	 Layer : 0
+	 Coor : 1175.33,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U27
+	 Layer : 0
+	 Coor : 2643.82,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC22
+	 Layer : 0
+	 Coor : 2486.34,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R124.2
+	 Layer : 3
+	 Coor : 813.12,1908.72
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T23
+	 Layer : 0
+	 Coor : 2517.84,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA5
+	 Layer : 0
+	 Coor : 1950.91,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E25
+	 Layer : 0
+	 Coor : 2580.83,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH15
+	 Layer : 0
+	 Coor : 2265.87,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R2
+	 Layer : 0
+	 Coor : 1856.42,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R126.2
+	 Layer : 3
+	 Coor : 1159.58,1168.56
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U5.A8
+	 Layer : 0
+	 Coor : 1395.8,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ5
+	 Layer : 0
+	 Coor : 1950.91,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E2
+	 Layer : 0
+	 Coor : 1856.42,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.B9
+	 Layer : 0
+	 Coor : 1364.3,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.J7
+	 Layer : 0
+	 Coor : 1143.83,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M22
+	 Layer : 0
+	 Coor : 2486.34,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.T8
+	 Layer : 0
+	 Coor : 923.36,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C24.2
+	 Layer : 3
+	 Coor : 2257.41,2042.58
+	 Type : PAD14
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R23
+	 Layer : 0
+	 Coor : 2517.84,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA26
+	 Layer : 0
+	 Coor : 2612.33,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N5
+	 Layer : 0
+	 Coor : 1950.91,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA11
+	 Layer : 0
+	 Coor : 2139.89,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.R1
+	 Layer : 0
+	 Coor : 954.86,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R11.1
+	 Layer : 3
+	 Coor : 2652.02,2116.31
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E6
+	 Layer : 0
+	 Coor : 1982.41,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF14
+	 Layer : 0
+	 Coor : 2234.38,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D16
+	 Layer : 0
+	 Coor : 2297.37,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.J3
+	 Layer : 0
+	 Coor : 1143.83,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC11
+	 Layer : 0
+	 Coor : 2139.89,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F22
+	 Layer : 0
+	 Coor : 2486.34,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C112.2
+	 Layer : 3
+	 Coor : 2139.89,1871.32
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U4.T8
+	 Layer : 0
+	 Coor : 923.36,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG12
+	 Layer : 0
+	 Coor : 2171.38,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M1
+	 Layer : 0
+	 Coor : 1824.93,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N18
+	 Layer : 0
+	 Coor : 2360.36,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF26
+	 Layer : 0
+	 Coor : 2612.33,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H27
+	 Layer : 0
+	 Coor : 2643.82,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.A9
+	 Layer : 0
+	 Coor : 1395.8,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D5
+	 Layer : 0
+	 Coor : 1950.91,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.P3
+	 Layer : 0
+	 Coor : 986.35,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y15
+	 Layer : 0
+	 Coor : 2265.87,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.K3
+	 Layer : 0
+	 Coor : 1112.34,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE8
+	 Layer : 0
+	 Coor : 2045.4,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC21
+	 Layer : 0
+	 Coor : 2454.85,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R550.2
+	 Layer : 3
+	 Coor : 2076.73,1579.99
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U6.R1
+	 Layer : 0
+	 Coor : 954.86,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W27
+	 Layer : 0
+	 Coor : 2643.82,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.T8
+	 Layer : 0
+	 Coor : 923.36,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ10
+	 Layer : 0
+	 Coor : 2108.39,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE2
+	 Layer : 0
+	 Coor : 1856.42,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.C8
+	 Layer : 0
+	 Coor : 1332.81,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F14
+	 Layer : 0
+	 Coor : 2234.38,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C59.1
+	 Layer : 3
+	 Coor : 2106.98,1806.85
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V23
+	 Layer : 0
+	 Coor : 2517.84,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH10
+	 Layer : 0
+	 Coor : 2108.39,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB16
+	 Layer : 0
+	 Coor : 2297.37,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH26
+	 Layer : 0
+	 Coor : 2612.33,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C94.2
+	 Layer : 3
+	 Coor : 2299.54,1778.83
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K13
+	 Layer : 0
+	 Coor : 2202.88,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C141.1
+	 Layer : 3
+	 Coor : 1092.65,1676.43
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.N2
+	 Layer : 0
+	 Coor : 1017.85,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.A2
+	 Layer : 0
+	 Coor : 1395.8,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF22
+	 Layer : 0
+	 Coor : 2486.34,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C473.1
+	 Layer : 3
+	 Coor : 2454.85,2127.22
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH22
+	 Layer : 0
+	 Coor : 2486.34,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA2
+	 Layer : 0
+	 Coor : 1856.42,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK28
+	 Layer : 0
+	 Coor : 2675.32,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L12
+	 Layer : 0
+	 Coor : 2171.38,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U11
+	 Layer : 0
+	 Coor : 2139.89,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K4
+	 Layer : 0
+	 Coor : 1919.42,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E28
+	 Layer : 0
+	 Coor : 2675.32,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F30
+	 Layer : 0
+	 Coor : 2738.31,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC1
+	 Layer : 0
+	 Coor : 1824.93,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA3
+	 Layer : 0
+	 Coor : 1887.92,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.L9
+	 Layer : 0
+	 Coor : 1080.84,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C1
+	 Layer : 0
+	 Coor : 1824.93,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE14
+	 Layer : 0
+	 Coor : 2234.38,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH3
+	 Layer : 0
+	 Coor : 1887.92,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA1
+	 Layer : 0
+	 Coor : 1824.93,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y13
+	 Layer : 0
+	 Coor : 2202.88,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK2
+	 Layer : 0
+	 Coor : 1856.42,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H23
+	 Layer : 0
+	 Coor : 2517.84,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.P7
+	 Layer : 0
+	 Coor : 986.35,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH12
+	 Layer : 0
+	 Coor : 2171.38,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R550.1
+	 Layer : 3
+	 Coor : 2076.73,1544.55
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB2
+	 Layer : 0
+	 Coor : 1856.42,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.R3
+	 Layer : 0
+	 Coor : 954.86,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C137.1
+	 Layer : 3
+	 Coor : 1220.6,1942.18
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.A2
+	 Layer : 0
+	 Coor : 1395.8,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA10
+	 Layer : 0
+	 Coor : 2108.39,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ9
+	 Layer : 0
+	 Coor : 2076.9,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG2
+	 Layer : 0
+	 Coor : 1856.42,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.F7
+	 Layer : 0
+	 Coor : 1238.32,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH8
+	 Layer : 0
+	 Coor : 2045.4,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A29
+	 Layer : 0
+	 Coor : 2706.82,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y23
+	 Layer : 0
+	 Coor : 2517.84,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H20
+	 Layer : 0
+	 Coor : 2423.35,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.J9
+	 Layer : 0
+	 Coor : 1143.83,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C51.2
+	 Layer : 3
+	 Coor : 2265.88,1969.74
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C98.2
+	 Layer : 3
+	 Coor : 2295.7,2162.3
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : C166.1
+	 Layer : 3
+	 Coor : 1157.61,2930.37
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J23
+	 Layer : 0
+	 Coor : 2517.84,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U6
+	 Layer : 0
+	 Coor : 1982.41,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N30
+	 Layer : 0
+	 Coor : 2738.31,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K10
+	 Layer : 0
+	 Coor : 2108.39,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.F9
+	 Layer : 0
+	 Coor : 1238.32,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J8
+	 Layer : 0
+	 Coor : 2045.4,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ22
+	 Layer : 0
+	 Coor : 2486.34,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.D3
+	 Layer : 0
+	 Coor : 1301.31,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.P3
+	 Layer : 0
+	 Coor : 986.35,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C104.1
+	 Layer : 3
+	 Coor : 2296.98,1840.48
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : C100.1
+	 Layer : 3
+	 Coor : 2467.12,1954.4
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U4.B7
+	 Layer : 0
+	 Coor : 1364.3,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.G2
+	 Layer : 0
+	 Coor : 1206.82,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.A7
+	 Layer : 0
+	 Coor : 1395.8,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K8
+	 Layer : 0
+	 Coor : 2045.4,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V19
+	 Layer : 0
+	 Coor : 2391.86,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C24
+	 Layer : 0
+	 Coor : 2549.34,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K1
+	 Layer : 0
+	 Coor : 1824.93,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.J9
+	 Layer : 0
+	 Coor : 1143.83,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R555.1
+	 Layer : 3
+	 Coor : 2591.2,1787.82
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C23
+	 Layer : 0
+	 Coor : 2517.84,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M5
+	 Layer : 0
+	 Coor : 1950.91,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K15
+	 Layer : 0
+	 Coor : 2265.87,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C20.2
+	 Layer : 3
+	 Coor : 2223.97,1920.91
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : C26.2
+	 Layer : 3
+	 Coor : 2160.89,2113.44
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : R128.1
+	 Layer : 3
+	 Coor : 1098.55,2733.52
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U3.K7
+	 Layer : 0
+	 Coor : 1112.34,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C28.1
+	 Layer : 3
+	 Coor : 2216.66,2176.44
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C116.1
+	 Layer : 3
+	 Coor : 2232.4,1780.54
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U4.F8
+	 Layer : 0
+	 Coor : 1238.32,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M26
+	 Layer : 0
+	 Coor : 2612.33,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA12
+	 Layer : 0
+	 Coor : 2171.38,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V26
+	 Layer : 0
+	 Coor : 2612.33,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.M1
+	 Layer : 0
+	 Coor : 1049.34,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R11.2
+	 Layer : 3
+	 Coor : 2652.02,2151.75
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J4
+	 Layer : 0
+	 Coor : 1919.42,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C168.2
+	 Layer : 3
+	 Coor : 1193.05,2381.16
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U4.G8
+	 Layer : 0
+	 Coor : 1206.82,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.F3
+	 Layer : 0
+	 Coor : 1238.32,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U30
+	 Layer : 0
+	 Coor : 2738.31,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A19
+	 Layer : 0
+	 Coor : 2391.86,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C139.1
+	 Layer : 3
+	 Coor : 1330.83,1081.95
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T17
+	 Layer : 0
+	 Coor : 2328.86,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.G9
+	 Layer : 0
+	 Coor : 1206.82,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.D8
+	 Layer : 0
+	 Coor : 1301.31,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.K2
+	 Layer : 0
+	 Coor : 1112.34,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C155.1
+	 Layer : 3
+	 Coor : 1241.68,2715.74
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.E1
+	 Layer : 0
+	 Coor : 1269.82,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V27
+	 Layer : 0
+	 Coor : 2643.82,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C121.2
+	 Layer : 3
+	 Coor : 2384.9,2378.9
+	 Type : PAD14
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J27
+	 Layer : 0
+	 Coor : 2643.82,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C18.1
+	 Layer : 3
+	 Coor : 2193.79,1953.81
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H17
+	 Layer : 0
+	 Coor : 2328.86,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V15
+	 Layer : 0
+	 Coor : 2265.87,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C83.1
+	 Layer : 3
+	 Coor : 2417,2228.82
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J5
+	 Layer : 0
+	 Coor : 1950.91,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C88.2
+	 Layer : 3
+	 Coor : 2605.22,2050.02
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.B2
+	 Layer : 0
+	 Coor : 1364.3,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.A1
+	 Layer : 0
+	 Coor : 1395.8,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M20
+	 Layer : 0
+	 Coor : 2423.35,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC19
+	 Layer : 0
+	 Coor : 2391.86,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C25.1
+	 Layer : 3
+	 Coor : 2189.1,2205.73
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J13
+	 Layer : 0
+	 Coor : 2202.88,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J12
+	 Layer : 0
+	 Coor : 2171.38,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.B8
+	 Layer : 0
+	 Coor : 1364.3,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK18
+	 Layer : 0
+	 Coor : 2360.36,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.M3
+	 Layer : 0
+	 Coor : 1049.34,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB25
+	 Layer : 0
+	 Coor : 2580.83,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.D1
+	 Layer : 0
+	 Coor : 1301.31,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C11
+	 Layer : 0
+	 Coor : 2139.89,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R717.1
+	 Layer : 3
+	 Coor : 2376.7,1754.31
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K2
+	 Layer : 0
+	 Coor : 1856.42,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R3.1
+	 Layer : 3
+	 Coor : 2171.39,1536.02
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U3.B1
+	 Layer : 0
+	 Coor : 1364.3,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H5
+	 Layer : 0
+	 Coor : 1950.91,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.N2
+	 Layer : 0
+	 Coor : 1017.85,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.A7
+	 Layer : 0
+	 Coor : 1395.8,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.C8
+	 Layer : 0
+	 Coor : 1332.81,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L11
+	 Layer : 0
+	 Coor : 2139.89,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W14
+	 Layer : 0
+	 Coor : 2234.38,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.R8
+	 Layer : 0
+	 Coor : 954.86,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.J2
+	 Layer : 0
+	 Coor : 1143.83,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B26
+	 Layer : 0
+	 Coor : 2612.33,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K29
+	 Layer : 0
+	 Coor : 2706.82,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F3
+	 Layer : 0
+	 Coor : 1887.92,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.G3
+	 Layer : 0
+	 Coor : 1887.92,2270.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.H7
+	 Layer : 0
+	 Coor : 1175.33,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C69.2
+	 Layer : 3
+	 Coor : 2011.46,1973.68
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.R9
+	 Layer : 0
+	 Coor : 954.86,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B1
+	 Layer : 0
+	 Coor : 1824.93,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C30.1
+	 Layer : 3
+	 Coor : 2181.89,2176.44
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V21
+	 Layer : 0
+	 Coor : 2454.85,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A11
+	 Layer : 0
+	 Coor : 2139.89,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R124.1
+	 Layer : 3
+	 Coor : 813.12,1944.16
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : C50.2
+	 Layer : 3
+	 Coor : 2265.28,1812.26
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C75.1
+	 Layer : 3
+	 Coor : 2097.9,2081.95
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U5.E9
+	 Layer : 0
+	 Coor : 1269.82,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U10
+	 Layer : 0
+	 Coor : 2108.39,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R10.2
+	 Layer : 3
+	 Coor : 2683.71,2151.75
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U3.M7
+	 Layer : 0
+	 Coor : 1049.34,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N8
+	 Layer : 0
+	 Coor : 2045.4,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.E3
+	 Layer : 0
+	 Coor : 1269.82,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.N1
+	 Layer : 0
+	 Coor : 1017.85,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C163.2
+	 Layer : 3
+	 Coor : 1045.4,1095.72
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C6.2
+	 Layer : 3
+	 Coor : 2360.36,1942.19
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.N9
+	 Layer : 0
+	 Coor : 1017.85,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.L8
+	 Layer : 0
+	 Coor : 1080.84,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R15
+	 Layer : 0
+	 Coor : 2265.87,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.C2
+	 Layer : 0
+	 Coor : 1332.81,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W1
+	 Layer : 0
+	 Coor : 1824.93,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C31.2
+	 Layer : 3
+	 Coor : 2244.88,2144.94
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH14
+	 Layer : 0
+	 Coor : 2234.38,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF11
+	 Layer : 0
+	 Coor : 2139.89,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.J7
+	 Layer : 0
+	 Coor : 1143.83,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T6
+	 Layer : 0
+	 Coor : 1982.41,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P8
+	 Layer : 0
+	 Coor : 2045.4,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J29
+	 Layer : 0
+	 Coor : 2706.82,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L13
+	 Layer : 0
+	 Coor : 2202.88,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C63.2
+	 Layer : 3
+	 Coor : 2124.14,2018.96
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y14
+	 Layer : 0
+	 Coor : 2234.38,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.J2
+	 Layer : 0
+	 Coor : 1143.83,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.N9
+	 Layer : 0
+	 Coor : 1017.85,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L26
+	 Layer : 0
+	 Coor : 2612.33,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y18
+	 Layer : 0
+	 Coor : 2360.36,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.C9
+	 Layer : 0
+	 Coor : 1332.81,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V12
+	 Layer : 0
+	 Coor : 2171.38,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C104.2
+	 Layer : 3
+	 Coor : 2296.98,1819.48
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : C39.2
+	 Layer : 3
+	 Coor : 2328.87,2162.66
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB20
+	 Layer : 0
+	 Coor : 2423.35,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C103.1
+	 Layer : 3
+	 Coor : 2360.36,1997.96
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U6.L9
+	 Layer : 0
+	 Coor : 1080.84,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N9
+	 Layer : 0
+	 Coor : 2076.9,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W11
+	 Layer : 0
+	 Coor : 2139.89,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K28
+	 Layer : 0
+	 Coor : 2675.32,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC15
+	 Layer : 0
+	 Coor : 2265.87,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH2
+	 Layer : 0
+	 Coor : 1856.42,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.H9
+	 Layer : 0
+	 Coor : 1175.33,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V5
+	 Layer : 0
+	 Coor : 1950.91,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C473.2
+	 Layer : 3
+	 Coor : 2454.85,2162.66
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.C2
+	 Layer : 0
+	 Coor : 1332.81,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R120.2
+	 Layer : 3
+	 Coor : 1088.71,1131.16
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U6.P1
+	 Layer : 0
+	 Coor : 986.35,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R123.2
+	 Layer : 0
+	 Coor : 1069.03,2038.64
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U4.B1
+	 Layer : 0
+	 Coor : 1364.3,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U19
+	 Layer : 0
+	 Coor : 2391.86,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y29
+	 Layer : 0
+	 Coor : 2706.82,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF7
+	 Layer : 0
+	 Coor : 2013.9,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK27
+	 Layer : 0
+	 Coor : 2643.82,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.A2
+	 Layer : 0
+	 Coor : 1395.8,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AD26
+	 Layer : 0
+	 Coor : 2612.33,1735.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.R8
+	 Layer : 0
+	 Coor : 954.86,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W29
+	 Layer : 0
+	 Coor : 2706.82,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D12
+	 Layer : 0
+	 Coor : 2171.38,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.G3
+	 Layer : 0
+	 Coor : 1206.82,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C19
+	 Layer : 0
+	 Coor : 2391.86,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D10
+	 Layer : 0
+	 Coor : 2108.39,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R128.2
+	 Layer : 3
+	 Coor : 1133.99,2733.52
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V2
+	 Layer : 0
+	 Coor : 1856.42,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK11
+	 Layer : 0
+	 Coor : 2139.89,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P9
+	 Layer : 0
+	 Coor : 2076.9,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.U1
+	 Layer : 0
+	 Coor : 1824.93,1955.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C5.2
+	 Layer : 3
+	 Coor : 2360.77,1850.97
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC12
+	 Layer : 0
+	 Coor : 2171.38,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K21
+	 Layer : 0
+	 Coor : 2454.85,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK3
+	 Layer : 0
+	 Coor : 1887.92,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.F3
+	 Layer : 0
+	 Coor : 1238.32,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG20
+	 Layer : 0
+	 Coor : 2423.35,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.V29
+	 Layer : 0
+	 Coor : 2706.82,1924.47
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C101.1
+	 Layer : 3
+	 Coor : 2506.14,2050.62
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H22
+	 Layer : 0
+	 Coor : 2486.34,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C17.1
+	 Layer : 3
+	 Coor : 2151.7,1948.12
+	 Type : PAD25
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE20
+	 Layer : 0
+	 Coor : 2423.35,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N4
+	 Layer : 0
+	 Coor : 1919.42,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.C9
+	 Layer : 0
+	 Coor : 1332.81,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.L1
+	 Layer : 0
+	 Coor : 1080.84,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H4
+	 Layer : 0
+	 Coor : 1919.42,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.B3
+	 Layer : 0
+	 Coor : 1364.3,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E23
+	 Layer : 0
+	 Coor : 2517.84,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF23
+	 Layer : 0
+	 Coor : 2517.84,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J9
+	 Layer : 0
+	 Coor : 2076.9,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.H7
+	 Layer : 0
+	 Coor : 1175.33,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.G30
+	 Layer : 0
+	 Coor : 2738.31,2270.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C102.1
+	 Layer : 3
+	 Coor : 2233.58,1840.48
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : R77.2
+	 Layer : 3
+	 Coor : 2179.25,1640.81
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L8
+	 Layer : 0
+	 Coor : 2045.4,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F16
+	 Layer : 0
+	 Coor : 2297.37,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG9
+	 Layer : 0
+	 Coor : 2076.9,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K23
+	 Layer : 0
+	 Coor : 2517.84,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG23
+	 Layer : 0
+	 Coor : 2517.84,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K19
+	 Layer : 0
+	 Coor : 2391.86,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ7
+	 Layer : 0
+	 Coor : 2013.9,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK29
+	 Layer : 0
+	 Coor : 2706.82,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R552.1
+	 Layer : 3
+	 Coor : 2248.16,1607.54
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U3.F7
+	 Layer : 0
+	 Coor : 1238.32,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C32.2
+	 Layer : 3
+	 Coor : 2244.88,2081.95
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L5
+	 Layer : 0
+	 Coor : 1950.91,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B17
+	 Layer : 0
+	 Coor : 2328.86,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.R7
+	 Layer : 0
+	 Coor : 954.86,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.D2
+	 Layer : 0
+	 Coor : 1301.31,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ6
+	 Layer : 0
+	 Coor : 1982.41,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A15
+	 Layer : 0
+	 Coor : 2265.87,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P27
+	 Layer : 0
+	 Coor : 2643.82,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B16
+	 Layer : 0
+	 Coor : 2297.37,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R24.2
+	 Layer : 3
+	 Coor : 2683.4,2083.92
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : C43.2
+	 Layer : 3
+	 Coor : 2423.36,2155.44
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U5.R3
+	 Layer : 0
+	 Coor : 954.86,2857.54
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M11
+	 Layer : 0
+	 Coor : 2139.89,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.A1
+	 Layer : 0
+	 Coor : 1395.8,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C147.1
+	 Layer : 3
+	 Coor : 1019.82,1361.48
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C102.2
+	 Layer : 3
+	 Coor : 2233.58,1819.48
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG4
+	 Layer : 0
+	 Coor : 1919.42,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC20
+	 Layer : 0
+	 Coor : 2423.35,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.K1
+	 Layer : 0
+	 Coor : 1112.34,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ4
+	 Layer : 0
+	 Coor : 1919.42,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L30
+	 Layer : 0
+	 Coor : 2738.31,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C56.2
+	 Layer : 3
+	 Coor : 2328.64,1940.42
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U5.H8
+	 Layer : 0
+	 Coor : 1175.33,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC18
+	 Layer : 0
+	 Coor : 2360.36,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K12
+	 Layer : 0
+	 Coor : 2171.38,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P1
+	 Layer : 0
+	 Coor : 1824.93,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.G8
+	 Layer : 0
+	 Coor : 1206.82,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C79.2
+	 Layer : 3
+	 Coor : 2251.42,2341.54
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C169.1
+	 Layer : 3
+	 Coor : 1015.88,2133.13
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C138.1
+	 Layer : 3
+	 Coor : 1397.77,1896.91
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AD5
+	 Layer : 0
+	 Coor : 1950.91,1735.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R131.2
+	 Layer : 0
+	 Coor : 1669.42,1792.58
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N2
+	 Layer : 0
+	 Coor : 1856.42,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C153.2
+	 Layer : 3
+	 Coor : 905.64,2133.13
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE17
+	 Layer : 0
+	 Coor : 2328.86,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.G3
+	 Layer : 0
+	 Coor : 1206.82,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C59.2
+	 Layer : 3
+	 Coor : 2106.98,1842.29
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.D2
+	 Layer : 0
+	 Coor : 1301.31,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE4
+	 Layer : 0
+	 Coor : 1919.42,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB3
+	 Layer : 0
+	 Coor : 1887.92,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C148.1
+	 Layer : 3
+	 Coor : 952.88,1656.75
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F25
+	 Layer : 0
+	 Coor : 2580.83,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A2
+	 Layer : 0
+	 Coor : 1856.42,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.H7
+	 Layer : 0
+	 Coor : 1175.33,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C90.2
+	 Layer : 3
+	 Coor : 2094.21,2285.26
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U4.D8
+	 Layer : 0
+	 Coor : 1301.31,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.G29
+	 Layer : 0
+	 Coor : 2706.82,2270.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E19
+	 Layer : 0
+	 Coor : 2391.86,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C117.1
+	 Layer : 3
+	 Coor : 2322.1,2224
+	 Type : PAD14
+		 Width : 0
+		 Height : 0
+ObsPad : U6.B7
+	 Layer : 0
+	 Coor : 1364.3,2180.38
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ8
+	 Layer : 0
+	 Coor : 2045.4,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG6
+	 Layer : 0
+	 Coor : 1982.41,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.N8
+	 Layer : 0
+	 Coor : 1017.85,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.M1
+	 Layer : 0
+	 Coor : 1049.34,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.C1
+	 Layer : 0
+	 Coor : 1332.81,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C64.1
+	 Layer : 3
+	 Coor : 2558.76,1841.22
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T2
+	 Layer : 0
+	 Coor : 1856.42,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC26
+	 Layer : 0
+	 Coor : 2612.33,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.E2
+	 Layer : 0
+	 Coor : 1269.82,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y25
+	 Layer : 0
+	 Coor : 2580.83,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.K1
+	 Layer : 0
+	 Coor : 1112.34,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.K8
+	 Layer : 0
+	 Coor : 1112.34,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R9
+	 Layer : 0
+	 Coor : 2076.9,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C83.2
+	 Layer : 3
+	 Coor : 2417,2193.38
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : R133.1
+	 Layer : 3
+	 Coor : 1795.4,2300.45
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB18
+	 Layer : 0
+	 Coor : 2360.36,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.A3
+	 Layer : 0
+	 Coor : 1395.8,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF21
+	 Layer : 0
+	 Coor : 2454.85,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C14.2
+	 Layer : 3
+	 Coor : 2328.64,1908.72
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P13
+	 Layer : 0
+	 Coor : 2202.88,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.R9
+	 Layer : 0
+	 Coor : 954.86,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y9
+	 Layer : 0
+	 Coor : 2076.9,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M30
+	 Layer : 0
+	 Coor : 2738.31,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB28
+	 Layer : 0
+	 Coor : 2675.32,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A20
+	 Layer : 0
+	 Coor : 2423.35,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K22
+	 Layer : 0
+	 Coor : 2486.34,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.N3
+	 Layer : 0
+	 Coor : 1017.85,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D13
+	 Layer : 0
+	 Coor : 2202.88,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C95.2
+	 Layer : 3
+	 Coor : 2311.15,1528.8
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG19
+	 Layer : 0
+	 Coor : 2391.86,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.R30
+	 Layer : 0
+	 Coor : 2738.31,2018.96
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.E2
+	 Layer : 0
+	 Coor : 1269.82,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C137.2
+	 Layer : 3
+	 Coor : 1256.04,1942.18
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C27.2
+	 Layer : 3
+	 Coor : 2252.1,2113.44
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.P8
+	 Layer : 0
+	 Coor : 986.35,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R552.2
+	 Layer : 3
+	 Coor : 2248.16,1642.98
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AC28
+	 Layer : 0
+	 Coor : 2675.32,1766.99
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C42.2
+	 Layer : 3
+	 Coor : 2289.7,2139.6
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y10
+	 Layer : 0
+	 Coor : 2108.39,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B14
+	 Layer : 0
+	 Coor : 2234.38,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF4
+	 Layer : 0
+	 Coor : 1919.42,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J30
+	 Layer : 0
+	 Coor : 2738.31,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J25
+	 Layer : 0
+	 Coor : 2580.83,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.F1
+	 Layer : 0
+	 Coor : 1238.32,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AD6
+	 Layer : 0
+	 Coor : 1982.41,1735.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.A7
+	 Layer : 0
+	 Coor : 1395.8,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ21
+	 Layer : 0
+	 Coor : 2454.85,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D24
+	 Layer : 0
+	 Coor : 2549.34,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H14
+	 Layer : 0
+	 Coor : 2234.38,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B30
+	 Layer : 0
+	 Coor : 2738.31,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C169.2
+	 Layer : 3
+	 Coor : 980.4400000000001,2133.13
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : R70.2
+	 Layer : 0
+	 Coor : 1817.06,2546.52
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.G26
+	 Layer : 0
+	 Coor : 2612.33,2270.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.G28
+	 Layer : 0
+	 Coor : 2675.32,2270.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J16
+	 Layer : 0
+	 Coor : 2297.37,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T10
+	 Layer : 0
+	 Coor : 2108.39,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ26
+	 Layer : 0
+	 Coor : 2612.33,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C107.1
+	 Layer : 3
+	 Coor : 2558.73,1873.28
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C60.2
+	 Layer : 3
+	 Coor : 2332.22,1776.98
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.H7
+	 Layer : 0
+	 Coor : 1175.33,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.F7
+	 Layer : 0
+	 Coor : 1238.32,1715.81
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C145.1
+	 Layer : 3
+	 Coor : 1161.55,1068.17
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F20
+	 Layer : 0
+	 Coor : 2423.35,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C16
+	 Layer : 0
+	 Coor : 2297.37,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.B1
+	 Layer : 0
+	 Coor : 1364.3,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.G5
+	 Layer : 0
+	 Coor : 1950.91,2270.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.F4
+	 Layer : 0
+	 Coor : 1919.42,2302.42
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF27
+	 Layer : 0
+	 Coor : 2643.82,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.D2
+	 Layer : 0
+	 Coor : 1301.31,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M10
+	 Layer : 0
+	 Coor : 2108.39,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C3
+	 Layer : 0
+	 Coor : 1887.92,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH1
+	 Layer : 0
+	 Coor : 1824.93,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.A1
+	 Layer : 0
+	 Coor : 1395.8,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.G7
+	 Layer : 0
+	 Coor : 1206.82,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C151.1
+	 Layer : 3
+	 Coor : 1015.87,2920.53
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N13
+	 Layer : 0
+	 Coor : 2202.88,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK25
+	 Layer : 0
+	 Coor : 2580.83,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y16
+	 Layer : 0
+	 Coor : 2297.37,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A18
+	 Layer : 0
+	 Coor : 2360.36,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG3
+	 Layer : 0
+	 Coor : 1887.92,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG29
+	 Layer : 0
+	 Coor : 2706.82,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E7
+	 Layer : 0
+	 Coor : 2013.9,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.P17
+	 Layer : 0
+	 Coor : 2328.86,2050.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E8
+	 Layer : 0
+	 Coor : 2045.4,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.G8
+	 Layer : 0
+	 Coor : 1206.82,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.G9
+	 Layer : 0
+	 Coor : 1206.82,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C13.2
+	 Layer : 3
+	 Coor : 2328.64,1877.22
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C126.2
+	 Layer : 3
+	 Coor : 2204.85,1536.02
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.W3
+	 Layer : 0
+	 Coor : 1887.92,1892.97
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.P8
+	 Layer : 0
+	 Coor : 986.35,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK13
+	 Layer : 0
+	 Coor : 2202.88,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AH21
+	 Layer : 0
+	 Coor : 2454.85,1609.51
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.B8
+	 Layer : 0
+	 Coor : 1364.3,1133.13
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ13
+	 Layer : 0
+	 Coor : 2202.88,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG15
+	 Layer : 0
+	 Coor : 2265.87,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.E9
+	 Layer : 0
+	 Coor : 1269.82,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : TP52.1
+	 Layer : 3
+	 Coor : 1966.66,2255.18
+	 Type : PAD4
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D26
+	 Layer : 0
+	 Coor : 2612.33,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C141.2
+	 Layer : 3
+	 Coor : 1092.65,1711.87
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U4.K1
+	 Layer : 0
+	 Coor : 1112.34,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J20
+	 Layer : 0
+	 Coor : 2423.35,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T16
+	 Layer : 0
+	 Coor : 2297.37,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK17
+	 Layer : 0
+	 Coor : 2328.86,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C140.2
+	 Layer : 3
+	 Coor : 1435.17,1337.85
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U4.T2
+	 Layer : 0
+	 Coor : 923.36,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L16
+	 Layer : 0
+	 Coor : 2297.37,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.M8
+	 Layer : 0
+	 Coor : 1049.34,2700.06
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E21
+	 Layer : 0
+	 Coor : 2454.85,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C77.1
+	 Layer : 3
+	 Coor : 2472.57,2081.95
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B5
+	 Layer : 0
+	 Coor : 1950.91,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.T2
+	 Layer : 0
+	 Coor : 923.36,2337.86
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H12
+	 Layer : 0
+	 Coor : 2171.38,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C78.2
+	 Layer : 3
+	 Coor : 2383.42,2295.2
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C86.1
+	 Layer : 3
+	 Coor : 2484.38,1751.24
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : C68.1
+	 Layer : 3
+	 Coor : 2021.78,1894.94
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T12
+	 Layer : 0
+	 Coor : 2171.38,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.C21
+	 Layer : 0
+	 Coor : 2454.85,2396.91
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.T3
+	 Layer : 0
+	 Coor : 923.36,1841.79
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.K3
+	 Layer : 0
+	 Coor : 1112.34,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J28
+	 Layer : 0
+	 Coor : 2675.32,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.C1
+	 Layer : 0
+	 Coor : 1332.81,1904.78
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R695.1
+	 Layer : 3
+	 Coor : 2539,2050.32
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A1
+	 Layer : 0
+	 Coor : 1824.93,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA22
+	 Layer : 0
+	 Coor : 2486.34,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK1
+	 Layer : 0
+	 Coor : 1824.93,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.G9
+	 Layer : 0
+	 Coor : 1206.82,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D23
+	 Layer : 0
+	 Coor : 2517.84,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R125.1
+	 Layer : 3
+	 Coor : 813.12,2123.28
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U5.K1
+	 Layer : 0
+	 Coor : 1112.34,2920.53
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N20
+	 Layer : 0
+	 Coor : 2423.35,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ2
+	 Layer : 0
+	 Coor : 1856.42,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T26
+	 Layer : 0
+	 Coor : 2612.33,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C122.1
+	 Layer : 3
+	 Coor : 2287.32,2374.1
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U4.K8
+	 Layer : 0
+	 Coor : 1112.34,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.L1
+	 Layer : 0
+	 Coor : 1080.84,2369.35
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C127.2
+	 Layer : 3
+	 Coor : 2132.02,1536.02
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : U50.J17
+	 Layer : 0
+	 Coor : 2328.86,2207.93
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AE30
+	 Layer : 0
+	 Coor : 2738.31,1704
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.M3
+	 Layer : 0
+	 Coor : 1049.34,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M13
+	 Layer : 0
+	 Coor : 2202.88,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.A8
+	 Layer : 0
+	 Coor : 1395.8,1684.31
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R132.2
+	 Layer : 3
+	 Coor : 848.55,2123.28
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U6.B8
+	 Layer : 0
+	 Coor : 1364.3,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K26
+	 Layer : 0
+	 Coor : 2612.33,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C103.2
+	 Layer : 3
+	 Coor : 2360.36,1976.96
+	 Type : PAD40
+		 Width : 0
+		 Height : 0
+ObsPad : C166.2
+	 Layer : 3
+	 Coor : 1193.05,2930.37
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.L27
+	 Layer : 0
+	 Coor : 2643.82,2144.94
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.L7
+	 Layer : 0
+	 Coor : 1080.84,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.M16
+	 Layer : 0
+	 Coor : 2297.37,2113.45
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A6
+	 Layer : 0
+	 Coor : 1982.41,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C37.1
+	 Layer : 3
+	 Coor : 2402.62,2042.64
+	 Type : PAD25
+		 Width : 0
+		 Height : 0
+ObsPad : U50.T8
+	 Layer : 0
+	 Coor : 2045.4,1987.46
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AJ16
+	 Layer : 0
+	 Coor : 2297.37,1578.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AG22
+	 Layer : 0
+	 Coor : 2486.34,1641.01
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.T9
+	 Layer : 0
+	 Coor : 923.36,2668.57
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.K2
+	 Layer : 0
+	 Coor : 1112.34,1322.11
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.Y17
+	 Layer : 0
+	 Coor : 2328.86,1861.48
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.T3
+	 Layer : 0
+	 Coor : 923.36,2306.36
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.M9
+	 Layer : 0
+	 Coor : 1049.34,1652.82
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N26
+	 Layer : 0
+	 Coor : 2612.33,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R78.1
+	 Layer : 3
+	 Coor : 2279.66,1528.8
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AK5
+	 Layer : 0
+	 Coor : 1950.91,1546.52
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U4.D2
+	 Layer : 0
+	 Coor : 1301.31,1873.29
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N10
+	 Layer : 0
+	 Coor : 2108.39,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.E20
+	 Layer : 0
+	 Coor : 2423.35,2333.92
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U5.H2
+	 Layer : 0
+	 Coor : 1175.33,2889.04
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.B3
+	 Layer : 0
+	 Coor : 1887.92,2428.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AB5
+	 Layer : 0
+	 Coor : 1950.91,1798.49
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C118.2
+	 Layer : 3
+	 Coor : 2314.6,2309.12
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF18
+	 Layer : 0
+	 Coor : 2360.36,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.A10
+	 Layer : 0
+	 Coor : 2108.39,2459.9
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.D19
+	 Layer : 0
+	 Coor : 2391.86,2365.41
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C150.1
+	 Layer : 3
+	 Coor : 1398.73,2686.99
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U3.R3
+	 Layer : 0
+	 Coor : 954.86,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : C38.2
+	 Layer : 3
+	 Coor : 2391.27,2157.81
+	 Type : PAD23
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF15
+	 Layer : 0
+	 Coor : 2265.87,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : R85.1
+	 Layer : 3
+	 Coor : 2060.71,1665.02
+	 Type : PAD45
+		 Width : 0
+		 Height : 0
+ObsPad : U5.B7
+	 Layer : 0
+	 Coor : 1364.3,2731.56
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.M8
+	 Layer : 0
+	 Coor : 1049.34,2148.88
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.E7
+	 Layer : 0
+	 Coor : 1269.82,1164.63
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N19
+	 Layer : 0
+	 Coor : 2391.86,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.K9
+	 Layer : 0
+	 Coor : 2076.9,2176.44
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AA20
+	 Layer : 0
+	 Coor : 2423.35,1829.98
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.J1
+	 Layer : 0
+	 Coor : 1143.83,1353.6
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.N1
+	 Layer : 0
+	 Coor : 1824.93,2081.95
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.AF16
+	 Layer : 0
+	 Coor : 2297.37,1672.5
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U50.H1
+	 Layer : 0
+	 Coor : 1824.93,2239.43
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.H9
+	 Layer : 0
+	 Coor : 1175.33,1101.64
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U3.B3
+	 Layer : 0
+	 Coor : 1364.3,1290.61
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+ObsPad : U6.T9
+	 Layer : 0
+	 Coor : 923.36,2117.39
+	 Type : PAD28
+		 Width : 0
+		 Height : 0
+MAX_LAYER: 4
+{'BOTTOM': 3, 'INNER LAYER 3-SIGNAL': 1, 'TOP': 0, 'INNER LAYER 6-SINGAL': 2}

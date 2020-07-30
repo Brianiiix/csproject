@@ -1,0 +1,1 @@
+./input2sat [case/.netlist] [config/.txt] [gds outputname]

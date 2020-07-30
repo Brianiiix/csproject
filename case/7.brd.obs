@@ -1,0 +1,5158 @@
+MG_MDI
+	pinPairRef:IC1000.A31 IC4000.19
+	pinPairRef:IC1000.B30 IC4000.20
+	pinPairRef:IC1000.C29 IC4000.18
+	pinPairRef:IC1000.D28 IC4000.21
+	pinPairRef:IC1000.G27 IC4000.17
+	pinPairRef:IC1000.H26 IC4000.16
+MG_RGMII_TX
+	pinPairRef:IC1000.A29 IC4000.24
+	pinPairRef:IC1000.B28 IC4000.26
+	pinPairRef:IC1000.E27 IC4000.27
+	pinPairRef:IC1000.F26 IC4000.28
+	pinPairRef:IC1000.G25 IC4000.25
+	pinPairRef:IC1000.H24 IC4000.23
+MG_PCIE_TX_RX
+	signalRef:IMX8_PCIE0_RX0_N
+	signalRef:IMX8_PCIE0_RX0_P
+	signalRef:IMX8_PCIE0_TX0_N
+	signalRef:IMX8_PCIE0_TX0_P
+	signalRef:SIGN003368
+	signalRef:SIGN003369
+MG_SDIO
+	pinPairRef:IC1000.A27 IC5000.G20
+	pinPairRef:IC1000.B26 IC5000.F20
+	pinPairRef:IC1000.C25 IC5000.J20
+	pinPairRef:IC1000.D26 IC5000.H20
+	pinPairRef:IC1000.E25 IC5000.E20
+	pinPairRef:IC1000.G23 IC5000.D20
+MG_EMMC_CLK
+	pinPairRef:IC1000.A21 IC2002.A4
+	pinPairRef:IC1000.A23 IC2002.B5
+	pinPairRef:IC1000.B22 IC2002.B3
+	pinPairRef:IC1000.C21 IC2002.A3
+	pinPairRef:IC1000.D20 IC2002.M5
+	pinPairRef:IC1000.D22 IC2002.B6
+	pinPairRef:IC1000.E21 IC2002.A5
+	pinPairRef:IC1000.G19 IC2002.M6
+	pinPairRef:IC1000.G21 IC2002.B4
+	pinPairRef:IC1000.H20 IC2002.B2
+MG_EMMC_DS
+	pinPairRef:IC1000.A21 IC2002.A4
+	pinPairRef:IC1000.A23 IC2002.B5
+	pinPairRef:IC1000.B22 IC2002.B3
+	pinPairRef:IC1000.C21 IC2002.A3
+	pinPairRef:IC1000.D20 IC2002.M5
+	pinPairRef:IC1000.D22 IC2002.B6
+	pinPairRef:IC1000.E21 IC2002.A5
+	pinPairRef:IC1000.F22 IC2002.H5
+	pinPairRef:IC1000.G21 IC2002.B4
+	pinPairRef:IC1000.H20 IC2002.B2
+MG_EMMC_CLK_DS
+	pinPairRef:IC1000.F22 IC2002.H5
+	pinPairRef:IC1000.G19 IC2002.M6
+MG_USB3.0
+	pinPairRef:C1304.2 IC3004.10
+		Reference Net:IMX8_SS3_TX_P
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:IC1000.B16 C1304.1
+		Reference Net:SIGN003362
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:IC1000.A15 C1305.1
+		Reference Net:SIGN003363
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:C1305.2 IC3004.11
+		Reference Net:IMX8_SS3_TX_N
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:IC3001.DB8 IC3004.5
+		Reference Net:SIGN007320
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:IC3004.4 IC3001.DC7
+		Reference Net:SIGN007321
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:IC3001.DA8 C3007.1
+		Reference Net:SIGN007159
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:IC3004.2 C3007.2
+		Reference Net:SIGN007314
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:IC3001.DA9 C3008.1
+		Reference Net:SIGN007161
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:C3008.2 IC3004.1
+		Reference Net:SIGN007315
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:IC1000.A19 IC3004.15
+		Reference Net:IMX8_SS3_RX_P
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	pinPairRef:IC1000.B18 IC3004.16
+		Reference Net:IMX8_SS3_RX_N
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+MG_DDR_B_DATA1
+	signalRef:DDR_DMI1_B
+		Reference Pin-Pair:IC1000.E1 IC1700.Y10
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_DQS3_P
+		Reference Pin-Pair:IC1000.D2 IC1700.W10
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	signalRef:DDR_DQ{24}
+	signalRef:DDR_DQ{25}
+	signalRef:DDR_DQ{26}
+	signalRef:DDR_DQ{27}
+	signalRef:DDR_DQ{28}
+	signalRef:DDR_DQ{29}
+	signalRef:DDR_DQ{30}
+	signalRef:DDR_DQ{31}
+MG_DDR_B_DATA0
+	signalRef:DDR_DMI0_B
+		Reference Pin-Pair:IC1700.Y3 IC1000.D4
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_DQ{16}
+	signalRef:DDR_DQ{17}
+	signalRef:DDR_DQ{18}
+	signalRef:DDR_DQ{19}
+	signalRef:DDR_DQ{20}
+	signalRef:DDR_DQ{21}
+	signalRef:DDR_DQ{22}
+	signalRef:DDR_DQ{23}
+	signalRef:DDR_DQS2_P
+		Reference Pin-Pair:IC1000.D6 IC1700.W3
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+MG_DDR_B_CA0
+	signalRef:DDR_CA0_B
+		Reference Pin-Pair:IC1000.K4 IC1700.R2
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CA1_B
+		Reference Pin-Pair:IC1000.L3 IC1700.P2
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CA2_B
+		Reference Pin-Pair:IC1000.P8 IC1700.R9
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CA3_B
+		Reference Pin-Pair:IC1000.L7 IC1700.R10
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CA4_B
+		Reference Pin-Pair:IC1000.N3 IC1700.R11
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CA5_B
+		Reference Pin-Pair:IC1000.N1 IC1700.P11
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CKE0_B
+		Reference Pin-Pair:IC1000.N7 IC1700.P4
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CKE1_B
+		Reference Pin-Pair:IC1000.L5 IC1700.P5
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CS0_B
+		Reference Pin-Pair:IC1000.K6 IC1700.R4
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CS1_B
+		Reference Pin-Pair:IC1000.K2 IC1700.R3
+		Net Class:CLSS_DDR_42OHM_G2
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CLKB_P
+		Reference Pin-Pair:IC1000.P6 IC1700.P8
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+MG_DDR_A_DATA1
+	signalRef:DDR_DMI1_A
+		Reference Pin-Pair:IC1000.AF4 IC1700.C10
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_DQS1_P
+		Reference Pin-Pair:IC1000.AF2 IC1700.D10
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	signalRef:DDR_DQ{8}
+	signalRef:DDR_DQ{9}
+	signalRef:DDR_DQ{10}
+	signalRef:DDR_DQ{11}
+	signalRef:DDR_DQ{12}
+	signalRef:DDR_DQ{13}
+	signalRef:DDR_DQ{14}
+	signalRef:DDR_DQ{15}
+MG_DDR_A_DATA0
+	signalRef:DDR_DMI0_A
+		Reference Pin-Pair:IC1000.AJ7 IC1700.C3
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_DQS0_P
+		Reference Pin-Pair:IC1000.AJ5 IC1700.D3
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+	signalRef:DDR_DQ{0}
+	signalRef:DDR_DQ{1}
+	signalRef:DDR_DQ{2}
+	signalRef:DDR_DQ{3}
+	signalRef:DDR_DQ{4}
+	signalRef:DDR_DQ{5}
+	signalRef:DDR_DQ{6}
+	signalRef:DDR_DQ{7}
+MG_DDR_A_CA0
+	signalRef:DDR_CA0_A
+		Reference Pin-Pair:IC1000.W3 IC1700.H2
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CA1_A
+		Reference Pin-Pair:IC1000.W7 IC1700.J2
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CA2_A
+		Reference Pin-Pair:IC1000.W1 IC1700.H9
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CA3_A
+		Reference Pin-Pair:IC1000.AB4 IC1700.H10
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CA4_A
+		Reference Pin-Pair:IC1000.U3 IC1700.H11
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CA5_A
+		Reference Pin-Pair:IC1000.U1 IC1700.J11
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CKE0_A
+		Reference Pin-Pair:IC1000.Y2 IC1700.J4
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CKE1_A
+		Reference Pin-Pair:IC1000.Y4 IC1700.J5
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CS0_A
+		Reference Pin-Pair:IC1000.AC5 IC1700.H4
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CS1_A
+		Reference Pin-Pair:IC1000.Y8 IC1700.H3
+		Net Class:CLSS_DDR_42OHM_G1
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:42OHM_S18(OUT)_15(INN_L2LS)
+	signalRef:DDR_CLKA_P
+		Reference Pin-Pair:IC1000.W5 IC1700.J8
+		Net Class:DEFAULT
+			physicalCSetRef:DEFAULT
+			spacingCSetRef:DEFAULT
+ObsPad : IC1000.AL33
+	 Layer : 0
+	 Coor : 3879.43,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AM26
+	 Layer : 0
+	 Coor : 3901.69,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.V3
+	 Layer : 0
+	 Coor : 3428.66,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AJ23
+	 Layer : 0
+	 Coor : 3834.9,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L19
+	 Layer : 0
+	 Coor : 3434.15,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K16
+	 Layer : 0
+	 Coor : 3411.89,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE19
+	 Layer : 0
+	 Coor : 3745.85,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.K5
+	 Layer : 0
+	 Coor : 3633.39,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AG3
+	 Layer : 0
+	 Coor : 3790.37,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK10
+	 Layer : 0
+	 Coor : 3857.17,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.B22
+	 Layer : 0
+	 Coor : 3233.78,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.G10
+	 Layer : 0
+	 Coor : 3710.16,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AA25
+	 Layer : 0
+	 Coor : 3656.79,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK6
+	 Layer : 0
+	 Coor : 3857.17,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.D34
+	 Layer : 0
+	 Coor : 3278.31,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.C9
+	 Layer : 0
+	 Coor : 3812.52,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.G11
+	 Layer : 0
+	 Coor : 3710.16,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AD14
+	 Layer : 0
+	 Coor : 3723.58,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J15
+	 Layer : 0
+	 Coor : 3389.63,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR29
+	 Layer : 0
+	 Coor : 3968.48,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.F2
+	 Layer : 0
+	 Coor : 3735.75,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1700.R11
+	 Layer : 0
+	 Coor : 3505.43,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1700.J5
+	 Layer : 0
+	 Coor : 3658.98,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AL31
+	 Layer : 0
+	 Coor : 3879.43,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F32
+	 Layer : 0
+	 Coor : 3322.83,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W27
+	 Layer : 0
+	 Coor : 3612.26,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.F1
+	 Layer : 0
+	 Coor : 3735.75,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AK18
+	 Layer : 0
+	 Coor : 3857.17,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y28
+	 Layer : 0
+	 Coor : 3634.53,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG11
+	 Layer : 0
+	 Coor : 3790.37,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.H12
+	 Layer : 0
+	 Coor : 3684.57,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.J9
+	 Layer : 0
+	 Coor : 3658.98,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.U12
+	 Layer : 0
+	 Coor : 3454.25,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.W3
+	 Layer : 0
+	 Coor : 3612.26,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T22
+	 Layer : 0
+	 Coor : 3545.47,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD28
+	 Layer : 0
+	 Coor : 3723.58,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V12
+	 Layer : 0
+	 Coor : 3590,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.AB4
+	 Layer : 0
+	 Coor : 3679.06,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AM4
+	 Layer : 0
+	 Coor : 3901.69,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M10
+	 Layer : 0
+	 Coor : 3456.42,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AM34
+	 Layer : 0
+	 Coor : 3901.69,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD24
+	 Layer : 0
+	 Coor : 3723.58,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.E10
+	 Layer : 0
+	 Coor : 3761.34,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.H22
+	 Layer : 0
+	 Coor : 3367.36,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA23
+	 Layer : 0
+	 Coor : 3656.79,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.C9
+	 Layer : 0
+	 Coor : 3256.04,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AA8
+	 Layer : 0
+	 Coor : 3351.89,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.E21
+	 Layer : 0
+	 Coor : 3300.57,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.E11
+	 Layer : 0
+	 Coor : 3761.34,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.P12
+	 Layer : 0
+	 Coor : 3500.94,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AB3
+	 Layer : 0
+	 Coor : 3326.3,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.D10
+	 Layer : 0
+	 Coor : 3278.31,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.E12
+	 Layer : 0
+	 Coor : 3761.34,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.U9
+	 Layer : 0
+	 Coor : 3567.74,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.Y2
+	 Layer : 0
+	 Coor : 3634.53,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.B1
+	 Layer : 0
+	 Coor : 3838.11,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.N1
+	 Layer : 0
+	 Coor : 3478.68,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD6
+	 Layer : 0
+	 Coor : 3723.58,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.R1
+	 Layer : 0
+	 Coor : 3505.43,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AM22
+	 Layer : 0
+	 Coor : 3901.69,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.A10
+	 Layer : 0
+	 Coor : 3863.7,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.AB11
+	 Layer : 0
+	 Coor : 3326.3,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.M18
+	 Layer : 0
+	 Coor : 3456.42,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K26
+	 Layer : 0
+	 Coor : 3411.89,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.G12
+	 Layer : 0
+	 Coor : 3710.16,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.AF2
+	 Layer : 0
+	 Coor : 3768.11,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.E1
+	 Layer : 0
+	 Coor : 3300.57,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W19
+	 Layer : 0
+	 Coor : 3612.26,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.N8
+	 Layer : 0
+	 Coor : 3556.61,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AM10
+	 Layer : 0
+	 Coor : 3901.69,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP24
+	 Layer : 0
+	 Coor : 3946.22,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.H11
+	 Layer : 0
+	 Coor : 3684.57,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.F2
+	 Layer : 0
+	 Coor : 3322.83,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.B8
+	 Layer : 0
+	 Coor : 3233.78,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ19
+	 Layer : 0
+	 Coor : 3834.9,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.R5
+	 Layer : 0
+	 Coor : 3505.43,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.W13
+	 Layer : 0
+	 Coor : 3612.26,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL25
+	 Layer : 0
+	 Coor : 3879.43,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.K1
+	 Layer : 0
+	 Coor : 3633.39,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.U7
+	 Layer : 0
+	 Coor : 3567.74,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR13
+	 Layer : 0
+	 Coor : 3968.48,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP26
+	 Layer : 0
+	 Coor : 3946.22,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H14
+	 Layer : 0
+	 Coor : 3367.36,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N35
+	 Layer : 0
+	 Coor : 3478.68,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AC21
+	 Layer : 0
+	 Coor : 3701.32,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.D28
+	 Layer : 0
+	 Coor : 3278.31,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.Y4
+	 Layer : 0
+	 Coor : 3634.53,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.A23
+	 Layer : 0
+	 Coor : 3211.52,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T14
+	 Layer : 0
+	 Coor : 3545.47,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J7
+	 Layer : 0
+	 Coor : 3389.63,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y32
+	 Layer : 0
+	 Coor : 3634.53,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R35
+	 Layer : 0
+	 Coor : 3523.21,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U21
+	 Layer : 0
+	 Coor : 3567.74,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN3
+	 Layer : 0
+	 Coor : 3923.96,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.T5
+	 Layer : 0
+	 Coor : 3479.84,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.Y8
+	 Layer : 0
+	 Coor : 3634.53,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T6
+	 Layer : 0
+	 Coor : 3545.47,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ33
+	 Layer : 0
+	 Coor : 3834.9,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F16
+	 Layer : 0
+	 Coor : 3322.83,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.G23
+	 Layer : 0
+	 Coor : 3345.1,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.B8
+	 Layer : 0
+	 Coor : 3838.11,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.A5
+	 Layer : 0
+	 Coor : 3211.52,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M34
+	 Layer : 0
+	 Coor : 3456.42,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.D2
+	 Layer : 0
+	 Coor : 3786.93,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AD18
+	 Layer : 0
+	 Coor : 3723.58,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.B28
+	 Layer : 0
+	 Coor : 3233.78,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K34
+	 Layer : 0
+	 Coor : 3411.89,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP6
+	 Layer : 0
+	 Coor : 3946.22,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N13
+	 Layer : 0
+	 Coor : 3478.68,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J17
+	 Layer : 0
+	 Coor : 3389.63,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE21
+	 Layer : 0
+	 Coor : 3745.85,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP14
+	 Layer : 0
+	 Coor : 3946.22,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T4
+	 Layer : 0
+	 Coor : 3545.47,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.R10
+	 Layer : 0
+	 Coor : 3505.43,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.F5
+	 Layer : 0
+	 Coor : 3735.75,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.E5
+	 Layer : 0
+	 Coor : 3300.57,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE27
+	 Layer : 0
+	 Coor : 3745.85,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AA1
+	 Layer : 0
+	 Coor : 3351.89,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.M20
+	 Layer : 0
+	 Coor : 3456.42,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.K2
+	 Layer : 0
+	 Coor : 3633.39,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.R5
+	 Layer : 0
+	 Coor : 3523.21,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.A12
+	 Layer : 0
+	 Coor : 3863.7,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.D24
+	 Layer : 0
+	 Coor : 3278.31,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L21
+	 Layer : 0
+	 Coor : 3434.15,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF18
+	 Layer : 0
+	 Coor : 3768.11,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.E25
+	 Layer : 0
+	 Coor : 3300.57,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AM24
+	 Layer : 0
+	 Coor : 3901.69,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.G2
+	 Layer : 0
+	 Coor : 3710.16,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AD26
+	 Layer : 0
+	 Coor : 3723.58,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M16
+	 Layer : 0
+	 Coor : 3456.42,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N15
+	 Layer : 0
+	 Coor : 3478.68,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE31
+	 Layer : 0
+	 Coor : 3745.85,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AC7
+	 Layer : 0
+	 Coor : 3701.32,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG9
+	 Layer : 0
+	 Coor : 3790.37,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB12
+	 Layer : 0
+	 Coor : 3679.06,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AC27
+	 Layer : 0
+	 Coor : 3701.32,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.D20
+	 Layer : 0
+	 Coor : 3278.31,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.D18
+	 Layer : 0
+	 Coor : 3278.31,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J11
+	 Layer : 0
+	 Coor : 3389.63,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.V10
+	 Layer : 0
+	 Coor : 3428.66,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AH2
+	 Layer : 0
+	 Coor : 3812.64,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.B32
+	 Layer : 0
+	 Coor : 3233.78,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V34
+	 Layer : 0
+	 Coor : 3590,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.P8
+	 Layer : 0
+	 Coor : 3500.94,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P14
+	 Layer : 0
+	 Coor : 3500.94,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F18
+	 Layer : 0
+	 Coor : 3322.83,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K14
+	 Layer : 0
+	 Coor : 3411.89,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.D32
+	 Layer : 0
+	 Coor : 3278.31,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G1
+	 Layer : 0
+	 Coor : 3345.1,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G17
+	 Layer : 0
+	 Coor : 3345.1,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AB4
+	 Layer : 0
+	 Coor : 3326.3,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AH30
+	 Layer : 0
+	 Coor : 3812.64,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN23
+	 Layer : 0
+	 Coor : 3923.96,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG1
+	 Layer : 0
+	 Coor : 3790.37,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.G8
+	 Layer : 0
+	 Coor : 3710.16,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.F8
+	 Layer : 0
+	 Coor : 3735.75,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.A25
+	 Layer : 0
+	 Coor : 3211.52,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AA2
+	 Layer : 0
+	 Coor : 3351.89,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.R23
+	 Layer : 0
+	 Coor : 3523.21,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA5
+	 Layer : 0
+	 Coor : 3656.79,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G31
+	 Layer : 0
+	 Coor : 3345.1,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P16
+	 Layer : 0
+	 Coor : 3500.94,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE15
+	 Layer : 0
+	 Coor : 3745.85,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA19
+	 Layer : 0
+	 Coor : 3656.79,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE3
+	 Layer : 0
+	 Coor : 3745.85,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U11
+	 Layer : 0
+	 Coor : 3567.74,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P24
+	 Layer : 0
+	 Coor : 3500.94,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.AJ7
+	 Layer : 0
+	 Coor : 3834.9,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.D8
+	 Layer : 0
+	 Coor : 3786.93,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.Y2
+	 Layer : 0
+	 Coor : 3377.48,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.A33
+	 Layer : 0
+	 Coor : 3211.52,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.F11
+	 Layer : 0
+	 Coor : 3735.75,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.G9
+	 Layer : 0
+	 Coor : 3710.16,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AB6
+	 Layer : 0
+	 Coor : 3679.06,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD34
+	 Layer : 0
+	 Coor : 3723.58,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR33
+	 Layer : 0
+	 Coor : 3968.48,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.A3
+	 Layer : 0
+	 Coor : 3211.52,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.Y9
+	 Layer : 0
+	 Coor : 3377.48,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.W8
+	 Layer : 0
+	 Coor : 3403.07,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AC9
+	 Layer : 0
+	 Coor : 3701.32,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W9
+	 Layer : 0
+	 Coor : 3612.26,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ17
+	 Layer : 0
+	 Coor : 3834.9,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.E23
+	 Layer : 0
+	 Coor : 3300.57,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.U3
+	 Layer : 0
+	 Coor : 3567.74,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.H4
+	 Layer : 0
+	 Coor : 3684.57,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.R25
+	 Layer : 0
+	 Coor : 3523.21,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AA11
+	 Layer : 0
+	 Coor : 3351.89,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.L13
+	 Layer : 0
+	 Coor : 3434.15,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR21
+	 Layer : 0
+	 Coor : 3968.48,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK32
+	 Layer : 0
+	 Coor : 3857.17,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.P1
+	 Layer : 0
+	 Coor : 3531.02,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AE7
+	 Layer : 0
+	 Coor : 3745.85,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.J8
+	 Layer : 0
+	 Coor : 3658.98,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AP16
+	 Layer : 0
+	 Coor : 3946.22,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD16
+	 Layer : 0
+	 Coor : 3723.58,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP8
+	 Layer : 0
+	 Coor : 3946.22,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD20
+	 Layer : 0
+	 Coor : 3723.58,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.AF4
+	 Layer : 0
+	 Coor : 3768.11,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P10
+	 Layer : 0
+	 Coor : 3500.94,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.Y5
+	 Layer : 0
+	 Coor : 3377.48,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AJ15
+	 Layer : 0
+	 Coor : 3834.9,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA21
+	 Layer : 0
+	 Coor : 3656.79,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA17
+	 Layer : 0
+	 Coor : 3656.79,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N9
+	 Layer : 0
+	 Coor : 3478.68,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K12
+	 Layer : 0
+	 Coor : 3411.89,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.E4
+	 Layer : 0
+	 Coor : 3761.34,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1700.R9
+	 Layer : 0
+	 Coor : 3505.43,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AC23
+	 Layer : 0
+	 Coor : 3701.32,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.H8
+	 Layer : 0
+	 Coor : 3684.57,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.P34
+	 Layer : 0
+	 Coor : 3500.94,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.U1
+	 Layer : 0
+	 Coor : 3567.74,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H8
+	 Layer : 0
+	 Coor : 3367.36,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J13
+	 Layer : 0
+	 Coor : 3389.63,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN25
+	 Layer : 0
+	 Coor : 3923.96,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V28
+	 Layer : 0
+	 Coor : 3590,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.E9
+	 Layer : 0
+	 Coor : 3300.57,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.R4
+	 Layer : 0
+	 Coor : 3505.43,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.J12
+	 Layer : 0
+	 Coor : 3658.98,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1700.J11
+	 Layer : 0
+	 Coor : 3658.98,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.Y12
+	 Layer : 0
+	 Coor : 3377.48,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AC19
+	 Layer : 0
+	 Coor : 3701.32,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J33
+	 Layer : 0
+	 Coor : 3389.63,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN19
+	 Layer : 0
+	 Coor : 3923.96,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG17
+	 Layer : 0
+	 Coor : 3790.37,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.C25
+	 Layer : 0
+	 Coor : 3256.04,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W35
+	 Layer : 0
+	 Coor : 3612.26,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.B16
+	 Layer : 0
+	 Coor : 3233.78,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N11
+	 Layer : 0
+	 Coor : 3478.68,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H28
+	 Layer : 0
+	 Coor : 3367.36,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE11
+	 Layer : 0
+	 Coor : 3745.85,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.E2
+	 Layer : 0
+	 Coor : 3761.34,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AM12
+	 Layer : 0
+	 Coor : 3901.69,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.A8
+	 Layer : 0
+	 Coor : 3863.7,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.T34
+	 Layer : 0
+	 Coor : 3545.47,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD22
+	 Layer : 0
+	 Coor : 3723.58,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R13
+	 Layer : 0
+	 Coor : 3523.21,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.F9
+	 Layer : 0
+	 Coor : 3735.75,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AG29
+	 Layer : 0
+	 Coor : 3790.37,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G3
+	 Layer : 0
+	 Coor : 3345.1,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y10
+	 Layer : 0
+	 Coor : 3634.53,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M8
+	 Layer : 0
+	 Coor : 3456.42,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W23
+	 Layer : 0
+	 Coor : 3612.26,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.N10
+	 Layer : 0
+	 Coor : 3556.61,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.AB10
+	 Layer : 0
+	 Coor : 3326.3,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.H5
+	 Layer : 0
+	 Coor : 3684.57,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.L17
+	 Layer : 0
+	 Coor : 3434.15,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.R8
+	 Layer : 0
+	 Coor : 3505.43,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.M22
+	 Layer : 0
+	 Coor : 3456.42,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AA10
+	 Layer : 0
+	 Coor : 3351.89,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.P12
+	 Layer : 0
+	 Coor : 3531.02,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.K32
+	 Layer : 0
+	 Coor : 3411.89,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.D10
+	 Layer : 0
+	 Coor : 3786.93,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.F8
+	 Layer : 0
+	 Coor : 3322.83,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.D12
+	 Layer : 0
+	 Coor : 3786.93,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.AC5
+	 Layer : 0
+	 Coor : 3701.32,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T20
+	 Layer : 0
+	 Coor : 3545.47,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF24
+	 Layer : 0
+	 Coor : 3768.11,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE35
+	 Layer : 0
+	 Coor : 3745.85,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.P5
+	 Layer : 0
+	 Coor : 3531.02,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.Y14
+	 Layer : 0
+	 Coor : 3634.53,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.A9
+	 Layer : 0
+	 Coor : 3863.7,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AC1
+	 Layer : 0
+	 Coor : 3701.32,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.C1
+	 Layer : 0
+	 Coor : 3812.52,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.R3
+	 Layer : 0
+	 Coor : 3523.21,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L11
+	 Layer : 0
+	 Coor : 3434.15,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y22
+	 Layer : 0
+	 Coor : 3634.53,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.K10
+	 Layer : 0
+	 Coor : 3633.39,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AR27
+	 Layer : 0
+	 Coor : 3968.48,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U15
+	 Layer : 0
+	 Coor : 3567.74,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE5
+	 Layer : 0
+	 Coor : 3745.85,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K10
+	 Layer : 0
+	 Coor : 3411.89,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J21
+	 Layer : 0
+	 Coor : 3389.63,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U33
+	 Layer : 0
+	 Coor : 3567.74,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH14
+	 Layer : 0
+	 Coor : 3812.64,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H30
+	 Layer : 0
+	 Coor : 3367.36,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F4
+	 Layer : 0
+	 Coor : 3322.83,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AC29
+	 Layer : 0
+	 Coor : 3701.32,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.J10
+	 Layer : 0
+	 Coor : 3658.98,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.W29
+	 Layer : 0
+	 Coor : 3612.26,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.C8
+	 Layer : 0
+	 Coor : 3812.52,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AA33
+	 Layer : 0
+	 Coor : 3656.79,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.V2
+	 Layer : 0
+	 Coor : 3428.66,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.E8
+	 Layer : 0
+	 Coor : 3761.34,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.T16
+	 Layer : 0
+	 Coor : 3545.47,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF20
+	 Layer : 0
+	 Coor : 3768.11,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH32
+	 Layer : 0
+	 Coor : 3812.64,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G15
+	 Layer : 0
+	 Coor : 3345.1,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.G3
+	 Layer : 0
+	 Coor : 3710.16,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.M32
+	 Layer : 0
+	 Coor : 3456.42,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.T3
+	 Layer : 0
+	 Coor : 3479.84,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.T8
+	 Layer : 0
+	 Coor : 3479.84,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.G29
+	 Layer : 0
+	 Coor : 3345.1,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN21
+	 Layer : 0
+	 Coor : 3923.96,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W25
+	 Layer : 0
+	 Coor : 3612.26,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.A29
+	 Layer : 0
+	 Coor : 3211.52,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF26
+	 Layer : 0
+	 Coor : 3768.11,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AB9
+	 Layer : 0
+	 Coor : 3326.3,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.V14
+	 Layer : 0
+	 Coor : 3590,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V26
+	 Layer : 0
+	 Coor : 3590,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL15
+	 Layer : 0
+	 Coor : 3879.43,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN27
+	 Layer : 0
+	 Coor : 3923.96,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.W3
+	 Layer : 0
+	 Coor : 3403.07,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.B4
+	 Layer : 0
+	 Coor : 3233.78,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U27
+	 Layer : 0
+	 Coor : 3567.74,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD10
+	 Layer : 0
+	 Coor : 3723.58,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK28
+	 Layer : 0
+	 Coor : 3857.17,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL7
+	 Layer : 0
+	 Coor : 3879.43,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y26
+	 Layer : 0
+	 Coor : 3634.53,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R21
+	 Layer : 0
+	 Coor : 3523.21,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.A19
+	 Layer : 0
+	 Coor : 3211.52,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG5
+	 Layer : 0
+	 Coor : 3790.37,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F14
+	 Layer : 0
+	 Coor : 3322.83,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG21
+	 Layer : 0
+	 Coor : 3790.37,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA31
+	 Layer : 0
+	 Coor : 3656.79,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.Y4
+	 Layer : 0
+	 Coor : 3377.48,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.A11
+	 Layer : 0
+	 Coor : 3863.7,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.C21
+	 Layer : 0
+	 Coor : 3256.04,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.D6
+	 Layer : 0
+	 Coor : 3278.31,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK34
+	 Layer : 0
+	 Coor : 3857.17,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.W11
+	 Layer : 0
+	 Coor : 3403.07,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.V8
+	 Layer : 0
+	 Coor : 3428.66,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.L23
+	 Layer : 0
+	 Coor : 3434.15,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.E7
+	 Layer : 0
+	 Coor : 3300.57,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF14
+	 Layer : 0
+	 Coor : 3768.11,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V24
+	 Layer : 0
+	 Coor : 3590,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y24
+	 Layer : 0
+	 Coor : 3634.53,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.Y8
+	 Layer : 0
+	 Coor : 3377.48,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.E31
+	 Layer : 0
+	 Coor : 3300.57,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL21
+	 Layer : 0
+	 Coor : 3879.43,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.B10
+	 Layer : 0
+	 Coor : 3838.11,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.T26
+	 Layer : 0
+	 Coor : 3545.47,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.K12
+	 Layer : 0
+	 Coor : 3633.39,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.N2
+	 Layer : 0
+	 Coor : 3556.61,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.F12
+	 Layer : 0
+	 Coor : 3322.83,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U19
+	 Layer : 0
+	 Coor : 3567.74,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.T4
+	 Layer : 0
+	 Coor : 3479.84,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.U11
+	 Layer : 0
+	 Coor : 3454.25,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AB14
+	 Layer : 0
+	 Coor : 3679.06,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.C10
+	 Layer : 0
+	 Coor : 3812.52,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AN13
+	 Layer : 0
+	 Coor : 3923.96,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF6
+	 Layer : 0
+	 Coor : 3768.11,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN9
+	 Layer : 0
+	 Coor : 3923.96,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W15
+	 Layer : 0
+	 Coor : 3612.26,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F30
+	 Layer : 0
+	 Coor : 3322.83,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.G27
+	 Layer : 0
+	 Coor : 3345.1,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.P4
+	 Layer : 0
+	 Coor : 3531.02,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AH28
+	 Layer : 0
+	 Coor : 3812.64,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J9
+	 Layer : 0
+	 Coor : 3389.63,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R29
+	 Layer : 0
+	 Coor : 3523.21,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R11
+	 Layer : 0
+	 Coor : 3523.21,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T30
+	 Layer : 0
+	 Coor : 3545.47,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR19
+	 Layer : 0
+	 Coor : 3968.48,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL27
+	 Layer : 0
+	 Coor : 3879.43,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP30
+	 Layer : 0
+	 Coor : 3946.22,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE17
+	 Layer : 0
+	 Coor : 3745.85,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN31
+	 Layer : 0
+	 Coor : 3923.96,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD32
+	 Layer : 0
+	 Coor : 3723.58,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R19
+	 Layer : 0
+	 Coor : 3523.21,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.F3
+	 Layer : 0
+	 Coor : 3735.75,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AC35
+	 Layer : 0
+	 Coor : 3701.32,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.C2
+	 Layer : 0
+	 Coor : 3812.52,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.V11
+	 Layer : 0
+	 Coor : 3428.66,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.AB1
+	 Layer : 0
+	 Coor : 3326.3,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AC15
+	 Layer : 0
+	 Coor : 3701.32,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T32
+	 Layer : 0
+	 Coor : 3545.47,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.B12
+	 Layer : 0
+	 Coor : 3233.78,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.T2
+	 Layer : 0
+	 Coor : 3479.84,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.G21
+	 Layer : 0
+	 Coor : 3345.1,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.P6
+	 Layer : 0
+	 Coor : 3500.94,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP20
+	 Layer : 0
+	 Coor : 3946.22,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.J3
+	 Layer : 0
+	 Coor : 3658.98,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AA3
+	 Layer : 0
+	 Coor : 3656.79,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.J1
+	 Layer : 0
+	 Coor : 3658.98,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1700.H9
+	 Layer : 0
+	 Coor : 3684.57,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AG33
+	 Layer : 0
+	 Coor : 3790.37,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M14
+	 Layer : 0
+	 Coor : 3456.42,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.V5
+	 Layer : 0
+	 Coor : 3428.66,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.C15
+	 Layer : 0
+	 Coor : 3256.04,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE13
+	 Layer : 0
+	 Coor : 3745.85,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.K6
+	 Layer : 0
+	 Coor : 3411.89,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K22
+	 Layer : 0
+	 Coor : 3411.89,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AC11
+	 Layer : 0
+	 Coor : 3701.32,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H10
+	 Layer : 0
+	 Coor : 3367.36,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.B2
+	 Layer : 0
+	 Coor : 3838.11,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AL23
+	 Layer : 0
+	 Coor : 3879.43,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.B11
+	 Layer : 0
+	 Coor : 3838.11,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AA35
+	 Layer : 0
+	 Coor : 3656.79,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N5
+	 Layer : 0
+	 Coor : 3478.68,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ25
+	 Layer : 0
+	 Coor : 3834.9,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.H20
+	 Layer : 0
+	 Coor : 3367.36,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F24
+	 Layer : 0
+	 Coor : 3322.83,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P2
+	 Layer : 0
+	 Coor : 3500.94,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H4
+	 Layer : 0
+	 Coor : 3367.36,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R17
+	 Layer : 0
+	 Coor : 3523.21,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U5
+	 Layer : 0
+	 Coor : 3567.74,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.U4
+	 Layer : 0
+	 Coor : 3454.25,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.N3
+	 Layer : 0
+	 Coor : 3478.68,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P26
+	 Layer : 0
+	 Coor : 3500.94,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF28
+	 Layer : 0
+	 Coor : 3768.11,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R15
+	 Layer : 0
+	 Coor : 3523.21,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.B20
+	 Layer : 0
+	 Coor : 3233.78,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L35
+	 Layer : 0
+	 Coor : 3434.15,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR31
+	 Layer : 0
+	 Coor : 3968.48,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U23
+	 Layer : 0
+	 Coor : 3567.74,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L31
+	 Layer : 0
+	 Coor : 3434.15,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD30
+	 Layer : 0
+	 Coor : 3723.58,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.D2
+	 Layer : 0
+	 Coor : 3278.31,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P30
+	 Layer : 0
+	 Coor : 3500.94,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.C5
+	 Layer : 0
+	 Coor : 3812.52,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.F34
+	 Layer : 0
+	 Coor : 3322.83,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V32
+	 Layer : 0
+	 Coor : 3590,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H6
+	 Layer : 0
+	 Coor : 3367.36,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H2
+	 Layer : 0
+	 Coor : 3367.36,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R9
+	 Layer : 0
+	 Coor : 3523.21,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.A4
+	 Layer : 0
+	 Coor : 3863.7,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AC33
+	 Layer : 0
+	 Coor : 3701.32,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.W5
+	 Layer : 0
+	 Coor : 3403.07,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1700.P11
+	 Layer : 0
+	 Coor : 3531.02,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.V1
+	 Layer : 0
+	 Coor : 3428.66,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AN33
+	 Layer : 0
+	 Coor : 3923.96,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.N11
+	 Layer : 0
+	 Coor : 3556.61,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AP28
+	 Layer : 0
+	 Coor : 3946.22,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.E35
+	 Layer : 0
+	 Coor : 3300.57,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AM14
+	 Layer : 0
+	 Coor : 3901.69,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.D16
+	 Layer : 0
+	 Coor : 3278.31,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M30
+	 Layer : 0
+	 Coor : 3456.42,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.W1
+	 Layer : 0
+	 Coor : 3403.07,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AB24
+	 Layer : 0
+	 Coor : 3679.06,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.C35
+	 Layer : 0
+	 Coor : 3256.04,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD8
+	 Layer : 0
+	 Coor : 3723.58,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK26
+	 Layer : 0
+	 Coor : 3857.17,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.P8
+	 Layer : 0
+	 Coor : 3531.02,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.A5
+	 Layer : 0
+	 Coor : 3863.7,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.P20
+	 Layer : 0
+	 Coor : 3500.94,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN1
+	 Layer : 0
+	 Coor : 3923.96,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.G25
+	 Layer : 0
+	 Coor : 3345.1,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL9
+	 Layer : 0
+	 Coor : 3879.43,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA27
+	 Layer : 0
+	 Coor : 3656.79,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.H24
+	 Layer : 0
+	 Coor : 3367.36,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA13
+	 Layer : 0
+	 Coor : 3656.79,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T24
+	 Layer : 0
+	 Coor : 3545.47,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB18
+	 Layer : 0
+	 Coor : 3679.06,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V22
+	 Layer : 0
+	 Coor : 3590,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.C3
+	 Layer : 0
+	 Coor : 3256.04,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR3
+	 Layer : 0
+	 Coor : 3968.48,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.U8
+	 Layer : 0
+	 Coor : 3454.25,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AM28
+	 Layer : 0
+	 Coor : 3901.69,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.C7
+	 Layer : 0
+	 Coor : 3256.04,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.C12
+	 Layer : 0
+	 Coor : 3812.52,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.D11
+	 Layer : 0
+	 Coor : 3786.93,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.G1
+	 Layer : 0
+	 Coor : 3710.16,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.W4
+	 Layer : 0
+	 Coor : 3403.07,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.C5
+	 Layer : 0
+	 Coor : 3256.04,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G5
+	 Layer : 0
+	 Coor : 3345.1,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.D30
+	 Layer : 0
+	 Coor : 3278.31,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN29
+	 Layer : 0
+	 Coor : 3923.96,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L25
+	 Layer : 0
+	 Coor : 3434.15,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.H1
+	 Layer : 0
+	 Coor : 3684.57,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.J3
+	 Layer : 0
+	 Coor : 3389.63,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.A2
+	 Layer : 0
+	 Coor : 3863.7,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AG19
+	 Layer : 0
+	 Coor : 3790.37,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP4
+	 Layer : 0
+	 Coor : 3946.22,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG15
+	 Layer : 0
+	 Coor : 3790.37,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G33
+	 Layer : 0
+	 Coor : 3345.1,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ29
+	 Layer : 0
+	 Coor : 3834.9,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF8
+	 Layer : 0
+	 Coor : 3768.11,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K20
+	 Layer : 0
+	 Coor : 3411.89,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB16
+	 Layer : 0
+	 Coor : 3679.06,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.G5
+	 Layer : 0
+	 Coor : 3710.16,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.W5
+	 Layer : 0
+	 Coor : 3612.26,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T2
+	 Layer : 0
+	 Coor : 3545.47,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA9
+	 Layer : 0
+	 Coor : 3656.79,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.W9
+	 Layer : 0
+	 Coor : 3403.07,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.G19
+	 Layer : 0
+	 Coor : 3345.1,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.F22
+	 Layer : 0
+	 Coor : 3322.83,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AM6
+	 Layer : 0
+	 Coor : 3901.69,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U29
+	 Layer : 0
+	 Coor : 3567.74,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H12
+	 Layer : 0
+	 Coor : 3367.36,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.T11
+	 Layer : 0
+	 Coor : 3479.84,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AR5
+	 Layer : 0
+	 Coor : 3968.48,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.H10
+	 Layer : 0
+	 Coor : 3684.57,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AR15
+	 Layer : 0
+	 Coor : 3968.48,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.B14
+	 Layer : 0
+	 Coor : 3233.78,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G7
+	 Layer : 0
+	 Coor : 3345.1,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V16
+	 Layer : 0
+	 Coor : 3590,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U35
+	 Layer : 0
+	 Coor : 3567.74,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.B26
+	 Layer : 0
+	 Coor : 3233.78,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP22
+	 Layer : 0
+	 Coor : 3946.22,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN35
+	 Layer : 0
+	 Coor : 3923.96,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U13
+	 Layer : 0
+	 Coor : 3567.74,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AB2
+	 Layer : 0
+	 Coor : 3326.3,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.D9
+	 Layer : 0
+	 Coor : 3786.93,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.C4
+	 Layer : 0
+	 Coor : 3812.52,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.U1
+	 Layer : 0
+	 Coor : 3454.25,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.C11
+	 Layer : 0
+	 Coor : 3256.04,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.K3
+	 Layer : 0
+	 Coor : 3633.39,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.C23
+	 Layer : 0
+	 Coor : 3256.04,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K24
+	 Layer : 0
+	 Coor : 3411.89,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N17
+	 Layer : 0
+	 Coor : 3478.68,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K28
+	 Layer : 0
+	 Coor : 3411.89,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N27
+	 Layer : 0
+	 Coor : 3478.68,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y20
+	 Layer : 0
+	 Coor : 3634.53,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V2
+	 Layer : 0
+	 Coor : 3590,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH22
+	 Layer : 0
+	 Coor : 3812.64,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J25
+	 Layer : 0
+	 Coor : 3389.63,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.K9
+	 Layer : 0
+	 Coor : 3633.39,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AP12
+	 Layer : 0
+	 Coor : 3946.22,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.H3
+	 Layer : 0
+	 Coor : 3684.57,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.A31
+	 Layer : 0
+	 Coor : 3211.52,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.W10
+	 Layer : 0
+	 Coor : 3403.07,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.T8
+	 Layer : 0
+	 Coor : 3545.47,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.H2
+	 Layer : 0
+	 Coor : 3684.57,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.B24
+	 Layer : 0
+	 Coor : 3233.78,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H16
+	 Layer : 0
+	 Coor : 3367.36,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.D22
+	 Layer : 0
+	 Coor : 3278.31,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.E29
+	 Layer : 0
+	 Coor : 3300.57,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.V9
+	 Layer : 0
+	 Coor : 3428.66,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.N25
+	 Layer : 0
+	 Coor : 3478.68,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W17
+	 Layer : 0
+	 Coor : 3612.26,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.A17
+	 Layer : 0
+	 Coor : 3211.52,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J27
+	 Layer : 0
+	 Coor : 3389.63,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK22
+	 Layer : 0
+	 Coor : 3857.17,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG35
+	 Layer : 0
+	 Coor : 3790.37,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK4
+	 Layer : 0
+	 Coor : 3857.17,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V10
+	 Layer : 0
+	 Coor : 3590,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.C29
+	 Layer : 0
+	 Coor : 3256.04,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK20
+	 Layer : 0
+	 Coor : 3857.17,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.K4
+	 Layer : 0
+	 Coor : 3411.89,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.F4
+	 Layer : 0
+	 Coor : 3735.75,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.D1
+	 Layer : 0
+	 Coor : 3786.93,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.E33
+	 Layer : 0
+	 Coor : 3300.57,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR9
+	 Layer : 0
+	 Coor : 3968.48,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F28
+	 Layer : 0
+	 Coor : 3322.83,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.A7
+	 Layer : 0
+	 Coor : 3211.52,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.R12
+	 Layer : 0
+	 Coor : 3505.43,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.H18
+	 Layer : 0
+	 Coor : 3367.36,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y30
+	 Layer : 0
+	 Coor : 3634.53,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.K4
+	 Layer : 0
+	 Coor : 3633.39,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AM16
+	 Layer : 0
+	 Coor : 3901.69,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.B34
+	 Layer : 0
+	 Coor : 3233.78,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA11
+	 Layer : 0
+	 Coor : 3656.79,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AC3
+	 Layer : 0
+	 Coor : 3701.32,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR23
+	 Layer : 0
+	 Coor : 3968.48,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R33
+	 Layer : 0
+	 Coor : 3523.21,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V30
+	 Layer : 0
+	 Coor : 3590,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB28
+	 Layer : 0
+	 Coor : 3679.06,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AB8
+	 Layer : 0
+	 Coor : 3326.3,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.E13
+	 Layer : 0
+	 Coor : 3300.57,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.W1
+	 Layer : 0
+	 Coor : 3612.26,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH8
+	 Layer : 0
+	 Coor : 3812.64,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.D4
+	 Layer : 0
+	 Coor : 3786.93,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.T1
+	 Layer : 0
+	 Coor : 3479.84,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AJ11
+	 Layer : 0
+	 Coor : 3834.9,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.Y3
+	 Layer : 0
+	 Coor : 3377.48,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.L15
+	 Layer : 0
+	 Coor : 3434.15,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG25
+	 Layer : 0
+	 Coor : 3790.37,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.E9
+	 Layer : 0
+	 Coor : 3761.34,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.C27
+	 Layer : 0
+	 Coor : 3256.04,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.A15
+	 Layer : 0
+	 Coor : 3211.52,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.T9
+	 Layer : 0
+	 Coor : 3479.84,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.V4
+	 Layer : 0
+	 Coor : 3428.66,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.AA4
+	 Layer : 0
+	 Coor : 3351.89,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.E1
+	 Layer : 0
+	 Coor : 3761.34,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.W2
+	 Layer : 0
+	 Coor : 3403.07,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.T18
+	 Layer : 0
+	 Coor : 3545.47,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH24
+	 Layer : 0
+	 Coor : 3812.64,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W21
+	 Layer : 0
+	 Coor : 3612.26,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.U2
+	 Layer : 0
+	 Coor : 3454.25,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.P10
+	 Layer : 0
+	 Coor : 3531.02,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AB2
+	 Layer : 0
+	 Coor : 3679.06,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ9
+	 Layer : 0
+	 Coor : 3834.9,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK2
+	 Layer : 0
+	 Coor : 3857.17,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF10
+	 Layer : 0
+	 Coor : 3768.11,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN5
+	 Layer : 0
+	 Coor : 3923.96,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.Y1
+	 Layer : 0
+	 Coor : 3377.48,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AH4
+	 Layer : 0
+	 Coor : 3812.64,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AM32
+	 Layer : 0
+	 Coor : 3901.69,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W11
+	 Layer : 0
+	 Coor : 3612.26,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AA5
+	 Layer : 0
+	 Coor : 3351.89,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AJ35
+	 Layer : 0
+	 Coor : 3834.9,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK30
+	 Layer : 0
+	 Coor : 3857.17,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL29
+	 Layer : 0
+	 Coor : 3879.43,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.B10
+	 Layer : 0
+	 Coor : 3233.78,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.B9
+	 Layer : 0
+	 Coor : 3838.11,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.U9
+	 Layer : 0
+	 Coor : 3454.25,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.N29
+	 Layer : 0
+	 Coor : 3478.68,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH26
+	 Layer : 0
+	 Coor : 3812.64,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.E17
+	 Layer : 0
+	 Coor : 3300.57,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.N3
+	 Layer : 0
+	 Coor : 3556.61,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.Y18
+	 Layer : 0
+	 Coor : 3634.53,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K18
+	 Layer : 0
+	 Coor : 3411.89,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AC31
+	 Layer : 0
+	 Coor : 3701.32,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H34
+	 Layer : 0
+	 Coor : 3367.36,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P32
+	 Layer : 0
+	 Coor : 3500.94,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.A3
+	 Layer : 0
+	 Coor : 3863.7,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.AA12
+	 Layer : 0
+	 Coor : 3351.89,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AL5
+	 Layer : 0
+	 Coor : 3879.43,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AM2
+	 Layer : 0
+	 Coor : 3901.69,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.N4
+	 Layer : 0
+	 Coor : 3556.61,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.E3
+	 Layer : 0
+	 Coor : 3761.34,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AD4
+	 Layer : 0
+	 Coor : 3723.58,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G9
+	 Layer : 0
+	 Coor : 3345.1,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.B18
+	 Layer : 0
+	 Coor : 3233.78,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG23
+	 Layer : 0
+	 Coor : 3790.37,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M28
+	 Layer : 0
+	 Coor : 3456.42,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ3
+	 Layer : 0
+	 Coor : 3834.9,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J35
+	 Layer : 0
+	 Coor : 3389.63,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.A13
+	 Layer : 0
+	 Coor : 3211.52,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.V12
+	 Layer : 0
+	 Coor : 3428.66,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AK16
+	 Layer : 0
+	 Coor : 3857.17,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.Y11
+	 Layer : 0
+	 Coor : 3377.48,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1700.Y10
+	 Layer : 0
+	 Coor : 3377.48,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.L3
+	 Layer : 0
+	 Coor : 3434.15,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL1
+	 Layer : 0
+	 Coor : 3879.43,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M12
+	 Layer : 0
+	 Coor : 3456.42,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.A11
+	 Layer : 0
+	 Coor : 3211.52,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR17
+	 Layer : 0
+	 Coor : 3968.48,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.E15
+	 Layer : 0
+	 Coor : 3300.57,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L29
+	 Layer : 0
+	 Coor : 3434.15,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N21
+	 Layer : 0
+	 Coor : 3478.68,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.K11
+	 Layer : 0
+	 Coor : 3633.39,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.N1
+	 Layer : 0
+	 Coor : 3556.61,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AC25
+	 Layer : 0
+	 Coor : 3701.32,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.A9
+	 Layer : 0
+	 Coor : 3211.52,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ31
+	 Layer : 0
+	 Coor : 3834.9,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.H26
+	 Layer : 0
+	 Coor : 3367.36,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.AJ5
+	 Layer : 0
+	 Coor : 3834.9,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.W31
+	 Layer : 0
+	 Coor : 3612.26,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF34
+	 Layer : 0
+	 Coor : 3768.11,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL3
+	 Layer : 0
+	 Coor : 3879.43,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.P3
+	 Layer : 0
+	 Coor : 3531.02,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.AB12
+	 Layer : 0
+	 Coor : 3326.3,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.Y12
+	 Layer : 0
+	 Coor : 3634.53,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ27
+	 Layer : 0
+	 Coor : 3834.9,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.P2
+	 Layer : 0
+	 Coor : 3531.02,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.M4
+	 Layer : 0
+	 Coor : 3456.42,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK12
+	 Layer : 0
+	 Coor : 3857.17,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.F10
+	 Layer : 0
+	 Coor : 3735.75,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.T10
+	 Layer : 0
+	 Coor : 3479.84,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.P22
+	 Layer : 0
+	 Coor : 3500.94,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G35
+	 Layer : 0
+	 Coor : 3345.1,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N33
+	 Layer : 0
+	 Coor : 3478.68,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L33
+	 Layer : 0
+	 Coor : 3434.15,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG27
+	 Layer : 0
+	 Coor : 3790.37,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R1
+	 Layer : 0
+	 Coor : 3523.21,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH10
+	 Layer : 0
+	 Coor : 3812.64,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.W7
+	 Layer : 0
+	 Coor : 3612.26,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T28
+	 Layer : 0
+	 Coor : 3545.47,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.U5
+	 Layer : 0
+	 Coor : 3454.25,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AG13
+	 Layer : 0
+	 Coor : 3790.37,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V6
+	 Layer : 0
+	 Coor : 3590,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M2
+	 Layer : 0
+	 Coor : 3456.42,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.B6
+	 Layer : 0
+	 Coor : 3233.78,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA15
+	 Layer : 0
+	 Coor : 3656.79,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.E5
+	 Layer : 0
+	 Coor : 3761.34,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.N31
+	 Layer : 0
+	 Coor : 3478.68,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE1
+	 Layer : 0
+	 Coor : 3745.85,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.G13
+	 Layer : 0
+	 Coor : 3345.1,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y34
+	 Layer : 0
+	 Coor : 3634.53,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.N12
+	 Layer : 0
+	 Coor : 3556.61,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AG31
+	 Layer : 0
+	 Coor : 3790.37,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AM30
+	 Layer : 0
+	 Coor : 3901.69,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.B3
+	 Layer : 0
+	 Coor : 3838.11,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AJ13
+	 Layer : 0
+	 Coor : 3834.9,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR25
+	 Layer : 0
+	 Coor : 3968.48,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.J2
+	 Layer : 0
+	 Coor : 3658.98,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AM8
+	 Layer : 0
+	 Coor : 3901.69,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N23
+	 Layer : 0
+	 Coor : 3478.68,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.B2
+	 Layer : 0
+	 Coor : 3233.78,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.K2
+	 Layer : 0
+	 Coor : 3411.89,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK8
+	 Layer : 0
+	 Coor : 3857.17,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T10
+	 Layer : 0
+	 Coor : 3545.47,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.A1
+	 Layer : 0
+	 Coor : 3863.7,1448.97
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.D8
+	 Layer : 0
+	 Coor : 3278.31,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP34
+	 Layer : 0
+	 Coor : 3946.22,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB32
+	 Layer : 0
+	 Coor : 3679.06,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP10
+	 Layer : 0
+	 Coor : 3946.22,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.T12
+	 Layer : 0
+	 Coor : 3545.47,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB26
+	 Layer : 0
+	 Coor : 3679.06,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AC17
+	 Layer : 0
+	 Coor : 3701.32,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.K8
+	 Layer : 0
+	 Coor : 3633.39,1228.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.D26
+	 Layer : 0
+	 Coor : 3278.31,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.C33
+	 Layer : 0
+	 Coor : 3256.04,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R31
+	 Layer : 0
+	 Coor : 3523.21,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN11
+	 Layer : 0
+	 Coor : 3923.96,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK14
+	 Layer : 0
+	 Coor : 3857.17,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.P9
+	 Layer : 0
+	 Coor : 3531.02,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.C1
+	 Layer : 0
+	 Coor : 3256.04,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.B30
+	 Layer : 0
+	 Coor : 3233.78,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V18
+	 Layer : 0
+	 Coor : 3590,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.E27
+	 Layer : 0
+	 Coor : 3300.57,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN7
+	 Layer : 0
+	 Coor : 3923.96,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP18
+	 Layer : 0
+	 Coor : 3946.22,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V20
+	 Layer : 0
+	 Coor : 3590,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA1
+	 Layer : 0
+	 Coor : 3656.79,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AK24
+	 Layer : 0
+	 Coor : 3857.17,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ21
+	 Layer : 0
+	 Coor : 3834.9,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J31
+	 Layer : 0
+	 Coor : 3389.63,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.A21
+	 Layer : 0
+	 Coor : 3211.52,2362.53
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L1
+	 Layer : 0
+	 Coor : 3434.15,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.E19
+	 Layer : 0
+	 Coor : 3300.57,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB22
+	 Layer : 0
+	 Coor : 3679.06,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.F12
+	 Layer : 0
+	 Coor : 3735.75,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.K8
+	 Layer : 0
+	 Coor : 3411.89,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.D14
+	 Layer : 0
+	 Coor : 3278.31,2206.68
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.N7
+	 Layer : 0
+	 Coor : 3478.68,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y16
+	 Layer : 0
+	 Coor : 3634.53,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.B12
+	 Layer : 0
+	 Coor : 3838.11,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AE9
+	 Layer : 0
+	 Coor : 3745.85,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F10
+	 Layer : 0
+	 Coor : 3322.83,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB30
+	 Layer : 0
+	 Coor : 3679.06,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL13
+	 Layer : 0
+	 Coor : 3879.43,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH12
+	 Layer : 0
+	 Coor : 3812.64,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.C19
+	 Layer : 0
+	 Coor : 3256.04,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.K30
+	 Layer : 0
+	 Coor : 3411.89,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J23
+	 Layer : 0
+	 Coor : 3389.63,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN17
+	 Layer : 0
+	 Coor : 3923.96,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF30
+	 Layer : 0
+	 Coor : 3768.11,2562.91
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.N5
+	 Layer : 0
+	 Coor : 3556.61,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.J1
+	 Layer : 0
+	 Coor : 3389.63,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AM20
+	 Layer : 0
+	 Coor : 3901.69,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J29
+	 Layer : 0
+	 Coor : 3389.63,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L9
+	 Layer : 0
+	 Coor : 3434.15,2095.37
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF32
+	 Layer : 0
+	 Coor : 3768.11,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.D5
+	 Layer : 0
+	 Coor : 3786.93,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.W33
+	 Layer : 0
+	 Coor : 3612.26,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.L5
+	 Layer : 0
+	 Coor : 3434.15,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA29
+	 Layer : 0
+	 Coor : 3656.79,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.U3
+	 Layer : 0
+	 Coor : 3454.25,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.M24
+	 Layer : 0
+	 Coor : 3456.42,2429.32
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F6
+	 Layer : 0
+	 Coor : 3322.83,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AD2
+	 Layer : 0
+	 Coor : 3723.58,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.R27
+	 Layer : 0
+	 Coor : 3523.21,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.C11
+	 Layer : 0
+	 Coor : 3812.52,1134.01
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.V4
+	 Layer : 0
+	 Coor : 3590,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.C13
+	 Layer : 0
+	 Coor : 3256.04,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AA3
+	 Layer : 0
+	 Coor : 3351.89,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.B5
+	 Layer : 0
+	 Coor : 3838.11,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AB8
+	 Layer : 0
+	 Coor : 3679.06,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF16
+	 Layer : 0
+	 Coor : 3768.11,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP2
+	 Layer : 0
+	 Coor : 3946.22,1939.52
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.R2
+	 Layer : 0
+	 Coor : 3505.43,1417.47
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.G4
+	 Layer : 0
+	 Coor : 3710.16,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1700.N9
+	 Layer : 0
+	 Coor : 3556.61,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.R7
+	 Layer : 0
+	 Coor : 3523.21,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.Y6
+	 Layer : 0
+	 Coor : 3634.53,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AC13
+	 Layer : 0
+	 Coor : 3701.32,2184.42
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AF12
+	 Layer : 0
+	 Coor : 3768.11,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.F20
+	 Layer : 0
+	 Coor : 3322.83,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AN15
+	 Layer : 0
+	 Coor : 3923.96,2228.95
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U25
+	 Layer : 0
+	 Coor : 3567.74,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.H32
+	 Layer : 0
+	 Coor : 3367.36,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB20
+	 Layer : 0
+	 Coor : 3679.06,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.U10
+	 Layer : 0
+	 Coor : 3454.25,1165.5
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AL19
+	 Layer : 0
+	 Coor : 3879.43,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.F26
+	 Layer : 0
+	 Coor : 3322.83,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J19
+	 Layer : 0
+	 Coor : 3389.63,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.J5
+	 Layer : 0
+	 Coor : 3389.63,2006.31
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.E3
+	 Layer : 0
+	 Coor : 3300.57,1961.78
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M26
+	 Layer : 0
+	 Coor : 3456.42,2473.85
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE23
+	 Layer : 0
+	 Coor : 3745.85,2407.06
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U31
+	 Layer : 0
+	 Coor : 3567.74,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.D12
+	 Layer : 0
+	 Coor : 3278.31,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.L27
+	 Layer : 0
+	 Coor : 3434.15,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.R3
+	 Layer : 0
+	 Coor : 3505.43,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AL17
+	 Layer : 0
+	 Coor : 3879.43,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.T12
+	 Layer : 0
+	 Coor : 3479.84,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AM18
+	 Layer : 0
+	 Coor : 3901.69,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR7
+	 Layer : 0
+	 Coor : 3968.48,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH34
+	 Layer : 0
+	 Coor : 3812.64,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AA9
+	 Layer : 0
+	 Coor : 3351.89,1197
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.G11
+	 Layer : 0
+	 Coor : 3345.1,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AJ1
+	 Layer : 0
+	 Coor : 3834.9,1917.26
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.C3
+	 Layer : 0
+	 Coor : 3812.52,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AL11
+	 Layer : 0
+	 Coor : 3879.43,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.AB5
+	 Layer : 0
+	 Coor : 3326.3,1322.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AF22
+	 Layer : 0
+	 Coor : 3768.11,2384.8
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AG7
+	 Layer : 0
+	 Coor : 3790.37,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.U17
+	 Layer : 0
+	 Coor : 3567.74,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH20
+	 Layer : 0
+	 Coor : 3812.64,2340.27
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.A27
+	 Layer : 0
+	 Coor : 3211.52,2496.11
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AP32
+	 Layer : 0
+	 Coor : 3946.22,2607.43
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AA7
+	 Layer : 0
+	 Coor : 3656.79,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.E11
+	 Layer : 0
+	 Coor : 3300.57,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH18
+	 Layer : 0
+	 Coor : 3812.64,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.M6
+	 Layer : 0
+	 Coor : 3456.42,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.B4
+	 Layer : 0
+	 Coor : 3838.11,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AE25
+	 Layer : 0
+	 Coor : 3745.85,2451.59
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P4
+	 Layer : 0
+	 Coor : 3500.94,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.C17
+	 Layer : 0
+	 Coor : 3256.04,2273.48
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH6
+	 Layer : 0
+	 Coor : 3812.64,2028.57
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.D3
+	 Layer : 0
+	 Coor : 3786.93,1385.98
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.AD12
+	 Layer : 0
+	 Coor : 3723.58,2162.16
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE29
+	 Layer : 0
+	 Coor : 3745.85,2540.64
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AL35
+	 Layer : 0
+	 Coor : 3879.43,2674.22
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB34
+	 Layer : 0
+	 Coor : 3679.06,2651.96
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AH16
+	 Layer : 0
+	 Coor : 3812.64,2251.21
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AB10
+	 Layer : 0
+	 Coor : 3679.06,2117.63
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.V8
+	 Layer : 0
+	 Coor : 3590,2073.1
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1000.L7
+	 Layer : 0
+	 Coor : 3434.15,2050.84
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P18
+	 Layer : 0
+	 Coor : 3500.94,2295.74
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.P28
+	 Layer : 0
+	 Coor : 3500.94,2518.38
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1700.W12
+	 Layer : 0
+	 Coor : 3403.07,1102.51
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+PinPad : IC1000.D4
+	 Layer : 0
+	 Coor : 3278.31,1984.05
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AR11
+	 Layer : 0
+	 Coor : 3968.48,2139.89
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.AE33
+	 Layer : 0
+	 Coor : 3745.85,2629.7
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+PinPad : IC1700.J4
+	 Layer : 0
+	 Coor : 3658.98,1354.48
+	 Type : KM0P325C
+		 Width : 0.325
+		 Height : 0.325
+ObsPad : IC1000.C31
+	 Layer : 0
+	 Coor : 3256.04,2585.17
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+ObsPad : IC1000.N19
+	 Layer : 0
+	 Coor : 3478.68,2318
+	 Type : KM0P4C
+		 Width : 0.4
+		 Height : 0.4
+MAX_LAYER: 6
+{'BOTTOM': 5, 'S3': 1, 'S6': 4, 'TOP': 0, 'S4': 2, 'S5': 3}

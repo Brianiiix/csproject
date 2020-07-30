@@ -1,0 +1,21 @@
+FileName: 1.brd.txt
+Region_Ext_Left: 3
+Region_Ext_Right: 3
+Region_Ext_Top: 3
+Region_Ext_Bot: 3
+Skip_Net: 
+USED_LAYER: 2
+CUT_SIZE: 25
+MIN_SPACING: 300
+WIRE_WIDTH: 300
+Complex_Routing_Net: 
+MaxSAT_ub: 10
+OutputName: 1_brd
+DivideTech: 1
+DivideProcess: LEFT
+HOR_Cutline: 1617
+Top_Ver_Cutline: 3546
+Bot_Ver_Cutline: 3578
+CPU_Name: U45.
+Group_Name: U61. U109.
+Direction: H H
