@@ -9,7 +9,22 @@ struct pinpair{
     int second_y;
 };
 
-list findboundary(vector<pinpair> &pp, int num)
+struct boundary{
+    int top;
+    int down;
+    int left;
+    int right;
+};
+
+int exactgrid(int a, int unit)
+{
+    if(a-(a/unit*unit) > (unit/2) || a-(a/unit*unit) < -(unit/2))
+        return (a/unit+1)*unit;
+    else
+        return a/unit*unit;
+}
+
+boundary findboundary(vector<pinpair> &pp, int num)
 {
     int top = 0;
     int down = INT_MAX;
@@ -24,7 +39,7 @@ list findboundary(vector<pinpair> &pp, int num)
             right = (pp[i].first_x > right) ? pp[i].first_x : right;
         }
     }
-    else{
+    if(num == 2){
         for(int i = 0; i < pp.size(); i++)
         {
             top = (pp[i].second_y > top) ? pp[i].second_y : top;
@@ -33,5 +48,10 @@ list findboundary(vector<pinpair> &pp, int num)
             right = (pp[i].second_x > right) ? pp[i].second_x : right;
         }
     }
-    
+    boundary b;
+    b.top = top;
+    b.down = down;
+    b.left = left;
+    b.right = right;
+    return b;
 }
