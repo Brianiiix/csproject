@@ -12,6 +12,7 @@
 #include "IO_interface.hpp"
 #include "output_gds.hpp"
 #include "initVar.hpp"
+#include "gridUnit.hpp"
 
 using namespace std;
 
@@ -490,18 +491,19 @@ int main(int argc, const char * argv[]) {
 
     vector<pinpair> pp;
     pp.resize(net.size());
+    int GU = findType("./case/1.brd_input.pCSet" , "DEFAULT", "./case/1.brd_input.sCSet", "DEFAULT");// Unit of grid, default : 800
         
     for(int i = 0; i < net.size(); i++){
         printf("Net %d : \n",i);
         for(int j = 0; j < net.at(i).size(); j++){
             printf("    %s (%d,%d)\n",pin.at(net.at(i).at(j)).name.c_str(),pin.at(net.at(i).at(j)).x,pin.at(net.at(i).at(j)).y);
             if(j==0){
-                pp[i].first_x = exactgrid(pin.at(net.at(i).at(j)).x, 800);
-                pp[i].first_y = exactgrid(pin.at(net.at(i).at(j)).y, 800);
+                pp[i].first_x = exactgrid(pin.at(net.at(i).at(j)).x, GU);
+                pp[i].first_y = exactgrid(pin.at(net.at(i).at(j)).y, GU);
             }
             else{
-                pp[i].second_x = exactgrid(pin.at(net.at(i).at(j)).x, 800);
-                pp[i].second_y = exactgrid(pin.at(net.at(i).at(j)).y, 800);
+                pp[i].second_x = exactgrid(pin.at(net.at(i).at(j)).x, GU);
+                pp[i].second_y = exactgrid(pin.at(net.at(i).at(j)).y, GU);
             }
         }
     }
@@ -512,25 +514,59 @@ int main(int argc, const char * argv[]) {
         std::cout << pp[i].first_x << ' ' << pp[i].first_y << ' ' << pp[i].second_x << ' ' << pp[i].second_y << std::endl;
     }
         
-        boundary set1, set2;
-        set1 = findboundary(pp, 1);
-        set2 = findboundary(pp, 2);
-            cout<<"boundary:"<<endl;
-            cout<<set1.top/800<<' '<<set1.down/800<<' '<<set1.left/800<<' '<<set1.right/800<<endl;
-            cout<<set2.top/800<<' '<<set2.down/800<<' '<<set2.left/800<<' '<<set2.right/800<<endl;
-        vector <Node> node;
-        node.resize(((set1.top/800)-(set1.down/800)+1)*((set1.right/800)-(set1.left/800)+1));
-        for(int i = 0; i < node.size(); i++)
-        {
-            
+    vector<boundary> set;
+    set.resize(static_cast<int>(cfig.group_name.size() + 1));
+    for(int i = 0; i < cfig.group_name.size() + 1; i++){
+        set.at(i) = findboundary(pp, i+1);
+        cout<<"boundary "<< i << endl
+            <<set.at(i).top/GU<<' '<<set.at(i).down/GU<<' '<<set.at(i).left/GU<<' '<<set.at(i).right/GU<<endl;//
+        // extra 1 space for slots !!!
+        set.at(i).setUp(set.at(i).top + GU, set.at(i).down - GU, set.at(i).left - GU, set.at(i).right + GU);
+    }
+
+    // grid map declared here
+    // many m x n 2D vector of vector
+    vector<vector <vector<Node> > > node;
+    // +1 is for CPU name and node[0] is CPU
+    node.resize(static_cast<int>(cfig.group_name.size() + 1));
+    for(int i = 0; i < cfig.group_name.size() + 1; i++){
+        // row and column here content only pins, so - 2 slots/fanout_nodes
+        int row = (set.at(i).top/GU)-(set.at(i).down/GU)+1-2, column = (set.at(i).right/GU)-(set.at(i).left/GU)+1-2;
+        // pin + edge(pin * 2 - 1) + slot/fanout_node(2) = pin * 2 + 1
+        node.at(i).resize(row * 2 + 1, vector<Node>(column * 2 + 1));
+        cout << "---size of grid map "<< i <<" is " << row * 2 + 1 << " x " << column * 2 + 1 << "---" << endl;//
+        for(int j = 0; j < static_cast<int>(node.at(i).size()); j++){
+            for(int k = 0; k < static_cast<int>(node.at(i).at(0).size()); k++){
+                // set x and y coor
+                node.at(i).at(j).at(k).SetUp(set.at(i).left / 100 + k * GU / 100, set.at(i).top / 100 - j * GU / 100);
+                // 4 vertexes of grip map have nothing
+                if((j == 0 || j == static_cast<int>(node.at(i).size() - 1)) && (k == 0 || k == static_cast<int>(node.at(i).at(0).size() - 1))){
+                    node.at(i).at(j).at(k).type = 'X';
+                // Slot
+                }else if(j == 0 || k == 0 || j == static_cast<int>(node.at(i).size() - 1) || k == static_cast<int>(node.at(i).at(0).size() - 1)){
+                    node.at(i).at(j).at(k).type = 'S';
+                // Edge
+                }else{
+                    node.at(i).at(j).at(k).type = 'E';
+                }
+            }
         }
-        
-        
-        
-        
-        
-        
-        
+                // Pin *2 group only*
+        if(i == 0){
+            for(int j = 0; j < pp.size(); j++){
+                cout << "coor of the pin is (" << (pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1
+                     << "," << ((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1 << ")" << endl;//
+                // top/GU-1 and left/GU+1 to elim slots
+                node.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
+            }
+        }else if(i == 1){
+            for(int j = 0; j < pp.size(); j++){
+                cout << "coor of the pin is (" << (pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1
+                     << "," << ((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1 << ")" << endl;//
+                node.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
+            }
+        }
+    }        
 }
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
