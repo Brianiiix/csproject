@@ -258,7 +258,6 @@ int main(int argc, const char * argv[]) {
     cfig.load_config("config/config_1_1.txt");
 
     string obs_name = "case/1.brd";
-        //wefewf
     cfig.load_config(obs_name+".obs");
 
     vector<Line_Box> outputedge;
