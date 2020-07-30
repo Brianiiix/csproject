@@ -1,4 +1,4 @@
-CXX	=	g++ -std=c++11 -O2
+CXX	=	g++ -std=c++17 -O2
 EXE = input2sat
 
 all: $(EXE)
