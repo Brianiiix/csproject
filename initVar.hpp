@@ -16,6 +16,12 @@ struct boundary{
     int down;
     int left;
     int right;
+    void setUp(int _top, int _down, int _left, int _right){
+        top = _top;
+        down = _down;
+        left = _left;
+        right = _right;
+    }
 };
 
 int exactgrid(int a, int unit)
