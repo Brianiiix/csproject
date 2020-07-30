@@ -255,9 +255,9 @@ int main(int argc, const char * argv[]) {
     int total_net_num = 0;
     clock_t tStart = clock();
     config cfig;
-    cfig.load_config(argv[2]);
+    cfig.load_config("config/config_1_1.txt");
 
-    string obs_name = argv[3];
+    string obs_name = "case/1.brd";
     cfig.load_config(obs_name+".obs");
 
     vector<Line_Box> outputedge;
@@ -281,7 +281,7 @@ int main(int argc, const char * argv[]) {
     ifstream fin;
     string line;
     ofstream foutput,goutput;
-    fin.open(argv[1], ios::in);
+    fin.open("case/1.brd_input.netlist", ios::in);
     foutput.open("board.txt",ios::out);
 
     int pinx,piny;
@@ -483,7 +483,7 @@ int main(int argc, const char * argv[]) {
     }
     fin.close();
 
-    printf("Loading Input End. #Nets : %d\n", net.size());
+    printf("Loading Input End. #Nets : %lu\n", net.size());
     if (net.size() == 0)
         continue;
 
@@ -504,7 +504,7 @@ int main(int argc, const char * argv[]) {
         outputpin.push_back(temp);
     }
 
-    string layout_name = argv[3];
+    string layout_name = "case/1.brd";
     outputGDS(layout_name, outputpin, outputedge, crossing_line_total);
 
     return 0;
