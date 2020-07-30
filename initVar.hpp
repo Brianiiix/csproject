@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <limits.h>
+#include <vector>
+using namespace std;
 
 struct pinpair{
     int first_x;
