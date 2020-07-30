@@ -11,6 +11,7 @@
 #include "board.h"
 #include "IO_interface.hpp"
 #include "output_gds.hpp"
+#include "initVar.hpp"
 
 using namespace std;
 
@@ -487,14 +488,29 @@ int main(int argc, const char * argv[]) {
     if (net.size() == 0)
         continue;
 
+    vector<pinpair> pp;
+    pp.resize(net.size());
+        
     for(int i = 0; i < net.size(); i++){
         printf("Net %d : \n",i);
         for(int j = 0; j < net.at(i).size(); j++){
             printf("    %s (%d,%d)\n",pin.at(net.at(i).at(j)).name.c_str(),pin.at(net.at(i).at(j)).x,pin.at(net.at(i).at(j)).y);
+            if(j==0){
+                pp[i].first_x = pin.at(net.at(i).at(j)).x;
+                pp[i].first_y = pin.at(net.at(i).at(j)).y;
+            }
+            else{
+                pp[i].second_x = pin.at(net.at(i).at(j)).x;
+                pp[i].second_y = pin.at(net.at(i).at(j)).y;
+            }
         }
     }
 
+    for(int i=0; i < net.size(); i++)
+    {
+        std::cout << pp[i].first_x << ' ' << pp[i].first_y << ' ' << pp[i].second_x << ' ' << pp[i].second_y << std::endl;
     }
+}
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
         OutputRect temp;
