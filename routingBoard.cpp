@@ -496,20 +496,28 @@ int main(int argc, const char * argv[]) {
         for(int j = 0; j < net.at(i).size(); j++){
             printf("    %s (%d,%d)\n",pin.at(net.at(i).at(j)).name.c_str(),pin.at(net.at(i).at(j)).x,pin.at(net.at(i).at(j)).y);
             if(j==0){
-                pp[i].first_x = pin.at(net.at(i).at(j)).x;
-                pp[i].first_y = pin.at(net.at(i).at(j)).y;
+                pp[i].first_x = exactgrid(pin.at(net.at(i).at(j)).x);
+                pp[i].first_y = exactgrid(pin.at(net.at(i).at(j)).y);
             }
             else{
-                pp[i].second_x = pin.at(net.at(i).at(j)).x;
-                pp[i].second_y = pin.at(net.at(i).at(j)).y;
+                pp[i].second_x = exactgrid(pin.at(net.at(i).at(j)).x);
+                pp[i].second_y = exactgrid(pin.at(net.at(i).at(j)).y);
             }
         }
     }
-
+    
+        
     for(int i=0; i < net.size(); i++)
     {
         std::cout << pp[i].first_x << ' ' << pp[i].first_y << ' ' << pp[i].second_x << ' ' << pp[i].second_y << std::endl;
     }
+        
+        boundary set1, set2;
+        set1 = findboundary(pp, 1);
+        set2 = findboundary(pp, 2);
+            cout<<"boundary:"<<endl;
+            cout<<set1.top<<' '<<set1.down<<' '<<set1.left<<' '<<set1.right<<endl;
+            cout<<set2.top<<' '<<set2.down<<' '<<set2.left<<' '<<set2.right<<endl;
 }
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
