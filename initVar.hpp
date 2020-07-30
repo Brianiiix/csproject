@@ -18,7 +18,10 @@ struct boundary{
 
 int exactgrid(int a, int unit)
 {
-    return a/unit*unit;
+    if(a-(a/unit*unit) > (unit/2) || a-(a/unit*unit) < -(unit/2))
+        return (a/unit+1)*unit;
+    else
+        return a/unit*unit;
 }
 
 boundary findboundary(vector<pinpair> &pp, int num)
