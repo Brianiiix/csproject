@@ -16,9 +16,9 @@ struct boundary{
     int right;
 };
 
-int exactgrid(int a)
+int exactgrid(int a, int unit)
 {
-    return a/800*800;
+    return a/unit*unit;
 }
 
 boundary findboundary(vector<pinpair> &pp, int num)
