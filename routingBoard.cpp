@@ -535,20 +535,29 @@ int main(int argc, const char * argv[]) {
         // pin + edge(pin * 2 - 1) + slot/fanout_node(2) = pin * 2 + 1
         node.at(i).resize(row * 2 + 1, vector<Node>(column * 2 + 1));
         cout << "---size of grid map "<< i <<" is " << row * 2 + 1 << " x " << column * 2 + 1 << "---" << endl;//
+        int var_id_counter = 0;
         for(int j = 0; j < static_cast<int>(node.at(i).size()); j++){
             for(int k = 0; k < static_cast<int>(node.at(i).at(0).size()); k++){
-                // set x and y coor
+                // set x and y coor (origin is at top-left)
                 node.at(i).at(j).at(k).SetUp(set.at(i).left / 100 + k * GU / 100, set.at(i).top / 100 - j * GU / 100);
-                // 4 vertexes of grip map have nothing
+                // default : 4 vertexes of grip map and (x,y)=(even,even) have nothing
                 if((j == 0 || j == static_cast<int>(node.at(i).size() - 1)) && (k == 0 || k == static_cast<int>(node.at(i).at(0).size() - 1))){
-                    node.at(i).at(j).at(k).type = 'X';
-                // Slot
+                // Slot (boundary except the vertexes)
                 }else if(j == 0 || k == 0 || j == static_cast<int>(node.at(i).size() - 1) || k == static_cast<int>(node.at(i).at(0).size() - 1)){
                     node.at(i).at(j).at(k).type = 'S';
-                // Edge
-                }else{
+                // Grid (x,y)=(odd,odd)
+                }else if((j % 2 != 0) && (k % 2 != 0)){
+                    node.at(i).at(j).at(k).type = 'G';
+                // Edge (x,y)=(odd,even)vertical or (even,odd)horizontal
+                }else if(((j % 2 != 0) && (k % 2 == 0)) || ((j % 2 == 0) && (k % 2 != 0))){
                     node.at(i).at(j).at(k).type = 'E';
                 }
+                // set variable_id
+                // example 1.set1 : 
+                //        1~91,93*N,92+93*N,35*93-1-91~35*93-1-1 -> slot
+                //        x % 93 is odd -> grid
+                //        x % 93 is even -> edge (x/35 is even -> h, x/35 is odd -> v)
+                node.at(i).at(j).at(k).var_id = var_id_counter++;
             }
         }
                 // Pin *2 group only*
@@ -566,7 +575,23 @@ int main(int argc, const char * argv[]) {
                 node.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
             }
         }
-    }        
+    }
+    /*draw the grid map*/
+    for(int i = 0; i < cfig.group_name.size() + 1; i++){
+        cout << "\n---Grid map " << i << "---" << endl;
+        for(int j = 0; j < static_cast<int>(node.at(i).size()); j++){
+            for(int k = 0; k < static_cast<int>(node.at(i).at(0).size()); k++){
+                switch (node.at(i).at(j).at(k).type){
+                    case 'X' : cout << ' '; break;
+                    case 'G' : cout << ' '; break;
+                    case 'E' : cout << ((k % 2 == 0)?'-':'|'); break;
+                    case 'P' : cout << 'X'; break;
+                    case 'S' : cout << '#'; break;
+                }
+            }
+            cout << endl;
+        }
+    }//
 }
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
