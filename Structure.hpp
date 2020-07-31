@@ -43,9 +43,11 @@ class Node{
 
 		int cost;
         
-		// S = Slot, E = Edge, P = Pin, X = nothing
-		char type;
-		
+		// S = Slot, E = Edge, P = Pin, G = Grid, X = nothing
+		char type = 'X';
+		int var_id;
+		bool bit;
+
 		void SetUp(int _x,int _y){
 			x = _x;
 			y = _y;
