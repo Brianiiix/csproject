@@ -519,8 +519,8 @@ int main(int argc, const char * argv[]) {
     for(int i = 0; i < cfig.group_name.size() + 1; i++){
         set.at(i) = findboundary(pp, i+1);
         cout<<"boundary "<< i << endl
-            <<set.at(i).top/GU<<' '<<set.at(i).down/GU<<' '<<set.at(i).left/GU<<' '<<set.at(i).right/GU<<endl;//
-        // extra 1 space for slots !!!
+            <<set.at(i).top/GU<<' '<<set.at(i).down/GU<<' '<<set.at(i).left/GU<<' '<<set.at(i).right/GU<<endl;
+        // extra 1 space for slots
         set.at(i).setUp(set.at(i).top + GU, set.at(i).down - GU, set.at(i).left - GU, set.at(i).right + GU);
     }
 
@@ -530,8 +530,9 @@ int main(int argc, const char * argv[]) {
     // +1 is for CPU name and node[0] is CPU
     node.resize(static_cast<int>(cfig.group_name.size() + 1));
     for(int i = 0; i < cfig.group_name.size() + 1; i++){
-        // row and column here content only pins, so - 2 slots/fanout_nodes
-        int row = (set.at(i).top/GU)-(set.at(i).down/GU)+1-2, column = (set.at(i).right/GU)-(set.at(i).left/GU)+1-2;
+        // row and column here contains only pins, so - 2 slots/fanout_nodes
+        int row = (set.at(i).top/GU)-(set.at(i).down/GU)+1-2;
+        int column = (set.at(i).right/GU)-(set.at(i).left/GU)+1-2;
         // pin + edge(pin * 2 - 1) + slot/fanout_node(2) = pin * 2 + 1
         node.at(i).resize(row * 2 + 1, vector<Node>(column * 2 + 1));
         cout << "---size of grid map "<< i <<" is " << row * 2 + 1 << " x " << column * 2 + 1 << "---" << endl;//
