@@ -6,6 +6,7 @@
 #include <ostream>
 #include <map>
 #include <set>
+#include <list>
 #include <math.h>
 #include <time.h>
 #include "board.h"
@@ -253,7 +254,8 @@ class config{
         }
 };
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char * argv[])
+{
     int total_net_num = 0;
     clock_t tStart = clock();
     config cfig;
@@ -565,15 +567,17 @@ int main(int argc, const char * argv[]) {
         if(i == 0){
             for(int j = 0; j < pp.size(); j++){
                 cout << "coor of the pin is (" << (pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1
-                     << "," << ((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1 << ")" << endl;//
+                     << "," << ((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1 << ")" << endl;
                 // top/GU-1 and left/GU+1 to elim slots
                 map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
+                map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).pin_id = j;
             }
         }else if(i == 1){
             for(int j = 0; j < pp.size(); j++){
                 cout << "coor of the pin is (" << (pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1
                      << "," << ((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1 << ")" << endl;//
                 map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
+                map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).pin_id = j;
             }
         }
     }
@@ -591,6 +595,20 @@ int main(int argc, const char * argv[]) {
                 }
             }
             cout << endl;
+        }
+    }
+    // constraint
+    // ls is to store the constraint in dimacs format, will write into the file later
+    list<string> ls;
+    string temp;
+    for(int i = 0; i < cfig.group_name.size() + 1; i++){
+        for(int j = 0; j < map.at(i).size(); j++){
+            for(int k = 0; k < map.at(i).at(0).size(); k++){
+                if(map[i][j][k].type == 'p')
+                {
+                    
+                }
+            }
         }
     }
 }

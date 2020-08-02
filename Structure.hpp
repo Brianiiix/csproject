@@ -46,6 +46,7 @@ class Node{
 		// S = Slot, E = Edge, P = Pin, G = Grid, X = nothing
 		char type = 'X';
 		int var_id;
+        int pin_id;
 		bool bit;
 
 		void SetUp(int _x,int _y){
