@@ -526,39 +526,39 @@ int main(int argc, const char * argv[]) {
 
     // grid map declared here
     // many m x n 2D vector of vector
-    vector<vector <vector<Node> > > node;
+    vector<vector <vector<Node> > > map;
     // +1 is for CPU name and node[0] is CPU
-    node.resize(static_cast<int>(cfig.group_name.size() + 1));
+    map.resize(static_cast<int>(cfig.group_name.size() + 1));
     for(int i = 0; i < cfig.group_name.size() + 1; i++){
         // row and column here contains only pins, so - 2 slots/fanout_nodes
         int row = (set.at(i).top/GU)-(set.at(i).down/GU)+1-2;
         int column = (set.at(i).right/GU)-(set.at(i).left/GU)+1-2;
         // pin + edge(pin * 2 - 1) + slot/fanout_node(2) = pin * 2 + 1
-        node.at(i).resize(row * 2 + 1, vector<Node>(column * 2 + 1));
+        map.at(i).resize(row * 2 + 1, vector<Node>(column * 2 + 1));
         cout << "---size of grid map "<< i <<" is " << row * 2 + 1 << " x " << column * 2 + 1 << "---" << endl;//
         int var_id_counter = 0;
-        for(int j = 0; j < static_cast<int>(node.at(i).size()); j++){
-            for(int k = 0; k < static_cast<int>(node.at(i).at(0).size()); k++){
+        for(int j = 0; j < static_cast<int>(map.at(i).size()); j++){
+            for(int k = 0; k < static_cast<int>(map.at(i).at(0).size()); k++){
                 // set x and y coor (origin is at top-left)
-                node.at(i).at(j).at(k).SetUp(set.at(i).left / 100 + k * GU / 100, set.at(i).top / 100 - j * GU / 100);
+                map.at(i).at(j).at(k).SetUp(set.at(i).left / 100 + k * GU / 100, set.at(i).top / 100 - j * GU / 100);
                 // default : 4 vertexes of grip map and (x,y)=(even,even) have nothing
-                if((j == 0 || j == static_cast<int>(node.at(i).size() - 1)) && (k == 0 || k == static_cast<int>(node.at(i).at(0).size() - 1))){
+                if((j == 0 || j == static_cast<int>(map.at(i).size() - 1)) && (k == 0 || k == static_cast<int>(map.at(i).at(0).size() - 1))){
                 // Slot (boundary except the vertexes)
-                }else if(j == 0 || k == 0 || j == static_cast<int>(node.at(i).size() - 1) || k == static_cast<int>(node.at(i).at(0).size() - 1)){
-                    node.at(i).at(j).at(k).type = 'S';
+                }else if(j == 0 || k == 0 || j == static_cast<int>(map.at(i).size() - 1) || k == static_cast<int>(map.at(i).at(0).size() - 1)){
+                    map.at(i).at(j).at(k).type = 'S';
                 // Grid (x,y)=(odd,odd)
                 }else if((j % 2 != 0) && (k % 2 != 0)){
-                    node.at(i).at(j).at(k).type = 'G';
+                    map.at(i).at(j).at(k).type = 'G';
                 // Edge (x,y)=(odd,even)vertical or (even,odd)horizontal
                 }else if(((j % 2 != 0) && (k % 2 == 0)) || ((j % 2 == 0) && (k % 2 != 0))){
-                    node.at(i).at(j).at(k).type = 'E';
+                    map.at(i).at(j).at(k).type = 'E';
                 }
                 // set variable_id
                 // example 1.set1 : 
                 //        1~91,93*N,92+93*N,35*93-1-91~35*93-1-1 -> slot
                 //        x % 93 is odd -> grid
                 //        x % 93 is even -> edge (x/35 is even -> h, x/35 is odd -> v)
-                node.at(i).at(j).at(k).var_id = var_id_counter++;
+                map.at(i).at(j).at(k).var_id = var_id_counter++;
             }
         }
                 // Pin *2 group only*
@@ -567,22 +567,22 @@ int main(int argc, const char * argv[]) {
                 cout << "coor of the pin is (" << (pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1
                      << "," << ((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1 << ")" << endl;//
                 // top/GU-1 and left/GU+1 to elim slots
-                node.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
+                map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
             }
         }else if(i == 1){
             for(int j = 0; j < pp.size(); j++){
                 cout << "coor of the pin is (" << (pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1
                      << "," << ((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1 << ")" << endl;//
-                node.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
+                map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
             }
         }
     }
     /*draw the grid map*/
     for(int i = 0; i < cfig.group_name.size() + 1; i++){
         cout << "\n---Grid map " << i << "---" << endl;
-        for(int j = 0; j < static_cast<int>(node.at(i).size()); j++){
-            for(int k = 0; k < static_cast<int>(node.at(i).at(0).size()); k++){
-                switch (node.at(i).at(j).at(k).type){
+        for(int j = 0; j < static_cast<int>(map.at(i).size()); j++){
+            for(int k = 0; k < static_cast<int>(map.at(i).at(0).size()); k++){
+                switch (map.at(i).at(j).at(k).type){
                     case 'X' : cout << ' '; break;
                     case 'G' : cout << ' '; break;
                     case 'E' : cout << ((k % 2 == 0)?'-':'|'); break;
@@ -592,7 +592,7 @@ int main(int argc, const char * argv[]) {
             }
             cout << endl;
         }
-    }//
+    }
 }
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
