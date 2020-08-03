@@ -116,7 +116,6 @@ class config{
 
                     if(string_list.at(0) == "FileName:"){
                         FileName = trim(string_list.at(1));
-                        std::cout<<"file name"<<FileName;
                     }
                     else if(string_list.at(0) == "Region_Ext_Left:"){
                         Region_Ext_Left = atoi(string_list.at(1).c_str());
@@ -147,7 +146,7 @@ class config{
                     }
                     else if(string_list.at(0) == "MIN_SPACING:"){
                         MIN_SPACING = atoi(string_list.at(1).c_str());
-                        printf("Min spacing : %d\n",MIN_SPACING);
+                        printf("min spacing : %d\n",MIN_SPACING);
                     }
                     else if(string_list.at(0) == "WIRE_WIDTH:"){
                         WIRE_WIDTH = atoi(string_list.at(1).c_str());
@@ -155,7 +154,7 @@ class config{
                     }
                     else if(string_list.at(0) == "USED_LAYER:"){
                         USED_LAYER = atoi(string_list.at(1).c_str());
-                        printf("#used layer : %d\n",USED_LAYER);
+                        printf("used layer : %d\n",USED_LAYER);
                     }
                     else if(string_list.at(0) == "Skip_Net:"){
                         for(int i = 1; i < string_list.size();i++){
@@ -259,9 +258,9 @@ int main(int argc, const char * argv[])
     int total_net_num = 0;
     clock_t tStart = clock();
     config cfig;
-    cfig.load_config("config/config_1_1.txt");
+    cfig.load_config("config/config_1_2.txt");
 
-    string obs_name = "case/1.brd";
+    string obs_name = "case/2.brd";
     cfig.load_config(obs_name+".obs");
 
     vector<Line_Box> outputedge;
@@ -285,7 +284,7 @@ int main(int argc, const char * argv[])
     ifstream fin;
     string line;
     ofstream foutput,goutput;
-    fin.open("case/1.brd_input.netlist", ios::in);
+    fin.open("case/2.brd_input.netlist", ios::in);
     foutput.open("board.txt",ios::out);
 
     int pinx,piny;
@@ -517,7 +516,7 @@ int main(int argc, const char * argv[])
     }
         
     vector<boundary> set;
-    set.resize(static_cast<int>(cfig.group_name.size() + 1));
+    set.resize(cfig.group_name.size() + 1);
     for(int i = 0; i < cfig.group_name.size() + 1; i++){
         set.at(i) = findboundary(pp, i+1);
         cout<<"boundary "<< i << endl
@@ -530,7 +529,7 @@ int main(int argc, const char * argv[])
     // many m x n 2D vector of vector
     vector<vector <vector<Node> > > map;
     // +1 is for CPU name and node[0] is CPU
-    map.resize(static_cast<int>(cfig.group_name.size() + 1));
+    map.resize(cfig.group_name.size() + 1);
     for(int i = 0; i < cfig.group_name.size() + 1; i++){
         // row and column here contains only pins, so - 2 slots/fanout_nodes
         int row = (set.at(i).top/GU)-(set.at(i).down/GU)+1-2;
@@ -539,14 +538,14 @@ int main(int argc, const char * argv[])
         map.at(i).resize(row * 2 + 1, vector<Node>(column * 2 + 1));
         cout << "---size of grid map "<< i <<" is " << row * 2 + 1 << " x " << column * 2 + 1 << "---" << endl;//
         int var_id_counter = 0;
-        for(int j = 0; j < static_cast<int>(map.at(i).size()); j++){
-            for(int k = 0; k < static_cast<int>(map.at(i).at(0).size()); k++){
+        for(int j = 0; j < map.at(i).size(); j++){
+            for(int k = 0; k < map.at(i).at(0).size(); k++){
                 // set x and y coor (origin is at top-left)
                 map.at(i).at(j).at(k).SetUp(set.at(i).left / 100 + k * GU / 100, set.at(i).top / 100 - j * GU / 100);
                 // default : 4 vertexes of grip map and (x,y)=(even,even) have nothing
-                if((j == 0 || j == static_cast<int>(map.at(i).size() - 1)) && (k == 0 || k == static_cast<int>(map.at(i).at(0).size() - 1))){
+                if((j == 0 || j == map.at(i).size() - 1) && (k == 0 || k == map.at(i).at(0).size() - 1)){
                 // Slot (boundary except the vertexes)
-                }else if(j == 0 || k == 0 || j == static_cast<int>(map.at(i).size() - 1) || k == static_cast<int>(map.at(i).at(0).size() - 1)){
+                }else if(j == 0 || k == 0 || j == map.at(i).size() - 1 || k == map.at(i).at(0).size() - 1){
                     map.at(i).at(j).at(k).type = 'S';
                 // Grid (x,y)=(odd,odd)
                 }else if((j % 2 != 0) && (k % 2 != 0)){
@@ -581,11 +580,11 @@ int main(int argc, const char * argv[])
             }
         }
     }
-    /*draw the grid map*/
+    //draw the grid map
     for(int i = 0; i < cfig.group_name.size() + 1; i++){
         cout << "\n---Grid map " << i << "---" << endl;
-        for(int j = 0; j < static_cast<int>(map.at(i).size()); j++){
-            for(int k = 0; k < static_cast<int>(map.at(i).at(0).size()); k++){
+        for(int j = 0; j < map.at(i).size(); j++){
+            for(int k = 0; k < map.at(i).at(0).size(); k++){
                 switch (map.at(i).at(j).at(k).type){
                     case 'X' : cout << ' '; break;
                     case 'G' : cout << ' '; break;
@@ -600,13 +599,20 @@ int main(int argc, const char * argv[])
     // constraint
     // ls is to store the constraint in dimacs format, will write into the file later
     list<string> ls;
-    string temp;
+    string s;
     for(int i = 0; i < cfig.group_name.size() + 1; i++){
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
-                if(map[i][j][k].type == 'p')
+                // each pin choose a way out
+                if(map[i][j][k].type == 'P')
                 {
-                    
+                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
+                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
+                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
+                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
+                    ls.push_back(to_string(map[i][j][k+1].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
+                    ls.push_back(to_string(map[i][j][k+1].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
+                    ls.push_back(to_string(map[i][j+1][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
                 }
             }
         }
@@ -622,7 +628,7 @@ int main(int argc, const char * argv[])
     }
 
     string layout_name = "case/1.brd";
-    outputGDS(layout_name, outputpin, outputedge, crossing_line_total);
+    //outputGDS(layout_name, outputpin, outputedge, crossing_line_total);
 
     return 0;
 }
