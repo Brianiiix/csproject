@@ -258,9 +258,9 @@ int main(int argc, const char * argv[])
     int total_net_num = 0;
     clock_t tStart = clock();
     config cfig;
-    cfig.load_config("config/config_1_2.txt");
+    cfig.load_config("config/config_1_1.txt");
 
-    string obs_name = "case/2.brd";
+    string obs_name = "case/1.brd";
     cfig.load_config(obs_name+".obs");
 
     vector<Line_Box> outputedge;
@@ -284,7 +284,7 @@ int main(int argc, const char * argv[])
     ifstream fin;
     string line;
     ofstream foutput,goutput;
-    fin.open("case/2.brd_input.netlist", ios::in);
+    fin.open("case/1.brd_input.netlist", ios::in);
     foutput.open("board.txt",ios::out);
 
     int pinx,piny;
