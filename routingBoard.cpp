@@ -516,11 +516,10 @@ int main(int argc, const char * argv[])
     }
         
     vector<boundary> set;
-    set.resize(cfig.group_name.size() + 1);
-    for(int i = 0; i < cfig.group_name.size() + 1; i++){
+    set.resize(2);
+    for(int i = 0; i < 2; i++){
         set.at(i) = findboundary(pp, i+1);
-        cout<<"boundary "<< i << endl
-            <<set.at(i).top/GU<<' '<<set.at(i).down/GU<<' '<<set.at(i).left/GU<<' '<<set.at(i).right/GU<<endl;
+        cout<<"boundary "<< i << endl<<set.at(i).top/GU<<' '<<set.at(i).down/GU<<' '<<set.at(i).left/GU<<' '<<set.at(i).right/GU<<endl;
         // extra 1 space for slots
         set.at(i).setUp(set.at(i).top + GU, set.at(i).down - GU, set.at(i).left - GU, set.at(i).right + GU);
     }
@@ -529,8 +528,9 @@ int main(int argc, const char * argv[])
     // many m x n 2D vector of vector
     vector<vector <vector<Node> > > map;
     // +1 is for CPU name and node[0] is CPU
-    map.resize(cfig.group_name.size() + 1);
-    for(int i = 0; i < cfig.group_name.size() + 1; i++){
+    //map.resize(cfig.group_name.size() + 1);
+    map.resize(2);
+    for(int i = 0; i < set.size(); i++){
         // row and column here contains only pins, so - 2 slots/fanout_nodes
         int row = (set.at(i).top/GU)-(set.at(i).down/GU)+1-2;
         int column = (set.at(i).right/GU)-(set.at(i).left/GU)+1-2;
@@ -581,7 +581,7 @@ int main(int argc, const char * argv[])
         }
     }
     //draw the grid map
-    for(int i = 0; i < cfig.group_name.size() + 1; i++){
+    for(int i = 0; i < set.size(); i++){
         cout << "\n---Grid map " << i << "---" << endl;
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
@@ -600,7 +600,7 @@ int main(int argc, const char * argv[])
     // ls is to store the constraint in dimacs format, will write into the file later
     list<string> ls;
     string s;
-    for(int i = 0; i < cfig.group_name.size() + 1; i++){
+    for(int i = 0; i < set.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
                 // each pin choose a way out
@@ -617,6 +617,8 @@ int main(int argc, const char * argv[])
             }
         }
     }
+       for(string i : ls)
+           cout<< i <<endl;
 }
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
