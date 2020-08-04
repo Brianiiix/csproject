@@ -618,12 +618,12 @@ int main(int argc, const char * argv[])
                 else if(map[i][j][k].type == 'E')
                 {
                     if(k % 2 == 0){
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
-                    }
-                    else{
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
+                    }
+                    else{
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
                     }
                 }
                 else if(map[i][j][k].type == 'G')
