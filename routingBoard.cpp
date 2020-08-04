@@ -589,7 +589,7 @@ int main(int argc, const char * argv[])
                     case 'X' : cout << ' '; break;
                     case 'G' : cout << ' '; break;
                     case 'E' : cout << ((k % 2 == 0)?'-':'|'); break;
-                    case 'P' : cout << 'X'; break;
+                    case 'P' : cout << map[i][j][k].pin_id; break;
                     case 'S' : cout << '#'; break;
                 }
             }
@@ -647,9 +647,9 @@ int main(int argc, const char * argv[])
             }
         }
     }
-       for(string i : ls)
-           cout<< i <<endl;
-        cout<<ls.size()<<endl;
+       //for(string i : ls)
+        //   cout<< i <<endl;
+        //cout<<ls.size()<<endl;
 }
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
