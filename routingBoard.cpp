@@ -606,6 +606,7 @@ int main(int argc, const char * argv[])
                 // each pin choose a way out
                 if(map[i][j][k].type == 'P')
                 {
+                    /*(¬a ∨ ¬b ∨ ¬c ∨ ¬d) ∧ (a ∨ b) ∧ (a ∨ c) ∧ (a ∨ d) ∧ (b ∨ c) ∧ (b ∨ d) ∧ (c ∨ d)*/
                     ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
                     ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
                     ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
@@ -614,11 +615,41 @@ int main(int argc, const char * argv[])
                     ls.push_back(to_string(map[i][j][k+1].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
                     ls.push_back(to_string(map[i][j+1][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
                 }
+                else if(map[i][j][k].type == 'E')
+                {
+                    if(k % 2 == 0){
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
+                    }
+                    else{
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
+                    }
+                }
+                else if(map[i][j][k].type == 'G')
+                {
+                    /*(¬a ∨ ¬b ∨ ¬c ∨ ¬d) ∧ (¬a ∨ ¬b ∨ ¬c ∨ ¬e) ∧ (¬a ∨ ¬b ∨ ¬d ∨ ¬e) ∧ (¬a ∨ b ∨ c ∨ d) ∧ (¬a ∨ b ∨ c ∨ e) ∧
+                     (¬a ∨ b ∨ d ∨ e) ∧ (¬a ∨ ¬c ∨ ¬d ∨ ¬e) ∧ (¬a ∨ c ∨ d ∨ e)*/
+                    int a = map[i][j][k].var_id;
+                    int b = map[i][j][k-1].var_id;
+                    int c = map[i][j+1][k].var_id;
+                    int d = map[i][j][k+1].var_id;
+                    int e = map[i][j-1][k].var_id;
+                    ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-d)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-d)+' '+to_string(-e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(d)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(d)+' '+to_string(e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
+                }
             }
         }
     }
        for(string i : ls)
            cout<< i <<endl;
+        cout<<ls.size()<<endl;
 }
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
