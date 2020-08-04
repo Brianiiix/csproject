@@ -527,6 +527,7 @@ int main(int argc, const char * argv[])
     // grid map declared here
     // many m x n 2D vector of vector
     vector<vector <vector<Node> > > map;
+    int var_id_counter = 0;
     // +1 is for CPU name and node[0] is CPU
     //map.resize(cfig.group_name.size() + 1);
     map.resize(2);
@@ -536,8 +537,7 @@ int main(int argc, const char * argv[])
         int column = (set.at(i).right/GU)-(set.at(i).left/GU)+1-2;
         // pin + edge(pin * 2 - 1) + slot/fanout_node(2) = pin * 2 + 1
         map.at(i).resize(row * 2 + 1, vector<Node>(column * 2 + 1));
-        cout << "---size of grid map "<< i <<" is " << row * 2 + 1 << " x " << column * 2 + 1 << "---" << endl;//
-        int var_id_counter = 0;
+        cout << "---size of grid map "<< i <<" is " << row * 2 + 1 << " x " << column * 2 + 1 << "---" << endl;
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
                 // set x and y coor (origin is at top-left)
@@ -554,15 +554,10 @@ int main(int argc, const char * argv[])
                 }else if(((j % 2 != 0) && (k % 2 == 0)) || ((j % 2 == 0) && (k % 2 != 0))){
                     map.at(i).at(j).at(k).type = 'E';
                 }
-                // set variable_id
-                // example 1.set1 : 
-                //        1~91,93*N,92+93*N,35*93-1-91~35*93-1-1 -> slot
-                //        x % 93 is odd -> grid
-                //        x % 93 is even -> edge (x/35 is even -> h, x/35 is odd -> v)
                 map.at(i).at(j).at(k).var_id = var_id_counter++;
             }
         }
-                // Pin *2 group only*
+        // Pin *2 group only*
         if(i == 0){
             for(int j = 0; j < pp.size(); j++){
                 cout << "coor of the pin is (" << (pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1
@@ -570,6 +565,14 @@ int main(int argc, const char * argv[])
                 // top/GU-1 and left/GU+1 to elim slots
                 map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
                 map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).pin_id = j;
+                int cnt = 0;
+                int dec = j;
+                while(dec != 0)
+                {
+                    map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).net_id[cnt] = (dec % 2);
+                    dec /= 2;
+                    cnt++;
+                }
             }
         }else if(i == 1){
             for(int j = 0; j < pp.size(); j++){
@@ -577,25 +580,28 @@ int main(int argc, const char * argv[])
                      << "," << ((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1 << ")" << endl;//
                 map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
                 map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).pin_id = j;
-            }
-        }
-    }
-    //draw the grid map
-    for(int i = 0; i < set.size(); i++){
-        cout << "\n---Grid map " << i << "---" << endl;
-        for(int j = 0; j < map.at(i).size(); j++){
-            for(int k = 0; k < map.at(i).at(0).size(); k++){
-                switch (map.at(i).at(j).at(k).type){
-                    case 'X' : cout << ' '; break;
-                    case 'G' : cout << ' '; break;
-                    case 'E' : cout << ((k % 2 == 0)?'-':'|'); break;
-                    case 'P' : cout << map[i][j][k].pin_id; break;
-                    case 'S' : cout << '#'; break;
+                int cnt = 0;
+                int dec = j;
+                while(dec != 0)
+                {
+                    map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).net_id[cnt] = (dec % 2);
+                    dec /= 2;
+                    cnt++;
                 }
             }
-            cout << endl;
         }
     }
+        
+        for(int i = 0; i < set.size(); i++){
+            for(int j = 0; j < map.at(i).size(); j++){
+                for(int k = 0; k < map.at(i).at(0).size(); k++){
+                    for(int l = 0; l < 5; l++){
+                        map.at(i).at(j).at(k).net_id[l] = var_id_counter++;
+                    }
+                }
+            }
+        }
+        
     // constraint
     // ls is to store the constraint in dimacs format, will write into the file later
     list<string> ls;
@@ -606,24 +612,52 @@ int main(int argc, const char * argv[])
                 // each pin choose a way out
                 if(map[i][j][k].type == 'P')
                 {
-                    /*(¬a ∨ ¬b ∨ ¬c ∨ ¬d) ∧ (a ∨ b) ∧ (a ∨ c) ∧ (a ∨ d) ∧ (b ∨ c) ∧ (b ∨ d) ∧ (c ∨ d)*/
-                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
-                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
-                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
-                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
-                    ls.push_back(to_string(map[i][j][k+1].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
-                    ls.push_back(to_string(map[i][j][k+1].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
-                    ls.push_back(to_string(map[i][j+1][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
+                    /*(¬a ∨ ¬b) ∧ (¬a ∨ ¬c) ∧ (¬a ∨ ¬d) ∧ (a ∨ b ∨ c ∨ d) ∧ (¬b ∨ ¬c) ∧ (¬b ∨ ¬d) ∧ (¬c ∨ ¬d)*/
+                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                    
+                    
                 }
                 else if(map[i][j][k].type == 'E')
                 {
+                    //-
                     if(k % 2 == 0){
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
+                        //bcdef a ghijk
+                        /*(¬a ∨ ¬b ∨ g) ∧ (¬a ∨ b ∨ ¬g) ∧ (¬a ∨ ¬c ∨ h) ∧ (¬a ∨ c ∨ ¬h) ∧ (¬a ∨ ¬d ∨ i) ∧ (¬a ∨ d ∨ ¬i)
+                         ∧ (¬a ∨ ¬e ∨ j) ∧ (¬a ∨ e ∨ ¬j) ∧ (¬a ∨ ¬f ∨ k) ∧ (¬a ∨ f ∨ ¬k)*/
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[0])+' '+to_string(map[i][j][k+1].net_id[0]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[1])+' '+to_string(map[i][j][k+1].net_id[1]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[2])+' '+to_string(map[i][j][k+1].net_id[2]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[3])+' '+to_string(map[i][j][k+1].net_id[3]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[4])+' '+to_string(map[i][j][k+1].net_id[4]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[0])+' '+to_string(-map[i][j][k+1].net_id[0]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[1])+' '+to_string(-map[i][j][k+1].net_id[1]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[2])+' '+to_string(-map[i][j][k+1].net_id[2]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[3])+' '+to_string(-map[i][j][k+1].net_id[3]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[4])+' '+to_string(-map[i][j][k+1].net_id[4]));
                     }
+                    //|
                     else{
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
+                        
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[0])+' '+to_string(map[i][j+1][k].net_id[0]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[1])+' '+to_string(map[i][j+1][k].net_id[1]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[2])+' '+to_string(map[i][j+1][k].net_id[2]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[3])+' '+to_string(map[i][j+1][k].net_id[3]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[4])+' '+to_string(map[i][j+1][k].net_id[4]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[0])+' '+to_string(-map[i][j+1][k].net_id[0]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[1])+' '+to_string(-map[i][j+1][k].net_id[1]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[2])+' '+to_string(-map[i][j+1][k].net_id[2]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[3])+' '+to_string(-map[i][j+1][k].net_id[3]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[4])+' '+to_string(-map[i][j+1][k].net_id[4]));
                     }
                 }
                 else if(map[i][j][k].type == 'G')
@@ -650,6 +684,48 @@ int main(int argc, const char * argv[])
        //for(string i : ls)
         //   cout<< i <<endl;
         //cout<<ls.size()<<endl;
+    ofstream file("temp.cnf");
+        if(file.is_open()){
+            file << "c temp.cnf" << endl;
+            file << "p cnf "<<var_id_counter-1<<' '<<ls.size()<<endl;
+            for(string l: ls)
+                file << l << endl;
+        }
+        file.close();
+        
+        
+         ifstream fil;
+            fil.open("output", ios::in);
+            int num[11000];
+            for(int i=0;i<10392;i++)
+                fil>>num[i];
+            
+        //draw the grid map
+        for(int i = 0; i < set.size(); i++){
+            cout << "\n---Grid map " << i << "---" << endl;
+            for(int j = 0; j < map.at(i).size(); j++){
+                for(int k = 0; k < map.at(i).at(0).size(); k++){
+                    switch (map.at(i).at(j).at(k).type){
+                        case 'X' : cout << ' '; break;
+                        case 'G' :
+                            if(num[map[i][j][k].var_id-1]>0)
+                                cout << '.';
+                            else
+                                cout << ' ';
+                            break;
+                        case 'E' :
+                            if(num[map[i][j][k].var_id-1]>0)
+                                cout << ((k % 2 == 0)?'-':'|');
+                            else
+                                cout << ' ';
+                            break;
+                        case 'P' : cout << 'x'; break;
+                        case 'S' : cout << '#'; break;
+                    }
+                }
+                cout << endl;
+            }
+        }
 }
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
