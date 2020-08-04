@@ -632,32 +632,32 @@ int main(int argc, const char * argv[])
                         //bcdef a ghijk
                         /*(¬a ∨ ¬b ∨ g) ∧ (¬a ∨ b ∨ ¬g) ∧ (¬a ∨ ¬c ∨ h) ∧ (¬a ∨ c ∨ ¬h) ∧ (¬a ∨ ¬d ∨ i) ∧ (¬a ∨ d ∨ ¬i)
                          ∧ (¬a ∨ ¬e ∨ j) ∧ (¬a ∨ e ∨ ¬j) ∧ (¬a ∨ ¬f ∨ k) ∧ (¬a ∨ f ∨ ¬k)*/
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[0])+' '+to_string(map[i][j][k+1].net_id[0]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[1])+' '+to_string(map[i][j][k+1].net_id[1]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[2])+' '+to_string(map[i][j][k+1].net_id[2]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[3])+' '+to_string(map[i][j][k+1].net_id[3]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[4])+' '+to_string(map[i][j][k+1].net_id[4]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[0])+' '+to_string(-map[i][j][k+1].net_id[0]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[1])+' '+to_string(-map[i][j][k+1].net_id[1]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[2])+' '+to_string(-map[i][j][k+1].net_id[2]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[3])+' '+to_string(-map[i][j][k+1].net_id[3]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[4])+' '+to_string(-map[i][j][k+1].net_id[4]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[0])+' '+to_string(map[i][j][k+1].net_id[0])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[1])+' '+to_string(map[i][j][k+1].net_id[1])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[2])+' '+to_string(map[i][j][k+1].net_id[2])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[3])+' '+to_string(map[i][j][k+1].net_id[3])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[4])+' '+to_string(map[i][j][k+1].net_id[4])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[0])+' '+to_string(-map[i][j][k+1].net_id[0])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[1])+' '+to_string(-map[i][j][k+1].net_id[1])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[2])+' '+to_string(-map[i][j][k+1].net_id[2])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[3])+' '+to_string(-map[i][j][k+1].net_id[3])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[4])+' '+to_string(-map[i][j][k+1].net_id[4])+" 0");
                     }
                     //|
                     else{
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
                         
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[0])+' '+to_string(map[i][j+1][k].net_id[0]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[1])+' '+to_string(map[i][j+1][k].net_id[1]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[2])+' '+to_string(map[i][j+1][k].net_id[2]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[3])+' '+to_string(map[i][j+1][k].net_id[3]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[4])+' '+to_string(map[i][j+1][k].net_id[4]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[0])+' '+to_string(-map[i][j+1][k].net_id[0]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[1])+' '+to_string(-map[i][j+1][k].net_id[1]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[2])+' '+to_string(-map[i][j+1][k].net_id[2]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[3])+' '+to_string(-map[i][j+1][k].net_id[3]));
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[4])+' '+to_string(-map[i][j+1][k].net_id[4]));
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[0])+' '+to_string(map[i][j+1][k].net_id[0])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[1])+' '+to_string(map[i][j+1][k].net_id[1])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[2])+' '+to_string(map[i][j+1][k].net_id[2])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[3])+' '+to_string(map[i][j+1][k].net_id[3])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[4])+' '+to_string(map[i][j+1][k].net_id[4])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[0])+' '+to_string(-map[i][j+1][k].net_id[0])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[1])+' '+to_string(-map[i][j+1][k].net_id[1])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[2])+' '+to_string(-map[i][j+1][k].net_id[2])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[3])+' '+to_string(-map[i][j+1][k].net_id[3])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[4])+' '+to_string(-map[i][j+1][k].net_id[4])+" 0");
                     }
                 }
                 else if(map[i][j][k].type == 'G')
