@@ -17,8 +17,6 @@
 
 using namespace std;
 
-int clausecnt = 0;
-
 std::string& trim(std::string &s)
 {
     if (s.empty())
@@ -79,7 +77,6 @@ void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, i
     ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[2])+' '+to_string(-map[x][y][z].net_id[2])+" 0");
     ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[3])+' '+to_string(-map[x][y][z].net_id[3])+" 0");
     ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[4])+' '+to_string(-map[x][y][z].net_id[4])+" 0");
-    clausecnt += 10;
 }
 
 class config{
@@ -625,7 +622,6 @@ int main(int argc, const char * argv[])
                                 map[i][j][k].net_id[l] = var_id_counter++;
                                 ls.push_back(to_string(-map[i][j][k].net_id[l])+" 0");
                             }
-                            clausecnt++;
                         }
                     }
                     else{
@@ -651,8 +647,6 @@ int main(int argc, const char * argv[])
                     ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
                     ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
                     ls.push_back(to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
-                    clausecnt+=7;
-                    
                 }
                 else if(map[i][j][k].type == 'E')
                 {
@@ -670,7 +664,6 @@ int main(int argc, const char * argv[])
                         
                         lsfunc(ls, map, i, j, k, i, j-1, k, i, j+1, k);
                     }
-                    clausecnt+=2;
                 }
                 else if(map[i][j][k].type == 'G')
                 {
@@ -689,13 +682,11 @@ int main(int argc, const char * argv[])
                     ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(d)+' '+to_string(e)+" 0");
                     ls.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
                     ls.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
-                    clausecnt+=8;
                 }
             }
         }
     }
-        cout<<"ls size: "<<ls.size()<<endl<<"clause size: "<<clausecnt<<endl;
-    ofstream file("temp.cnf");
+        ofstream file("temp.cnf");
         if(file.is_open()){
             file << "c temp.cnf" << endl;
             file << "p cnf "<<var_id_counter-1<<' '<<ls.size()<<endl;
@@ -704,13 +695,31 @@ int main(int argc, const char * argv[])
         }
         file.close();
         
+        /* for xcode
+        string command = "./open-wbo /Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/temp.cnf > output";
+        system(command.c_str());
         
          ifstream fil;
-            fil.open("output", ios::in);
-            int num[64000];
-            for(int i=0;i<62363;i++)
-                fil>>num[i];
-            
+    fil.open("/Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/output", ios::in);
+        for(int i=0;i<26;i++)
+            getline(fil, line);
+        int num[64000];
+        char c;
+        fil >> c;
+        for(int i=0;i<62363;i++)
+            fil >> num[i];
+         */
+        
+        ifstream fil;
+        fil.open("output", ios::in);
+        for(int i=0;i<26;i++)
+            getline(fil, line);
+        int num[64000];
+        char c;
+        fil >> c;
+        for(int i=0;i<62363;i++)
+            fil>>num[i];
+        
         //draw the grid map
         for(int i = 0; i < set.size(); i++){
             cout << "\n---Grid map " << i << "---" << endl;
