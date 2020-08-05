@@ -47,7 +47,7 @@ class Node{
 		char type = 'X';
 		int var_id;
         int pin_id;
-        int net_id[5];
+        int net_id[5] = {0, 0, 0, 0, 0};
 		bool bit;
 
 		void SetUp(int _x,int _y){
