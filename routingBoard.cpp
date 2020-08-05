@@ -17,6 +17,8 @@
 
 using namespace std;
 
+int clausecnt = 0;
+
 std::string& trim(std::string &s)
 {
     if (s.empty())
@@ -60,6 +62,24 @@ struct Obs_Point {
 int cross(const Obs_Point &O, const Obs_Point &A, const Obs_Point &B)
 {
     return (A.x - O.x) * (B.y - O.y) - (A.y - O.y) * (B.x - O.x);
+}
+
+/*push formula like (¬a ∨ ¬b ∨ g) ∧ (¬a ∨ b ∨ ¬g) ∧ (¬a ∨ ¬c ∨ h) ∧ (¬a ∨ c ∨ ¬h) ∧ (¬a ∨ ¬d ∨ i) ∧ (¬a ∨ d ∨ ¬i)
+∧ (¬a ∨ ¬e ∨ j) ∧ (¬a ∨ e ∨ ¬j) ∧ (¬a ∨ ¬f ∨ k) ∧ (¬a ∨ f ∨ ¬k)*/
+// map[i][j][k] implies map[a][b][c].netid = map[x]y][z].netid
+void lsfunc(list<string> ls, vector<vector<vector<Node>>> map, int i, int j, int k, int a, int b, int c, int x, int y, int z)
+{
+    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[0])+' '+to_string(map[x][y][z].net_id[0])+" 0");
+    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[1])+' '+to_string(map[x][y][z].net_id[1])+" 0");
+    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[2])+' '+to_string(map[x][y][z].net_id[2])+" 0");
+    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[3])+' '+to_string(map[x][y][z].net_id[3])+" 0");
+    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[4])+' '+to_string(map[x][y][z].net_id[4])+" 0");
+    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[0])+' '+to_string(-map[x][y][z].net_id[0])+" 0");
+    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[1])+' '+to_string(-map[x][y][z].net_id[1])+" 0");
+    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[2])+' '+to_string(-map[x][y][z].net_id[2])+" 0");
+    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[3])+' '+to_string(-map[x][y][z].net_id[3])+" 0");
+    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[4])+' '+to_string(-map[x][y][z].net_id[4])+" 0");
+    clausecnt += 10;
 }
 
 class config{
@@ -591,28 +611,33 @@ int main(int argc, const char * argv[])
             }
         }
     }
-        
+    list<string> ls;
         for(int i = 0; i < set.size(); i++){
             for(int j = 0; j < map.at(i).size(); j++){
                 for(int k = 0; k < map.at(i).at(0).size(); k++){
                     for(int l = 0; l < 5; l++){
-                        map.at(i).at(j).at(k).net_id[l] = var_id_counter++;
+                        if(map[i][j][k].net_id[l] == 1){
+                            map[i][j][k].net_id[l] = var_id_counter++;
+                            ls.push_back(to_string(map[i][j][k].net_id[l])+' '+" 0");
+                        }
+                        else{
+                            map[i][j][k].net_id[l] = var_id_counter++;
+                            ls.push_back(to_string(-map[i][j][k].net_id[l])+' '+" 0");
+                        }
+                        clausecnt++;
                     }
                 }
             }
         }
-        
     // constraint
     // ls is to store the constraint in dimacs format, will write into the file later
-    list<string> ls;
-    string s;
     for(int i = 0; i < set.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
                 // each pin choose a way out
                 if(map[i][j][k].type == 'P')
                 {
-                    /*(¬a ∨ ¬b) ∧ (¬a ∨ ¬c) ∧ (¬a ∨ ¬d) ∧ (a ∨ b ∨ c ∨ d) ∧ (¬b ∨ ¬c) ∧ (¬b ∨ ¬d) ∧ (¬c ∨ ¬d)*/
+                    //(¬a ∨ ¬b) ∧ (¬a ∨ ¬c) ∧ (¬a ∨ ¬d) ∧ (a ∨ b ∨ c ∨ d) ∧ (¬b ∨ ¬c) ∧ (¬b ∨ ¬d) ∧ (¬c ∨ ¬d)
                     ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
                     ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
                     ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
@@ -620,7 +645,7 @@ int main(int argc, const char * argv[])
                     ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
                     ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
                     ls.push_back(to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
-                    
+                    clausecnt+=7;
                     
                 }
                 else if(map[i][j][k].type == 'E')
@@ -629,41 +654,22 @@ int main(int argc, const char * argv[])
                     if(k % 2 == 0){
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
-                        //bcdef a ghijk
-                        /*(¬a ∨ ¬b ∨ g) ∧ (¬a ∨ b ∨ ¬g) ∧ (¬a ∨ ¬c ∨ h) ∧ (¬a ∨ c ∨ ¬h) ∧ (¬a ∨ ¬d ∨ i) ∧ (¬a ∨ d ∨ ¬i)
-                         ∧ (¬a ∨ ¬e ∨ j) ∧ (¬a ∨ e ∨ ¬j) ∧ (¬a ∨ ¬f ∨ k) ∧ (¬a ∨ f ∨ ¬k)*/
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[0])+' '+to_string(map[i][j][k+1].net_id[0])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[1])+' '+to_string(map[i][j][k+1].net_id[1])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[2])+' '+to_string(map[i][j][k+1].net_id[2])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[3])+' '+to_string(map[i][j][k+1].net_id[3])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j][k-1].net_id[4])+' '+to_string(map[i][j][k+1].net_id[4])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[0])+' '+to_string(-map[i][j][k+1].net_id[0])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[1])+' '+to_string(-map[i][j][k+1].net_id[1])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[2])+' '+to_string(-map[i][j][k+1].net_id[2])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[3])+' '+to_string(-map[i][j][k+1].net_id[3])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].net_id[4])+' '+to_string(-map[i][j][k+1].net_id[4])+" 0");
+                        
+                        lsfunc(ls, map, i, j, k, i, j, k-1, i, j, k+1);
                     }
                     //|
                     else{
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
                         
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[0])+' '+to_string(map[i][j+1][k].net_id[0])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[1])+' '+to_string(map[i][j+1][k].net_id[1])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[2])+' '+to_string(map[i][j+1][k].net_id[2])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[3])+' '+to_string(map[i][j+1][k].net_id[3])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[i][j-1][k].net_id[4])+' '+to_string(map[i][j+1][k].net_id[4])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[0])+' '+to_string(-map[i][j+1][k].net_id[0])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[1])+' '+to_string(-map[i][j+1][k].net_id[1])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[2])+' '+to_string(-map[i][j+1][k].net_id[2])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[3])+' '+to_string(-map[i][j+1][k].net_id[3])+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].net_id[4])+' '+to_string(-map[i][j+1][k].net_id[4])+" 0");
+                        lsfunc(ls, map, i, j, k, i, j-1, k, i, j+1, k);
                     }
+                    clausecnt+=2;
                 }
                 else if(map[i][j][k].type == 'G')
                 {
-                    /*(¬a ∨ ¬b ∨ ¬c ∨ ¬d) ∧ (¬a ∨ ¬b ∨ ¬c ∨ ¬e) ∧ (¬a ∨ ¬b ∨ ¬d ∨ ¬e) ∧ (¬a ∨ b ∨ c ∨ d) ∧ (¬a ∨ b ∨ c ∨ e) ∧
-                     (¬a ∨ b ∨ d ∨ e) ∧ (¬a ∨ ¬c ∨ ¬d ∨ ¬e) ∧ (¬a ∨ c ∨ d ∨ e)*/
+                    //(¬a ∨ ¬b ∨ ¬c ∨ ¬d) ∧ (¬a ∨ ¬b ∨ ¬c ∨ ¬e) ∧ (¬a ∨ ¬b ∨ ¬d ∨ ¬e) ∧ (¬a ∨ b ∨ c ∨ d) ∧ (¬a ∨ b ∨ c ∨ e) ∧
+                     //(¬a ∨ b ∨ d ∨ e) ∧ (¬a ∨ ¬c ∨ ¬d ∨ ¬e) ∧ (¬a ∨ c ∨ d ∨ e)
                     int a = map[i][j][k].var_id;
                     int b = map[i][j][k-1].var_id;
                     int c = map[i][j+1][k].var_id;
@@ -677,6 +683,7 @@ int main(int argc, const char * argv[])
                     ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(d)+' '+to_string(e)+" 0");
                     ls.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
                     ls.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
+                    clausecnt+=8;
                 }
             }
         }
@@ -684,6 +691,7 @@ int main(int argc, const char * argv[])
        //for(string i : ls)
         //   cout<< i <<endl;
         //cout<<ls.size()<<endl;
+        cout<<"ls size: "<<ls.size()<<endl<<"clause size: "<<clausecnt<<endl;
     ofstream file("temp.cnf");
         if(file.is_open()){
             file << "c temp.cnf" << endl;
@@ -696,8 +704,8 @@ int main(int argc, const char * argv[])
         
          ifstream fil;
             fil.open("output", ios::in);
-            int num[11000];
-            for(int i=0;i<10392;i++)
+            int num[64000];
+            for(int i=0;i<62363;i++)
                 fil>>num[i];
             
         //draw the grid map
