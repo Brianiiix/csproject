@@ -67,7 +67,7 @@ int cross(const Obs_Point &O, const Obs_Point &A, const Obs_Point &B)
 /*push formula like (¬a ∨ ¬b ∨ g) ∧ (¬a ∨ b ∨ ¬g) ∧ (¬a ∨ ¬c ∨ h) ∧ (¬a ∨ c ∨ ¬h) ∧ (¬a ∨ ¬d ∨ i) ∧ (¬a ∨ d ∨ ¬i)
 ∧ (¬a ∨ ¬e ∨ j) ∧ (¬a ∨ e ∨ ¬j) ∧ (¬a ∨ ¬f ∨ k) ∧ (¬a ∨ f ∨ ¬k)*/
 // map[i][j][k] implies map[a][b][c].netid = map[x]y][z].netid
-void lsfunc(list<string> ls, vector<vector<vector<Node>>> map, int i, int j, int k, int a, int b, int c, int x, int y, int z)
+void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, int k, int a, int b, int c, int x, int y, int z)
 {
     ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[0])+' '+to_string(map[x][y][z].net_id[0])+" 0");
     ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[1])+' '+to_string(map[x][y][z].net_id[1])+" 0");
@@ -615,16 +615,22 @@ int main(int argc, const char * argv[])
         for(int i = 0; i < set.size(); i++){
             for(int j = 0; j < map.at(i).size(); j++){
                 for(int k = 0; k < map.at(i).at(0).size(); k++){
-                    for(int l = 0; l < 5; l++){
-                        if(map[i][j][k].net_id[l] == 1){
-                            map[i][j][k].net_id[l] = var_id_counter++;
-                            ls.push_back(to_string(map[i][j][k].net_id[l])+' '+" 0");
+                    if(map[i][j][k].type == 'P'){
+                        for(int l = 0; l < 5; l++){
+                            if(map[i][j][k].net_id[l] == 1){
+                                map[i][j][k].net_id[l] = var_id_counter++;
+                                ls.push_back(to_string(map[i][j][k].net_id[l])+" 0");
+                            }
+                            else{
+                                map[i][j][k].net_id[l] = var_id_counter++;
+                                ls.push_back(to_string(-map[i][j][k].net_id[l])+" 0");
+                            }
+                            clausecnt++;
                         }
-                        else{
+                    }
+                    else{
+                        for(int l = 0; l < 5; l++)
                             map[i][j][k].net_id[l] = var_id_counter++;
-                            ls.push_back(to_string(-map[i][j][k].net_id[l])+' '+" 0");
-                        }
-                        clausecnt++;
                     }
                 }
             }
@@ -688,9 +694,6 @@ int main(int argc, const char * argv[])
             }
         }
     }
-       //for(string i : ls)
-        //   cout<< i <<endl;
-        //cout<<ls.size()<<endl;
         cout<<"ls size: "<<ls.size()<<endl<<"clause size: "<<clausecnt<<endl;
     ofstream file("temp.cnf");
         if(file.is_open()){
