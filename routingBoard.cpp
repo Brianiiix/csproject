@@ -64,7 +64,7 @@ int cross(const Obs_Point &O, const Obs_Point &A, const Obs_Point &B)
 
 /*push formula like (¬a ∨ ¬b ∨ g) ∧ (¬a ∨ b ∨ ¬g) ∧ (¬a ∨ ¬c ∨ h) ∧ (¬a ∨ c ∨ ¬h) ∧ (¬a ∨ ¬d ∨ i) ∧ (¬a ∨ d ∨ ¬i)
 ∧ (¬a ∨ ¬e ∨ j) ∧ (¬a ∨ e ∨ ¬j) ∧ (¬a ∨ ¬f ∨ k) ∧ (¬a ∨ f ∨ ¬k)*/
-// map[i][j][k] implies map[a][b][c].netid = map[x]y][z].netid
+// map[i][j][k] implies map[a][b][c].netid = map[x][y][z].netid
 void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, int k, int a, int b, int c, int x, int y, int z)
 {
     ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[0])+' '+to_string(map[x][y][z].net_id[0])+" 0");
@@ -313,9 +313,7 @@ int main(int argc, const char * argv[])
     //printf("Loading Config completed\n");
     ifstream fin;
     string line;
-    ofstream foutput,goutput;
     fin.open("case/1.brd_input.netlist", ios::in);
-    foutput.open("board.txt",ios::out);
 
     int pinx,piny;
     std::string outfilename = "test";
@@ -516,7 +514,7 @@ int main(int argc, const char * argv[])
     }
     fin.close();
 
-    printf("Loading Input End. #Nets : %lu\n", net.size());
+    printf("Loading Input End. #Nets : %d\n", static_cast<int>(net.size()));
     if (net.size() == 0)
         continue;
 
@@ -706,7 +704,9 @@ int main(int argc, const char * argv[])
         }
     }
         
-        slot slotorder[slotcnt1 + slotcnt2];
+        //slot slotorder[slotcnt1 + slotcnt2];
+        vector<slot> slotorder;
+        slotorder.resize(slotcnt1 + slotcnt2);
         int i = 0;
             for(int k = 1; k < map[0][0].size()-1; k++, i++)
                 slotorder[i].setup(map[0][0][k].var_id, 0, 0, k);
@@ -759,7 +759,7 @@ int main(int argc, const char * argv[])
         
         ifstream fil;
         fil.open("output", ios::in);
-        for(int i=0;i<26;i++)
+        for(int i=0;i<27;i++)
             getline(fil, line);
         int num[64000];
         char c;
@@ -792,6 +792,8 @@ int main(int argc, const char * argv[])
                 }
                 cout << endl;
             }
+            cout << "";
+            cout << "";
         }
 }
 
