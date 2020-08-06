@@ -79,6 +79,19 @@ void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, i
     ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[4])+' '+to_string(-map[x][y][z].net_id[4])+" 0");
 }
 
+struct slot{
+    int var_id;
+    int i, j, k;
+    
+    void setup(int var, int _i, int _j, int _k)
+    {
+        var_id = var;
+        i = _i;
+        j = _j;
+        k = _k;
+    }
+};
+
 class config{
     public:
         string FileName;
@@ -631,6 +644,8 @@ int main(int argc, const char * argv[])
                 }
             }
         }
+    int slotcnt1 = 0;
+    int slotcnt2 = 0;
     // constraint
     // ls is to store the constraint in dimacs format, will write into the file later
     for(int i = 0; i < set.size(); i++){
@@ -683,9 +698,41 @@ int main(int argc, const char * argv[])
                     ls.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
                     ls.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
                 }
+                else if(map[i][j][k].type == 'S' && i == 0)
+                    slotcnt1++;
+                else if(map[i][j][k].type == 'S' && i == 1)
+                    slotcnt2++;
             }
         }
     }
+        
+        slot slotorder[slotcnt1 + slotcnt2];
+        int i = 0;
+            for(int k = 1; k < map[0][0].size()-1; k++, i++)
+                slotorder[i].setup(map[0][0][k].var_id, 0, 0, k);
+            for(int j = 1; j < map[0].size(); j++, i++)
+                slotorder[i].setup(map[0][j][map[0][0].size()-1].var_id, 0, j, (int)map[0][0].size()-1);
+            for(int k = (int)map[0][0].size()-3; k >= 0; k--, i++)
+                slotorder[i].setup(map[0][map[0].size()-1][k].var_id, 0, (int)map[0].size()-1, k);
+            for(int j = (int)map[0].size()-3; j > 0; j--, i++)
+                slotorder[i].setup(map[0][j][0].var_id, 0, j, 0);
+        
+            for(int k = 1; k < map[1][0].size()-1; k++, i++)
+                slotorder[i].setup(map[1][0][k].var_id, 0, 0, k);
+            for(int j = 1; j < map[1].size(); j++, i++)
+                slotorder[i].setup(map[1][j][map[1][0].size()-1].var_id, 0, j, (int)map[1][0].size()-1);
+            for(int k = (int)map[1][0].size()-3; k >= 0; k--, i++)
+                slotorder[i].setup(map[1][map[0].size()-1][k].var_id, 0, (int)map[1].size()-1, k);
+            for(int j = (int)map[1].size()-3; j > 0; j--, i++)
+                slotorder[i].setup(map[1][j][0].var_id, 0, j, 0);
+        
+            for(int i = 0; i < slotcnt1-2; i++){
+                for(int j = i+1; j < slotcnt1-1; j++)
+                {
+                    
+                }
+            }
+        
         ofstream file("temp.cnf");
         if(file.is_open()){
             file << "c temp.cnf" << endl;
