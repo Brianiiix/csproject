@@ -43,7 +43,7 @@ class Node{
 
 		int cost;
         
-		// S = Slot, E = Edge, P = Pin, G = Grid, X = nothing
+		// S = Slot, E = Edge, P = Pin, G = Grid, B = boundary X = nothing
 		char type = 'X';
 		int var_id;
         int pin_id;

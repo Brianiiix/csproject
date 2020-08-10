@@ -560,21 +560,23 @@ int main(int argc, const char * argv[])
     //map.resize(cfig.group_name.size() + 1);
     map.resize(2);
     for(int i = 0; i < set.size(); i++){
+        // length between boundary and nearest pin #even only#
+        int bsize = 4;
         // row and column here contains only pins, so - 2 slots/fanout_nodes
         int row = (set.at(i).top/GU)-(set.at(i).down/GU)+1-2;
         int column = (set.at(i).right/GU)-(set.at(i).left/GU)+1-2;
         // pin + edge(pin * 2 - 1) + slot/fanout_node(2) = pin * 2 + 1
-        map.at(i).resize(row * 2 + 1, vector<Node>(column * 2 + 1));
-        cout << "---size of grid map "<< i <<" is " << row * 2 + 1 << " x " << column * 2 + 1 << "---" << endl;
+        map.at(i).resize(row * 2 + 1 + bsize*2, vector<Node>(column * 2 + 1 + bsize*2));
+        cout << "---size of grid map "<< i <<" is " << row * 2 + 1 + bsize*2 << " x " << column * 2 + 1 + bsize*2 << "---" << endl;
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
                 // set x and y coor (origin is at top-left)
                 map.at(i).at(j).at(k).SetUp(set.at(i).left / 100 + k * GU / 100, set.at(i).top / 100 - j * GU / 100);
                 // default : 4 vertexes of grip map and (x,y)=(even,even) have nothing
-                if((j == 0 || j == map.at(i).size() - 1) && (k == 0 || k == map.at(i).at(0).size() - 1)){
+                //if((j == 0 || j == map.at(i).size() - 1) && (k == 0 || k == map.at(i).at(0).size() - 1)){
                 // Slot (boundary except the vertexes)
-                }else if(j == 0 || k == 0 || j == map.at(i).size() - 1 || k == map.at(i).at(0).size() - 1){
-                    map.at(i).at(j).at(k).type = 'S';
+                if(j == 0 || k == 0 || j == map.at(i).size() - 1 || k == map.at(i).at(0).size() - 1){
+                    map.at(i).at(j).at(k).type = 'B';
                 // Grid (x,y)=(odd,odd)
                 }else if((j % 2 != 0) && (k % 2 != 0)){
                     map.at(i).at(j).at(k).type = 'G';
@@ -585,34 +587,40 @@ int main(int argc, const char * argv[])
                 map.at(i).at(j).at(k).var_id = var_id_counter++;
             }
         }
-        // Pin *2 group only*
+        // **
+        int z = 1;
+        for(int j = 0; j < pp.size(); j++){
+            map[i][map[i].size()-1][z].type = 'S';
+            z += 2;
+        }
+        // Pin **2 group only**
         if(i == 0){
             for(int j = 0; j < pp.size(); j++){
-                cout << "coor of the pin is (" << (pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1
-                     << "," << ((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1 << ")" << endl;
+                cout << "coor of the pin is (" << (pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize
+                     << "," << ((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1+bsize << ")" << endl;
                 // top/GU-1 and left/GU+1 to elim slots
-                map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
-                map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).pin_id = j;
+                map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1+bsize).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).type = 'P';
+                map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1+bsize).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).pin_id = j;
                 int cnt = 0;
                 int dec = j;
                 while(dec != 0)
                 {
-                    map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1).net_id[cnt] = (dec % 2);
+                    map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1+bsize).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).net_id[cnt] = (dec % 2);
                     dec /= 2;
                     cnt++;
                 }
             }
         }else if(i == 1){
             for(int j = 0; j < pp.size(); j++){
-                cout << "coor of the pin is (" << (pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1
-                     << "," << ((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1 << ")" << endl;//
-                map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).type = 'P';
-                map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).pin_id = j;
+                cout << "coor of the pin is (" << (pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize
+                     << "," << ((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1+2 << ")" << endl;//
+                map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1+bsize).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).type = 'P';
+                map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1+bsize).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).pin_id = j;
                 int cnt = 0;
                 int dec = j;
                 while(dec != 0)
                 {
-                    map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1).net_id[cnt] = (dec % 2);
+                    map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1+bsize).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).net_id[cnt] = (dec % 2);
                     dec /= 2;
                     cnt++;
                 }
@@ -696,16 +704,19 @@ int main(int argc, const char * argv[])
                     ls.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
                     ls.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
                 }
-                else if(map[i][j][k].type == 'S' && i == 0)
+                /*else if(map[i][j][k].type == 'S' && i == 0)
                     slotcnt1++;
                 else if(map[i][j][k].type == 'S' && i == 1)
-                    slotcnt2++;
+                    slotcnt2++;*/
+                else if(map[i][j][k].type == 'S'){
+                    
+                }
             }
         }
     }
         
         //slot slotorder[slotcnt1 + slotcnt2];
-        vector<slot> slotorder;
+        /*vector<slot> slotorder;
         slotorder.resize(slotcnt1 + slotcnt2);
         int i = 0;
             for(int k = 1; k < map[0][0].size()-1; k++, i++)
@@ -731,7 +742,7 @@ int main(int argc, const char * argv[])
                 {
                     
                 }
-            }
+            }*/
         
         ofstream file("temp.cnf");
         if(file.is_open()){
@@ -759,7 +770,7 @@ int main(int argc, const char * argv[])
         
         ifstream fil;
         fil.open("output", ios::in);
-        for(int i=0;i<27;i++)
+        for(int i=0;i<27;i++) // 26->27
             getline(fil, line);
         int num[64000];
         char c;
@@ -787,7 +798,8 @@ int main(int argc, const char * argv[])
                                 cout << ' ';
                             break;
                         case 'P' : cout << 'x'; break;
-                        case 'S' : cout << '#'; break;
+                        case 'S' : cout << 'S'; break;
+                        case 'B' : cout << '#'; break;
                     }
                 }
                 cout << endl;
