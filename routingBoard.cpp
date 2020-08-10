@@ -80,12 +80,10 @@ void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, i
 }
 
 struct slot{
-    int var_id;
     int i, j, k;
     
-    void setup(int var, int _i, int _j, int _k)
+    void setup(int _i, int _j, int _k)
     {
-        var_id = var;
         i = _i;
         j = _j;
         k = _k;
@@ -520,6 +518,7 @@ int main(int argc, const char * argv[])
 
     vector<pinpair> pp;
     pp.resize(net.size());
+    slot map0slot[pp.size()], map1slot[pp.size()];
     int GU = findType("./case/1.brd_input.pCSet" , "DEFAULT", "./case/1.brd_input.sCSet", "DEFAULT");// Unit of grid, default : 800
         
     for(int i = 0; i < net.size(); i++){
@@ -592,6 +591,8 @@ int main(int argc, const char * argv[])
         for(int j = 0; j < pp.size(); j++){
             map[i][map[i].size()-1][z].type = 'S';
             z += 2;
+            if(i == 0) map0slot[j].setup(i, (int)map[i].size()-1, z);
+            else map1slot[j].setup(i, (int)map[i].size()-1, z);
         }
         // Pin **2 group only**
         if(i == 0){
@@ -709,12 +710,31 @@ int main(int argc, const char * argv[])
                 else if(map[i][j][k].type == 'S' && i == 1)
                     slotcnt2++;*/
                 else if(map[i][j][k].type == 'S'){
-                    
+                    ls.push_back(to_string(map[i][j][k].var_id)+" 0");
+                }
+                else if(map[i][j][k].type == 'B'){
+                    ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
                 }
             }
         }
     }
-        
+        //To match two map's slot order
+        for(int i=0; i < pp.size(); i++)
+        {
+            int a = map0slot[i].i;
+            int b = map0slot[i].j;
+            int c = map0slot[i].k;
+            int x = map1slot[i].i;
+            int y = map1slot[i].j;
+            int z = map1slot[i].k;
+            for(int j=0; j<5; j++)
+            {
+                //(¬a ∨ b) ∧ (a ∨ ¬b)
+                //map[a][b][c].netid = map[x][y][z].netid
+                ls.push_back(to_string(-map[a][b][c].net_id[j])+' '+to_string(map[x][y][z].net_id[j])+" 0");
+                ls.push_back(to_string(map[a][b][c].net_id[j])+' '+to_string(-map[x][y][z].net_id[j])+" 0");
+            }
+        }
         //slot slotorder[slotcnt1 + slotcnt2];
         /*vector<slot> slotorder;
         slotorder.resize(slotcnt1 + slotcnt2);
@@ -736,12 +756,6 @@ int main(int argc, const char * argv[])
                 slotorder[i].setup(map[1][map[0].size()-1][k].var_id, 0, (int)map[1].size()-1, k);
             for(int j = (int)map[1].size()-3; j > 0; j--, i++)
                 slotorder[i].setup(map[1][j][0].var_id, 0, j, 0);
-        
-            for(int i = 0; i < slotcnt1-2; i++){
-                for(int j = i+1; j < slotcnt1-1; j++)
-                {
-                    
-                }
             }*/
         
         ofstream file("temp.cnf");
@@ -783,7 +797,7 @@ int main(int argc, const char * argv[])
             cout << "\n---Grid map " << i << "---" << endl;
             for(int j = 0; j < map.at(i).size(); j++){
                 for(int k = 0; k < map.at(i).at(0).size(); k++){
-                    switch (map.at(i).at(j).at(k).type){
+                    switch (map[i][j][k].type){
                         case 'X' : cout << ' '; break;
                         case 'G' :
                             if(num[map[i][j][k].var_id-1]>0)
