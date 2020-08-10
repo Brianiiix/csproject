@@ -711,6 +711,7 @@ int main(int argc, const char * argv[])
                     slotcnt2++;*/
                 else if(map[i][j][k].type == 'S'){
                     ls.push_back(to_string(map[i][j][k].var_id)+" 0");
+                    lsfunc(ls, map, i, j, k, i, j-1, k, i, j, k);
                 }
                 else if(map[i][j][k].type == 'B'){
                     ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
@@ -781,6 +782,8 @@ int main(int argc, const char * argv[])
         for(int i=0;i<62363;i++)
             fil >> num[i];
          */
+        string command = "./open-wbo temp.cnf > output";
+        system(command.c_str());
         
         ifstream fil;
         fil.open("output", ios::in);
