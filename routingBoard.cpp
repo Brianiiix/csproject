@@ -518,7 +518,10 @@ int main(int argc, const char * argv[])
 
     vector<pinpair> pp;
     pp.resize(net.size());
-    slot map0slot[pp.size()], map1slot[pp.size()];
+    vector<slot> map0slot, map1slot;
+    map0slot.resize(pp.size());
+    map1slot.resize(pp.size());
+
     int GU = findType("./case/1.brd_input.pCSet" , "DEFAULT", "./case/1.brd_input.sCSet", "DEFAULT");// Unit of grid, default : 800
         
     for(int i = 0; i < net.size(); i++){
@@ -543,7 +546,7 @@ int main(int argc, const char * argv[])
     }
         
     vector<boundary> set;
-    set.resize(2);
+    set.resize(cfig.group_name.size() + 1);
     for(int i = 0; i < 2; i++){
         set.at(i) = findboundary(pp, i+1);
         cout<<"boundary "<< i << endl<<set.at(i).top/GU<<' '<<set.at(i).down/GU<<' '<<set.at(i).left/GU<<' '<<set.at(i).right/GU<<endl;
@@ -557,7 +560,7 @@ int main(int argc, const char * argv[])
     int var_id_counter = 0;
     // +1 is for CPU name and node[0] is CPU
     //map.resize(cfig.group_name.size() + 1);
-    map.resize(2);
+    map.resize(cfig.group_name.size() + 1);
     for(int i = 0; i < set.size(); i++){
         // length between boundary and nearest pin #even only#
         int bsize = 4;
@@ -629,28 +632,28 @@ int main(int argc, const char * argv[])
         }
     }
     list<string> ls;
-        for(int i = 0; i < set.size(); i++){
-            for(int j = 0; j < map.at(i).size(); j++){
-                for(int k = 0; k < map.at(i).at(0).size(); k++){
-                    if(map[i][j][k].type == 'P'){
-                        for(int l = 0; l < 5; l++){
-                            if(map[i][j][k].net_id[l] == 1){
-                                map[i][j][k].net_id[l] = var_id_counter++;
-                                ls.push_back(to_string(map[i][j][k].net_id[l])+" 0");
-                            }
-                            else{
-                                map[i][j][k].net_id[l] = var_id_counter++;
-                                ls.push_back(to_string(-map[i][j][k].net_id[l])+" 0");
-                            }
+    for(int i = 0; i < set.size(); i++){
+        for(int j = 0; j < map.at(i).size(); j++){
+            for(int k = 0; k < map.at(i).at(0).size(); k++){
+                if(map[i][j][k].type == 'P'){
+                    for(int l = 0; l < 5; l++){
+                        if(map[i][j][k].net_id[l] == 1){
+                            map[i][j][k].net_id[l] = var_id_counter++;
+                            ls.push_back(to_string(map[i][j][k].net_id[l])+" 0");
+                        }
+                        else{
+                            map[i][j][k].net_id[l] = var_id_counter++;
+                            ls.push_back(to_string(-map[i][j][k].net_id[l])+" 0");
                         }
                     }
-                    else{
-                        for(int l = 0; l < 5; l++)
-                            map[i][j][k].net_id[l] = var_id_counter++;
-                    }
+                }
+                else{
+                    for(int l = 0; l < 5; l++)
+                        map[i][j][k].net_id[l] = var_id_counter++;
                 }
             }
         }
+    }
     int slotcnt1 = 0;
     int slotcnt2 = 0;
     // constraint
@@ -711,7 +714,7 @@ int main(int argc, const char * argv[])
                     slotcnt2++;*/
                 else if(map[i][j][k].type == 'S'){
                     ls.push_back(to_string(map[i][j][k].var_id)+" 0");
-                    lsfunc(ls, map, i, j, k, i, j-1, k, i, j, k);
+                    //lsfunc(ls, map, i, j, k, i, j-1, k, i, j, k);
                 }
                 else if(map[i][j][k].type == 'B'){
                     ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
@@ -732,8 +735,8 @@ int main(int argc, const char * argv[])
             {
                 //(¬a ∨ b) ∧ (a ∨ ¬b)
                 //map[a][b][c].netid = map[x][y][z].netid
-                ls.push_back(to_string(-map[a][b][c].net_id[j])+' '+to_string(map[x][y][z].net_id[j])+" 0");
-                ls.push_back(to_string(map[a][b][c].net_id[j])+' '+to_string(-map[x][y][z].net_id[j])+" 0");
+                //ls.push_back(to_string(-map[a][b][c].net_id[j])+' '+to_string(map[x][y][z].net_id[j])+" 0");
+                //ls.push_back(to_string(map[a][b][c].net_id[j])+' '+to_string(-map[x][y][z].net_id[j])+" 0");
             }
         }
         //slot slotorder[slotcnt1 + slotcnt2];
@@ -782,18 +785,25 @@ int main(int argc, const char * argv[])
         for(int i=0;i<62363;i++)
             fil >> num[i];
          */
-        string command = "./open-wbo temp.cnf > output";
-        system(command.c_str());
+        //string command = "./open-wbo temp.cnf > output";
+        //system(command.c_str());
         
         ifstream fil;
         fil.open("output", ios::in);
         for(int i=0;i<27;i++) // 26->27
             getline(fil, line);
-        int num[64000];
+        vector<int> num;
+        num.reserve(64000);
         char c;
         fil >> c;
-        for(int i=0;i<62363;i++)
-            fil>>num[i];
+        int tem, tem2;
+        for(int i=0;i<62363;i++){
+            tem2 = tem;
+            fil>>tem;
+            if(tem2 == tem) break;
+            num.push_back(tem);
+        }
+        cout << num.size();
         
         //draw the grid map
         for(int i = 0; i < set.size(); i++){
@@ -815,7 +825,8 @@ int main(int argc, const char * argv[])
                                 cout << ' ';
                             break;
                         case 'P' : cout << 'x'; break;
-                        case 'S' : cout << 'S'; break;
+                        case 'S' : cout << ((num[map[i][j][k].net_id[0]-1])?1:0)+((num[map[i][j][k].net_id[1]-1])?2:0)+
+                        ((num[map[i][j][k].net_id[2]-1])?4:0)+((num[map[i][j][k].net_id[3]-1])?8:0)+((num[map[i][j][k].net_id[4]-1])?16:0); break;
                         case 'B' : cout << '#'; break;
                     }
                 }
