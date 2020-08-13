@@ -47,8 +47,10 @@ class Node{
 		char type = 'X';
 		int var_id;
         int pin_id;
-    int net_id[5] = {0};
+    	int net_id[5] = {0};
 		bool bit;
+		// check redundant cycles
+		bool check = false;
 
 		void SetUp(int _x,int _y){
 			x = _x;

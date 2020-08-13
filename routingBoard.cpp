@@ -557,13 +557,13 @@ int main(int argc, const char * argv[])
     // grid map declared here
     // many m x n 2D vector of vector
     vector<vector <vector<Node> > > map;
-    int var_id_counter = 0;
+    int var_id_counter = 1;
+    // length between boundary and nearest pin #even only#
+    int bsize = 4;
     // +1 is for CPU name and node[0] is CPU
     //map.resize(cfig.group_name.size() + 1);
     map.resize(cfig.group_name.size() + 1);
     for(int i = 0; i < set.size(); i++){
-        // length between boundary and nearest pin #even only#
-        int bsize = 4;
         // row and column here contains only pins, so - 2 slots/fanout_nodes
         int row = (set.at(i).top/GU)-(set.at(i).down/GU)+1-2;
         int column = (set.at(i).right/GU)-(set.at(i).left/GU)+1-2;
@@ -590,12 +590,12 @@ int main(int argc, const char * argv[])
             }
         }
         // **
-        int z = 1;
+        int z = 1, bd = 0;
         for(int j = 0; j < pp.size(); j++){
-            map[i][map[i].size()-1][z].type = 'S';
+            map[i][bd][z].type = 'S';
             z += 2;
-            if(i == 0) map0slot[j].setup(i, (int)map[i].size()-1, z);
-            else map1slot[j].setup(i, (int)map[i].size()-1, z);
+            if(i == 0) map0slot[j].setup(i, bd, z);
+            else map1slot[j].setup(i, bd, z);
         }
         // Pin **2 group only**
         if(i == 0){
@@ -714,7 +714,8 @@ int main(int argc, const char * argv[])
                     slotcnt2++;*/
                 else if(map[i][j][k].type == 'S'){
                     ls.push_back(to_string(map[i][j][k].var_id)+" 0");
-                    //lsfunc(ls, map, i, j, k, i, j-1, k, i, j, k);
+                    // **
+                    lsfunc(ls, map, i, j, k, i, j+1, k, i, j, k);
                 }
                 else if(map[i][j][k].type == 'B'){
                     ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
@@ -722,119 +723,167 @@ int main(int argc, const char * argv[])
             }
         }
     }
-        //To match two map's slot order
-        for(int i=0; i < pp.size(); i++)
+    //To match two map's slot order
+    for(int i=0; i < pp.size(); i++)
+    {
+        int a = map0slot[i].i;
+        int b = map0slot[i].j;
+        int c = map0slot[i].k;
+        int x = map1slot[i].i;
+        int y = map1slot[i].j;
+        int z = map1slot[i].k;
+        for(int j=0; j<5; j++)
         {
-            int a = map0slot[i].i;
-            int b = map0slot[i].j;
-            int c = map0slot[i].k;
-            int x = map1slot[i].i;
-            int y = map1slot[i].j;
-            int z = map1slot[i].k;
-            for(int j=0; j<5; j++)
-            {
-                //(¬a ∨ b) ∧ (a ∨ ¬b)
-                //map[a][b][c].netid = map[x][y][z].netid
-                //ls.push_back(to_string(-map[a][b][c].net_id[j])+' '+to_string(map[x][y][z].net_id[j])+" 0");
-                //ls.push_back(to_string(map[a][b][c].net_id[j])+' '+to_string(-map[x][y][z].net_id[j])+" 0");
-            }
+            //(¬a ∨ b) ∧ (a ∨ ¬b)
+            //map[a][b][c].netid = map[x][y][z].netid
+            //ls.push_back(to_string(-map[a][b][c].net_id[j])+' '+to_string(map[x][y][z].net_id[j])+" 0");
+            //ls.push_back(to_string(map[a][b][c].net_id[j])+' '+to_string(-map[x][y][z].net_id[j])+" 0");
         }
-        //slot slotorder[slotcnt1 + slotcnt2];
-        /*vector<slot> slotorder;
-        slotorder.resize(slotcnt1 + slotcnt2);
-        int i = 0;
-            for(int k = 1; k < map[0][0].size()-1; k++, i++)
-                slotorder[i].setup(map[0][0][k].var_id, 0, 0, k);
-            for(int j = 1; j < map[0].size(); j++, i++)
-                slotorder[i].setup(map[0][j][map[0][0].size()-1].var_id, 0, j, (int)map[0][0].size()-1);
-            for(int k = (int)map[0][0].size()-3; k >= 0; k--, i++)
-                slotorder[i].setup(map[0][map[0].size()-1][k].var_id, 0, (int)map[0].size()-1, k);
-            for(int j = (int)map[0].size()-3; j > 0; j--, i++)
-                slotorder[i].setup(map[0][j][0].var_id, 0, j, 0);
-        
-            for(int k = 1; k < map[1][0].size()-1; k++, i++)
-                slotorder[i].setup(map[1][0][k].var_id, 0, 0, k);
-            for(int j = 1; j < map[1].size(); j++, i++)
-                slotorder[i].setup(map[1][j][map[1][0].size()-1].var_id, 0, j, (int)map[1][0].size()-1);
-            for(int k = (int)map[1][0].size()-3; k >= 0; k--, i++)
-                slotorder[i].setup(map[1][map[0].size()-1][k].var_id, 0, (int)map[1].size()-1, k);
-            for(int j = (int)map[1].size()-3; j > 0; j--, i++)
-                slotorder[i].setup(map[1][j][0].var_id, 0, j, 0);
-            }*/
-        
-        ofstream file("temp.cnf");
-        if(file.is_open()){
-            file << "c temp.cnf" << endl;
-            file << "p cnf "<<var_id_counter-1<<' '<<ls.size()<<endl;
-            for(string l: ls)
-                file << l << endl;
-        }
-        file.close();
-        
-        /* for xcode
-        string command = "./open-wbo /Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/temp.cnf > output";
-        system(command.c_str());
-        
-         ifstream fil;
+    }
+    //slot slotorder[slotcnt1 + slotcnt2];
+    /*vector<slot> slotorder;
+    slotorder.resize(slotcnt1 + slotcnt2);
+    int i = 0;
+        for(int k = 1; k < map[0][0].size()-1; k++, i++)
+            slotorder[i].setup(map[0][0][k].var_id, 0, 0, k);
+        for(int j = 1; j < map[0].size(); j++, i++)
+            slotorder[i].setup(map[0][j][map[0][0].size()-1].var_id, 0, j, (int)map[0][0].size()-1);
+        for(int k = (int)map[0][0].size()-3; k >= 0; k--, i++)
+            slotorder[i].setup(map[0][map[0].size()-1][k].var_id, 0, (int)map[0].size()-1, k);
+        for(int j = (int)map[0].size()-3; j > 0; j--, i++)
+            slotorder[i].setup(map[0][j][0].var_id, 0, j, 0);
+    
+        for(int k = 1; k < map[1][0].size()-1; k++, i++)
+            slotorder[i].setup(map[1][0][k].var_id, 0, 0, k);
+        for(int j = 1; j < map[1].size(); j++, i++)
+            slotorder[i].setup(map[1][j][map[1][0].size()-1].var_id, 0, j, (int)map[1][0].size()-1);
+        for(int k = (int)map[1][0].size()-3; k >= 0; k--, i++)
+            slotorder[i].setup(map[1][map[0].size()-1][k].var_id, 0, (int)map[1].size()-1, k);
+        for(int j = (int)map[1].size()-3; j > 0; j--, i++)
+            slotorder[i].setup(map[1][j][0].var_id, 0, j, 0);
+        }*/
+    
+    ofstream file("temp.cnf");
+    if(file.is_open()){
+        file << "c temp.cnf" << endl;
+        file << "p cnf "<<var_id_counter-1<<' '<<ls.size()<<endl;
+        for(string l: ls)
+            file << l << endl;
+    }
+    file.close();
+    
+    /* for xcode
+    string command = "./open-wbo /Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/temp.cnf > output";
+    system(command.c_str());
+    
+    ifstream fil;
     fil.open("/Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/output", ios::in);
-        for(int i=0;i<26;i++)
-            getline(fil, line);
-        int num[64000];
-        char c;
-        fil >> c;
-        for(int i=0;i<62363;i++)
-            fil >> num[i];
-         */
-        //string command = "./open-wbo temp.cnf > output";
-        //system(command.c_str());
-        
-        ifstream fil;
-        fil.open("output", ios::in);
-        for(int i=0;i<27;i++) // 26->27
-            getline(fil, line);
-        vector<int> num;
-        num.reserve(64000);
-        char c;
-        fil >> c;
-        int tem, tem2;
-        for(int i=0;i<62363;i++){
-            tem2 = tem;
-            fil>>tem;
-            if(tem2 == tem) break;
-            num.push_back(tem);
-        }
-        cout << num.size();
-        
-        //draw the grid map
-        for(int i = 0; i < set.size(); i++){
-            cout << "\n---Grid map " << i << "---" << endl;
-            for(int j = 0; j < map.at(i).size(); j++){
-                for(int k = 0; k < map.at(i).at(0).size(); k++){
-                    switch (map[i][j][k].type){
-                        case 'X' : cout << ' '; break;
-                        case 'G' :
-                            if(num[map[i][j][k].var_id-1]>0)
-                                cout << '.';
-                            else
-                                cout << ' ';
-                            break;
-                        case 'E' :
-                            if(num[map[i][j][k].var_id-1]>0)
-                                cout << ((k % 2 == 0)?'-':'|');
-                            else
-                                cout << ' ';
-                            break;
-                        case 'P' : cout << 'x'; break;
-                        case 'S' : cout << ((num[map[i][j][k].net_id[0]-1])?1:0)+((num[map[i][j][k].net_id[1]-1])?2:0)+
-                        ((num[map[i][j][k].net_id[2]-1])?4:0)+((num[map[i][j][k].net_id[3]-1])?8:0)+((num[map[i][j][k].net_id[4]-1])?16:0); break;
-                        case 'B' : cout << '#'; break;
-                    }
-                }
-                cout << endl;
+    for(int i=0;i<26;i++)
+        getline(fil, line);
+    int num[64000];
+    char c;
+    fil >> c;
+    for(int i=0;i<62363;i++)
+        fil >> num[i];
+    */    
+    string command = "./open-wbo temp.cnf > output";
+    system(command.c_str());
+    
+    ifstream fil;
+    fil.open("output", ios::in);
+    for(int i=0;i<27;i++) // 26->27
+        getline(fil, line);
+    vector<int> num;
+    num.reserve(64000);
+    char c;
+    fil >> c;
+    int tem, tem2;
+    for(int i=0;i<62363;i++){
+        tem2 = tem;
+        fil>>tem;
+        if(tem2 == tem) break;
+        num.push_back(tem);
+    }
+    //cout << num.size() << endl;
+    
+    for(int i = 0; i < set.size(); i++){
+        for(int j = 0; j < map.at(i).size(); j++){
+            for(int k = 0; k < map.at(i).at(0).size(); k++){
+                map[i][j][k].bit = (num[map[i][j][k].var_id-1] > 0) ? true : false;
             }
-            cout << "";
-            cout << "";
         }
+    }
+    
+    // BFS from pin to find redundant cycles **
+    for(int i = 0; i < pp.size(); i++){
+        int x = (pp[i].first_x/GU - (set.at(0).left/GU+1)) * 2 + 1 + bsize;
+        int y = ((set.at(0).top/GU-1) - pp[i].first_y/GU) * 2 + 1 + bsize;
+        while(map[0][y][x].type != 'S'){
+            if(map[0][y+1][x].bit && !map[0][y+1][x].check){ // D
+                map[0][y++][x].check = true;
+            }else if(map[0][y-1][x].bit && !map[0][y-1][x].check){ // T
+                map[0][y--][x].check = true;
+            }else if(map[0][y][x+1].bit && !map[0][y][x+1].check){ // L
+                map[0][y][x++].check = true;
+            }else if(map[0][y][x-1].bit && !map[0][y][x-1].check){ // R
+                map[0][y][x--].check = true;
+            }
+        }
+    }
+    for(int i = 0; i < pp.size(); i++){
+        int x = (pp[i].second_x/GU - (set.at(1).left/GU+1)) * 2 + 1 + bsize;
+        int y = ((set.at(1).top/GU-1) - pp[i].second_y/GU) * 2 + 1 + bsize;
+        while(map[1][y][x].type != 'S'){
+            if(map[1][y+1][x].bit && !map[1][y+1][x].check){ // D
+                map[1][y++][x].check = true;
+            }else if(map[1][y-1][x].bit && !map[1][y-1][x].check){ // T
+                map[1][y--][x].check = true;
+            }else if(map[1][y][x+1].bit && !map[1][y][x+1].check){ // L
+                map[1][y][x++].check = true;
+            }else if(map[1][y][x-1].bit && !map[1][y][x-1].check){ // R
+                map[1][y][x--].check = true;
+            }
+        }
+    }
+
+    for(int i = 0; i < set.size(); i++){
+        for(int j = 1; j < map.at(i).size()-1; j++){
+            for(int k = 1; k < map.at(i).at(0).size()-1; k++){
+                map[i][j][k].bit = (map[i][j][k].check) ? true : false;
+            }
+        }
+    }
+
+    //draw the grid map
+    for(int i = 0; i < set.size(); i++){
+        cout << "\n---Grid map " << i << "---" << endl;
+        for(int j = 0; j < map.at(i).size(); j++){
+            for(int k = 0; k < map.at(i).at(0).size(); k++){
+                switch (map[i][j][k].type){
+                    case 'X' : cout << ' '; break;
+                    case 'G' :
+                        if(map[i][j][k].bit)
+                            cout << '.';
+                        else
+                            cout << ' ';
+                        break;
+                    case 'E' :
+                        if(map[i][j][k].bit)
+                            cout << ((k % 2 == 0)?'-':'|');
+                        else
+                            cout << ' ';
+                        break;
+                    case 'P' : cout << 'x'; break;
+                    case 'S' : cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
+                    ((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0); break;
+                    case 'B' : cout << '#'; break;
+                }
+            }
+            cout << endl;
+        }
+        cout << "";
+        cout << "";
+    }
 }
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
