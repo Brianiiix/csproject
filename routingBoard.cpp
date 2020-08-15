@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <fstream>
+// declare both fstream and ostream is necessary before C++11
 #include <ostream>
 #include <map>
 #include <set>
@@ -67,16 +68,10 @@ int cross(const Obs_Point &O, const Obs_Point &A, const Obs_Point &B)
 // map[i][j][k] implies map[a][b][c].netid = map[x][y][z].netid
 void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, int k, int a, int b, int c, int x, int y, int z)
 {
-    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[0])+' '+to_string(map[x][y][z].net_id[0])+" 0");
-    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[1])+' '+to_string(map[x][y][z].net_id[1])+" 0");
-    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[2])+' '+to_string(map[x][y][z].net_id[2])+" 0");
-    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[3])+' '+to_string(map[x][y][z].net_id[3])+" 0");
-    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[4])+' '+to_string(map[x][y][z].net_id[4])+" 0");
-    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[0])+' '+to_string(-map[x][y][z].net_id[0])+" 0");
-    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[1])+' '+to_string(-map[x][y][z].net_id[1])+" 0");
-    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[2])+' '+to_string(-map[x][y][z].net_id[2])+" 0");
-    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[3])+' '+to_string(-map[x][y][z].net_id[3])+" 0");
-    ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[4])+' '+to_string(-map[x][y][z].net_id[4])+" 0");
+    for(int l = 0; l < 5; l++){
+        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[l])+' '+to_string(map[x][y][z].net_id[l])+" 0");
+        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[l])+' '+to_string(-map[x][y][z].net_id[l])+" 0");
+    }
 }
 
 struct slot{
@@ -286,8 +281,9 @@ int main(int argc, const char * argv[])
     int total_net_num = 0;
     clock_t tStart = clock();
     config cfig;
+    // ***
     cfig.load_config("config/config_1_1.txt");
-
+    // ***
     string obs_name = "case/1.brd";
     cfig.load_config(obs_name+".obs");
 
@@ -311,6 +307,7 @@ int main(int argc, const char * argv[])
     //printf("Loading Config completed\n");
     ifstream fin;
     string line;
+    // **
     fin.open("case/1.brd_input.netlist", ios::in);
 
     int pinx,piny;
@@ -522,6 +519,7 @@ int main(int argc, const char * argv[])
     map0slot.resize(pp.size());
     map1slot.resize(pp.size());
 
+    // ***
     int GU = findType("./case/1.brd_input.pCSet" , "DEFAULT", "./case/1.brd_input.sCSet", "DEFAULT");// Unit of grid, default : 800
         
     for(int i = 0; i < net.size(); i++){
@@ -715,7 +713,10 @@ int main(int argc, const char * argv[])
                 else if(map[i][j][k].type == 'S'){
                     ls.push_back(to_string(map[i][j][k].var_id)+" 0");
                     // **
-                    lsfunc(ls, map, i, j, k, i, j+1, k, i, j, k);
+                    for(int l = 0; l < 5; l++){
+                        ls.push_back(to_string(-map[i][j][k].net_id[l])+' '+to_string(map[i][j+1][k].net_id[l])+" 0");
+                        ls.push_back(to_string(map[i][j][k].net_id[l])+' '+to_string(-map[i][j+1][k].net_id[l])+" 0");
+                    }
                 }
                 else if(map[i][j][k].type == 'B'){
                     ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
@@ -736,8 +737,8 @@ int main(int argc, const char * argv[])
         {
             //(¬a ∨ b) ∧ (a ∨ ¬b)
             //map[a][b][c].netid = map[x][y][z].netid
-            //ls.push_back(to_string(-map[a][b][c].net_id[j])+' '+to_string(map[x][y][z].net_id[j])+" 0");
-            //ls.push_back(to_string(map[a][b][c].net_id[j])+' '+to_string(-map[x][y][z].net_id[j])+" 0");
+            ls.push_back(to_string(-map[a][b][c].net_id[j])+' '+to_string(map[x][y][z].net_id[j])+" 0");
+            ls.push_back(to_string(map[a][b][c].net_id[j])+' '+to_string(-map[x][y][z].net_id[j])+" 0");
         }
     }
     //slot slotorder[slotcnt1 + slotcnt2];
@@ -798,7 +799,7 @@ int main(int argc, const char * argv[])
     char c;
     fil >> c;
     int tem, tem2;
-    for(int i=0;i<62363;i++){
+    for(;;){
         tem2 = tem;
         fil>>tem;
         if(tem2 == tem) break;
@@ -814,7 +815,7 @@ int main(int argc, const char * argv[])
         }
     }
     
-    // BFS from pin to find redundant cycles **
+    // DFS from pin to find redundant cycles **
     for(int i = 0; i < pp.size(); i++){
         int x = (pp[i].first_x/GU - (set.at(0).left/GU+1)) * 2 + 1 + bsize;
         int y = ((set.at(0).top/GU-1) - pp[i].first_y/GU) * 2 + 1 + bsize;
@@ -894,6 +895,7 @@ int main(int argc, const char * argv[])
         outputpin.push_back(temp);
     }
 
+    // ***
     string layout_name = "case/1.brd";
     //outputGDS(layout_name, outputpin, outputedge, crossing_line_total);
 
