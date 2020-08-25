@@ -9,7 +9,7 @@
 #include <set>
 #include <list>
 #include <math.h>
-#include <time.h>
+#include <chrono>
 #include "board.h"
 #include "IO_interface.hpp"
 #include "output_gds.hpp"
@@ -278,8 +278,8 @@ class config{
 
 int main(int argc, const char * argv[])
 {
-    int total_net_num = 0;
-    clock_t tStart = clock();
+    chrono::steady_clock::time_point tStart = chrono::steady_clock::now();
+    chrono::duration<double> Stime, Ttime;
     config cfig;
     // ***
     cfig.load_config("config/config_1_1.txt");
@@ -763,7 +763,7 @@ int main(int argc, const char * argv[])
         for(int j = (int)map[1].size()-3; j > 0; j--, i++)
             slotorder[i].setup(map[1][j][0].var_id, 0, j, 0);
         }*/
-    
+
     ofstream file("temp.cnf");
     if(file.is_open()){
         file << "c temp.cnf" << endl;
@@ -772,7 +772,6 @@ int main(int argc, const char * argv[])
             file << l << endl;
     }
     file.close();
-    
     /* for xcode
     string command = "./open-wbo /Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/temp.cnf > output";
     system(command.c_str());
@@ -787,8 +786,11 @@ int main(int argc, const char * argv[])
     for(int i=0;i<62363;i++)
         fil >> num[i];
     */    
+    chrono::steady_clock::time_point tSStart = chrono::steady_clock::now();
     string command = "./open-wbo temp.cnf > output";
     system(command.c_str());
+    chrono::steady_clock::time_point tSEnd = chrono::steady_clock::now();
+    Stime = chrono::duration_cast<chrono::duration<double>>(tSEnd - tSStart);
     
     ifstream fil;
     fil.open("output", ios::in);
@@ -898,6 +900,11 @@ int main(int argc, const char * argv[])
     // ***
     string layout_name = "case/1.brd";
     //outputGDS(layout_name, outputpin, outputedge, crossing_line_total);
+
+    chrono::steady_clock::time_point tEnd = chrono::steady_clock::now();
+    Ttime = chrono::duration_cast<chrono::duration<double>>(tEnd - tStart);
+    cout << endl << "total run time : " << (int)(Ttime.count()/60) << "m " << Ttime.count() - (int)(Ttime.count()/60) << 's'
+         << endl << "set solver run time : " << (int)(Stime.count()/60) << "m " << Stime.count() - (int)(Stime.count()/60) << 's' << endl;
 
     return 0;
 }
