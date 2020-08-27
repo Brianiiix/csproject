@@ -76,7 +76,7 @@ void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, i
 
 struct slot{
     int i, j, k;
-    
+    // reverse order
     void setup(int _i, int _j, int _k)
     {
         i = _i;
@@ -545,11 +545,34 @@ int main(int argc, const char * argv[])
         
     vector<boundary> set;
     set.resize(cfig.group_name.size() + 1);
-    for(int i = 0; i < 2; i++){
+    for(int i = 0; i < set.size(); i++){
         set.at(i) = findboundary(pp, i+1);
         cout<<"boundary "<< i << endl<<set.at(i).top/GU<<' '<<set.at(i).down/GU<<' '<<set.at(i).left/GU<<' '<<set.at(i).right/GU<<endl;
         // extra 1 space for slots
         set.at(i).setUp(set.at(i).top + GU, set.at(i).down - GU, set.at(i).left - GU, set.at(i).right + GU);
+    }
+    // find relative location between CPU & DDRs
+    bool map0slotRev = false, map1slotRev = false;
+    for(int i = 1; i < set.size(); i++){
+        if(set[i].top <= set[0].down){ // bottom
+            if(set[i].left >= set[0].left+(set[0].right-set[0].left)/2){
+                set[i].loc = 'b'; // bottom right
+                map0slotRev = true;
+            }else{
+                set[i].loc = 'B'; // bottom left
+                map1slotRev = true;
+            }
+        }else if(set[i].down >= set[0].top){ // top
+            if(set[i].left >= set[0].left+(set[0].right-set[0].left)/2){
+                set[i].loc = 't'; // top right
+                map0slotRev = true;
+            }else{
+                set[i].loc = 'T'; // top left
+                map1slotRev = true;
+            }
+        }else{
+            cout << "F" << endl;
+        }
     }
 
     // grid map declared here
@@ -587,13 +610,26 @@ int main(int argc, const char * argv[])
                 map.at(i).at(j).at(k).var_id = var_id_counter++;
             }
         }
-        // **
-        int z = 1, bd = 0;
-        for(int j = 0; j < pp.size(); j++){
-            map[i][bd][z].type = 'S';
-            z += 2;
-            if(i == 0) map0slot[j].setup(i, bd, z);
-            else map1slot[j].setup(i, bd, z);
+        // ** 1 DDR only
+        int z = 1, bd = 0, Z = 1, BD = 0; // for CPU
+        if(i != 0){
+            z = (set[i].loc == 'T' || set[i].loc == 'B') ? map[i][0].size()-2 : 1;
+            bd = (set[i].loc == 'B' || set[i].loc == 'b') ? 0 : map[i].size()-1;
+            Z = (set[i].loc == 't' || set[i].loc == 'b') ? map[0][0].size()-2 : 1;
+            BD = (set[i].loc == 'T' || set[i].loc == 't') ? 0 : map[0].size()-1;
+            for(int j = 0; j < pp.size(); j++){
+                map[i][bd][z].type = 'S';
+                map[0][BD][Z].type = 'S';
+                map0slot[j].setup(0, BD, Z);
+                map1slot[j].setup(i, bd, z);
+                if(set[i].loc == 't' || set[i].loc == 'b'){
+                    z += 2;
+                    Z -= 2;
+                }else{
+                    z -= 2;
+                    Z += 2;
+                }
+            }
         }
         // Pin **2 group only**
         if(i == 0){
@@ -714,8 +750,13 @@ int main(int argc, const char * argv[])
                     ls.push_back(to_string(map[i][j][k].var_id)+" 0");
                     // **
                     for(int l = 0; l < 5; l++){
-                        ls.push_back(to_string(-map[i][j][k].net_id[l])+' '+to_string(map[i][j+1][k].net_id[l])+" 0");
-                        ls.push_back(to_string(map[i][j][k].net_id[l])+' '+to_string(-map[i][j+1][k].net_id[l])+" 0");
+                        if(j == 0){
+                            ls.push_back(to_string(-map[i][j][k].net_id[l])+' '+to_string(map[i][j+1][k].net_id[l])+" 0");
+                            ls.push_back(to_string(map[i][j][k].net_id[l])+' '+to_string(-map[i][j+1][k].net_id[l])+" 0");
+                        }else{
+                            ls.push_back(to_string(-map[i][j][k].net_id[l])+' '+to_string(map[i][j-1][k].net_id[l])+" 0");
+                            ls.push_back(to_string(map[i][j][k].net_id[l])+' '+to_string(-map[i][j-1][k].net_id[l])+" 0");
+                        }
                     }
                 }
                 else if(map[i][j][k].type == 'B'){
@@ -727,12 +768,12 @@ int main(int argc, const char * argv[])
     //To match two map's slot order
     for(int i=0; i < pp.size(); i++)
     {
-        int a = map0slot[i].i;
-        int b = map0slot[i].j;
-        int c = map0slot[i].k;
-        int x = map1slot[i].i;
-        int y = map1slot[i].j;
-        int z = map1slot[i].k;
+        int a = (map0slotRev) ? map0slot[pp.size()-1-i].i : map0slot[i].i;
+        int b = (map0slotRev) ? map0slot[pp.size()-1-i].j : map0slot[i].j;
+        int c = (map0slotRev) ? map0slot[pp.size()-1-i].k : map0slot[i].k;
+        int x = (map1slotRev) ? map1slot[pp.size()-1-i].i : map1slot[i].i;
+        int y = (map1slotRev) ? map1slot[pp.size()-1-i].j : map1slot[i].j;
+        int z = (map1slotRev) ? map1slot[pp.size()-1-i].k : map1slot[i].k;
         for(int j=0; j<5; j++)
         {
             //(¬a ∨ b) ∧ (a ∨ ¬b)
@@ -785,7 +826,37 @@ int main(int argc, const char * argv[])
     fil >> c;
     for(int i=0;i<62363;i++)
         fil >> num[i];
-    */    
+    */
+    //
+    for(int i = 0; i < set.size(); i++){
+        cout << "\n---Grid map " << i << "---" << endl;
+        for(int j = 0; j < map.at(i).size(); j++){
+            for(int k = 0; k < map.at(i).at(0).size(); k++){
+                switch (map[i][j][k].type){
+                    case 'X' : cout << ' '; break;
+                    case 'G' :
+                        if(map[i][j][k].bit)
+                            cout << '.';
+                        else
+                            cout << ' ';
+                        break;
+                    case 'E' :
+                        if(map[i][j][k].bit)
+                            cout << ((k % 2 == 0)?'-':'|');
+                        else
+                            cout << ' ';
+                        break;
+                    case 'P' : cout << 'x'; break;
+                    case 'S' : cout << 'S'; break;
+                    case 'B' : cout << '#'; break;
+                }
+            }
+            cout << endl;
+        }
+        cout << "";
+        cout << "";
+    }
+    //
     chrono::steady_clock::time_point tSStart = chrono::steady_clock::now();
     string command = "./open-wbo temp.cnf > output";
     system(command.c_str());

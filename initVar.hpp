@@ -16,6 +16,8 @@ struct boundary{
     int down;
     int left;
     int right;
+    // C = CPU, T = Top left, t = Top right, B = Bottom left, b = Bottom right
+    char loc = 'C';
     void setUp(int _top, int _down, int _left, int _right){
         top = _top;
         down = _down;
