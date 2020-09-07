@@ -308,7 +308,7 @@ int main(int argc, const char * argv[])
     ifstream fin;
     string line;
     // **
-    fin.open("case/1.brd_input.netlist", ios::in);
+    fin.open("case/1.brd_input_origin.netlist", ios::in);
 
     int pinx,piny;
     std::string outfilename = "test";
@@ -765,6 +765,298 @@ int main(int argc, const char * argv[])
             }
         }
     }
+    
+    //tile structure begin
+
+    /*
+
+    11-13-15-17-19  <--RowNow
+    |            |
+    31          39
+    |            |
+    51          59 
+    |            |
+    71          79
+    |            |
+    91-93-95-97-99
+    ^
+    |__ ColNow
+
+    */
+   
+    int N13, N15, N17, N31, N39, N51, N59, N71, N79, N93, N95, N97; //node left of imply
+    int ColNow, RowNow;
+    int N33, N35, N37, N53, N55, N57, N73, N75, N77; //node right of imply
+    for(int i = 0; i < set.size(); i++){
+        ColNow = 0;
+        
+        while(ColNow + 8 <= map[i].size()){
+            RowNow = 0;
+            while(RowNow + 8 <= map[i][0].size()){
+                //node left of imply
+                N13 = map[i][ColNow+2][RowNow].var_id;
+                N15 = map[i][ColNow+4][RowNow].var_id;
+                N17 = map[i][ColNow+6][RowNow].var_id;
+                N31 = map[i][ColNow][RowNow+2].var_id;
+                N39 = map[i][ColNow+8][RowNow+2].var_id;
+                N51 = map[i][ColNow][RowNow+4].var_id;
+                N59 = map[i][ColNow+8][RowNow+4].var_id;
+                N71 = map[i][ColNow][RowNow+6].var_id;
+                N79 = map[i][ColNow+8][RowNow+6].var_id;
+                N93 = map[i][ColNow+2][RowNow+8].var_id;
+                N95 = map[i][ColNow+4][RowNow+8].var_id;
+                N97 = map[i][ColNow+6][RowNow+8].var_id;
+                //node right of imply
+                N33 = map[i][ColNow+2][RowNow+2].var_id;
+                N35 = map[i][ColNow+4][RowNow+2].var_id;
+                N37 = map[i][ColNow+6][RowNow+2].var_id;
+                N53 = map[i][ColNow+2][RowNow+4].var_id;
+                N55 = map[i][ColNow+4][RowNow+4].var_id;
+                N57 = map[i][ColNow+6][RowNow+4].var_id;
+                N73 = map[i][ColNow+2][RowNow+6].var_id;
+                N75 = map[i][ColNow+4][RowNow+6].var_id;
+                N77 = map[i][ColNow+6][RowNow+6].var_id;
+                //31 13
+                ls.push_back(to_string(-N31)+' '+to_string(-N13)+' '+to_string(N33)+" 0"); //if both N31 and N13 are true, then constrain the road, which pass through N33 (N31&N13 implies N33)
+                //31 15
+                ls.push_back(to_string(-N31)+' '+to_string(-N15)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N15)+' '+to_string(N35)+" 0");
+                //31 17
+                ls.push_back(to_string(-N31)+' '+to_string(-N17)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N17)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N17)+' '+to_string(N37)+" 0"); 
+                //31 39
+                ls.push_back(to_string(-N31)+' '+to_string(-N39)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N39)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N39)+' '+to_string(N37)+" 0");
+                //31 59
+                ls.push_back(to_string(-N31)+' '+to_string(-N59)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N59)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N59)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N59)+' '+to_string(N57)+" 0");
+                //31 79
+                ls.push_back(to_string(-N31)+' '+to_string(-N79)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N79)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N79)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N79)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N79)+' '+to_string(N77)+" 0");
+                //31 97
+                ls.push_back(to_string(-N31)+' '+to_string(-N97)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N97)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N97)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N97)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N97)+' '+to_string(N77)+" 0");
+                //31 95
+                ls.push_back(to_string(-N31)+' '+to_string(-N95)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N95)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N95)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N95)+' '+to_string(N75)+" 0");
+                //31 93
+                ls.push_back(to_string(-N31)+' '+to_string(-N93)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N93)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N31)+' '+to_string(-N93)+' '+to_string(N73)+" 0");
+                //51 13
+                ls.push_back(to_string(-N51)+' '+to_string(-N13)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N13)+' '+to_string(N33)+" 0");
+                //51 15
+                ls.push_back(to_string(-N51)+' '+to_string(-N15)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N15)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N15)+' '+to_string(N35)+" 0");
+                //51 17
+                ls.push_back(to_string(-N51)+' '+to_string(-N17)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N17)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N17)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N17)+' '+to_string(N37)+" 0");
+                //51 39
+                ls.push_back(to_string(-N51)+' '+to_string(-N39)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N39)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N39)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N39)+' '+to_string(N37)+" 0");
+                //51 59
+                ls.push_back(to_string(-N51)+' '+to_string(-N59)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N59)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N59)+' '+to_string(N57)+" 0");
+                //51 79
+                ls.push_back(to_string(-N51)+' '+to_string(-N79)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N79)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N79)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N79)+' '+to_string(N77)+" 0");
+                //51 97
+                ls.push_back(to_string(-N51)+' '+to_string(-N97)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N97)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N97)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N97)+' '+to_string(N77)+" 0");
+                //51 95
+                ls.push_back(to_string(-N51)+' '+to_string(-N95)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N95)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N95)+' '+to_string(N75)+" 0");
+                //51 93
+                ls.push_back(to_string(-N51)+' '+to_string(-N93)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N51)+' '+to_string(-N93)+' '+to_string(N73)+" 0");
+                //71 93
+                ls.push_back(to_string(-N71)+' '+to_string(-N93)+' '+to_string(N73)+" 0"); 
+                //71 95
+                ls.push_back(to_string(-N71)+' '+to_string(-N95)+' '+to_string(N73)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N95)+' '+to_string(N75)+" 0");
+                //71 97
+                ls.push_back(to_string(-N71)+' '+to_string(-N97)+' '+to_string(N73)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N97)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N97)+' '+to_string(N77)+" 0"); 
+                //71 79
+                ls.push_back(to_string(-N71)+' '+to_string(-N79)+' '+to_string(N73)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N79)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N79)+' '+to_string(N77)+" 0");
+                //71 59
+                ls.push_back(to_string(-N71)+' '+to_string(-N59)+' '+to_string(N73)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N59)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N59)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N59)+' '+to_string(N57)+" 0");
+                //71 39
+                ls.push_back(to_string(-N71)+' '+to_string(-N39)+' '+to_string(N73)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N39)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N39)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N39)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N39)+' '+to_string(N37)+" 0");
+                //71 17
+                ls.push_back(to_string(-N71)+' '+to_string(-N17)+' '+to_string(N73)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N17)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N17)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N17)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N17)+' '+to_string(N37)+" 0");
+                //71 15
+                ls.push_back(to_string(-N71)+' '+to_string(-N15)+' '+to_string(N73)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N15)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N15)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N15)+' '+to_string(N35)+" 0");
+                //71 13
+                ls.push_back(to_string(-N71)+' '+to_string(-N13)+' '+to_string(N73)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N13)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N71)+' '+to_string(-N13)+' '+to_string(N33)+" 0");
+                //13 39
+                ls.push_back(to_string(-N13)+' '+to_string(-N39)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N39)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N39)+' '+to_string(N37)+" 0");
+                //13 59
+                ls.push_back(to_string(-N13)+' '+to_string(-N59)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N59)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N59)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N59)+' '+to_string(N57)+" 0");
+                //13 79
+                ls.push_back(to_string(-N13)+' '+to_string(-N79)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N79)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N79)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N79)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N79)+' '+to_string(N77)+" 0");
+                //13 97
+                ls.push_back(to_string(-N13)+' '+to_string(-N97)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N97)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N97)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N97)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N97)+' '+to_string(N77)+" 0");
+                //13 95
+                ls.push_back(to_string(-N13)+' '+to_string(-N95)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N95)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N95)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N95)+' '+to_string(N75)+" 0");
+                //13 93
+                ls.push_back(to_string(-N13)+' '+to_string(-N93)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N93)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N13)+' '+to_string(-N93)+' '+to_string(N73)+" 0");
+                //15 39
+                ls.push_back(to_string(-N15)+' '+to_string(-N39)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N39)+' '+to_string(N37)+" 0");
+                //15 59
+                ls.push_back(to_string(-N15)+' '+to_string(-N59)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N59)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N59)+' '+to_string(N57)+" 0");
+                //15 79
+                ls.push_back(to_string(-N15)+' '+to_string(-N79)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N79)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N79)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N79)+' '+to_string(N77)+" 0");
+                //15 97
+                ls.push_back(to_string(-N15)+' '+to_string(-N97)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N97)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N97)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N97)+' '+to_string(N77)+" 0");
+                //15 95
+                ls.push_back(to_string(-N15)+' '+to_string(-N95)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N95)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N95)+' '+to_string(N75)+" 0");
+                //15 93
+                ls.push_back(to_string(-N15)+' '+to_string(-N93)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N93)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N93)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N15)+' '+to_string(-N93)+' '+to_string(N73)+" 0");
+                //17 39
+                ls.push_back(to_string(-N17)+' '+to_string(-N39)+' '+to_string(N37)+" 0");
+                //17 59
+                ls.push_back(to_string(-N17)+' '+to_string(-N59)+' '+to_string(N37)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N59)+' '+to_string(N57)+" 0");
+                //17 79
+                ls.push_back(to_string(-N17)+' '+to_string(-N79)+' '+to_string(N37)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N79)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N79)+' '+to_string(N77)+" 0");
+                //17 97
+                ls.push_back(to_string(-N17)+' '+to_string(-N97)+' '+to_string(N37)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N97)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N97)+' '+to_string(N77)+" 0");
+                //17 95
+                ls.push_back(to_string(-N17)+' '+to_string(-N95)+' '+to_string(N37)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N95)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N95)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N95)+' '+to_string(N75)+" 0");
+                //17 93
+                ls.push_back(to_string(-N17)+' '+to_string(-N93)+' '+to_string(N37)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N93)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N93)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N93)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N17)+' '+to_string(-N93)+' '+to_string(N73)+" 0");
+                //39 93
+                ls.push_back(to_string(-N39)+' '+to_string(-N93)+' '+to_string(N37)+" 0");
+                ls.push_back(to_string(-N39)+' '+to_string(-N93)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N39)+' '+to_string(-N93)+' '+to_string(N33)+" 0");
+                ls.push_back(to_string(-N39)+' '+to_string(-N93)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N39)+' '+to_string(-N93)+' '+to_string(N73)+" 0");
+                //39 95
+                ls.push_back(to_string(-N39)+' '+to_string(-N95)+' '+to_string(N37)+" 0");
+                ls.push_back(to_string(-N39)+' '+to_string(-N95)+' '+to_string(N35)+" 0");
+                ls.push_back(to_string(-N39)+' '+to_string(-N95)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N39)+' '+to_string(-N95)+' '+to_string(N75)+" 0");
+                //39 97
+                ls.push_back(to_string(-N39)+' '+to_string(-N97)+' '+to_string(N37)+" 0");
+                ls.push_back(to_string(-N39)+' '+to_string(-N97)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N39)+' '+to_string(-N97)+' '+to_string(N77)+" 0");
+                //59 93
+                ls.push_back(to_string(-N59)+' '+to_string(-N93)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N59)+' '+to_string(-N93)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N59)+' '+to_string(-N93)+' '+to_string(N53)+" 0");
+                ls.push_back(to_string(-N59)+' '+to_string(-N93)+' '+to_string(N73)+" 0");
+                //59 95
+                ls.push_back(to_string(-N59)+' '+to_string(-N95)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N59)+' '+to_string(-N95)+' '+to_string(N55)+" 0");
+                ls.push_back(to_string(-N59)+' '+to_string(-N95)+' '+to_string(N75)+" 0");
+                //59 97
+                ls.push_back(to_string(-N59)+' '+to_string(-N97)+' '+to_string(N57)+" 0");
+                ls.push_back(to_string(-N59)+' '+to_string(-N97)+' '+to_string(N77)+" 0");
+                //79 93
+                ls.push_back(to_string(-N79)+' '+to_string(-N93)+' '+to_string(N73)+" 0");
+                ls.push_back(to_string(-N79)+' '+to_string(-N93)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N79)+' '+to_string(-N93)+' '+to_string(N77)+" 0");
+                //79 95
+                ls.push_back(to_string(-N79)+' '+to_string(-N95)+' '+to_string(N75)+" 0");
+                ls.push_back(to_string(-N79)+' '+to_string(-N95)+' '+to_string(N77)+" 0");
+                //79 97
+                ls.push_back(to_string(-N79)+' '+to_string(-N97)+' '+to_string(N77)+" 0");
+
+                RowNow+=8;
+            }
+            ColNow+=8;
+        }
+    }
+    
+    //tile structure end
+    
     //To match two map's slot order
     for(int i=0; i < pp.size(); i++)
     {
