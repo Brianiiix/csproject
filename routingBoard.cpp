@@ -74,6 +74,13 @@ void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, i
     }
 }
 
+bool notInVector(vector<int> &a, int j)
+{
+    for(int i=0; i<a.size(); i++)
+        if(j==a[i]) return false;
+    return true;
+}
+
 struct slot{
     int i, j, k;
     // reverse order
@@ -308,7 +315,7 @@ int main(int argc, const char * argv[])
     ifstream fin;
     string line;
     // **
-    fin.open("case/1.brd_input_origin.netlist", ios::in);
+    fin.open("case/1.brd_input.netlist", ios::in);
 
     int pinx,piny;
     std::string outfilename = "test";
@@ -1056,7 +1063,65 @@ int main(int argc, const char * argv[])
     }
     
     //tile structure end
-    
+        
+    vector<int> donotsetfalserow0, donotsetfalsecol0, donotsetfalserow1, donotsetfalsecol1;
+    for(int i = 0; i < set.size(); i++){
+        for(int j = 0; j < map.at(i).size(); j++){
+            for(int k = 0; k < map.at(i).at(0).size(); k++){
+                if(map[i][j][k].type == 'P'){
+                    if(i==0){
+                        donotsetfalserow0.push_back(j);
+                        donotsetfalsecol0.push_back(k);
+                    }
+                    else{
+                        donotsetfalserow1.push_back(j);
+                        donotsetfalsecol1.push_back(k);
+                    }
+                }
+                else if(map[i][j][k].type == 'S'){
+                    if(i==0){
+                        donotsetfalserow0.push_back(j);
+                        donotsetfalsecol0.push_back(k);
+                    }
+                    else{
+                        donotsetfalserow1.push_back(j);
+                        donotsetfalsecol1.push_back(k);
+                    }
+                }
+            }
+        }
+    }
+    //row
+    for(int i = 0; i < set.size(); i++){
+        for(int j=1; j<map[i].size(); j+=8){
+            for(int k=1; k<map[i][0].size(); k++){
+                if(map[i][j][k].type == 'E' && i==0){
+                    if(notInVector(donotsetfalserow0, j))
+                        ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                }
+                if(map[i][j][k].type == 'E' && i==1){
+                    if(notInVector(donotsetfalserow1, j))
+                        ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                }
+            }
+        }
+    }//
+    //col
+    for(int i = 0; i < set.size(); i++){
+        for(int j=1; j<map[i].size(); j++){
+            for(int k=1; k<map[i][0].size(); k+=8){
+                if(map[i][j][k].type == 'E' && i==0){
+                    if(notInVector(donotsetfalsecol0, k))
+                        ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                }
+                if(map[i][j][k].type == 'E' && i==1){
+                    if(notInVector(donotsetfalsecol1, k))
+                        ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                }
+            }
+        }
+    }//
+        
     //To match two map's slot order
     for(int i=0; i < pp.size(); i++)
     {
