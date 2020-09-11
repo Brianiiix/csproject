@@ -77,6 +77,65 @@ class Edge{
 		}
 };
 
+void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num){
+	for(int i = 0; i < groupSize; i++){
+		cout << "\n---Grid map " << i << "---" << endl;
+		cout << " ";
+		for(int I = 0; I < map.at(i).at(0).size(); I++){
+			if(I%10 == 0 || I%10 == 5)
+				cout << I % 10;
+			else
+				cout << " ";
+		}
+		cout << endl;
+		for(int j = 0; j < map.at(i).size(); j++){
+			if(j%10 == 0 || j%10 == 5)
+				cout<< j % 10;
+			else
+				cout << " ";
+			for(int k = 0; k < map.at(i).at(0).size(); k++){
+				switch (map[i][j][k].type){
+					case 'X' : cout << ' '; break;
+					case 'G' :
+						if(map[i][j][k].bit)
+							cout << '.';
+						else
+							cout << ' ';
+						break;
+					case 'E' :
+						if(map[i][j][k].bit)
+							cout << ((k % 2 == 0)?'-':'|');
+						else
+							cout << ' ';
+						break;
+					case 'P' :
+						//if(i == 0)
+							//cout << map[i][j][k].group;
+						//else
+							cout << 'x';
+						break;
+                    case 'S' : cout << 'S'; break;
+						//cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
+                    	//((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0); break;
+                    case 'B' : cout << '#'; break;
+				}
+			}
+			if(j%10 == 0 || j%10 == 5)
+				cout<< j % 10;
+			else
+				cout << " ";
+			cout << endl;
+		}
+		cout << " ";
+		for(int I = 0; I < map.at(i).at(0).size(); I++){
+			if(I%10 == 0 || I%10 == 5)
+				cout << I % 10;
+			else
+				cout << " ";
+		}
+		cout << endl;
+	}
+}
 
 class Rect{
 	

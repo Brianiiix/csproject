@@ -797,12 +797,10 @@ int main(int argc, const char * argv[])
     int E21, E41, E61, E81, E12, E32, E52, E72, E92, E23, E43, E63, E83, E14, E34, E54, 
     E74, E94, E25, E45, E65, E85, E16, E36, E56, E76, E96, E27, E47, E67, E87, E18, E38, 
     E58, E78, E98, E29, E49, E69, E89; //edge
+    int HAHA = 5;
     for(int i = 0; i < set.size(); i++){
-        ColNow = 1;
-        
-        while(ColNow + 8 <= map[i].size()){
-            RowNow = 1;
-            while(RowNow + 8 <= map[i][0].size()){
+        for(int RowNow = HAHA; RowNow + 8 + HAHA < map[i].size(); RowNow += 8){
+            for(int ColNow = HAHA; ColNow + 8 + HAHA < map[i][0].size(); ColNow += 8){
                 //node left of imply
                 N13 = map[i][RowNow][ColNow+2].var_id;
                 N15 = map[i][RowNow][ColNow+4].var_id;
@@ -1333,15 +1331,11 @@ int main(int argc, const char * argv[])
                 ls.push_back(to_string(-N79)+' '+to_string(-N97)+' '+to_string(E78)+" 0");
                 ls.push_back(to_string(-N79)+' '+to_string(-N97)+' '+to_string(N77)+" 0");
                 ls.push_back(to_string(-N79)+' '+to_string(-N97)+' '+to_string(E87)+" 0");
-
-                RowNow+=8;
             }
-            ColNow+=8;
         }
     }
     
     //tile structure end
-        
     vector<int> donotsetfalserow0, donotsetfalsecol0, donotsetfalserow1, donotsetfalsecol1;
     for(int i = 0; i < set.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
@@ -1371,7 +1365,7 @@ int main(int argc, const char * argv[])
     }
     //row
     for(int i = 0; i < set.size(); i++){
-        for(int j=1; j<map[i].size(); j+=8){
+        for(int j=HAHA; j+8+HAHA<map[i].size(); j+=8){
             for(int k=1; k<map[i][0].size(); k++){
                 if(map[i][j][k].type == 'E' && i==0){
                     if(notInVector(donotsetfalserow0, j))
@@ -1387,7 +1381,7 @@ int main(int argc, const char * argv[])
     //col
     for(int i = 0; i < set.size(); i++){
         for(int j=1; j<map[i].size(); j++){
-            for(int k=1; k<map[i][0].size(); k+=8){
+            for(int k=HAHA; k+8+HAHA<map[i][0].size(); k+=8){
                 if(map[i][j][k].type == 'E' && i==0){
                     if(notInVector(donotsetfalsecol0, k))
                         ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
@@ -1462,36 +1456,9 @@ int main(int argc, const char * argv[])
     for(int i=0;i<62363;i++)
         fil >> num[i];
     */
-    //
-    for(int i = 0; i < set.size(); i++){
-        cout << "\n---Grid map " << i << "---" << endl;
-        for(int j = 0; j < map.at(i).size(); j++){
-            for(int k = 0; k < map.at(i).at(0).size(); k++){
-                switch (map[i][j][k].type){
-                    case 'X' : cout << ' '; break;
-                    case 'G' :
-                        if(map[i][j][k].bit)
-                            cout << '.';
-                        else
-                            cout << ' ';
-                        break;
-                    case 'E' :
-                        if(map[i][j][k].bit)
-                            cout << ((k % 2 == 0)?'-':'|');
-                        else
-                            cout << ' ';
-                        break;
-                    case 'P' : cout << 'x'; break;
-                    case 'S' : cout << 'S'; break;
-                    case 'B' : cout << '#'; break;
-                }
-            }
-            cout << endl;
-        }
-        cout << "";
-        cout << "";
-    }
-    //
+    
+    //drawMap(map, cfig.group_name.size()+1);
+
     chrono::steady_clock::time_point tSStart = chrono::steady_clock::now();
     string command = "./open-wbo temp.cnf > output";
     system(command.c_str());
@@ -1563,8 +1530,9 @@ int main(int argc, const char * argv[])
         }
     }
 
+    drawMap(map, cfig.group_name.size()+1, num);
     //draw the grid map
-    for(int i = 0; i < set.size(); i++){
+    /*for(int i = 0; i < set.size(); i++){
         cout << "\n---Grid map " << i << "---" << endl;
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
@@ -1592,7 +1560,7 @@ int main(int argc, const char * argv[])
         }
         cout << "";
         cout << "";
-    }
+    }*/
 }
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
