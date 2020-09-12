@@ -797,10 +797,18 @@ int main(int argc, const char * argv[])
     int E21, E41, E61, E81, E12, E32, E52, E72, E92, E23, E43, E63, E83, E14, E34, E54, 
     E74, E94, E25, E45, E65, E85, E16, E36, E56, E76, E96, E27, E47, E67, E87, E18, E38, 
     E58, E78, E98, E29, E49, E69, E89; //edge
-    int HAHA = 5;
+    TSoffset offset;
+    offset.SetUp(4,4,4,4); // RowLeft, RowRight, ColLeft, ColRight *even only*
     for(int i = 0; i < set.size(); i++){
-        for(int RowNow = HAHA; RowNow + 8 + HAHA < map[i].size(); RowNow += 8){
-            for(int ColNow = HAHA; ColNow + 8 + HAHA < map[i][0].size(); ColNow += 8){
+        for(int RowNow = 1+offset.RL; RowNow + 8 + offset.RR < map[i].size(); RowNow += 8){
+            for(int ColNow = 1+offset.CL; ColNow + 8 + offset.CR < map[i][0].size(); ColNow += 8){
+                for(int z = 0; z < 9; z++){
+                    map[i][RowNow][ColNow+z].tilestruct = true;
+                    map[i][RowNow+z][ColNow].tilestruct = true;
+                    map[i][RowNow+8][ColNow+z].tilestruct = true;
+                    map[i][RowNow+z][ColNow+8].tilestruct = true;
+                }
+
                 //node left of imply
                 N13 = map[i][RowNow][ColNow+2].var_id;
                 N15 = map[i][RowNow][ColNow+4].var_id;
@@ -1365,7 +1373,7 @@ int main(int argc, const char * argv[])
     }
     //row
     for(int i = 0; i < set.size(); i++){
-        for(int j=HAHA; j+8+HAHA<map[i].size(); j+=8){
+        for(int j=1+offset.RL; j+8+offset.RR<map[i].size(); j+=8){
             for(int k=1; k<map[i][0].size(); k++){
                 if(map[i][j][k].type == 'E' && i==0){
                     if(notInVector(donotsetfalserow0, j))
@@ -1381,7 +1389,7 @@ int main(int argc, const char * argv[])
     //col
     for(int i = 0; i < set.size(); i++){
         for(int j=1; j<map[i].size(); j++){
-            for(int k=HAHA; k+8+HAHA<map[i][0].size(); k+=8){
+            for(int k=1+offset.CL; k+8+offset.CR<map[i][0].size(); k+=8){
                 if(map[i][j][k].type == 'E' && i==0){
                     if(notInVector(donotsetfalsecol0, k))
                         ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
@@ -1457,7 +1465,7 @@ int main(int argc, const char * argv[])
         fil >> num[i];
     */
     
-    //drawMap(map, cfig.group_name.size()+1);
+    drawMap0(map, cfig.group_name.size()+1);
 
     chrono::steady_clock::time_point tSStart = chrono::steady_clock::now();
     string command = "./open-wbo temp.cnf > output";
@@ -1577,8 +1585,8 @@ int main(int argc, const char * argv[])
 
     chrono::steady_clock::time_point tEnd = chrono::steady_clock::now();
     Ttime = chrono::duration_cast<chrono::duration<double>>(tEnd - tStart);
-    cout << endl << "total run time : " << (int)(Ttime.count()/60) << "m " << Ttime.count() - (int)(Ttime.count()/60) << 's'
-         << endl << "set solver run time : " << (int)(Stime.count()/60) << "m " << Stime.count() - (int)(Stime.count()/60) << 's' << endl;
+    cout << endl << "total run time : " << (int)(Ttime.count()/60) << "m " << Ttime.count() - (int)(Ttime.count()/60)*60 << 's'
+         << endl << "set solver run time : " << (int)(Stime.count()/60) << "m " << Stime.count() - (int)(Stime.count()/60)*60 << 's' << endl;
 
     return 0;
 }
