@@ -798,11 +798,12 @@ int main(int argc, const char * argv[])
     E74, E94, E25, E45, E65, E85, E16, E36, E56, E76, E96, E27, E47, E67, E87, E18, E38, 
     E58, E78, E98, E29, E49, E69, E89; //edge
     TSoffset offset;
-    offset.SetUp(4,4,4,4); // RowLeft, RowRight, ColLeft, ColRight *even only*
+    offset.SetUp(6,6,6,6); // RowLeft, RowRight, ColLeft, ColRight *even only*
+    int nxn = 5;
     for(int i = 0; i < set.size(); i++){
         for(int RowNow = 1+offset.RL; RowNow + 8 + offset.RR < map[i].size(); RowNow += 8){
             for(int ColNow = 1+offset.CL; ColNow + 8 + offset.CR < map[i][0].size(); ColNow += 8){
-                for(int z = 0; z < 9; z++){
+                for(int z = 0; z < nxn*2-1; z++){
                     map[i][RowNow][ColNow+z].tilestruct = true;
                     map[i][RowNow+z][ColNow].tilestruct = true;
                     map[i][RowNow+8][ColNow+z].tilestruct = true;
@@ -1371,37 +1372,63 @@ int main(int argc, const char * argv[])
             }
         }
     }
+    vector<vector<pair<int,int>>> LOL(2), LOL2(2);
     //row
     for(int i = 0; i < set.size(); i++){
-        for(int j=1+offset.RL; j+8+offset.RR<map[i].size(); j+=8){
-            for(int k=1; k<map[i][0].size(); k++){
+        for(int j=1+offset.RL; j+offset.RR<map[i].size(); j+=nxn*2-2){
+            for(int k=1+offset.CL; k+offset.CR<map[i][0].size(); k+=1){
                 if(map[i][j][k].type == 'E' && i==0){
-                    if(notInVector(donotsetfalserow0, j))
+                    vector<int>::iterator itR = find(donotsetfalserow0.begin(), donotsetfalserow0.end(), j);
+                    if(itR == donotsetfalserow0.end()){
                         ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                        map[i][j][k].tilestruct = false;
+                    }else{
+                        cout << "";
+                        LOL2[i].push_back({j,k});                     
+                    }
                 }
                 if(map[i][j][k].type == 'E' && i==1){
-                    if(notInVector(donotsetfalserow1, j))
+                    vector<int>::iterator itR = find(donotsetfalserow1.begin(), donotsetfalserow1.end(), j);
+                    if(itR == donotsetfalserow1.end()){
                         ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                        map[i][j][k].tilestruct = false;
+                    }else{
+                        cout << "";
+                        LOL2[i].push_back({j,k});
+                    }
                 }
             }
         }
     }//
+    
     //col
     for(int i = 0; i < set.size(); i++){
-        for(int j=1; j<map[i].size(); j++){
-            for(int k=1+offset.CL; k+8+offset.CR<map[i][0].size(); k+=8){
+        for(int j=1+offset.RL; j+offset.RR<map[i].size(); j+=1){
+            for(int k=1+offset.CL; k+offset.CR<map[i][0].size(); k+=nxn*2-2){
                 if(map[i][j][k].type == 'E' && i==0){
-                    if(notInVector(donotsetfalsecol0, k))
+                    vector<int>::iterator itC = find(donotsetfalsecol0.begin(), donotsetfalsecol0.end(), k);
+                    if(itC == donotsetfalsecol0.end()){
                         ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                        map[i][j][k].tilestruct = false;
+                    }else{
+                        cout << "";
+                        LOL2[i].push_back({j,k});                     
+                    }
                 }
                 if(map[i][j][k].type == 'E' && i==1){
-                    if(notInVector(donotsetfalsecol1, k))
+                    vector<int>::iterator itC = find(donotsetfalsecol1.begin(), donotsetfalsecol1.end(), k);
+                    if(itC == donotsetfalsecol1.end()){
                         ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                        map[i][j][k].tilestruct = false;
+                    }else{
+                        cout << "";
+                        LOL2[i].push_back({j,k});
+                    }
                 }
             }
         }
     }//
-        
+    
     //To match two map's slot order
     for(int i=0; i < pp.size(); i++)
     {

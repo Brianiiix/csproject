@@ -172,13 +172,13 @@ void drawMap0(vector<vector<vector<Node>>> &map, int groupSize){
 					case 'X' : cout << ' '; break;
 					case 'G' :
 						if(map[i][j][k].tilestruct)
-							cout << '#';
+							cout << 'G';
 						else
 							cout << ' ';
 						break;
 					case 'E' :
 						if(map[i][j][k].tilestruct)
-							cout << '#';
+							cout << 'E';
 						else
 							cout << ' ';
 						break;
