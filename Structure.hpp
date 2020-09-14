@@ -107,7 +107,9 @@ void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num)
 					case 'X' : cout << ' '; break;
 					case 'G' :
 						if(map[i][j][k].bit)
-							cout << '.';
+							//cout << '.';
+													cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
+                    	((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0);
 						else if(map[i][j][k].tilestruct)
 							cout << '#';
 						else
@@ -115,7 +117,9 @@ void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num)
 						break;
 					case 'E' :
 						if(map[i][j][k].bit)
-							cout << ((k % 2 == 0)?'-':'|');
+							//cout << ((k % 2 == 0)?'-':'|'); 						
+							cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
+                    	((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0);
 						else if(map[i][j][k].tilestruct)
 							cout << '#';
 						else
@@ -125,7 +129,9 @@ void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num)
 						//if(i == 0)
 							//cout << map[i][j][k].group;
 						//else
-							cout << 'x';
+							//cout << 'x';
+													cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
+                    	((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0);
 						break;
                     case 'S' : //cout << 'S'; break;
 						cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
