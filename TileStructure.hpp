@@ -19,7 +19,7 @@ left |          | right
     */
     int SideLen = 9; //default = 9
     int ColNow, RowNow;
-    for(int i = 0; i < 2; i++){//Group
+    for(int i = 0; i < map.size(); i++){//Group
         for(int RowNow = 1+offset.RL; RowNow + 8 + offset.RR < map[i].size()-1; RowNow += 8){
             for(int ColNow = 1+offset.CL; ColNow + 8 + offset.CR < map[i][0].size()-1; ColNow += 8){
                 for(int z = 0; z < nxn*2-1; z++){
@@ -220,7 +220,7 @@ left |          | right
         }
     }
     vector<int> donotsetfalserow0, donotsetfalsecol0, donotsetfalserow1, donotsetfalsecol1;
-    for(int i = 0; i < 2; i++){//G
+    for(int i = 0; i < map.size(); i++){//G
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
                 if(map[i][j][k].type == 'P'){

@@ -45,6 +45,8 @@ class Node{
         
 		// S = Slot, E = Edge, P = Pin, G = Grid, B = boundary X = nothing
 		char type = 'X';
+		// from which ddr
+		int group;
 		int var_id;
         int pin_id;
     	int net_id[5] = {0};
@@ -86,9 +88,10 @@ class Edge{
 		}
 };
 
-void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num){
+void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num, vector<pair<int,int>> &mapsize){
 	for(int i = 0; i < groupSize; i++){
-		cout << "\n---Grid map " << i << "---" << endl;
+		cout << "\n---Grid map " << i << "---";
+		cout << "(" << mapsize[i].first << " x " << mapsize[i].second << ")" << endl;
 		cout << " ";
 		for(int I = 0; I < map.at(i).at(0).size(); I++){
 			if(I%10 == 0 || I%10 == 5)
@@ -107,9 +110,9 @@ void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num)
 					case 'X' : cout << ' '; break;
 					case 'G' :
 						if(map[i][j][k].bit)
-							//cout << '.';
-													cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
-                    	((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0);
+							cout << '.';
+						//cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
+                    	//((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0);
 						else if(map[i][j][k].tilestruct)
 							cout << '#';
 						else
@@ -117,9 +120,9 @@ void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num)
 						break;
 					case 'E' :
 						if(map[i][j][k].bit)
-							//cout << ((k % 2 == 0)?'-':'|'); 						
-							cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
-                    	((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0);
+							cout << ((k % 2 == 0)?'-':'|'); 						
+							//cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
+                    	//((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0);
 						else if(map[i][j][k].tilestruct)
 							cout << '#';
 						else
@@ -130,12 +133,17 @@ void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num)
 							//cout << map[i][j][k].group;
 						//else
 							//cout << 'x';
-													cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
+						cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
                     	((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0);
 						break;
                     case 'S' : //cout << 'S'; break;
-						cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
-                    	((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0); break;
+						if(j == 0)
+							cout << (((num[map[i][j+1][k].net_id[0]-1])>0?1:0)+((num[map[i][j+1][k].net_id[1]-1]>0)?2:0)+
+                    		((num[map[i][j+1][k].net_id[2]-1]>0)?4:0)+((num[map[i][j+1][k].net_id[3]-1]>0)?8:0)+((num[map[i][j+1][k].net_id[4]-1]>0)?16:0))%10;
+						else
+							cout << (((num[map[i][j-1][k].net_id[0]-1])>0?1:0)+((num[map[i][j-1][k].net_id[1]-1]>0)?2:0)+
+                    		((num[map[i][j-1][k].net_id[2]-1]>0)?4:0)+((num[map[i][j-1][k].net_id[3]-1]>0)?8:0)+((num[map[i][j-1][k].net_id[4]-1]>0)?16:0))%10;
+						break;
                     case 'B' : cout << '#'; break;
 				}
 			}
@@ -157,9 +165,10 @@ void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num)
 }
 
 // map before routing
-void drawMap0(vector<vector<vector<Node>>> &map, int groupSize){
+void drawMap0(vector<vector<vector<Node>>> &map, int groupSize, vector<pair<int,int>> &mapsize){
 	for(int i = 0; i < groupSize; i++){
-		cout << "\n---Grid map " << i << "---" << endl;
+		cout << "\n---Grid map " << i << "---";
+		cout << "(" << mapsize[i].first << " x " << mapsize[i].second << ")" << endl;
 		cout << " ";
 		for(int I = 0; I < map.at(i).at(0).size(); I++){
 			if(I%10 == 0 || I%10 == 5)
@@ -192,7 +201,9 @@ void drawMap0(vector<vector<vector<Node>>> &map, int groupSize){
 						//if(i == 0)
 							//cout << map[i][j][k].group;
 						//else
-							cout << 'x';
+							//cout << 'x';
+						cout << (map[i][j][k].net_id[0]>0?1:0)+(map[i][j][k].net_id[1]?2:0)+
+                    	(map[i][j][k].net_id[2]?4:0)+(map[i][j][k].net_id[3]?8:0)+(map[i][j][k].net_id[4]?16:0); break;
 						break;
                     case 'S' : cout << 'S'; break;
 						//cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
@@ -216,6 +227,17 @@ void drawMap0(vector<vector<vector<Node>>> &map, int groupSize){
 		cout << endl;
 	}
 }
+
+struct slot{
+    int i, j, k;
+
+    void setup(int _i, int _j, int _k)
+    {
+        i = _i;
+        j = _j;
+        k = _k;
+    }
+};
 
 class Rect{
 	

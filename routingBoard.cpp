@@ -82,17 +82,6 @@ bool notInVector(vector<int> &a, int j)
     return true;
 }
 
-struct slot{
-    int i, j, k;
-    // reverse order
-    void setup(int _i, int _j, int _k)
-    {
-        i = _i;
-        j = _j;
-        k = _k;
-    }
-};
-
 class config{
     public:
         string FileName;
@@ -291,9 +280,9 @@ int main(int argc, const char * argv[])
     config cfig;
     // ***
     cfig.load_config("config/config_1_1.txt");
-    // ***
-    string obs_name = "case/1.brd";
-    cfig.load_config(obs_name+".obs");
+    // *
+    //string obs_name = "case/2.brd";
+    //cfig.load_config(obs_name+".obs");
 
     vector<vector<vector<int> > > netBox;
     vector<vector<pin> > pinBox;
@@ -308,17 +297,17 @@ int main(int argc, const char * argv[])
     // main finc start
     for (int group_count = 0; group_count < static_cast<int>(cfig.group_name.size()); group_count++) {
     std::vector< std::vector<int> > net;
-    vector<int> x,y,newx,newy,box_x,box_y,psudoVertex;
+    vector<int> x,y;//,newx,newy,box_x,box_y,psudoVertex;
     vector<pin> pin;
-    vector<edge> all_edge;
+    //vector<edge> all_edge;
     int net_count = 0;
     int vertex_count = 1;
-    int edge_count = 0;
+    //int edge_count = 0;
 
     //printf("Loading Config completed\n");
     ifstream fin;
     string line;
-    // **
+    // ***
     fin.open("case/1.brd_input.netlist", ios::in);
 
     int pinx,piny;
@@ -388,7 +377,7 @@ int main(int argc, const char * argv[])
 
                             if (foundC == true && foundP == true)
                             {
-                                cout << "Find net: "<< pin[pin_name_temp[0]].name << " " << pin[pin_name_temp[1]].name << endl;
+                                //@cout << "Find net: "<< pin[pin_name_temp[0]].name << " " << pin[pin_name_temp[1]].name << endl;
                                 net.push_back(temp);
                                 net_count++;
                                 break;
@@ -438,7 +427,7 @@ int main(int argc, const char * argv[])
 
                             if (foundA >= 0 && foundB >= 0) {
                                 vector<int> temp1;
-                                cout << "Find net: "<< pin[pin_name_temp[foundA]].name << " " << pin[pin_name_temp[foundB]].name << endl;
+                                //@cout << "Find net: "<< pin[pin_name_temp[foundA]].name << " " << pin[pin_name_temp[foundB]].name << endl;
                                 temp1.push_back(temp[foundA]);
                                 temp1.push_back(temp[foundB]);
                                 net.push_back(temp1);
@@ -521,166 +510,172 @@ int main(int argc, const char * argv[])
     fin.close();
 
     printf("Loading Input End. #Nets : %d\n", static_cast<int>(net.size()));
-    if (net.size() == 0){
+    if (net.size() == 0)
         continue;
         netBox.push_back(net);
         pinBox.push_back(pin);
     }
-
-    vector<pinpair> pp;
-    pp.resize(net.size());
-    vector<slot> map0slot, map1slot;
-    map0slot.resize(pp.size());
-    map1slot.resize(pp.size());
-
-    // ***
-    int GU = findType("./case/1.brd_input.pCSet" , "DEFAULT", "./case/1.brd_input.sCSet", "DEFAULT");// Unit of grid, default : 800
-        
-    for(int i = 0; i < net.size(); i++){
-        printf("Net %d : \n",i);
-        for(int j = 0; j < net.at(i).size(); j++){
-            printf("    %s (%d,%d)\n",pin.at(net.at(i).at(j)).name.c_str(),pin.at(net.at(i).at(j)).x,pin.at(net.at(i).at(j)).y);
-            if(j==0){
-                pp[i].first_x = exactgrid(pin.at(net.at(i).at(j)).x, GU);
-                pp[i].first_y = exactgrid(pin.at(net.at(i).at(j)).y, GU);
-            }
-            else{
-                pp[i].second_x = exactgrid(pin.at(net.at(i).at(j)).x, GU);
-                pp[i].second_y = exactgrid(pin.at(net.at(i).at(j)).y, GU);
-            }
-        }
-    }
-    
-        
-    for(int i=0; i < net.size(); i++)
-    {
-        std::cout << pp[i].first_x << ' ' << pp[i].first_y << ' ' << pp[i].second_x << ' ' << pp[i].second_y << std::endl;
-    }
-        
-    vector<boundary> set;
-    set.resize(cfig.group_name.size() + 1);
-    for(int i = 0; i < set.size(); i++){
-        set.at(i) = findboundary(pp, i+1);
-        cout<<"boundary "<< i << endl<<set.at(i).top/GU<<' '<<set.at(i).down/GU<<' '<<set.at(i).left/GU<<' '<<set.at(i).right/GU<<endl;
-        // extra 1 space for slots
-        set.at(i).setUp(set.at(i).top + GU, set.at(i).down - GU, set.at(i).left - GU, set.at(i).right + GU);
-    }
-    // find relative location between CPU & DDRs
-    bool map0slotRev = false, map1slotRev = false;
-    for(int i = 1; i < set.size(); i++){
-        if(set[i].top <= set[0].down){ // bottom
-            if(set[i].left >= set[0].left+(set[0].right-set[0].left)/2){
-                set[i].loc = 'b'; // bottom right
-                map0slotRev = true;
-            }else{
-                set[i].loc = 'B'; // bottom left
-                map1slotRev = true;
-            }
-        }else if(set[i].down >= set[0].top){ // top
-            if(set[i].left >= set[0].left+(set[0].right-set[0].left)/2){
-                set[i].loc = 't'; // top right
-                map0slotRev = true;
-            }else{
-                set[i].loc = 'T'; // top left
-                map1slotRev = true;
-            }
-        }else{
-            cout << "F" << endl;
-        }
-    }
-
-    // grid map declared here
+    // *** Grid Unit, 1.default : 800
+    int GU = findType("./case/1.brd_input.pCSet" , "DEFAULT", "./case/1.brd_input.sCSet", "DEFAULT");
+    // Pin info
+    vector<vector<pair<int, int>>> P(groupSize);
+    // boundary info
+    vector<boundary> set(groupSize);
     // many m x n 2D vector of vector
     vector<vector <vector<Node> > > map;
     int var_id_counter = 1;
     // length between boundary and nearest pin #even only#
     int bsize = 4;
     // +1 is for CPU name and node[0] is CPU
-    //map.resize(cfig.group_name.size() + 1);
-    map.resize(cfig.group_name.size() + 1);
-    for(int i = 0; i < set.size(); i++){
+    map.resize(groupSize);
+    //first vector imply which (slot[0] = DDR1)
+    vector<vector<slot>> CPUslot(groupSize-1),DDRslot(groupSize-1);
+    // whether slots are reverse to their iteration (rev[0] = DDR1)
+    vector<bool> CPUslotRev(groupSize-1), DDRslotRev(groupSize-1);
+    // how many pin in the group (accumulated)
+    vector<int> groupnum(groupSize-1);
+    // grid map size info
+    vector<pair<int,int>> mapsize(groupSize);
+
+    // set grid maps
+    for(int z = 0; z < groupSize; z++){
+        
+        if(z == 0){ // CPU
+            int sum = 0;
+            for(int i = 0; i < netBox.size(); i++)
+                sum += netBox[i].size();
+            P[z].reserve(sum);
+            for(int i = 0; i < netBox.size(); i++){
+                for(int j = 0; j < netBox[i].size(); j++){
+                    P[z].push_back(make_pair(exactgrid(pinBox[i].at(netBox[i].at(j).at(0)).x, GU),exactgrid(pinBox[i].at(netBox[i].at(j).at(0)).y, GU)));
+                }
+                groupnum[i] = netBox[i].size();
+                if(i != 0)
+                    groupnum[i] += groupnum[i-1];
+            }
+        }else{
+            P[z].reserve(netBox[z-1].size());
+            for(int i = 0; i < netBox[z-1].size(); i++){
+                P[z].push_back(make_pair(exactgrid(pinBox[z-1].at(netBox[z-1].at(i).at(1)).x, GU),exactgrid(pinBox[z-1].at(netBox[z-1].at(i).at(1)).y, GU)));
+            }
+        }
+        set.at(z) = findBoundary(P[z]);
+        set.at(z).setUp(set.at(z).top + GU, set.at(z).down - GU, set.at(z).left - GU, set.at(z).right + GU);
+        //@cout << set[z].top << " " << set[z].down << " " << set[z].left << " " << set[z].right << endl;
         // row and column here contains only pins, so - 2 slots/fanout_nodes
-        int row = (set.at(i).top/GU)-(set.at(i).down/GU)+1-2;
-        int column = (set.at(i).right/GU)-(set.at(i).left/GU)+1-2;
+        int row = (set.at(z).top/GU)-(set.at(z).down/GU)+1-2;
+        int column = (set.at(z).right/GU)-(set.at(z).left/GU)+1-2;
         // pin + edge(pin * 2 - 1) + slot/fanout_node(2) = pin * 2 + 1
-        map.at(i).resize(row * 2 + 1 + bsize*2, vector<Node>(column * 2 + 1 + bsize*2));
-        cout << "---size of grid map "<< i <<" is " << row * 2 + 1 + bsize*2 << " x " << column * 2 + 1 + bsize*2 << "---" << endl;
-        for(int j = 0; j < map.at(i).size(); j++){
-            for(int k = 0; k < map.at(i).at(0).size(); k++){
+        map.at(z).resize(row * 2 + 1 + bsize*2, vector<Node>(column * 2 + 1 + bsize*2));
+        mapsize[z] = make_pair(row * 2 + 1 + bsize*2, column * 2 + 1 + bsize*2);
+        for(int j = 0; j < map.at(z).size(); j++){
+            for(int k = 0; k < map.at(z).at(0).size(); k++){
                 // set x and y coor (origin is at top-left)
-                map.at(i).at(j).at(k).SetUp(set.at(i).left / 100 + k * GU / 100, set.at(i).top / 100 - j * GU / 100);
+                map.at(z).at(j).at(k).SetUp(set.at(z).left / 100 + k * GU / 100, set.at(z).top / 100 - j * GU / 100);
                 // default : 4 vertexes of grip map and (x,y)=(even,even) have nothing
                 //if((j == 0 || j == map.at(i).size() - 1) && (k == 0 || k == map.at(i).at(0).size() - 1)){
                 // Slot (boundary except the vertexes)
-                if(j == 0 || k == 0 || j == map.at(i).size() - 1 || k == map.at(i).at(0).size() - 1){
-                    map.at(i).at(j).at(k).type = 'B';
+                if(j == 0 || k == 0 || j == map.at(z).size() - 1 || k == map.at(z).at(0).size() - 1){
+                    map.at(z).at(j).at(k).type = 'B';
                 // Grid (x,y)=(odd,odd)
                 }else if((j % 2 != 0) && (k % 2 != 0)){
-                    map.at(i).at(j).at(k).type = 'G';
+                    map.at(z).at(j).at(k).type = 'G';
                 // Edge (x,y)=(odd,even)vertical or (even,odd)horizontal
                 }else if(((j % 2 != 0) && (k % 2 == 0)) || ((j % 2 == 0) && (k % 2 != 0))){
-                    map.at(i).at(j).at(k).type = 'E';
+                    map.at(z).at(j).at(k).type = 'E';
                 }
-                map.at(i).at(j).at(k).var_id = var_id_counter++;
+                map.at(z).at(j).at(k).var_id = var_id_counter++;
             }
         }
-        // ** 1 DDR only
-        int z = 1, bd = 0, Z = 1, BD = 0; // for CPU
-        if(i != 0){
-            z = (set[i].loc == 'T' || set[i].loc == 'B') ? map[i][0].size()-2 : 1;
-            bd = (set[i].loc == 'B' || set[i].loc == 'b') ? 0 : map[i].size()-1;
-            Z = (set[i].loc == 't' || set[i].loc == 'b') ? map[0][0].size()-2 : 1;
-            BD = (set[i].loc == 'T' || set[i].loc == 't') ? 0 : map[0].size()-1;
-            for(int j = 0; j < pp.size(); j++){
-                map[i][bd][z].type = 'S';
-                map[0][BD][Z].type = 'S';
-                map0slot[j].setup(0, BD, Z);
-                map1slot[j].setup(i, bd, z);
-                if(set[i].loc == 't' || set[i].loc == 'b'){
-                    z += 2;
-                    Z -= 2;
-                }else{
-                    z -= 2;
-                    Z += 2;
+        // Pin
+        int groupnumvar = 1;
+        for(int j = 0; j < P[z].size(); j++){
+            //@cout << "coor of the pin is (" << (P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize
+            //@    << "," << ((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize << ")" << endl;
+            // top/GU-1 and left/GU+1 to elim slots
+            map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize).type = 'P';
+            map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize).pin_id = j;
+            if(z == 0){
+                if(groupnum[groupnumvar-1] == j){
+                    groupnumvar++;
                 }
+                map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize).group = groupnumvar;
             }
-        }
-        // Pin **2 group only**
-        if(i == 0){
-            for(int j = 0; j < pp.size(); j++){
-                cout << "coor of the pin is (" << (pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize
-                     << "," << ((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1+bsize << ")" << endl;
-                // top/GU-1 and left/GU+1 to elim slots
-                map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1+bsize).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).type = 'P';
-                map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1+bsize).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).pin_id = j;
-                int cnt = 0;
-                int dec = j;
-                while(dec != 0)
-                {
-                    map.at(i).at(((set.at(i).top/GU-1) - pp[j].first_y/GU) * 2 + 1+bsize).at((pp[j].first_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).net_id[cnt] = (dec % 2);
-                    dec /= 2;
-                    cnt++;
+            int cnt = 0;
+            int dec = j;
+            //set dec = 0 every different group
+            /*for(int x = groupnum.size() - 1; x >= 0; x--){
+                if(dec >= groupnum[x]){
+                    dec -= groupnum[x];
+                    break;
                 }
+            }*/
+            // add dec for >=2rd DDR group
+            if(z >= 2){
+                dec += groupnum[z-2];
             }
-        }else if(i == 1){
-            for(int j = 0; j < pp.size(); j++){
-                cout << "coor of the pin is (" << (pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize
-                     << "," << ((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1+2 << ")" << endl;//
-                map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1+bsize).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).type = 'P';
-                map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1+bsize).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).pin_id = j;
-                int cnt = 0;
-                int dec = j;
-                while(dec != 0)
-                {
-                    map.at(i).at(((set.at(i).top/GU-1) - pp[j].second_y/GU) * 2 + 1+bsize).at((pp[j].second_x/GU - (set.at(i).left/GU+1)) * 2 + 1+bsize).net_id[cnt] = (dec % 2);
-                    dec /= 2;
-                    cnt++;
-                }
+
+            while(dec != 0)
+            {
+                map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize).net_id[cnt] = (dec % 2);
+                dec /= 2;
+                cnt++;
             }
         }
     }
+
+    // set the slots **
+    // find relative location between CPU & DDRs
+    for(int i = 1; i < groupSize; i++){
+        CPUslot[i-1].resize(netBox[i-1].size());
+        DDRslot[i-1].resize(netBox[i-1].size());
+        // whether slots are reverse to their iterations
+        CPUslotRev[i-1] = false;
+        DDRslotRev[i-1] = false;
+        if(set[i].top <= set[0].down){ // bottom
+            if(set[i].left >= set[0].left+(set[0].right-set[0].left)/2){
+                set[i].loc = 'b'; // bottom right
+                CPUslotRev[i-1] = true;
+            }else{
+                set[i].loc = 'B'; // bottom left
+                DDRslotRev[i-1] = true;
+            }
+        }else if(set[i].down >= set[0].top){ // top
+            if(set[i].left >= set[0].left+(set[0].right-set[0].left)/2){
+                set[i].loc = 't'; // top right
+                CPUslotRev[i-1] = true;
+            }else{
+                set[i].loc = 'T'; // top left
+                DDRslotRev[i-1] = true;
+            }
+        }else{
+            cout << "Slot allocation failed at group " << i << endl;
+        }
+        int z = 1, bd = 0, Z = 1, BD = 0; // Z, BD for CPU
+        z = (set[i].loc == 'T' || set[i].loc == 'B') ? map[i][0].size()-2 : 1;
+        bd = (set[i].loc == 'B' || set[i].loc == 'b') ? 0 : map[i].size()-1;
+        Z = (set[i].loc == 't' || set[i].loc == 'b') ? map[0][0].size()-2 : 1;
+        BD = (set[i].loc == 'T' || set[i].loc == 't') ? 0 : map[0].size()-1;
+        for(int j = 0; j < netBox[i-1].size(); j++){
+            map[i][bd][z].type = 'S';
+            map[0][BD][Z].type = 'S';
+            CPUslot[i-1][j].setup(0, BD, Z);
+            DDRslot[i-1][j].setup(i, bd, z);
+            if(set[i].loc == 't' || set[i].loc == 'b'){
+                z += 2;
+                Z -= 2;
+            }else{
+                z -= 2;
+                Z += 2;
+            }
+        }
+    }
+    drawMap0(map, groupSize, mapsize);
+    // constraint
+    // ls is to store the constraint in dimacs format, will write into the file later
     list<string> ls;
-    for(int i = 0; i < set.size(); i++){
+    // net_id[i] = 0 -> false, 1 ->true
+    for(int i = 0; i < map.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
                 if(map[i][j][k].type == 'P'){
@@ -703,18 +698,21 @@ int main(int argc, const char * argv[])
             }
         }
     }
-    int slotcnt1 = 0;
-    int slotcnt2 = 0;
-    // constraint
-    // ls is to store the constraint in dimacs format, will write into the file later
-    for(int i = 0; i < set.size(); i++){
+
+    for(int i = 0; i < map.size(); i++){
+        int CPUslotC;
+        int DDRslotC;
+        if(i != 0){
+            CPUslotC = (CPUslotRev[i-1])?CPUslot[i-1].size() - 1:0;
+            DDRslotC = (DDRslotRev[i-1])?DDRslot[i-1].size() - 1:0;   
+        }
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
                 // each pin choose a way out
-                if(map[i][j][k].type == 'P')
-                {
+                if(map[i][j][k].type == 'P'){
                     //(¬a ∨ ¬b) ∧ (¬a ∨ ¬c) ∧ (¬a ∨ ¬d) ∧ (a ∨ b ∨ c ∨ d) ∧ (¬b ∨ ¬c) ∧ (¬b ∨ ¬d) ∧ (¬c ∨ ¬d)
-                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
+                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+' '+
+                                 to_string(map[i][j][k-1].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
                     ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
                     ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
                     ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
@@ -722,8 +720,7 @@ int main(int argc, const char * argv[])
                     ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
                     ls.push_back(to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
                 }
-                else if(map[i][j][k].type == 'E')
-                {
+                else if(map[i][j][k].type == 'E'){
                     //-
                     if(k % 2 == 0){
                         ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
@@ -739,10 +736,9 @@ int main(int argc, const char * argv[])
                         lsfunc(ls, map, i, j, k, i, j-1, k, i, j+1, k);
                     }
                 }
-                else if(map[i][j][k].type == 'G')
-                {
+                else if(map[i][j][k].type == 'G'){
                     //(¬a ∨ ¬b ∨ ¬c ∨ ¬d) ∧ (¬a ∨ ¬b ∨ ¬c ∨ ¬e) ∧ (¬a ∨ ¬b ∨ ¬d ∨ ¬e) ∧ (¬a ∨ b ∨ c ∨ d) ∧ (¬a ∨ b ∨ c ∨ e) ∧
-                     //(¬a ∨ b ∨ d ∨ e) ∧ (¬a ∨ ¬c ∨ ¬d ∨ ¬e) ∧ (¬a ∨ c ∨ d ∨ e)
+                    //(¬a ∨ b ∨ d ∨ e) ∧ (¬a ∨ ¬c ∨ ¬d ∨ ¬e) ∧ (¬a ∨ c ∨ d ∨ e)
                     int a = map[i][j][k].var_id;
                     int b = map[i][j][k-1].var_id;
                     int c = map[i][j+1][k].var_id;
@@ -757,25 +753,38 @@ int main(int argc, const char * argv[])
                     ls.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
                     ls.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
                 }
-                /*else if(map[i][j][k].type == 'S' && i == 0)
-                    slotcnt1++;
-                else if(map[i][j][k].type == 'S' && i == 1)
-                    slotcnt2++;*/
                 else if(map[i][j][k].type == 'S'){
-                    ls.push_back(to_string(map[i][j][k].var_id)+" 0");
-                    // **
-                    //if(j == 0)
-                        //ls.push_back(to_string(map[i][j+1][k].var_id)+" 0");
-                    //else
-                        //ls.push_back(to_string(map[i][j-1][k].var_id)+" 0");
-                    for(int l = 0; l < 5; l++){
+                    //ls.push_back(to_string(map[i][j][k].var_id)+" 0");
+                    if(j == 0)
+                        ls.push_back(to_string(map[i][j+1][k].var_id)+" 0");
+                    else
+                        ls.push_back(to_string(map[i][j-1][k].var_id)+" 0");
+                    /*
                         if(j == 0){
-                            ls.push_back(to_string(-map[i][j][k].net_id[l])+' '+to_string(map[i][j+1][k].net_id[l])+" 0");
-                            ls.push_back(to_string(map[i][j][k].net_id[l])+' '+to_string(-map[i][j+1][k].net_id[l])+" 0");
+                            lsfunc(ls, map, i, j, k, i, j, k, i, j+1, k);
                         }else{
-                            ls.push_back(to_string(-map[i][j][k].net_id[l])+' '+to_string(map[i][j-1][k].net_id[l])+" 0");
-                            ls.push_back(to_string(map[i][j][k].net_id[l])+' '+to_string(-map[i][j-1][k].net_id[l])+" 0");
+                            lsfunc(ls, map, i, j, k, i, j, k, i, j-1, k);
                         }
+                    */
+                    
+                    if(i != 0){
+                        if(j == 0){ // now
+                            for(int l = 0; l < 5; l++){
+                                ls.push_back(to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+
+                                             to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0"); 
+                                ls.push_back(to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+
+                                             to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0"); 
+                            }
+                        }else{
+                            for(int l = 0; l < 5; l++){
+                                ls.push_back(to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+
+                                             to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0"); 
+                                ls.push_back(to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+
+                                             to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0"); 
+                            }
+                        }
+                        CPUslotC = (CPUslotRev[i-1])?CPUslotC - 1:CPUslotC + 1;
+                        DDRslotC = (DDRslotRev[i-1])?DDRslotC - 1:DDRslotC + 1;
                     }
                 }
                 else if(map[i][j][k].type == 'B'){
@@ -784,63 +793,33 @@ int main(int argc, const char * argv[])
             }
         }
     }
-    
+
     //tile structure begin
 
-    TSoffset offset;
+    /*TSoffset offset;
     offset.SetUp(4,0,4,0); // offset from RowLeft, RowRight, ColLeft, ColRight *even only*
     int nxn = 5; // n x n tile structure
     TileStruct(ls, map, nxn, offset);
-    drawMap0(map, groupSize);
+    drawMap0(map, groupSize, mapsize);*/
 
     //To match two map's slot order
-    for(int i=0; i < pp.size(); i++)
+    /*for(int i=0; i < pp.size(); i++)
     {
-        int a = (map0slotRev) ? map0slot[pp.size()-1-i].i : map0slot[i].i;
-        int b = (map0slotRev) ? map0slot[pp.size()-1-i].j : map0slot[i].j;
-        int c = (map0slotRev) ? map0slot[pp.size()-1-i].k : map0slot[i].k;
-        int x = (map1slotRev) ? map1slot[pp.size()-1-i].i : map1slot[i].i;
-        int y = (map1slotRev) ? map1slot[pp.size()-1-i].j : map1slot[i].j;
-        int z = (map1slotRev) ? map1slot[pp.size()-1-i].k : map1slot[i].k;
+        int a = (CPUslotRev) ? CPUslot[pp.size()-1-i].i : CPUslot[i].i;
+        int b = (CPUslotRev) ? CPUslot[pp.size()-1-i].j : CPUslot[i].j;
+        int c = (CPUslotRev) ? CPUslot[pp.size()-1-i].k : CPUslot[i].k;
+        int x = (DDRslotRev) ? DDRslot[pp.size()-1-i].i : DDRslot[i].i;
+        int y = (DDRslotRev) ? DDRslot[pp.size()-1-i].j : DDRslot[i].j;
+        int z = (DDRslotRev) ? DDRslot[pp.size()-1-i].k : DDRslot[i].k;
         for(int j=0; j<5; j++)
         {
             //(¬a ∨ b) ∧ (a ∨ ¬b)
             //map[a][b][c].netid = map[x][y][z].netid
-            //ls.push_back(to_string(-map[a][b][c].net_id[j])+' '+to_string(map[x][y][z].net_id[j])+" 0");
-            //ls.push_back(to_string(map[a][b][c].net_id[j])+' '+to_string(-map[x][y][z].net_id[j])+" 0");
+            ls.push_back(to_string(-map[a][b][c].net_id[j])+' '+to_string(map[x][y][z].net_id[j])+" 0");
+            ls.push_back(to_string(map[a][b][c].net_id[j])+' '+to_string(-map[x][y][z].net_id[j])+" 0");
         }
-    }
-    //slot slotorder[slotcnt1 + slotcnt2];
-    /*vector<slot> slotorder;
-    slotorder.resize(slotcnt1 + slotcnt2);
-    int i = 0;
-        for(int k = 1; k < map[0][0].size()-1; k++, i++)
-            slotorder[i].setup(map[0][0][k].var_id, 0, 0, k);
-        for(int j = 1; j < map[0].size(); j++, i++)
-            slotorder[i].setup(map[0][j][map[0][0].size()-1].var_id, 0, j, (int)map[0][0].size()-1);
-        for(int k = (int)map[0][0].size()-3; k >= 0; k--, i++)
-            slotorder[i].setup(map[0][map[0].size()-1][k].var_id, 0, (int)map[0].size()-1, k);
-        for(int j = (int)map[0].size()-3; j > 0; j--, i++)
-            slotorder[i].setup(map[0][j][0].var_id, 0, j, 0);
-    
-        for(int k = 1; k < map[1][0].size()-1; k++, i++)
-            slotorder[i].setup(map[1][0][k].var_id, 0, 0, k);
-        for(int j = 1; j < map[1].size(); j++, i++)
-            slotorder[i].setup(map[1][j][map[1][0].size()-1].var_id, 0, j, (int)map[1][0].size()-1);
-        for(int k = (int)map[1][0].size()-3; k >= 0; k--, i++)
-            slotorder[i].setup(map[1][map[0].size()-1][k].var_id, 0, (int)map[1].size()-1, k);
-        for(int j = (int)map[1].size()-3; j > 0; j--, i++)
-            slotorder[i].setup(map[1][j][0].var_id, 0, j, 0);
-        }*/
+    }*/
 
-    ofstream file("temp.cnf");
-    if(file.is_open()){
-        file << "c temp.cnf" << endl;
-        file << "p cnf "<<var_id_counter-1<<' '<<ls.size()<<endl;
-        for(string l: ls)
-            file << l << endl;
-    }
-    file.close();
     /* for xcode
     string command = "./open-wbo /Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/temp.cnf > output";
     system(command.c_str());
@@ -855,8 +834,15 @@ int main(int argc, const char * argv[])
     for(int i=0;i<62363;i++)
         fil >> num[i];
     */
-    
-    drawMap0(map, cfig.group_name.size()+1);
+
+    ofstream file("temp.cnf");
+    if(file.is_open()){
+        file << "c temp.cnf" << endl;
+        file << "p cnf "<<var_id_counter-1<<' '<<ls.size()<<endl;
+        for(string l: ls)
+            file << l << endl;
+    }
+    file.close();
 
     chrono::steady_clock::time_point tSStart = chrono::steady_clock::now();
     string command = "./open-wbo temp.cnf > output";
@@ -865,11 +851,21 @@ int main(int argc, const char * argv[])
     Stime = chrono::duration_cast<chrono::duration<double>>(tSEnd - tSStart);
     
     ifstream fil;
+    string line;
+    int numSize;
     fil.open("output", ios::in);
-    for(int i=0;i<27;i++) // 26->27
+    for(int i=0;i<27;i++){
         getline(fil, line);
+        if(i == 13){ // fetch num of variables
+            stringstream ss(line);
+            string temp;
+            for(int x = 0; x < 6; x++)
+                ss >> temp;
+            numSize = stoi(temp);
+        }
+    }
     vector<int> num;
-    num.reserve(64000);
+    num.reserve(numSize);
     char c;
     fil >> c;
     int tem, tem2;
@@ -879,7 +875,7 @@ int main(int argc, const char * argv[])
         if(tem2 == tem) break;
         num.push_back(tem);
     }
-    //cout << num.size() << endl;
+    cout << num.size() << endl;
     
     for(int i = 0; i < set.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
@@ -888,41 +884,25 @@ int main(int argc, const char * argv[])
             }
         }
     }
-    
-    // DFS from pin to find redundant cycles **
-    for(int i = 0; i < pp.size(); i++){
-        int x = (pp[i].first_x/GU - (set.at(0).left/GU+1)) * 2 + 1 + bsize;
-        int y = ((set.at(0).top/GU-1) - pp[i].first_y/GU) * 2 + 1 + bsize;
-        while(map[0][y][x].type != 'S'){
-            if(map[0][y+1][x].bit && !map[0][y+1][x].check){ // D
-                map[0][y++][x].check = true;
-            }else if(map[0][y-1][x].bit && !map[0][y-1][x].check){ // T
-                map[0][y--][x].check = true;
-            }else if(map[0][y][x+1].bit && !map[0][y][x+1].check){ // L
-                map[0][y][x++].check = true;
-            }else if(map[0][y][x-1].bit && !map[0][y][x-1].check){ // R
-                map[0][y][x--].check = true;
-            }else{
-                cout << "F" << endl;
-                break;
-            }
-        }
-    }
-    for(int i = 0; i < pp.size(); i++){
-        int x = (pp[i].second_x/GU - (set.at(1).left/GU+1)) * 2 + 1 + bsize;
-        int y = ((set.at(1).top/GU-1) - pp[i].second_y/GU) * 2 + 1 + bsize;
-        while(map[1][y][x].type != 'S'){
-            if(map[1][y+1][x].bit && !map[1][y+1][x].check){ // D
-                map[1][y++][x].check = true;
-            }else if(map[1][y-1][x].bit && !map[1][y-1][x].check){ // T
-                map[1][y--][x].check = true;
-            }else if(map[1][y][x+1].bit && !map[1][y][x+1].check){ // L
-                map[1][y][x++].check = true;
-            }else if(map[1][y][x-1].bit && !map[1][y][x-1].check){ // R
-                map[1][y][x--].check = true;
-            }else{
-                cout << "F" << endl;
-                break;
+
+    // DFS from pin to find redundant cycles
+    for(int i = 0; i < map.size(); i++){
+        for(int p = 0; p < P[i].size(); p++){
+            int x = (P[i][p].first/GU - (set[i].left/GU+1)) * 2 + 1 + bsize;
+            int y = ((set[i].top/GU-1) - P[i][p].second/GU) * 2 + 1 + bsize;
+            while(map[i][y][x].type != 'S'){
+                if(map[i][y+1][x].bit && !map[i][y+1][x].check){ // D
+                    map[i][y++][x].check = true;
+                }else if(map[i][y-1][x].bit && !map[i][y-1][x].check){ // T
+                    map[i][y--][x].check = true;
+                }else if(map[i][y][x+1].bit && !map[i][y][x+1].check){ // L
+                    map[i][y][x++].check = true;
+                }else if(map[i][y][x-1].bit && !map[i][y][x-1].check){ // R
+                    map[i][y][x--].check = true;
+                }else{
+                    cout << "routing from pin has problem!!!" << endl;
+                    break;
+                }
             }
         }
     }
@@ -935,38 +915,8 @@ int main(int argc, const char * argv[])
         }
     }
 
-    drawMap(map, cfig.group_name.size()+1, num);
-    //draw the grid map
-    /*for(int i = 0; i < set.size(); i++){
-        cout << "\n---Grid map " << i << "---" << endl;
-        for(int j = 0; j < map.at(i).size(); j++){
-            for(int k = 0; k < map.at(i).at(0).size(); k++){
-                switch (map[i][j][k].type){
-                    case 'X' : cout << ' '; break;
-                    case 'G' :
-                        if(map[i][j][k].bit)
-                            cout << '.';
-                        else
-                            cout << ' ';
-                        break;
-                    case 'E' :
-                        if(map[i][j][k].bit)
-                            cout << ((k % 2 == 0)?'-':'|');
-                        else
-                            cout << ' ';
-                        break;
-                    case 'P' : cout << 'x'; break;
-                    case 'S' : cout << ((num[map[i][j][k].net_id[0]-1])>0?1:0)+((num[map[i][j][k].net_id[1]-1]>0)?2:0)+
-                    ((num[map[i][j][k].net_id[2]-1]>0)?4:0)+((num[map[i][j][k].net_id[3]-1]>0)?8:0)+((num[map[i][j][k].net_id[4]-1]>0)?16:0); break;
-                    case 'B' : cout << '#'; break;
-                }
-            }
-            cout << endl;
-        }
-        cout << "";
-        cout << "";
-    }*/
-}
+    drawMap(map, cfig.group_name.size()+1, num, mapsize);
+
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
         OutputRect temp;
@@ -976,7 +926,7 @@ int main(int argc, const char * argv[])
         outputpin.push_back(temp);
     }
 
-    // ***
+    // *
     string layout_name = "case/1.brd";
     //outputGDS(layout_name, outputpin, outputedge, crossing_line_total);
 
