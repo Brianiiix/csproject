@@ -1,5 +1,105 @@
 using namespace std;
 
+void EdgeIdNotTheSame(list<string> &ls, int a, int b, int c1, int c2, int c3, int c4, int c5, int d1, int d2, int d3, int d4, int d5){
+
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
+                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
+                        +to_string(-d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
+                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
+                        +to_string(-d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
+                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
+                        +to_string(d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
+                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
+                        +to_string(-d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
+                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
+                        +to_string(-d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
+                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
+                        +to_string(-d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
+                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
+                        +to_string(-d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
+                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
+                        +to_string(-d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
+                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
+                        +to_string(d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
+                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
+                        +to_string(-d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(c3)+' '
+                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(d3)+' '
+                        +to_string(-d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
+                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
+                        +to_string(d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
+                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
+                        +to_string(-d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
+                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
+                        +to_string(d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
+                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
+                        +to_string(-d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
+                        +to_string(c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
+                        +to_string(d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(c3)+' '
+                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(d3)+' '
+                        +to_string(-d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
+                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
+                        +to_string(d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
+                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
+                        +to_string(-d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
+                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
+                        +to_string(d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
+                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
+                        +to_string(-d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
+                        +to_string(c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
+                        +to_string(d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(c3)+' '
+                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(d3)+' '
+                        +to_string(d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(c3)+' '
+                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(d3)+' '
+                        +to_string(-d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
+                        +to_string(c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
+                        +to_string(d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
+                        +to_string(c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
+                        +to_string(d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(c3)+' '
+                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(d3)+' '
+                        +to_string(d4)+' '+to_string(-d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(c3)+' '
+                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(d3)+' '
+                        +to_string(-d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
+                        +to_string(c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
+                        +to_string(d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
+                        +to_string(c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
+                        +to_string(d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(c3)+' '
+                        +to_string(c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(d3)+' '
+                        +to_string(d4)+' '+to_string(d5)+" 0");
+                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(c3)+' '
+                        +to_string(c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(d3)+' '
+                        +to_string(d4)+' '+to_string(d5)+" 0");    
+}
+
 void TileStruct(list<string> &ls, vector<vector<vector<Node>>> &map, int nxn, TSoffset offset){
     /*
          top
@@ -29,6 +129,147 @@ left |          | right
                     map[i][RowNow+z][ColNow+nxn*2-2].tilestruct = true;
                 }
                 
+
+                /*
+                    FFFFT
+                    T___|
+                */
+/*                for(int m = 2; m < SideLen-1; m+=2){
+                    for(int n = 0; n < m; n+=2){
+                        for(int l = 0; l < 5; l++){
+                            ls.push_back(to_string(-map[i][RowNow][ColNow+m].var_id)+' '+to_string(-map[i][RowNow+2][ColNow].var_id)+' '
+                            +to_string(-map[i][RowNow][ColNow+m].net_id[l])+' '+to_string(-map[i][RowNow+2][ColNow].net_id[l])+' '+
+                            to_string(-map[i][RowNow][ColNow+n].var_id));
+                            ls.push_back(to_string(-map[i][RowNow][ColNow+m].var_id)+' '+to_string(-map[i][RowNow+2][ColNow].var_id)+' '
+                            +to_string(map[i][RowNow][ColNow+m].net_id[l])+' '+to_string(map[i][RowNow+2][ColNow].net_id[l])+' '+
+                            to_string(-map[i][RowNow][ColNow+n].var_id));
+                        }                        
+                    }
+                }
+                /*
+                    FT
+                    F
+                    T
+                */
+/*               for(int m = 2; m < SideLen-1; m+=2){
+                    for(int n = 0; n < m; n+=2){
+                        for(int l = 0; l < 5; l++){
+                            ls.push_back(to_string(-map[i][RowNow][ColNow+2].var_id)+' '+to_string(-map[i][RowNow+m][ColNow].var_id)+' '
+                            +to_string(-map[i][RowNow][ColNow+2].net_id[l])+' '+to_string(-map[i][RowNow+m][ColNow].net_id[l])+' '+
+                            to_string(-map[i][RowNow+n][ColNow].var_id));
+                            ls.push_back(to_string(-map[i][RowNow][ColNow+2].var_id)+' '+to_string(-map[i][RowNow+m][ColNow].var_id)+' '
+                            +to_string(map[i][RowNow][ColNow+2].net_id[l])+' '+to_string(map[i][RowNow+m][ColNow].net_id[l])+' '+
+                            to_string(-map[i][RowNow+n][ColNow].var_id));
+                        }                        
+                    }
+                }
+                /*
+                
+
+                    ***TF
+                       |F
+                       _T
+                */
+/*                for(int m = 2; m < SideLen-1; m+=2){
+                    for(int n = 0; n < m; n+=2){
+                        for(int l = 0; l < 5; l++){
+                            ls.push_back(to_string(-map[i][RowNow][ColNow+SideLen-3].var_id)+' '+to_string(-map[i][RowNow+m][ColNow+SideLen-1].var_id)+' '
+                            +to_string(-map[i][RowNow][ColNow+SideLen-3].net_id[l])+' '+to_string(-map[i][RowNow+m][ColNow+SideLen-1].net_id[l])+' '+
+                            to_string(-map[i][RowNow+n][ColNow+SideLen-1].var_id));
+                            ls.push_back(to_string(-map[i][RowNow][ColNow+SideLen-3].var_id)+' '+to_string(-map[i][RowNow+m][ColNow+SideLen-1].var_id)+' '
+                            +to_string(map[i][RowNow][ColNow+SideLen-3].net_id[l])+' '+to_string(map[i][RowNow+m][ColNow+SideLen-1].net_id[l])+' '+
+                            to_string(-map[i][RowNow+n][ColNow+SideLen-1].var_id));
+                        }                        
+                    }
+                }
+                /*
+                    TFFF
+                       T
+                */
+/*                for(int m = 2; m < SideLen-1; m+=2){
+                    for(int n = m+2; n < SideLen; n+=2){
+                        for(int l = 0; l < 5; l++){
+                            ls.push_back(to_string(-map[i][RowNow][ColNow+m].var_id)+' '+to_string(-map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '
+                            +to_string(-map[i][RowNow][ColNow+m].net_id[l])+' '+to_string(-map[i][RowNow+2][ColNow+SideLen-1].net_id[l])+' '+
+                            to_string(-map[i][RowNow][ColNow+n].var_id));
+                            ls.push_back(to_string(-map[i][RowNow][ColNow+m].var_id)+' '+to_string(-map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '
+                            +to_string(map[i][RowNow][ColNow+m].net_id[l])+' '+to_string(map[i][RowNow+2][ColNow+SideLen-1].net_id[l])+' '+
+                            to_string(-map[i][RowNow][ColNow+n].var_id));
+                        }                        
+                    }
+                }
+
+
+                /*
+                      T
+                  TFFFF
+                */    
+/*                for(int m = 2; m < SideLen-1; m+=2){
+                    for(int n = m+2; n < SideLen; n+=2){
+                        for(int l = 0; l < 5; l++){
+                            ls.push_back(to_string(-map[i][RowNow+SideLen-3][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+m].var_id)+' '
+                            +to_string(-map[i][RowNow+SideLen-3][ColNow+SideLen-1].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+m].net_id[l])+' '+
+                            to_string(-map[i][RowNow+SideLen-1][ColNow+n].var_id));
+                            ls.push_back(to_string(-map[i][RowNow+SideLen-3][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+m].var_id)+' '
+                            +to_string(-map[i][RowNow+SideLen-3][ColNow+SideLen-1].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+m].net_id[l])+' '+
+                            to_string(-map[i][RowNow+SideLen-1][ColNow+n].var_id));
+                        }                        
+                    }
+                }
+                /*
+                    T
+                    F
+                ***TF
+                */
+/*                for(int m = 2; m < SideLen-1; m+=2){
+                    for(int n = m+2; n < SideLen; n+=2){
+                        for(int l = 0; l < 5; l++){
+                            ls.push_back(to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-3].var_id)+' '+to_string(-map[i][RowNow+m][ColNow+SideLen-1].var_id)+' '
+                            +to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-3].net_id[l])+' '+to_string(-map[i][RowNow+m][ColNow+SideLen-1].net_id[l])+' '+
+                            to_string(-map[i][RowNow+n][ColNow+SideLen-1].var_id));
+                            ls.push_back(to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-3].var_id)+' '+to_string(-map[i][RowNow+m][ColNow+SideLen-1].var_id)+' '
+                            +to_string(map[i][RowNow+SideLen-1][ColNow+SideLen-3].net_id[l])+' '+to_string(map[i][RowNow+m][ColNow+SideLen-1].net_id[l])+' '+
+                            to_string(-map[i][RowNow+n][ColNow+SideLen-1].var_id));
+                        }                        
+                    }
+                }
+
+                /*
+                    T
+                    F
+                    FT
+                */
+ /*               for(int m = 2; m < SideLen-1; m+=2){
+                    for(int n = m+2; n < SideLen; n+=2){
+                        for(int l = 0; l < 5; l++){
+                            ls.push_back(to_string(-map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '+to_string(-map[i][RowNow+m][ColNow].var_id)+' '
+                            +to_string(-map[i][RowNow+SideLen-1][ColNow+2].net_id[l])+' '+to_string(-map[i][RowNow+m][ColNow].net_id[l])+' '+
+                            to_string(-map[i][RowNow+n][ColNow].var_id));
+                            ls.push_back(to_string(-map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '+to_string(-map[i][RowNow+m][ColNow].var_id)+' '
+                            +to_string(map[i][RowNow+SideLen-1][ColNow+2].net_id[l])+' '+to_string(map[i][RowNow+m][ColNow].net_id[l])+' '+
+                            to_string(-map[i][RowNow+n][ColNow].var_id));
+                        }                        
+                    }
+                }
+                /*
+                    *
+                    * 
+                    T
+                    FFFT
+                */
+/*                for(int m = 2; m < SideLen-1; m+=2){
+                    for(int n = 0; n < m; n+=2){
+                        for(int l = 0; l < 5; l++){
+                            ls.push_back(to_string(-map[i][RowNow+SideLen-3][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+m].var_id)+' '
+                            +to_string(-map[i][RowNow+SideLen-3][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+m].net_id[l])+' '+
+                            to_string(-map[i][RowNow+SideLen-1][ColNow+n].var_id));
+                            ls.push_back(to_string(-map[i][RowNow+SideLen-3][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+m].var_id)+' '
+                            +to_string(map[i][RowNow+SideLen-3][ColNow].net_id[l])+' '+to_string(map[i][RowNow+SideLen-1][ColNow+m].net_id[l])+' '+
+                            to_string(-map[i][RowNow+SideLen-1][ColNow+n].var_id));
+                        }                        
+                    }
+                }
+*/                
                 for(int j = 2; j <= SideLen-3; j+=2){
                     for(int k = 2; k <= SideLen-3; k+=2){
                         //left top
@@ -38,7 +279,7 @@ left |          | right
                                         |
                                 left---mid
                         */
-                        for(int m = 1; m < k; m++){  //left to mid
+/*                        for(int m = 1; m < k; m++){  //left to mid
                              
 
                             for(int l = 0; l < 5; l++){                       
@@ -63,9 +304,12 @@ left |          | right
                                 +to_string(map[i][RowNow+m][ColNow+k].var_id)+" 0");
                             }                         
                         }
+ */                       
+                        
+
                         //left right
-                        int mid = SideLen/2-1;
-                        for(int m = 1; m < mid; m++){ //left to mid
+                        int mid = SideLen/2;
+                       /* for(int m = 1; m < mid; m++){ //left to mid
                             for(int l = 0; l < 5; l++){                       
                                 ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].net_id[l])+' '
@@ -106,8 +350,8 @@ left |          | right
                                 +to_string(map[i][RowNow+k][ColNow+m].var_id)+" 0");
                             }
                         }
-                        //left bottom
-                        for(int m = 1; m < k; m++){  //left to mid
+                       */ //left bottom 
+/*                        for(int m = 1; m < k; m++){  //left to mid
                             for(int l = 0; l < 5; l++){                                                     
                                 ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
@@ -127,8 +371,8 @@ left |          | right
                                 +to_string(map[i][RowNow+j+m][ColNow+k].var_id)+" 0");
                             }                         
                         }
-                        //right top
-                        for(int m = mid+1; m < SideLen-1; m++){  //right to mid
+*/                        //right top
+                        for(int m = k+1; m < SideLen-1; m++){  //right to mid
                             for(int l = 0; l < 5; l++){                       
                                 
                                 ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
@@ -150,7 +394,7 @@ left |          | right
                             }                         
                         }
                         //right bottom
-                        for(int m = mid+1; m < SideLen-1; m++){  //right to mid
+ /*                       for(int m = k+1; m < SideLen-1; m++){  //right to mid
                             for(int l = 0; l < 5; l++){                                                     
                                 ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow+SideLen-1].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
@@ -170,8 +414,8 @@ left |          | right
                                 +to_string(map[i][RowNow+j+m][ColNow+k].var_id)+" 0");
                             }                         
                         }
-                        //top to bottom
-                        for(int m = 1; m < mid; m++){ //top to mid
+ */                       //top to bottom **slow**
+ /*                       for(int m = 1; m < mid; m++){ //top to mid
                             for(int l = 0; l < 5; l++){                       
                                 ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow][ColNow+j].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
@@ -212,9 +456,68 @@ left |          | right
                                 +to_string(map[i][RowNow+m][ColNow+k].var_id)+" 0");
                             }
                         }
+*/
+                        
                     }
                 } 
-                   
+                //boundary of tile can't have two node that have the same net_id
+              /*  for(int m = 0; m < SideLen-1; m++){
+                    for(int n = m+1; n < SideLen; n++){
+                       //top
+                        EdgeIdNotTheSame(ls, map[i][RowNow][ColNow+m].var_id,
+                        map[i][RowNow][ColNow+n].var_id,
+                        map[i][RowNow][ColNow+m].net_id[0],
+                        map[i][RowNow][ColNow+m].net_id[1],
+                        map[i][RowNow][ColNow+m].net_id[2],
+                        map[i][RowNow][ColNow+m].net_id[3],
+                        map[i][RowNow][ColNow+m].net_id[4],
+                        map[i][RowNow][ColNow+n].net_id[0],
+                        map[i][RowNow][ColNow+n].net_id[1],
+                        map[i][RowNow][ColNow+n].net_id[2],
+                        map[i][RowNow][ColNow+n].net_id[3],
+                        map[i][RowNow][ColNow+n].net_id[4]);
+                        //left
+                        EdgeIdNotTheSame(ls, map[i][RowNow+m][ColNow].var_id,
+                        map[i][RowNow+n][ColNow].var_id,
+                        map[i][RowNow+m][ColNow].net_id[0],
+                        map[i][RowNow+m][ColNow].net_id[1],
+                        map[i][RowNow+m][ColNow].net_id[2],
+                        map[i][RowNow+m][ColNow].net_id[3],
+                        map[i][RowNow+m][ColNow].net_id[4],
+                        map[i][RowNow+n][ColNow].net_id[0],
+                        map[i][RowNow+n][ColNow].net_id[1],
+                        map[i][RowNow+n][ColNow].net_id[2],
+                        map[i][RowNow+n][ColNow].net_id[3],
+                        map[i][RowNow+n][ColNow].net_id[4]);
+                        //right
+                        EdgeIdNotTheSame(ls, map[i][RowNow+m][ColNow+SideLen-1].var_id,
+                        map[i][RowNow+n][ColNow+SideLen-1].var_id,
+                        map[i][RowNow+m][ColNow+SideLen-1].net_id[0],
+                        map[i][RowNow+m][ColNow+SideLen-1].net_id[1],
+                        map[i][RowNow+m][ColNow+SideLen-1].net_id[2],
+                        map[i][RowNow+m][ColNow+SideLen-1].net_id[3],
+                        map[i][RowNow+m][ColNow+SideLen-1].net_id[4],
+                        map[i][RowNow+n][ColNow+SideLen-1].net_id[0],
+                        map[i][RowNow+n][ColNow+SideLen-1].net_id[1],
+                        map[i][RowNow+n][ColNow+SideLen-1].net_id[2],
+                        map[i][RowNow+n][ColNow+SideLen-1].net_id[3],
+                        map[i][RowNow+n][ColNow+SideLen-1].net_id[4]);
+                        //bottom
+                        EdgeIdNotTheSame(ls, map[i][RowNow+SideLen-1][ColNow+m].var_id,
+                        map[i][RowNow+SideLen-1][ColNow+n].var_id,
+                        map[i][RowNow+SideLen-1][ColNow+m].net_id[0],
+                        map[i][RowNow+SideLen-1][ColNow+m].net_id[1],
+                        map[i][RowNow+SideLen-1][ColNow+m].net_id[2],
+                        map[i][RowNow+SideLen-1][ColNow+m].net_id[3],
+                        map[i][RowNow+SideLen-1][ColNow+m].net_id[4],
+                        map[i][RowNow+SideLen-1][ColNow+n].net_id[0],
+                        map[i][RowNow+SideLen-1][ColNow+n].net_id[1],
+                        map[i][RowNow+SideLen-1][ColNow+n].net_id[2],
+                        map[i][RowNow+SideLen-1][ColNow+n].net_id[3],
+                        map[i][RowNow+SideLen-1][ColNow+n].net_id[4]);
+
+                    }
+                }  */
             }
     
         }
