@@ -279,7 +279,7 @@ left |          | right
                                         |
                                 left---mid
                         */
-/*                        for(int m = 1; m < k; m++){  //left to mid
+                        for(int m = 1; m < k; m++){  //left to mid
                              
 
                             for(int l = 0; l < 5; l++){                       
@@ -304,12 +304,12 @@ left |          | right
                                 +to_string(map[i][RowNow+m][ColNow+k].var_id)+" 0");
                             }                         
                         }
- */                       
+                        
                         
 
                         //left right
                         int mid = SideLen/2;
-                       /* for(int m = 1; m < mid; m++){ //left to mid
+                        for(int m = 1; m < mid; m++){ //left to mid
                             for(int l = 0; l < 5; l++){                       
                                 ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].net_id[l])+' '
@@ -350,8 +350,8 @@ left |          | right
                                 +to_string(map[i][RowNow+k][ColNow+m].var_id)+" 0");
                             }
                         }
-                       */ //left bottom 
-/*                        for(int m = 1; m < k; m++){  //left to mid
+                        //left bottom 
+                        for(int m = 1; m < k; m++){  //left to mid
                             for(int l = 0; l < 5; l++){                                                     
                                 ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
@@ -371,7 +371,7 @@ left |          | right
                                 +to_string(map[i][RowNow+j+m][ColNow+k].var_id)+" 0");
                             }                         
                         }
-*/                        //right top
+                        //right top
                         for(int m = k+1; m < SideLen-1; m++){  //right to mid
                             for(int l = 0; l < 5; l++){                       
                                 
@@ -394,7 +394,7 @@ left |          | right
                             }                         
                         }
                         //right bottom
- /*                       for(int m = k+1; m < SideLen-1; m++){  //right to mid
+                        for(int m = k+1; m < SideLen-1; m++){  //right to mid
                             for(int l = 0; l < 5; l++){                                                     
                                 ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow+SideLen-1].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
@@ -414,8 +414,8 @@ left |          | right
                                 +to_string(map[i][RowNow+j+m][ColNow+k].var_id)+" 0");
                             }                         
                         }
- */                       //top to bottom **slow**
- /*                       for(int m = 1; m < mid; m++){ //top to mid
+                        //top to bottom **slow**
+                        for(int m = 1; m < mid; m++){ //top to mid
                             for(int l = 0; l < 5; l++){                       
                                 ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow][ColNow+j].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
@@ -456,12 +456,13 @@ left |          | right
                                 +to_string(map[i][RowNow+m][ColNow+k].var_id)+" 0");
                             }
                         }
-*/
+
                         
                     }
                 } 
                 //boundary of tile can't have two node that have the same net_id
-              /*  for(int m = 0; m < SideLen-1; m++){
+           //   /*  <--cancel the // to comment additional rule
+                for(int m = 0; m < SideLen-1; m++){
                     for(int n = m+1; n < SideLen; n++){
                        //top
                         EdgeIdNotTheSame(ls, map[i][RowNow][ColNow+m].var_id,
@@ -517,7 +518,7 @@ left |          | right
                         map[i][RowNow+SideLen-1][ColNow+n].net_id[4]);
 
                     }
-                }  */
+                }   // <--cancel this to comment additional rule */
             }
     
         }
