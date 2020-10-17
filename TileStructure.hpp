@@ -461,64 +461,82 @@ left |          | right
                     }
                 } 
                 //boundary of tile can't have two node that have the same net_id
-           //   /*  <--cancel the // to comment additional rule
+          //    /*  <--cancel the // to comment additional rule
                 for(int m = 0; m < SideLen-1; m++){
                     for(int n = m+1; n < SideLen; n++){
-                       //top
-                        EdgeIdNotTheSame(ls, map[i][RowNow][ColNow+m].var_id,
-                        map[i][RowNow][ColNow+n].var_id,
-                        map[i][RowNow][ColNow+m].net_id[0],
-                        map[i][RowNow][ColNow+m].net_id[1],
-                        map[i][RowNow][ColNow+m].net_id[2],
-                        map[i][RowNow][ColNow+m].net_id[3],
-                        map[i][RowNow][ColNow+m].net_id[4],
-                        map[i][RowNow][ColNow+n].net_id[0],
-                        map[i][RowNow][ColNow+n].net_id[1],
-                        map[i][RowNow][ColNow+n].net_id[2],
-                        map[i][RowNow][ColNow+n].net_id[3],
-                        map[i][RowNow][ColNow+n].net_id[4]);
+                        bool TopHasPin = 0, BotHasPin = 0, RightHasPin =0, LeftHasPin = 0;
+                        for(int g = 0; g < SideLen; g++){
+                            if(map[i][RowNow][ColNow+g].type == 'P') TopHasPin = 1;
+                            if(map[i][RowNow+g][ColNow].type == 'P') LeftHasPin = 1;
+                            if(map[i][RowNow+SideLen-1][ColNow+g].type == 'P') BotHasPin = 1;
+                            if(map[i][RowNow+g][ColNow+SideLen-1].type == 'P') RightHasPin = 1;
+                        }
+                        //top
+                        if(TopHasPin == 0){
+                            EdgeIdNotTheSame(ls, map[i][RowNow][ColNow+m].var_id,
+                                map[i][RowNow][ColNow+n].var_id,
+                                map[i][RowNow][ColNow+m].net_id[0],
+                                map[i][RowNow][ColNow+m].net_id[1],
+                                map[i][RowNow][ColNow+m].net_id[2],
+                                map[i][RowNow][ColNow+m].net_id[3],
+                                map[i][RowNow][ColNow+m].net_id[4],
+                                map[i][RowNow][ColNow+n].net_id[0],
+                                map[i][RowNow][ColNow+n].net_id[1],
+                                map[i][RowNow][ColNow+n].net_id[2],
+                                map[i][RowNow][ColNow+n].net_id[3],
+                                map[i][RowNow][ColNow+n].net_id[4]);
+                        }
                         //left
-                        EdgeIdNotTheSame(ls, map[i][RowNow+m][ColNow].var_id,
-                        map[i][RowNow+n][ColNow].var_id,
-                        map[i][RowNow+m][ColNow].net_id[0],
-                        map[i][RowNow+m][ColNow].net_id[1],
-                        map[i][RowNow+m][ColNow].net_id[2],
-                        map[i][RowNow+m][ColNow].net_id[3],
-                        map[i][RowNow+m][ColNow].net_id[4],
-                        map[i][RowNow+n][ColNow].net_id[0],
-                        map[i][RowNow+n][ColNow].net_id[1],
-                        map[i][RowNow+n][ColNow].net_id[2],
-                        map[i][RowNow+n][ColNow].net_id[3],
-                        map[i][RowNow+n][ColNow].net_id[4]);
+                        if(LeftHasPin == 0){
+                            EdgeIdNotTheSame(ls, map[i][RowNow+m][ColNow].var_id,
+                            map[i][RowNow+n][ColNow].var_id,
+                            map[i][RowNow+m][ColNow].net_id[0],
+                            map[i][RowNow+m][ColNow].net_id[1],
+                            map[i][RowNow+m][ColNow].net_id[2],
+                            map[i][RowNow+m][ColNow].net_id[3],
+                            map[i][RowNow+m][ColNow].net_id[4],
+                            map[i][RowNow+n][ColNow].net_id[0],
+                            map[i][RowNow+n][ColNow].net_id[1],
+                            map[i][RowNow+n][ColNow].net_id[2],
+                            map[i][RowNow+n][ColNow].net_id[3],
+                            map[i][RowNow+n][ColNow].net_id[4]);
+                        }
+                                               
                         //right
-                        EdgeIdNotTheSame(ls, map[i][RowNow+m][ColNow+SideLen-1].var_id,
-                        map[i][RowNow+n][ColNow+SideLen-1].var_id,
-                        map[i][RowNow+m][ColNow+SideLen-1].net_id[0],
-                        map[i][RowNow+m][ColNow+SideLen-1].net_id[1],
-                        map[i][RowNow+m][ColNow+SideLen-1].net_id[2],
-                        map[i][RowNow+m][ColNow+SideLen-1].net_id[3],
-                        map[i][RowNow+m][ColNow+SideLen-1].net_id[4],
-                        map[i][RowNow+n][ColNow+SideLen-1].net_id[0],
-                        map[i][RowNow+n][ColNow+SideLen-1].net_id[1],
-                        map[i][RowNow+n][ColNow+SideLen-1].net_id[2],
-                        map[i][RowNow+n][ColNow+SideLen-1].net_id[3],
-                        map[i][RowNow+n][ColNow+SideLen-1].net_id[4]);
+                        if(RightHasPin == 0){
+                            EdgeIdNotTheSame(ls, map[i][RowNow+m][ColNow+SideLen-1].var_id,
+                            map[i][RowNow+n][ColNow+SideLen-1].var_id,
+                            map[i][RowNow+m][ColNow+SideLen-1].net_id[0],
+                            map[i][RowNow+m][ColNow+SideLen-1].net_id[1],
+                            map[i][RowNow+m][ColNow+SideLen-1].net_id[2],
+                            map[i][RowNow+m][ColNow+SideLen-1].net_id[3],
+                            map[i][RowNow+m][ColNow+SideLen-1].net_id[4],
+                            map[i][RowNow+n][ColNow+SideLen-1].net_id[0],
+                            map[i][RowNow+n][ColNow+SideLen-1].net_id[1],
+                            map[i][RowNow+n][ColNow+SideLen-1].net_id[2],
+                            map[i][RowNow+n][ColNow+SideLen-1].net_id[3],
+                            map[i][RowNow+n][ColNow+SideLen-1].net_id[4]);
+                        }
+                        
                         //bottom
-                        EdgeIdNotTheSame(ls, map[i][RowNow+SideLen-1][ColNow+m].var_id,
-                        map[i][RowNow+SideLen-1][ColNow+n].var_id,
-                        map[i][RowNow+SideLen-1][ColNow+m].net_id[0],
-                        map[i][RowNow+SideLen-1][ColNow+m].net_id[1],
-                        map[i][RowNow+SideLen-1][ColNow+m].net_id[2],
-                        map[i][RowNow+SideLen-1][ColNow+m].net_id[3],
-                        map[i][RowNow+SideLen-1][ColNow+m].net_id[4],
-                        map[i][RowNow+SideLen-1][ColNow+n].net_id[0],
-                        map[i][RowNow+SideLen-1][ColNow+n].net_id[1],
-                        map[i][RowNow+SideLen-1][ColNow+n].net_id[2],
-                        map[i][RowNow+SideLen-1][ColNow+n].net_id[3],
-                        map[i][RowNow+SideLen-1][ColNow+n].net_id[4]);
+                        if(BotHasPin == 0){
+                            EdgeIdNotTheSame(ls, map[i][RowNow+SideLen-1][ColNow+m].var_id,
+                            map[i][RowNow+SideLen-1][ColNow+n].var_id,
+                            map[i][RowNow+SideLen-1][ColNow+m].net_id[0],
+                            map[i][RowNow+SideLen-1][ColNow+m].net_id[1],
+                            map[i][RowNow+SideLen-1][ColNow+m].net_id[2],
+                            map[i][RowNow+SideLen-1][ColNow+m].net_id[3],
+                            map[i][RowNow+SideLen-1][ColNow+m].net_id[4],
+                            map[i][RowNow+SideLen-1][ColNow+n].net_id[0],
+                            map[i][RowNow+SideLen-1][ColNow+n].net_id[1],
+                            map[i][RowNow+SideLen-1][ColNow+n].net_id[2],
+                            map[i][RowNow+SideLen-1][ColNow+n].net_id[3],
+                            map[i][RowNow+SideLen-1][ColNow+n].net_id[4]);
+                        }
+                        
 
                     }
-                }   // <--cancel this to comment additional rule */
+                }  //  <--cancel this to comment additional rule */
             }
     
         }
