@@ -821,18 +821,42 @@ int main(int argc, const char * argv[])
     }*/
 
     /* for xcode
+     ofstream file("temp.cnf");
+     if(file.is_open()){
+         file << "c temp.cnf" << endl;
+         file << "p cnf "<<var_id_counter-1<<' '<<ls.size()<<endl;
+         for(string l: ls)
+             file << l << endl;
+     }
+     file.close();
     string command = "./open-wbo /Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/temp.cnf > output";
     system(command.c_str());
     
     ifstream fil;
     fil.open("/Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/output", ios::in);
-    for(int i=0;i<26;i++)
+    string line;
+    int numSize;
+    for(int i=0;i<26;i++){
         getline(fil, line);
-    int num[64000];
+        if(i == 12){ // fetch num of variables
+            stringstream ss(line);
+            string temp;
+            for(int x = 0; x < 6; x++)
+                ss >> temp;
+            numSize = stoi(temp);
+        }
+    }
+    vector<int> num;
+    num.reserve(numSize);
     char c;
     fil >> c;
-    for(int i=0;i<62363;i++)
-        fil >> num[i];
+    int tem, tem2;
+    for(;;){
+        tem2 = tem;
+        fil>>tem;
+        if(tem2 == tem) break;
+        num.push_back(tem);
+    }
     */
 
     ofstream file("temp.cnf");
