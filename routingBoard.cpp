@@ -662,11 +662,11 @@ int main(int argc, const char * argv[])
             CPUslot[i-1][j].setup(0, BD, Z);
             DDRslot[i-1][j].setup(i, bd, z);
             if(set[i].loc == 't' || set[i].loc == 'b'){
-                z += 2;
-                Z -= 2;
+                z += 4;
+                Z -= 4;
             }else{
-                z -= 2;
-                Z += 2;
+                z -= 4;
+                Z += 4;
             }
         }
     }
@@ -796,11 +796,12 @@ int main(int argc, const char * argv[])
 
     //tile structure begin
 
-    /*TSoffset offset;
-    offset.SetUp(4,0,4,0); // offset from RowLeft, RowRight, ColLeft, ColRight *even only*
+    TSoffset offset1, offset2;
+    offset1.SetUp(0,6,0,0); // offset from RowLeft, RowRight, ColLeft, ColRight *even only*
+    offset2.SetUp(8,0,0,0);
     int nxn = 5; // n x n tile structure
-    TileStruct(ls, map, nxn, offset);
-    drawMap0(map, groupSize, mapsize);*/
+    TileStruct(ls, map, nxn, offset1, offset2);
+    drawMap0(map, groupSize, mapsize);
 
     //To match two map's slot order
     /*for(int i=0; i < pp.size(); i++)

@@ -100,7 +100,7 @@ void EdgeIdNotTheSame(list<string> &ls, int a, int b, int c1, int c2, int c3, in
                         +to_string(d4)+' '+to_string(d5)+" 0");    
 }
 
-void TileStruct(list<string> &ls, vector<vector<vector<Node>>> &map, int nxn, TSoffset offset){
+void TileStruct(list<string> &ls, vector<vector<vector<Node>>> &map, int nxn, TSoffset offset1, TSoffset offset2){
     /*
          top
      11-13-...-1x  <--RowNow
@@ -118,8 +118,10 @@ left |          | right
     SideLen = x
     */
     int SideLen = 2*nxn-1; //default = 9
-    int ColNow, RowNow;
     for(int i = 0; i < map.size(); i++){//Group
+        TSoffset offset;
+        if(i==0){offset=offset1;}
+        else if(i==1){offset=offset2;}
         for(int RowNow = 1+offset.RL; RowNow + SideLen-1 + offset.RR < map[i].size()-1; RowNow += SideLen-1){
             for(int ColNow = 1+offset.CL; ColNow + SideLen-1 + offset.CR < map[i][0].size()-1; ColNow += SideLen-1){
                 //crossroad control
