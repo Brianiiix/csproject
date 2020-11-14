@@ -118,26 +118,42 @@ left |          | right
     SideLen = x
     */
     int SideLen = 2*nxn-1; //default = 9
+    int cnt = 0;
     for(int i = 0; i < map.size(); i++){//Group
         TSoffset offset;
         if(i==0){offset=offset1;}
         else if(i==1){offset=offset2;}
         for(int RowNow = 1+offset.RL; RowNow + SideLen-1 + offset.RR < map[i].size()-1; RowNow += SideLen-1){
-            for(int ColNow = 1+offset.CL; ColNow + SideLen-1 + offset.CR < map[i][0].size()-1; ColNow += SideLen-1){
+            for(int ColNow = 1+offset.CL; ColNow + SideLen-1 + offset.CR < map[i][0].size()-1; ColNow += SideLen-1){cnt++;
                 //crossroad control
                 //topleft
-                
-                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow].var_id)+' '+to_string(-map[i][RowNow+3][ColNow].var_id)+" 0");
-                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow].var_id)+' '+to_string(-map[i][RowNow][ColNow+3].var_id)+" 0");
+                if(map[i][RowNow][ColNow].type != 'P') {
+                    ls.push_back("1 "+to_string(-map[i][RowNow+1][ColNow].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+1].var_id)+" 0");
+                }
+                ls.push_back("1 "+to_string(-map[i][RowNow+3][ColNow].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+3].var_id)+" 0");
                 //topright
-                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+3][ColNow+SideLen-1].var_id)+" 0");
-                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow][ColNow+SideLen-4].var_id)+" 0");
+                if(map[i][RowNow][ColNow+SideLen-1].type != 'P') {
+                    ls.push_back("1 "+to_string(-map[i][RowNow+1][ColNow+SideLen-1].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+SideLen-2].var_id)+" 0");
+                }
+                ls.push_back("1 "+to_string(-map[i][RowNow+3][ColNow+SideLen-1].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+SideLen-4].var_id)+" 0");
                 //botleft
-                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+3].var_id)+" 0");
-                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-4][ColNow].var_id)+" 0");
+                if(map[i][RowNow+SideLen-1][ColNow].type != 'P') {
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-2][ColNow].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+1].var_id)+" 0");
+                }
+                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+3].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-4][ColNow].var_id)+" 0");
                 //botright 
-                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-4].var_id)+" 0");
-                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-4][ColNow+SideLen-1].var_id)+" 0");
+                if(map[i][RowNow+SideLen-1][ColNow+SideLen-1].type != 'P') {
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-2][ColNow+SideLen-1].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-2].var_id)+" 0");
+                }
+                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-4].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-4][ColNow+SideLen-1].var_id)+" 0");
 
                 for(int z = 0; z < nxn*2-1; z++){
                     map[i][RowNow][ColNow+z].tilestruct = true;
@@ -145,35 +161,71 @@ left |          | right
                     map[i][RowNow+nxn*2-2][ColNow+z].tilestruct = true;
                     map[i][RowNow+z][ColNow+nxn*2-2].tilestruct = true;
                 }
-                            
+                bool hasPin = 0;
+                //if edge has pin then no rule
+                /*for(int a = 0; a < SideLen; a+=1){
+                    //for(int b = 0; b < SideLen; b+=1){
+                        if(map[i][RowNow+a][ColNow].type == 'P') hasPin = 1;
+                        if(map[i][RowNow+a][ColNow+SideLen-1].type == 'P') hasPin = 1;
+                        if(map[i][RowNow+SideLen-1][ColNow+a].type == 'P') hasPin = 1;
+                        if(map[i][RowNow][ColNow+a].type == 'P') hasPin = 1;
+                        //if(cnt == 5) cout << map[i][RowNow+a][ColNow+b].type << " ";
+                    //}
+                    //if(cnt == 5) cout << endl;
+                }*/
+                //if tile has pin then no rule
+                for(int a = 0; a < SideLen; a+=1){
+                    for(int b = 0; b < SideLen; b+=1){
+                        if(map[i][RowNow+a][ColNow+b].type == 'P') hasPin = 1;                        
+                    }
+                }
+                if(hasPin == 1) continue;
+                //else cout << cnt << " no pin" << endl;
+                //if(cnt == 5) cout << RowNow << " " << ColNow << endl;            
                 for(int j = 2; j <= SideLen-3; j+=2){
-                    //one in implies one out
+                    //one in implies one out                    
+                    //if(hasPin == 0){//cout << cnt <<" don't have pin"<<endl;
                     //top
-                    
-                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(map[i][RowNow+2][ColNow].var_id)+' '
-                    +to_string(map[i][RowNow+4][ColNow].var_id)+' '+to_string(map[i][RowNow+6][ColNow].var_id)+' '
-                    +to_string(map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+4][ColNow+SideLen-1].var_id)+' '
-                    +to_string(map[i][RowNow+6][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '
-                    +to_string(map[i][RowNow+SideLen-1][ColNow+4].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+6].var_id)+" 0");
+                        ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(map[i][RowNow+2][ColNow].var_id)+' '
+                        +to_string(map[i][RowNow+4][ColNow].var_id)+' '+to_string(map[i][RowNow+6][ColNow].var_id)+' '
+                        +to_string(map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+4][ColNow+SideLen-1].var_id)+' '
+                        +to_string(map[i][RowNow+6][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '
+                        +to_string(map[i][RowNow+SideLen-1][ColNow+4].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+6].var_id)+" 0");
                     //left
-                    ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
-                    +to_string(map[i][RowNow][ColNow+4].var_id)+' '+to_string(map[i][RowNow][ColNow+6].var_id)+' '
-                    +to_string(map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+4][ColNow+SideLen-1].var_id)+' '
-                    +to_string(map[i][RowNow+6][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '
-                    +to_string(map[i][RowNow+SideLen-1][ColNow+4].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+6].var_id)+" 0");
+                        ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
+                        +to_string(map[i][RowNow][ColNow+4].var_id)+' '+to_string(map[i][RowNow][ColNow+6].var_id)+' '
+                        +to_string(map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+4][ColNow+SideLen-1].var_id)+' '
+                        +to_string(map[i][RowNow+6][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '
+                        +to_string(map[i][RowNow+SideLen-1][ColNow+4].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+6].var_id)+" 0");
                     //bottom
-                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+j].var_id)+' '+to_string(map[i][RowNow+2][ColNow].var_id)+' '
-                    +to_string(map[i][RowNow+4][ColNow].var_id)+' '+to_string(map[i][RowNow+6][ColNow].var_id)+' '
-                    +to_string(map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+4][ColNow+SideLen-1].var_id)+' '
-                    +to_string(map[i][RowNow+6][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
-                    +to_string(map[i][RowNow][ColNow+4].var_id)+' '+to_string(map[i][RowNow][ColNow+6].var_id)+" 0");
+                        ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+j].var_id)+' '+to_string(map[i][RowNow+2][ColNow].var_id)+' '
+                        +to_string(map[i][RowNow+4][ColNow].var_id)+' '+to_string(map[i][RowNow+6][ColNow].var_id)+' '
+                        +to_string(map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+4][ColNow+SideLen-1].var_id)+' '
+                        +to_string(map[i][RowNow+6][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
+                        +to_string(map[i][RowNow][ColNow+4].var_id)+' '+to_string(map[i][RowNow][ColNow+6].var_id)+" 0");
                     //right
-                    ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
-                    +to_string(map[i][RowNow][ColNow+4].var_id)+' '+to_string(map[i][RowNow][ColNow+6].var_id)+' '
-                    +to_string(map[i][RowNow][ColNow+2].var_id)+' '+to_string(map[i][RowNow][ColNow+4].var_id)+' '
-                    +to_string(map[i][RowNow][ColNow+6].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '
-                    +to_string(map[i][RowNow+SideLen-1][ColNow+4].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+6].var_id)+" 0");
+                        ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
+                        +to_string(map[i][RowNow][ColNow+4].var_id)+' '+to_string(map[i][RowNow][ColNow+6].var_id)+' '
+                        +to_string(map[i][RowNow+2][ColNow].var_id)+' '+to_string(map[i][RowNow+4][ColNow].var_id)+' '
+                        +to_string(map[i][RowNow+6][ColNow].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '
+                        +to_string(map[i][RowNow+SideLen-1][ColNow+4].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+6].var_id)+" 0");
+                       
+                    //}
+                    //else cout << cnt << " has pin"  << endl;
 
+                    /*if(cnt == 31){
+                            cout <<"KJHGJYG "<< to_string(map[i][RowNow+j][ColNow+SideLen-1].var_id)<<" " << to_string(map[i][RowNow][ColNow+2].var_id)<<" " 
+                            << to_string(map[i][RowNow][ColNow+4].var_id)<<" "  << to_string(map[i][RowNow][ColNow+6].var_id) <<" " 
+                            << to_string(map[i][RowNow+2][ColNow].var_id)<<" "  << to_string(map[i][RowNow+4][ColNow].var_id)<<" " 
+                            << to_string(map[i][RowNow+6][ColNow].var_id)<<" "  << to_string(map[i][RowNow+SideLen-1][ColNow+2].var_id)<<" " 
+                            << to_string(map[i][RowNow+SideLen-1][ColNow+4].var_id)<<" "  << to_string(map[i][RowNow+SideLen-1][ColNow+6].var_id) << endl;
+                            for(int g = 0; g < 5; g++){
+                                cout << to_string(map[i][RowNow+j][ColNow+SideLen-1].net_id[g]) << " ";
+                            }
+                            cout << endl;
+                            cout << to_string(map[i][RowNow+j][ColNow+SideLen-1].var_id) << endl;
+                        }*/
+                    
                     for(int k = 2; k <= SideLen-3; k+=2){
                         //left top
                         /*
@@ -212,6 +264,7 @@ left |          | right
 
                         //left right
                         int mid = SideLen/2;
+                       
                         for(int m = 1; m < mid; m++){ //left to mid
                             for(int l = 0; l < 5; l++){                       
                                 ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
@@ -223,6 +276,7 @@ left |          | right
                             }
                                                  
                         }
+                        
                         for(int m = 0; m <= abs(j-k); m++){ //mid to mid
                             for(int l = 0; l < 5; l++){ 
                                 if(j-k > 0){
@@ -243,6 +297,7 @@ left |          | right
                                 }
                             }                      
                         }
+                       
                         for(int m = mid+1; m < SideLen-1; m++){ //mid to right
                             for(int l = 0; l < 5; l++){                       
                                 ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
