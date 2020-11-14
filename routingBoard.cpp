@@ -519,6 +519,8 @@ int main(int argc, const char * argv[])
     int GU = findType("./case/1.brd_input.pCSet" , "DEFAULT", "./case/1.brd_input.sCSet", "DEFAULT");
     // Pin info
     vector<vector<pair<int, int>>> P(groupSize);
+    // Pin info for map coor, first:j of map[i][j][k] second:k of map[i][j][k]
+    vector<vector<pair<int, int>>> P_map(groupSize);
     // boundary info
     vector<boundary> set(groupSize);
     // many m x n 2D vector of vector
@@ -545,6 +547,7 @@ int main(int argc, const char * argv[])
             for(int i = 0; i < netBox.size(); i++)
                 sum += netBox[i].size();
             P[z].reserve(sum);
+            P_map[z].resize(sum);
             for(int i = 0; i < netBox.size(); i++){
                 for(int j = 0; j < netBox[i].size(); j++){
                     P[z].push_back(make_pair(exactgrid(pinBox[i].at(netBox[i].at(j).at(0)).x, GU),exactgrid(pinBox[i].at(netBox[i].at(j).at(0)).y, GU)));
@@ -555,6 +558,7 @@ int main(int argc, const char * argv[])
             }
         }else{
             P[z].reserve(netBox[z-1].size());
+            P_map[z].resize(netBox[z-1].size());
             for(int i = 0; i < netBox[z-1].size(); i++){
                 P[z].push_back(make_pair(exactgrid(pinBox[z-1].at(netBox[z-1].at(i).at(1)).x, GU),exactgrid(pinBox[z-1].at(netBox[z-1].at(i).at(1)).y, GU)));
             }
@@ -593,6 +597,7 @@ int main(int argc, const char * argv[])
             //@cout << "coor of the pin is (" << (P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize
             //@    << "," << ((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize << ")" << endl;
             // top/GU-1 and left/GU+1 to elim slots
+            P_map[z][j] = {((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize,(P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize};
             map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize).type = 'P';
             map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize).pin_id = j;
             if(z == 0){
@@ -625,7 +630,7 @@ int main(int argc, const char * argv[])
     }
 
     // set the slots **
-    // find relative location between CPU & DDRs
+    // find relative location between CPU & DDRs, not slot location!
     for(int i = 1; i < groupSize; i++){
         CPUslot[i-1].resize(netBox[i-1].size());
         DDRslot[i-1].resize(netBox[i-1].size());
@@ -636,17 +641,33 @@ int main(int argc, const char * argv[])
             if(set[i].left >= set[0].left+(set[0].right-set[0].left)/2){
                 set[i].loc = 'b'; // bottom right
                 CPUslotRev[i-1] = true;
+                if(set[0].loc == 'b' || set[0].loc == 'B') // CPU's slot is at top and bot
+                    set[0].loc = 'C';
+                else if(set[0].loc != 'C')
+                    set[0].loc = 'T'; // DDR:bottom right <-> CPU:top left
             }else{
                 set[i].loc = 'B'; // bottom left
                 DDRslotRev[i-1] = true;
+                if(set[0].loc == 'b' || set[0].loc == 'B')
+                    set[0].loc = 'C';
+                else if(set[0].loc != 'C')
+                    set[0].loc = 't';
             }
         }else if(set[i].down >= set[0].top){ // top
             if(set[i].left >= set[0].left+(set[0].right-set[0].left)/2){
                 set[i].loc = 't'; // top right
                 CPUslotRev[i-1] = true;
+                if(set[0].loc == 't' || set[0].loc == 'T')
+                    set[0].loc = 'C';
+                else if(set[0].loc != 'C')
+                    set[0].loc = 'B';
             }else{
                 set[i].loc = 'T'; // top left
                 DDRslotRev[i-1] = true;
+                if(set[0].loc == 't' || set[0].loc == 'T')
+                    set[0].loc = 'C';
+                else if(set[0].loc != 'C')
+                    set[0].loc = 'b';
             }
         }else{
             cout << "Slot allocation failed at group " << i << endl;
@@ -727,6 +748,7 @@ int main(int argc, const char * argv[])
                         ls.push_back("1 "+to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
                         
                         lsfunc(ls, map, i, j, k, i, j, k-1, i, j, k+1);
+                        lsfunc(ls, map, i, j, k, i, j, k-1, i, j, k);
                     }
                     //|
                     else{
@@ -734,6 +756,8 @@ int main(int argc, const char * argv[])
                         ls.push_back("1 "+to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
                         
                         lsfunc(ls, map, i, j, k, i, j-1, k, i, j+1, k);
+                        lsfunc(ls, map, i, j, k, i, j-1, k, i, j, k);
+
                     }
                 }
                 else if(map[i][j][k].type == 'G'){
@@ -790,14 +814,56 @@ int main(int argc, const char * argv[])
         }
     }
 
+    //* group 1 only
+    // mono start
+    for(int z = 0; z < netBox[0].size(); z++){ // 1 group
+    //for(int z = 0; z <= 3; z++){ // 1 group
+
+        int dec = z, temp[5] = {0};
+        for(int T = 0; T < 5; T++){
+            temp[T] = dec % 2;
+            dec /= 2;
+        }
+        
+        for(int i = 0; i < map.size(); i++){
+            int jmin = 0, jmax = map[i].size();
+            int kmin = 0, kmax = map[i][0].size()-1; // -1
+            if(set[i].loc == 'B' || set[i].loc == 'b'){ // slot at top
+                jmax = P_map[i][z].first;
+            }else if(set[i].loc == 'T' || set[i].loc == 't'){ // slot at bot
+                jmin = P_map[i][z].first;
+            }
+            for(int j = jmin; j < jmax; j++){
+                for(int k = kmin; k < kmax; k++){
+                    if(map[i][j][k].type == 'E' && k % 2 == 1){ // |
+                        for(int K = k + 2; K < map.at(i).at(0).size(); K+=2){
+                            string tmps = "1 ";
+                            for(int T = 0; T < 5; T++){
+                                tmps += (temp[T])?(to_string(-map[i][j][k].net_id[T])):(to_string(map[i][j][k].net_id[T]));
+                                tmps += " ";
+                            }
+                            for(int T = 0; T < 5; T++){
+                                tmps += (temp[T])?(to_string(-map[i][j][K].net_id[T])):(to_string(map[i][j][K].net_id[T]));
+                                tmps += " ";
+                            }
+                            tmps += "0";
+                            ls.push_back(tmps);
+                        }  
+                    }
+                }
+            }
+        }
+    }
+    // mono end
+
     //tile structure begin
 
     TSoffset offset1, offset2;
     offset1.SetUp(0,0,0,0); // offset from RowLeft, RowRight, ColLeft, ColRight *even only*
     offset2.SetUp(0,0,0,0);
     int nxn = 5; // n x n tile structure
-    TileStruct(ls, map, nxn, offset1, offset2);
-    drawMap0(map, groupSize, mapsize);
+    //TileStruct(ls, map, nxn, offset1, offset2);
+    //drawMap0(map, groupSize, mapsize);
 
     //To match two map's slot order
     /*for(int i=0; i < pp.size(); i++)
@@ -878,6 +944,7 @@ int main(int argc, const char * argv[])
     fil.open("output", ios::in);
     for(int i=0;i<27;i++){
         getline(fil, line);
+        if(line == "") break;
         if(i == 13){ // fetch num of variables
             stringstream ss(line);
             string temp;
@@ -898,7 +965,8 @@ int main(int argc, const char * argv[])
         num.push_back(tem);
     }
     cout << num.size() << endl;
-    
+        for(int i=0;i<5;i++)
+        cout << num[map[1][34][29].net_id[i]-1] << " " << num[map[1][34][31].net_id[i]-1]<<endl;
     for(int i = 0; i < set.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
