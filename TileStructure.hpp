@@ -131,29 +131,45 @@ left |          | right
                     ls.push_back("1 "+to_string(-map[i][RowNow+1][ColNow].var_id)+" 0");
                     ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+1].var_id)+" 0");
                 }
-                ls.push_back("1 "+to_string(-map[i][RowNow+3][ColNow].var_id)+" 0");
-                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+3].var_id)+" 0");
+                for(int k = 3; k <= nxn-2; k+=2){
+                    ls.push_back("1 "+to_string(-map[i][RowNow+k][ColNow].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+k].var_id)+" 0");
+                }
+                /*ls.push_back("1 "+to_string(-map[i][RowNow+3][ColNow].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+3].var_id)+" 0");*/
                 //topright
                 if(map[i][RowNow][ColNow+SideLen-1].type != 'P') {
                     ls.push_back("1 "+to_string(-map[i][RowNow+1][ColNow+SideLen-1].var_id)+" 0");
                     ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+SideLen-2].var_id)+" 0");
                 }
-                ls.push_back("1 "+to_string(-map[i][RowNow+3][ColNow+SideLen-1].var_id)+" 0");
-                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+SideLen-4].var_id)+" 0");
+                for(int k = 3; k <= nxn-2; k+=2){
+                    ls.push_back("1 "+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+SideLen-1-k].var_id)+" 0");
+                }
+                /*ls.push_back("1 "+to_string(-map[i][RowNow+3][ColNow+SideLen-1].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+SideLen-4].var_id)+" 0");*/
                 //botleft
                 if(map[i][RowNow+SideLen-1][ColNow].type != 'P') {
                     ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-2][ColNow].var_id)+" 0");
                     ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+1].var_id)+" 0");
                 }
-                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+3].var_id)+" 0");
-                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-4][ColNow].var_id)+" 0");
+                for(int k = 3; k <= nxn-2; k+=2){
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1-k][ColNow].var_id)+" 0");
+                }
+                /*ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+3].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-4][ColNow].var_id)+" 0");*/
                 //botright 
                 if(map[i][RowNow+SideLen-1][ColNow+SideLen-1].type != 'P') {
                     ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-2][ColNow+SideLen-1].var_id)+" 0");
                     ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-2].var_id)+" 0");
                 }
-                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-4].var_id)+" 0");
-                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-4][ColNow+SideLen-1].var_id)+" 0");
+                for(int k = 3; k <= nxn-2; k+=2){
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-1-k].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1-k][ColNow+SideLen-1].var_id)+" 0");
+                }
+                /*ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-4].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-4][ColNow+SideLen-1].var_id)+" 0");*/
 
                 for(int z = 0; z < nxn*2-1; z++){
                     map[i][RowNow][ColNow+z].tilestruct = true;
