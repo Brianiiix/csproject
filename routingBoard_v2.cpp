@@ -735,10 +735,10 @@ int main(int argc, const char * argv[])
                 //new ver : one node can only have zero or one net
                 for(int x = 0; x < net_num-1; x++){
                     for(int y = x+1; y < net_num; y++){
-                        ls.push_back(to_string(-map[i][j][k].var_id[x])+' '+to_string(-map[i][j][k+1].var_id[y])+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id[x])+' '+to_string(-map[i][j][k].var_id[y])+" 0");
                     }
                 }
-                
+
                 // each pin choose a way out
                 if(map[i][j][k].type == 'P'){
                     //(¬a ∨ ¬b) ∧ (¬a ∨ ¬c) ∧ (¬a ∨ ¬d) ∧ (a ∨ b ∨ c ∨ d) ∧ (¬b ∨ ¬c) ∧ (¬b ∨ ¬d) ∧ (¬c ∨ ¬d)
