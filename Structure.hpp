@@ -26,12 +26,7 @@ int node_num = 0;
 int net_num = 0;
 int edge_num = 0;
 
-class Node_bit{
-	public:
-		int var_id;
-		// SAT value
-		bool bit;
-};
+
 
 class Node{
 	public:
@@ -47,7 +42,7 @@ class Node{
 		char type = 'X';
 		// from which ddr
 		int group;
-		int var_id;
+		vector<int> var_id;
         int pin_id;
     	int net_id[5] = {0};
 		bool bit;

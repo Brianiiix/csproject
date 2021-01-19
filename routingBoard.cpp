@@ -15,7 +15,7 @@
 #include "output_gds.hpp"
 #include "initVar.hpp"
 #include "gridUnit.hpp"
-#include "TileStructure.hpp"
+//#include "TileStructure.hpp"
 
 using namespace std;
 
@@ -67,11 +67,11 @@ int cross(const Obs_Point &O, const Obs_Point &A, const Obs_Point &B)
 /*push formula like (¬a ∨ ¬b ∨ g) ∧ (¬a ∨ b ∨ ¬g) ∧ (¬a ∨ ¬c ∨ h) ∧ (¬a ∨ c ∨ ¬h) ∧ (¬a ∨ ¬d ∨ i) ∧ (¬a ∨ d ∨ ¬i)
 ∧ (¬a ∨ ¬e ∨ j) ∧ (¬a ∨ e ∨ ¬j) ∧ (¬a ∨ ¬f ∨ k) ∧ (¬a ∨ f ∨ ¬k)*/
 // map[i][j][k] implies map[a][b][c].netid = map[x][y][z].netid
-void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, int k, int a, int b, int c, int x, int y, int z)
+void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, int k, int a, int b, int c, int x, int y, int z, int p)
 {
     for(int l = 0; l < 5; l++){
-        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[l])+' '+to_string(map[x][y][z].net_id[l])+" 0");
-        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[l])+' '+to_string(-map[x][y][z].net_id[l])+" 0");
+        ls.push_back("1 "+to_string(-map[i][j][k].var_id[p])+' '+to_string(-map[a][b][c].net_id[l])+' '+to_string(map[x][y][z].net_id[l])+" 0");
+        ls.push_back("1 "+to_string(-map[i][j][k].var_id[p])+' '+to_string(map[a][b][c].net_id[l])+' '+to_string(-map[x][y][z].net_id[l])+" 0");
     }
 }
 
@@ -588,7 +588,11 @@ int main(int argc, const char * argv[])
                 }else if(((j % 2 != 0) && (k % 2 == 0)) || ((j % 2 == 0) && (k % 2 != 0))){
                     map.at(z).at(j).at(k).type = 'E';
                 }
-                map.at(z).at(j).at(k).var_id = var_id_counter++;
+                // each pin has its own gird map
+                map.at(z).at(j).at(k).var_id.reserve(P[z].size());
+                for(int t = 0; t < P[z].size(); t++){
+                    map.at(z).at(j).at(k).var_id.push_back(var_id_counter++);
+                }
             }
         }
         // Pin
@@ -629,7 +633,7 @@ int main(int argc, const char * argv[])
         }
     }
 
-    // set the slots **
+    // set the slots ** (2 DDRs)
     // find relative location between CPU & DDRs, not slot location!
     for(int i = 1; i < groupSize; i++){
         CPUslot[i-1].resize(netBox[i-1].size());
@@ -672,7 +676,8 @@ int main(int argc, const char * argv[])
         }else{
             cout << "Slot allocation failed at group " << i << endl;
         }
-        int z = 1, bd = 0, Z = 1, BD = 0; // Z, BD for CPU
+        // Z:row BD:col Z, BD for CPU
+        int z = 1, bd = 0, Z = 1, BD = 0;
         z = (set[i].loc == 'T' || set[i].loc == 'B') ? map[i][0].size()-2 : 1;
         bd = (set[i].loc == 'B' || set[i].loc == 'b') ? 0 : map[i].size()-1;
         Z = (set[i].loc == 't' || set[i].loc == 'b') ? map[0][0].size()-2 : 1;
@@ -683,19 +688,19 @@ int main(int argc, const char * argv[])
             CPUslot[i-1][j].setup(0, BD, Z);
             DDRslot[i-1][j].setup(i, bd, z);
             if(set[i].loc == 't' || set[i].loc == 'b'){
-                z += 2;
-                Z -= 2;
+                z += 4; // space between slot
+                Z -= 4;
             }else{
-                z -= 2;
-                Z += 2;
+                z -= 4;
+                Z += 4;
             }
         }
     }
     drawMap0(map, groupSize, mapsize);
     // constraint
     // ls is to store the constraint in dimacs format, will write into the file later
+    // every clause ends with " 0"
     list<string> ls;
-    list<string> softls;
     // net_id[i] = 0 -> false, 1 ->true
     for(int i = 0; i < map.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
@@ -704,11 +709,11 @@ int main(int argc, const char * argv[])
                     for(int l = 0; l < 5; l++){
                         if(map[i][j][k].net_id[l] == 1){
                             map[i][j][k].net_id[l] = var_id_counter++;
-                            ls.push_back(to_string(map[i][j][k].net_id[l])+" 0");
+                            ls.push_back("1 "+to_string(map[i][j][k].net_id[l])+" 0");
                         }
                         else{
                             map[i][j][k].net_id[l] = var_id_counter++;
-                            ls.push_back(to_string(-map[i][j][k].net_id[l])+" 0");
+                            ls.push_back("1 "+to_string(-map[i][j][k].net_id[l])+" 0");
                         }
                     }
                 }
@@ -722,7 +727,8 @@ int main(int argc, const char * argv[])
     }
 
     for(int i = 0; i < map.size(); i++){
-        int CPUslotC;
+    for(int p = 0; p < P_map[i].size(); p++){
+        int CPUslotC; // counter
         int DDRslotC;
         if(i != 0){
             CPUslotC = (CPUslotRev[i-1])?CPUslot[i-1].size() - 1:0;
@@ -733,59 +739,57 @@ int main(int argc, const char * argv[])
                 // each pin choose a way out
                 if(map[i][j][k].type == 'P'){
                     //(¬a ∨ ¬b) ∧ (¬a ∨ ¬c) ∧ (¬a ∨ ¬d) ∧ (a ∨ b ∨ c ∨ d) ∧ (¬b ∨ ¬c) ∧ (¬b ∨ ¬d) ∧ (¬c ∨ ¬d)
-                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+' '+
-                                 to_string(map[i][j][k-1].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
-                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
-                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
-                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
-                    ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
-                    ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
-                    ls.push_back(to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                    ls.push_back("1 "+to_string(map[i][j-1][k].var_id[p])+' '+to_string(map[i][j+1][k].var_id[p])+' '+
+                                 to_string(map[i][j][k-1].var_id[p])+' '+to_string(map[i][j][k+1].var_id[p])+" 0");
+                    ls.push_back("1 "+to_string(-map[i][j-1][k].var_id[p])+' '+to_string(-map[i][j][k+1].var_id[p])+" 0");
+                    ls.push_back("1 "+to_string(-map[i][j-1][k].var_id[p])+' '+to_string(-map[i][j][k-1].var_id[p])+" 0");
+                    ls.push_back("1 "+to_string(-map[i][j-1][k].var_id[p])+' '+to_string(-map[i][j+1][k].var_id[p])+" 0");
+                    ls.push_back("1 "+to_string(-map[i][j][k+1].var_id[p])+' '+to_string(-map[i][j][k-1].var_id[p])+" 0");
+                    ls.push_back("1 "+to_string(-map[i][j][k+1].var_id[p])+' '+to_string(-map[i][j+1][k].var_id[p])+" 0");
+                    ls.push_back("1 "+to_string(-map[i][j+1][k].var_id[p])+' '+to_string(-map[i][j][k-1].var_id[p])+" 0");
                 }
                 else if(map[i][j][k].type == 'E'){
                     //-
                     if(k % 2 == 0){
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
+                        ls.push_back("1 "+to_string(-map[i][j][k].var_id[p])+' '+to_string(map[i][j][k+1].var_id[p])+" 0");
+                        ls.push_back("1 "+to_string(-map[i][j][k].var_id[p])+' '+to_string(map[i][j][k-1].var_id[p])+" 0");
                         
-                        lsfunc(ls, map, i, j, k, i, j, k-1, i, j, k+1);
-                        lsfunc(ls, map, i, j, k, i, j, k-1, i, j, k);
-                        //softls.push_back("1 "+to_string(-map[i][j][k].var_id)+" 0");
+                        lsfunc(ls, map, i, j, k, i, j, k-1, i, j, k+1, p);
+                        lsfunc(ls, map, i, j, k, i, j, k-1, i, j, k, p);
                     }
                     //|
                     else{
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
-                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
+                        ls.push_back("1 "+to_string(-map[i][j][k].var_id[p])+' '+to_string(map[i][j+1][k].var_id[p])+" 0");
+                        ls.push_back("1 "+to_string(-map[i][j][k].var_id[p])+' '+to_string(map[i][j-1][k].var_id[p])+" 0");
                         
-                        lsfunc(ls, map, i, j, k, i, j-1, k, i, j+1, k);
-                        lsfunc(ls, map, i, j, k, i, j-1, k, i, j, k);
-                        //softls.push_back("1 "+to_string(-map[i][j][k].var_id)+" 0");
+                        lsfunc(ls, map, i, j, k, i, j-1, k, i, j+1, k, p);
+                        lsfunc(ls, map, i, j, k, i, j-1, k, i, j, k, p);
+
                     }
                 }
                 else if(map[i][j][k].type == 'G'){
                     //(¬a ∨ ¬b ∨ ¬c ∨ ¬d) ∧ (¬a ∨ ¬b ∨ ¬c ∨ ¬e) ∧ (¬a ∨ ¬b ∨ ¬d ∨ ¬e) ∧ (¬a ∨ b ∨ c ∨ d) ∧ (¬a ∨ b ∨ c ∨ e) ∧
                     //(¬a ∨ b ∨ d ∨ e) ∧ (¬a ∨ ¬c ∨ ¬d ∨ ¬e) ∧ (¬a ∨ c ∨ d ∨ e)
-                    int a = map[i][j][k].var_id;
-                    int b = map[i][j][k-1].var_id;
-                    int c = map[i][j+1][k].var_id;
-                    int d = map[i][j][k+1].var_id;
-                    int e = map[i][j-1][k].var_id;
-                    ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-d)+" 0");
-                    ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-e)+" 0");
-                    ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-d)+' '+to_string(-e)+" 0");
-                    ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(d)+" 0");
-                    ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(e)+" 0");
-                    ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(d)+' '+to_string(e)+" 0");
-                    ls.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
-                    ls.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
-                    //softls.push_back("2 "+to_string(-map[i][j][k].var_id)+" 0");
+                    int a = map[i][j][k].var_id[p];
+                    int b = map[i][j][k-1].var_id[p];
+                    int c = map[i][j+1][k].var_id[p];
+                    int d = map[i][j][k+1].var_id[p];
+                    int e = map[i][j-1][k].var_id[p];
+                    ls.push_back("1 "+to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-d)+" 0");
+                    ls.push_back("1 "+to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-e)+" 0");
+                    ls.push_back("1 "+to_string(-a)+' '+to_string(-b)+' '+to_string(-d)+' '+to_string(-e)+" 0");
+                    ls.push_back("1 "+to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(d)+" 0");
+                    ls.push_back("1 "+to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(e)+" 0");
+                    ls.push_back("1 "+to_string(-a)+' '+to_string(b)+' '+to_string(d)+' '+to_string(e)+" 0");
+                    ls.push_back("1 "+to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
+                    ls.push_back("1 "+to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
                 }
                 else if(map[i][j][k].type == 'S'){
                     //ls.push_back(to_string(map[i][j][k].var_id)+" 0");
                     if(j == 0)
-                        ls.push_back(to_string(map[i][j+1][k].var_id)+" 0");
+                        ls.push_back("1 "+to_string(map[i][j+1][k].var_id[p])+" 0");
                     else
-                        ls.push_back(to_string(map[i][j-1][k].var_id)+" 0");
+                        ls.push_back("1 "+to_string(map[i][j-1][k].var_id[p])+" 0");
                     /*
                         if(j == 0){
                             lsfunc(ls, map, i, j, k, i, j, k, i, j+1, k);
@@ -795,15 +799,19 @@ int main(int argc, const char * argv[])
                     */
                     
                     if(i != 0){
-                        if(j == 0){ // now
+                        if(j == 0){ // CPU slot at top, DDr slot at bottom (testcase)
                             for(int l = 0; l < 5; l++){
-                                ls.push_back(to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
-                                ls.push_back(to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                ls.push_back("1 "+to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+
+                                    to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                ls.push_back("1 "+to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+
+                                    to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
                             }
-                        }else{
+                        }else{ // CPU slot at bottom, DDr slot at top
                             for(int l = 0; l < 5; l++){
-                                ls.push_back(to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
-                                ls.push_back(to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                ls.push_back("1 "+to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+
+                                    to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                ls.push_back("1 "+to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+
+                                    to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
                             }
                         }
                         CPUslotC = (CPUslotRev[i-1])?CPUslotC - 1:CPUslotC + 1;
@@ -811,15 +819,31 @@ int main(int argc, const char * argv[])
                     }
                 }
                 else if(map[i][j][k].type == 'B'){
-                    ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][j][k].var_id[p])+" 0");
                 }
+                //else
+                    //continue;
+                // var_id[x] is true imply all var_id[x] are true, vice versa
+                // var_id[0] == var_id[1], var_id[1] == var_id[2]....
+                if(p != P_map[i].size() - 1){
+                    ls.push_back("1 "+to_string(-map[i][j][k].var_id[p])+" "+to_string(map[i][j][k].var_id[p+1]) + " 0");
+                    ls.push_back("1 "+to_string(map[i][j][k].var_id[p])+" "+to_string(-map[i][j][k].var_id[p+1]) + " 0");
+                }
+                // var_id[x] is true imply other var_id[] are false, but unsatifiable :(
+                /*for(int pp = 0; pp < P_map[i].size(); pp++){
+                    if(pp != p){
+                        ls.push_back("1 "+to_string(map[i][j][k].var_id[p])+" "+to_string(-map[i][j][k].var_id[pp]) + " 0");
+                    }
+                }*/
+            
             }
         }
     }
+    }
 
     //* group 1 only
-    /* mono start
-    for(int z = 0; z < netBox[0].size(); z++){ // 1 group
+    // mono start
+    /*for(int z = 0; z < netBox[0].size(); z++){ // 1 group
     //for(int z = 0; z <= 3; z++){ // 1 group
 
         int dec = z, temp[5] = {0};
@@ -857,13 +881,13 @@ int main(int argc, const char * argv[])
             }
         }
     }
-    // mono end*/
+    // mono end */
 
     //tile structure begin
 
     TSoffset offset1, offset2;
-    offset1.SetUp(0,4,0,0); // offset from RowLeft, RowRight, ColLeft, ColRight *even only*
-    offset2.SetUp(8,0,0,0);
+    offset1.SetUp(0,0,0,0); // offset from RowLeft, RowRight, ColLeft, ColRight *even only*
+    offset2.SetUp(0,0,0,0);
     int nxn = 5; // n x n tile structure
     //TileStruct(ls, map, nxn, offset1, offset2);
     //drawMap0(map, groupSize, mapsize);
@@ -890,25 +914,19 @@ int main(int argc, const char * argv[])
      ofstream file("temp.cnf");
      if(file.is_open()){
          file << "c temp.cnf" << endl;
-         file << "p wcnf "<<var_id_counter-1<<' '<<ls.size()+softls.size()<<' '<<softls.size()*2+1<<endl;
+         file << "p wcnf "<<var_id_counter-1<<' '<<ls.size()<<' '<<1<<endl;
          for(string l: ls)
-             file << softls.size()*2+1 << ' ' << l << endl;
-         for(string l: softls)
              file << l << endl;
      }
      file.close();
-    string command = "./open-wbo /Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/temp.cnf > output";
+    string command = "./open-wbo  /Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/temp.cnf > output";
     system(command.c_str());
     
     ifstream fil;
     fil.open("/Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/output", ios::in);
     string line;
     int numSize;
-    vector<int> num;
-    int tem, tem2;
-    char c;
-    num.reserve(numSize);
-    for(int i=0;;i++){
+    for(int i=0;i<26;i++){
         getline(fil, line);
         if(i == 12){ // fetch num of variables
             stringstream ss(line);
@@ -917,16 +935,17 @@ int main(int argc, const char * argv[])
                 ss >> temp;
             numSize = stoi(temp);
         }
-        if(line[0]=='s'){
-            fil >> c;
-            for(;;){
-                tem2 = tem;
-                fil >> tem;
-                if(tem2 == tem) break;
-                num.push_back(tem);
-            }
-            break;
-        }
+    }
+    vector<int> num;
+    num.reserve(numSize);
+    char c;
+    fil >> c;
+    int tem, tem2;
+    for(;;){
+        tem2 = tem;
+        fil>>tem;
+        if(tem2 == tem) break;
+        num.push_back(tem);
     }
     cout << "num: "<< ls.size() << endl;
     */
@@ -940,10 +959,14 @@ int main(int argc, const char * argv[])
     }
     file.close();
 
+    // 'killed' sayed by solver means you run out of ram :( check your constraint
+    cout << "clause number is: " << ls.size() << endl;
+    cout << "set solver running~" << endl;
     chrono::steady_clock::time_point tSStart = chrono::steady_clock::now();
     string command = "./open-wbo temp.cnf > output";
     system(command.c_str());
     chrono::steady_clock::time_point tSEnd = chrono::steady_clock::now();
+    cout << "set solver over~" << endl;
     Stime = chrono::duration_cast<chrono::duration<double>>(tSEnd - tSStart);
     
     ifstream fil;
@@ -978,7 +1001,14 @@ int main(int argc, const char * argv[])
     for(int i = 0; i < set.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
-                map[i][j][k].bit = (num[map[i][j][k].var_id-1] > 0) ? true : false;
+                int flag = 0;
+                for(int p = 0; p < P_map[i].size(); p++){
+                    if(num[map[i][j][k].var_id[p]-1] > 0){
+                        flag = 1;
+                        break;
+                    }
+                }
+                map[i][j][k].bit = (flag) ? true : false;
             }
         }
     }
