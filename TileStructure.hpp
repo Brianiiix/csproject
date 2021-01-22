@@ -1,106 +1,6 @@
 using namespace std;
 
-void EdgeIdNotTheSame(list<string> &ls, int a, int b, int c1, int c2, int c3, int c4, int c5, int d1, int d2, int d3, int d4, int d5){
-
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
-                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
-                        +to_string(-d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
-                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
-                        +to_string(-d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
-                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
-                        +to_string(d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
-                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
-                        +to_string(-d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
-                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
-                        +to_string(-d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
-                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
-                        +to_string(-d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
-                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
-                        +to_string(-d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
-                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
-                        +to_string(-d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
-                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
-                        +to_string(d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
-                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
-                        +to_string(-d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(c3)+' '
-                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(d3)+' '
-                        +to_string(-d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
-                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
-                        +to_string(d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
-                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
-                        +to_string(-d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
-                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
-                        +to_string(d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
-                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
-                        +to_string(-d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
-                        +to_string(c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
-                        +to_string(d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(c3)+' '
-                        +to_string(-c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(d3)+' '
-                        +to_string(-d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
-                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
-                        +to_string(d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
-                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
-                        +to_string(-d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
-                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
-                        +to_string(d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
-                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
-                        +to_string(-d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(-c3)+' '
-                        +to_string(c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(-d3)+' '
-                        +to_string(d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(c3)+' '
-                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(d3)+' '
-                        +to_string(d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(c3)+' '
-                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(d3)+' '
-                        +to_string(-d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
-                        +to_string(c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
-                        +to_string(d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
-                        +to_string(c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
-                        +to_string(d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(c3)+' '
-                        +to_string(c4)+' '+to_string(-c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(d3)+' '
-                        +to_string(d4)+' '+to_string(-d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(c3)+' '
-                        +to_string(-c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(d3)+' '
-                        +to_string(-d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(-c3)+' '
-                        +to_string(c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(-d3)+' '
-                        +to_string(d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(-c2)+' '+to_string(c3)+' '
-                        +to_string(c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(-d2)+' '+to_string(d3)+' '
-                        +to_string(d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c1)+' '+to_string(c2)+' '+to_string(c3)+' '
-                        +to_string(c4)+' '+to_string(c5)+' '+to_string(-d1)+' '+to_string(d2)+' '+to_string(d3)+' '
-                        +to_string(d4)+' '+to_string(d5)+" 0");
-                        ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(c1)+' '+to_string(c2)+' '+to_string(c3)+' '
-                        +to_string(c4)+' '+to_string(c5)+' '+to_string(d1)+' '+to_string(d2)+' '+to_string(d3)+' '
-                        +to_string(d4)+' '+to_string(d5)+" 0");    
-}
-
-void TileStruct(list<string> &ls, vector<vector<vector<Node>>> &map, int nxn, TSoffset offset1, TSoffset offset2){
+void TileStruct(list<string> &ls, vector<vector<vector<Node>>> &map, int nxn, TSoffset offset1, TSoffset offset2, vector<vector<vector<int>>> &netBox){
     /*
          top
      11-13-...-1x  <--RowNow
@@ -128,32 +28,32 @@ left |          | right
                 //crossroad control
                 //topleft
                 if(map[i][RowNow][ColNow].type != 'P') {
-                    ls.push_back(to_string(-map[i][RowNow+1][ColNow].var_id)+" 0");
-                    ls.push_back(to_string(-map[i][RowNow][ColNow+1].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow+1][ColNow].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+1].var_id)+" 0");
                 }
-                ls.push_back(to_string(-map[i][RowNow+3][ColNow].var_id)+" 0");
-                ls.push_back(to_string(-map[i][RowNow][ColNow+3].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow+3][ColNow].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+3].var_id)+" 0");
                 //topright
                 if(map[i][RowNow][ColNow+SideLen-1].type != 'P') {
-                    ls.push_back(to_string(-map[i][RowNow+1][ColNow+SideLen-1].var_id)+" 0");
-                    ls.push_back(to_string(-map[i][RowNow][ColNow+SideLen-2].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow+1][ColNow+SideLen-1].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+SideLen-2].var_id)+" 0");
                 }
-                ls.push_back(to_string(-map[i][RowNow+3][ColNow+SideLen-1].var_id)+" 0");
-                ls.push_back(to_string(-map[i][RowNow][ColNow+SideLen-4].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow+3][ColNow+SideLen-1].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+SideLen-4].var_id)+" 0");
                 //botleft
                 if(map[i][RowNow+SideLen-1][ColNow].type != 'P') {
-                    ls.push_back(to_string(-map[i][RowNow+SideLen-2][ColNow].var_id)+" 0");
-                    ls.push_back(to_string(-map[i][RowNow+SideLen-1][ColNow+1].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-2][ColNow].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+1].var_id)+" 0");
                 }
-                ls.push_back(to_string(-map[i][RowNow+SideLen-1][ColNow+3].var_id)+" 0");
-                ls.push_back(to_string(-map[i][RowNow+SideLen-4][ColNow].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+3].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-4][ColNow].var_id)+" 0");
                 //botright 
                 if(map[i][RowNow+SideLen-1][ColNow+SideLen-1].type != 'P') {
-                    ls.push_back(to_string(-map[i][RowNow+SideLen-2][ColNow+SideLen-1].var_id)+" 0");
-                    ls.push_back(to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-2].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-2][ColNow+SideLen-1].var_id)+" 0");
+                    ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-2].var_id)+" 0");
                 }
-                ls.push_back(to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-4].var_id)+" 0");
-                ls.push_back(to_string(-map[i][RowNow+SideLen-4][ColNow+SideLen-1].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+SideLen-4].var_id)+" 0");
+                ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-4][ColNow+SideLen-1].var_id)+" 0");
 
                 for(int z = 0; z < nxn*2-1; z++){
                     map[i][RowNow][ColNow+z].tilestruct = true;
@@ -174,37 +74,82 @@ left |          | right
                     //if(cnt == 5) cout << endl;
                 }*/
                 //if tile has pin then no rule
-                for(int a = 0; a < SideLen; a+=1){
+                /*for(int a = 0; a < SideLen; a+=1){
                     for(int b = 0; b < SideLen; b+=1){
                         if(map[i][RowNow+a][ColNow+b].type == 'P') hasPin = 1;                        
                     }
                 }
-                if(hasPin == 1) continue;
+                if(hasPin == 1) continue;*/
+
+                //mono start
+                for(int z = 0; z < netBox[0].size(); z++){
+                    int dec = z, temp[5] = {0};
+                    for(int T = 0; T < 5; T++){
+                        temp[T] = dec % 2;
+                        dec /= 2;
+                    }
+                    string top_str = "1 ", left_str = "1 ", right_str = "1 ", bot_str = "1 ";
+                    for(int j = 2; j <= SideLen-5; j+=2){
+                        for(int k = j+2; k <= SideLen-3; k+=2){
+                            for(int T = 0; T < 5; T++){
+                                top_str += (temp[T])?(to_string(-map[i][RowNow][ColNow+j].net_id[T])):(to_string(map[i][RowNow][ColNow+j].net_id[T]));
+                                top_str += " ";
+                                right_str += (temp[T])?(to_string(-map[i][RowNow+j][ColNow+SideLen-1].net_id[T])):(to_string(map[i][RowNow+j][ColNow+SideLen-1].net_id[T]));
+                                right_str += " ";
+                                left_str += (temp[T])?(to_string(-map[i][RowNow+j][ColNow].net_id[T])):(to_string(map[i][RowNow+j][ColNow].net_id[T]));
+                                left_str += " ";
+                                bot_str += (temp[T])?(to_string(-map[i][RowNow+SideLen-1][ColNow+j].net_id[T])):(to_string(map[i][RowNow+SideLen-1][ColNow+j].net_id[T]));
+                                bot_str += " ";
+                            }
+                            for(int T = 0; T < 5; T++){
+                                top_str += (temp[T])?(to_string(-map[i][RowNow][ColNow+k].net_id[T])):(to_string(map[i][RowNow][ColNow+k].net_id[T]));
+                                top_str += " ";
+                                right_str += (temp[T])?(to_string(-map[i][RowNow+k][ColNow+SideLen-1].net_id[T])):(to_string(map[i][RowNow+k][ColNow+SideLen-1].net_id[T]));
+                                right_str += " ";
+                                left_str += (temp[T])?(to_string(-map[i][RowNow+k][ColNow].net_id[T])):(to_string(map[i][RowNow+k][ColNow].net_id[T]));
+                                left_str += " ";
+                                bot_str += (temp[T])?(to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[T])):(to_string(map[i][RowNow+SideLen-1][ColNow+k].net_id[T]));
+                                bot_str += " ";
+                            }            
+                        }
+                    }
+                    top_str += "0";
+                    right_str += "0";
+                    left_str += "0";
+                    bot_str += "0";
+                    ls.push_back(top_str);
+                    ls.push_back(right_str);
+                    ls.push_back(left_str);
+                    ls.push_back(bot_str);
+                }
+                //mono end
+
+
                 //else cout << cnt << " no pin" << endl;
                 //if(cnt == 5) cout << RowNow << " " << ColNow << endl;            
                 for(int j = 2; j <= SideLen-3; j+=2){
                     //one in implies one out                    
                     //if(hasPin == 0){//cout << cnt <<" don't have pin"<<endl;
                     //top
-                        ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(map[i][RowNow+2][ColNow].var_id)+' '
+                        /*ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(map[i][RowNow+2][ColNow].var_id)+' '
                         +to_string(map[i][RowNow+4][ColNow].var_id)+' '+to_string(map[i][RowNow+6][ColNow].var_id)+' '
                         +to_string(map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+4][ColNow+SideLen-1].var_id)+' '
                         +to_string(map[i][RowNow+6][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '
                         +to_string(map[i][RowNow+SideLen-1][ColNow+4].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+6].var_id)+" 0");
                     //left
-                        ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
+                        ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
                         +to_string(map[i][RowNow][ColNow+4].var_id)+' '+to_string(map[i][RowNow][ColNow+6].var_id)+' '
                         +to_string(map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+4][ColNow+SideLen-1].var_id)+' '
                         +to_string(map[i][RowNow+6][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '
                         +to_string(map[i][RowNow+SideLen-1][ColNow+4].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+6].var_id)+" 0");
                     //bottom
-                        ls.push_back(to_string(-map[i][RowNow+SideLen-1][ColNow+j].var_id)+' '+to_string(map[i][RowNow+2][ColNow].var_id)+' '
+                        ls.push_back("1 "+to_string(-map[i][RowNow+SideLen-1][ColNow+j].var_id)+' '+to_string(map[i][RowNow+2][ColNow].var_id)+' '
                         +to_string(map[i][RowNow+4][ColNow].var_id)+' '+to_string(map[i][RowNow+6][ColNow].var_id)+' '
                         +to_string(map[i][RowNow+2][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow+4][ColNow+SideLen-1].var_id)+' '
                         +to_string(map[i][RowNow+6][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
                         +to_string(map[i][RowNow][ColNow+4].var_id)+' '+to_string(map[i][RowNow][ColNow+6].var_id)+" 0");
                     //right
-                        ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
+                        ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(map[i][RowNow][ColNow+2].var_id)+' '
                         +to_string(map[i][RowNow][ColNow+4].var_id)+' '+to_string(map[i][RowNow][ColNow+6].var_id)+' '
                         +to_string(map[i][RowNow+2][ColNow].var_id)+' '+to_string(map[i][RowNow+4][ColNow].var_id)+' '
                         +to_string(map[i][RowNow+6][ColNow].var_id)+' '+to_string(map[i][RowNow+SideLen-1][ColNow+2].var_id)+' '
@@ -241,20 +186,20 @@ left |          | right
                                 //CNF(a & b & (c xnor d)) implies e) --> (¬a ∨ ¬b ∨ ¬c ∨ ¬d ∨ e) ∧ (¬a ∨ ¬b ∨ c ∨ d ∨ e), 
                                 //c and d mean net_id
                                 
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j][ColNow+m].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
                                 +to_string(map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(map[i][RowNow][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j][ColNow+m].var_id)+" 0");
                             }                         
                         }
                         for(int m = 1; m <= j; m++){  //mid to top
                             for(int l = 0; l < 5; l++){                                             
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+m][ColNow+k].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
                                 +to_string(map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(map[i][RowNow][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+m][ColNow+k].var_id)+" 0");
                             }                         
@@ -267,10 +212,10 @@ left |          | right
                        
                         for(int m = 1; m < mid; m++){ //left to mid
                             for(int l = 0; l < 5; l++){                       
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].net_id[l])+' '
                                 +to_string(map[i][RowNow+j][ColNow+m].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
                                 +to_string(map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(map[i][RowNow+k][ColNow+SideLen-1].net_id[l])+' '
                                 +to_string(map[i][RowNow+j][ColNow+m].var_id)+" 0");
                             }
@@ -280,18 +225,18 @@ left |          | right
                         for(int m = 0; m <= abs(j-k); m++){ //mid to mid
                             for(int l = 0; l < 5; l++){ 
                                 if(j-k > 0){
-                                    ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
+                                    ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
                                     +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].net_id[l])+' '
                                     +to_string(map[i][RowNow+j-m][ColNow+mid].var_id)+" 0");
-                                    ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
+                                    ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
                                     +to_string(map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(map[i][RowNow+k][ColNow+SideLen-1].net_id[l])+' '
                                     +to_string(map[i][RowNow+j-m][ColNow+mid].var_id)+" 0");
                                 }                      
                                 else{
-                                    ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
+                                    ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
                                     +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].net_id[l])+' '
                                     +to_string(map[i][RowNow+j+m][ColNow+mid].var_id)+" 0");
-                                    ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
+                                    ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
                                     +to_string(map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(map[i][RowNow+k][ColNow+SideLen-1].net_id[l])+' '
                                     +to_string(map[i][RowNow+j+m][ColNow+mid].var_id)+" 0");
                                 }
@@ -300,31 +245,31 @@ left |          | right
                        
                         for(int m = mid+1; m < SideLen-1; m++){ //mid to right
                             for(int l = 0; l < 5; l++){                       
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].net_id[l])+' '
                                 +to_string(map[i][RowNow+k][ColNow+m].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+k][ColNow+SideLen-1].var_id)+' '
                                 +to_string(map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(map[i][RowNow+k][ColNow+SideLen-1].net_id[l])+' '
                                 +to_string(map[i][RowNow+k][ColNow+m].var_id)+" 0");
                             }
                         }
                         //left bottom 
                         for(int m = 1; m < k; m++){  //left to mid
-                            for(int l = 0; l < 5; l++){
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                            for(int l = 0; l < 5; l++){                                                     
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j][ColNow+m].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j][ColNow+m].var_id)+" 0");
                             }                         
                         }
                         for(int m = 0; m < SideLen-j-1; m++){  //mid to bottom
                             for(int l = 0; l < 5; l++){                                             
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j+m][ColNow+k].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(map[i][RowNow+j][ColNow].net_id[l])+' '+to_string(map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j+m][ColNow+k].var_id)+" 0");
                             }                         
@@ -333,20 +278,20 @@ left |          | right
                         for(int m = k+1; m < SideLen-1; m++){  //right to mid
                             for(int l = 0; l < 5; l++){                       
                                 
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow+SideLen-1].net_id[l])+' '+to_string(-map[i][RowNow][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j][ColNow+m].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
                                 +to_string(map[i][RowNow+j][ColNow+SideLen-1].net_id[l])+' '+to_string(map[i][RowNow][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j][ColNow+m].var_id)+" 0");
                             }                         
                         }
                         for(int m = 1; m <= j; m++){  //mid to top
                             for(int l = 0; l < 5; l++){                                             
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow+SideLen-1].net_id[l])+' '+to_string(-map[i][RowNow][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+m][ColNow+k].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow][ColNow+k].var_id)+' '
                                 +to_string(map[i][RowNow+j][ColNow+SideLen-1].net_id[l])+' '+to_string(map[i][RowNow][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+m][ColNow+k].var_id)+" 0");
                             }                         
@@ -354,20 +299,20 @@ left |          | right
                         //right bottom
                         for(int m = k+1; m < SideLen-1; m++){  //right to mid
                             for(int l = 0; l < 5; l++){                                                     
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow+SideLen-1].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j][ColNow+m].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(map[i][RowNow+j][ColNow+SideLen-1].net_id[l])+' '+to_string(map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j][ColNow+m].var_id)+" 0");
                             }                         
                         }
                         for(int m = 0; m < SideLen-j-1; m++){  //mid to bottom
                             for(int l = 0; l < 5; l++){                                             
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow+j][ColNow+SideLen-1].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j+m][ColNow+k].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow+j][ColNow+SideLen-1].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(map[i][RowNow+j][ColNow+SideLen-1].net_id[l])+' '+to_string(map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+j+m][ColNow+k].var_id)+" 0");
                             }                         
@@ -375,10 +320,10 @@ left |          | right
                         //top to bottom **slow**
                         for(int m = 1; m < mid; m++){ //top to mid
                             for(int l = 0; l < 5; l++){                       
-                                ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow][ColNow+j].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+m][ColNow+j].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(map[i][RowNow][ColNow+j].net_id[l])+' '+to_string(map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+m][ColNow+j].var_id)+" 0");
                             }
@@ -387,18 +332,18 @@ left |          | right
                         for(int m = 0; m <= abs(j-k); m++){ //mid to mid
                             for(int l = 0; l < 5; l++){ 
                                 if(j-k > 0){
-                                    ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                     +to_string(-map[i][RowNow][ColNow+j].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                     +to_string(map[i][RowNow+mid][ColNow+j-m].var_id)+" 0");
-                                    ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                     +to_string(map[i][RowNow][ColNow+j].net_id[l])+' '+to_string(map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                     +to_string(map[i][RowNow+mid][ColNow+j-m].var_id)+" 0");
                                 }                      
                                 else{
-                                    ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                     +to_string(-map[i][RowNow][ColNow+j].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                     +to_string(map[i][RowNow+mid][ColNow+j+m].var_id)+" 0");
-                                    ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                    ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                     +to_string(map[i][RowNow][ColNow+j].net_id[l])+' '+to_string(map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                     +to_string(map[i][RowNow+mid][ColNow+j+m].var_id)+" 0");
                                 }
@@ -406,10 +351,10 @@ left |          | right
                         }
                         for(int m = mid+1; m < SideLen-1; m++){ //mid to bottom
                             for(int l = 0; l < 5; l++){                       
-                                ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(-map[i][RowNow][ColNow+j].net_id[l])+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+m][ColNow+k].var_id)+" 0");
-                                ls.push_back(to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
+                                ls.push_back("1 "+to_string(-map[i][RowNow][ColNow+j].var_id)+' '+to_string(-map[i][RowNow+SideLen-1][ColNow+k].var_id)+' '
                                 +to_string(map[i][RowNow][ColNow+j].net_id[l])+' '+to_string(map[i][RowNow+SideLen-1][ColNow+k].net_id[l])+' '
                                 +to_string(map[i][RowNow+m][ColNow+k].var_id)+" 0");
                             }
@@ -418,83 +363,7 @@ left |          | right
                     //    */
                     }       
                 } 
-                //boundary of tile can't have two node that have the same net_id
-              /*  <--cancel the // to comment additional rule
-                for(int m = 0; m < SideLen-1; m++){
-                    for(int n = m+1; n < SideLen; n++){
-                        bool TopHasPin = 0, BotHasPin = 0, RightHasPin =0, LeftHasPin = 0;
-                        for(int g = 0; g < SideLen; g++){
-                            if(map[i][RowNow][ColNow+g].type == 'P') TopHasPin = 1;
-                            if(map[i][RowNow+g][ColNow].type == 'P') LeftHasPin = 1;
-                            if(map[i][RowNow+SideLen-1][ColNow+g].type == 'P') BotHasPin = 1;
-                            if(map[i][RowNow+g][ColNow+SideLen-1].type == 'P') RightHasPin = 1;
-                        }
-                        //top
-                        if(TopHasPin == 0){
-                            EdgeIdNotTheSame(ls, map[i][RowNow][ColNow+m].var_id,
-                                map[i][RowNow][ColNow+n].var_id,
-                                map[i][RowNow][ColNow+m].net_id[0],
-                                map[i][RowNow][ColNow+m].net_id[1],
-                                map[i][RowNow][ColNow+m].net_id[2],
-                                map[i][RowNow][ColNow+m].net_id[3],
-                                map[i][RowNow][ColNow+m].net_id[4],
-                                map[i][RowNow][ColNow+n].net_id[0],
-                                map[i][RowNow][ColNow+n].net_id[1],
-                                map[i][RowNow][ColNow+n].net_id[2],
-                                map[i][RowNow][ColNow+n].net_id[3],
-                                map[i][RowNow][ColNow+n].net_id[4]);
-                        }
-                        //left
-                        if(LeftHasPin == 0){
-                            EdgeIdNotTheSame(ls, map[i][RowNow+m][ColNow].var_id,
-                            map[i][RowNow+n][ColNow].var_id,
-                            map[i][RowNow+m][ColNow].net_id[0],
-                            map[i][RowNow+m][ColNow].net_id[1],
-                            map[i][RowNow+m][ColNow].net_id[2],
-                            map[i][RowNow+m][ColNow].net_id[3],
-                            map[i][RowNow+m][ColNow].net_id[4],
-                            map[i][RowNow+n][ColNow].net_id[0],
-                            map[i][RowNow+n][ColNow].net_id[1],
-                            map[i][RowNow+n][ColNow].net_id[2],
-                            map[i][RowNow+n][ColNow].net_id[3],
-                            map[i][RowNow+n][ColNow].net_id[4]);
-                        }
-                                               
-                        //right
-                        if(RightHasPin == 0){
-                            EdgeIdNotTheSame(ls, map[i][RowNow+m][ColNow+SideLen-1].var_id,
-                            map[i][RowNow+n][ColNow+SideLen-1].var_id,
-                            map[i][RowNow+m][ColNow+SideLen-1].net_id[0],
-                            map[i][RowNow+m][ColNow+SideLen-1].net_id[1],
-                            map[i][RowNow+m][ColNow+SideLen-1].net_id[2],
-                            map[i][RowNow+m][ColNow+SideLen-1].net_id[3],
-                            map[i][RowNow+m][ColNow+SideLen-1].net_id[4],
-                            map[i][RowNow+n][ColNow+SideLen-1].net_id[0],
-                            map[i][RowNow+n][ColNow+SideLen-1].net_id[1],
-                            map[i][RowNow+n][ColNow+SideLen-1].net_id[2],
-                            map[i][RowNow+n][ColNow+SideLen-1].net_id[3],
-                            map[i][RowNow+n][ColNow+SideLen-1].net_id[4]);
-                        }
-                        
-                        //bottom
-                        if(BotHasPin == 0){
-                            EdgeIdNotTheSame(ls, map[i][RowNow+SideLen-1][ColNow+m].var_id,
-                            map[i][RowNow+SideLen-1][ColNow+n].var_id,
-                            map[i][RowNow+SideLen-1][ColNow+m].net_id[0],
-                            map[i][RowNow+SideLen-1][ColNow+m].net_id[1],
-                            map[i][RowNow+SideLen-1][ColNow+m].net_id[2],
-                            map[i][RowNow+SideLen-1][ColNow+m].net_id[3],
-                            map[i][RowNow+SideLen-1][ColNow+m].net_id[4],
-                            map[i][RowNow+SideLen-1][ColNow+n].net_id[0],
-                            map[i][RowNow+SideLen-1][ColNow+n].net_id[1],
-                            map[i][RowNow+SideLen-1][ColNow+n].net_id[2],
-                            map[i][RowNow+SideLen-1][ColNow+n].net_id[3],
-                            map[i][RowNow+SideLen-1][ColNow+n].net_id[4]);
-                        }
-                        
-
-                    }
-                }    <--cancel this to comment additional rule */
+                
             }
     
         }
