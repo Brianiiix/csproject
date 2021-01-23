@@ -88,9 +88,10 @@ left |          | right
                         temp[T] = dec % 2;
                         dec /= 2;
                     }
-                    string top_str = "1 ", left_str = "1 ", right_str = "1 ", bot_str = "1 ";
+                    
                     for(int j = 2; j <= SideLen-5; j+=2){
                         for(int k = j+2; k <= SideLen-3; k+=2){
+                            string top_str = "1 ", left_str = "1 ", right_str = "1 ", bot_str = "1 ";
                             for(int T = 0; T < 5; T++){
                                 top_str += (temp[T])?(to_string(-map[i][RowNow][ColNow+j].net_id[T])):(to_string(map[i][RowNow][ColNow+j].net_id[T]));
                                 top_str += " ";
@@ -110,17 +111,18 @@ left |          | right
                                 left_str += " ";
                                 bot_str += (temp[T])?(to_string(-map[i][RowNow+SideLen-1][ColNow+k].net_id[T])):(to_string(map[i][RowNow+SideLen-1][ColNow+k].net_id[T]));
                                 bot_str += " ";
-                            }            
+                            }
+                            top_str += "0";
+                            right_str += "0";
+                            left_str += "0";
+                            bot_str += "0";
+                            ls.push_back(top_str);
+                            ls.push_back(right_str);
+                            ls.push_back(left_str);
+                            ls.push_back(bot_str);
                         }
                     }
-                    top_str += "0";
-                    right_str += "0";
-                    left_str += "0";
-                    bot_str += "0";
-                    ls.push_back(top_str);
-                    ls.push_back(right_str);
-                    ls.push_back(left_str);
-                    ls.push_back(bot_str);
+                    
                 }
                 //mono end
 
