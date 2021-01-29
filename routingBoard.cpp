@@ -16,6 +16,7 @@
 #include "initVar.hpp"
 #include "gridUnit.hpp"
 #include "TileStructure.hpp"
+#include "phase.hpp"
 
 using namespace std;
 
@@ -70,8 +71,8 @@ int cross(const Obs_Point &O, const Obs_Point &A, const Obs_Point &B)
 void lsfunc(list<string> &ls, vector<vector<vector<Node>>> &map, int i, int j, int k, int a, int b, int c, int x, int y, int z)
 {
     for(int l = 0; l < 5; l++){
-        ls.push_back("1 "+to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[l])+' '+to_string(map[x][y][z].net_id[l])+" 0");
-        ls.push_back("1 "+to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[l])+' '+to_string(-map[x][y][z].net_id[l])+" 0");
+        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(-map[a][b][c].net_id[l])+' '+to_string(map[x][y][z].net_id[l])+" 0");
+        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[a][b][c].net_id[l])+' '+to_string(-map[x][y][z].net_id[l])+" 0");
     }
 }
 
@@ -695,6 +696,8 @@ int main(int argc, const char * argv[])
     // constraint
     // ls is to store the constraint in dimacs format, will write into the file later
     list<string> ls;
+    list<string> lshard1, lshard2;
+    list<string> lssoft1, lssoft2;
     // net_id[i] = 0 -> false, 1 ->true
     for(int i = 0; i < map.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
@@ -703,11 +706,19 @@ int main(int argc, const char * argv[])
                     for(int l = 0; l < 5; l++){
                         if(map[i][j][k].net_id[l] == 1){
                             map[i][j][k].net_id[l] = var_id_counter++;
-                            ls.push_back("1 "+to_string(map[i][j][k].net_id[l])+" 0");
+                            ls.push_back(to_string(map[i][j][k].net_id[l])+" 0");
+                            if(!i)
+                                lshard1.push_back(to_string(map[i][j][k].net_id[l])+" 0");
+                            else
+                                lshard2.push_back(to_string(map[i][j][k].net_id[l])+" 0");
                         }
                         else{
                             map[i][j][k].net_id[l] = var_id_counter++;
-                            ls.push_back("1 "+to_string(-map[i][j][k].net_id[l])+" 0");
+                            ls.push_back(to_string(-map[i][j][k].net_id[l])+" 0");
+                            if(!i)
+                                lshard1.push_back(to_string(-map[i][j][k].net_id[l])+" 0");
+                            else
+                                lshard2.push_back(to_string(-map[i][j][k].net_id[l])+" 0");
                         }
                     }
                 }
@@ -732,32 +743,85 @@ int main(int argc, const char * argv[])
                 // each pin choose a way out
                 if(map[i][j][k].type == 'P'){
                     //(¬a ∨ ¬b) ∧ (¬a ∨ ¬c) ∧ (¬a ∨ ¬d) ∧ (a ∨ b ∨ c ∨ d) ∧ (¬b ∨ ¬c) ∧ (¬b ∨ ¬d) ∧ (¬c ∨ ¬d)
-                    ls.push_back("1 "+to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+' '+
+                    ls.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+' '+
                                  to_string(map[i][j][k-1].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
-                    ls.push_back("1 "+to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
-                    ls.push_back("1 "+to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
-                    ls.push_back("1 "+to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
-                    ls.push_back("1 "+to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
-                    ls.push_back("1 "+to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
-                    ls.push_back("1 "+to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                    if(!i){
+                        lshard1.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+' '+
+                                     to_string(map[i][j][k-1].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
+                        lshard1.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
+                        lshard1.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                        lshard1.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
+                        lshard1.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                        lshard1.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
+                        lshard1.push_back(to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                    }
+                    else{
+                        lshard2.push_back(to_string(map[i][j-1][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+' '+
+                                     to_string(map[i][j][k-1].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
+                        lshard2.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k+1].var_id)+" 0");
+                        lshard2.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                        lshard2.push_back(to_string(-map[i][j-1][k].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
+                        lshard2.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                        lshard2.push_back(to_string(-map[i][j][k+1].var_id)+' '+to_string(-map[i][j+1][k].var_id)+" 0");
+                        lshard2.push_back(to_string(-map[i][j+1][k].var_id)+' '+to_string(-map[i][j][k-1].var_id)+" 0");
+                    }
                 }
                 else if(map[i][j][k].type == 'E'){
                     //-
                     if(k % 2 == 0){
-                        ls.push_back("1 "+to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
-                        ls.push_back("1 "+to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
                         
                         lsfunc(ls, map, i, j, k, i, j, k-1, i, j, k+1);
                         lsfunc(ls, map, i, j, k, i, j, k-1, i, j, k);
+                        
+                        if(!i){
+                            lshard1.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
+                            lshard1.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
+                            
+                            lsfunc(lshard1, map, i, j, k, i, j, k-1, i, j, k+1);
+                            lsfunc(lshard1, map, i, j, k, i, j, k-1, i, j, k);
+                        }
+                        else{
+                            lshard2.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k+1].var_id)+" 0");
+                            lshard2.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j][k-1].var_id)+" 0");
+                            
+                            lsfunc(lshard2, map, i, j, k, i, j, k-1, i, j, k+1);
+                            lsfunc(lshard2, map, i, j, k, i, j, k-1, i, j, k);
+                        }
                     }
                     //|
                     else{
-                        ls.push_back("1 "+to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
-                        ls.push_back("1 "+to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
+                        ls.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
                         
                         lsfunc(ls, map, i, j, k, i, j-1, k, i, j+1, k);
                         lsfunc(ls, map, i, j, k, i, j-1, k, i, j, k);
 
+                        if(!i){
+                            lshard1.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
+                            lshard1.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
+                            
+                            lsfunc(lshard1, map, i, j, k, i, j-1, k, i, j+1, k);
+                            lsfunc(lshard1, map, i, j, k, i, j-1, k, i, j, k);
+        
+                            //lssoft1.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                        }
+                        else{
+                            lshard2.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j+1][k].var_id)+" 0");
+                            lshard2.push_back(to_string(-map[i][j][k].var_id)+' '+to_string(map[i][j-1][k].var_id)+" 0");
+                            
+                            lsfunc(lshard2, map, i, j, k, i, j-1, k, i, j+1, k);
+                            lsfunc(lshard2, map, i, j, k, i, j-1, k, i, j, k);
+        
+                            //lssoft2.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                        }
                     }
                 }
                 else if(map[i][j][k].type == 'G'){
@@ -768,21 +832,58 @@ int main(int argc, const char * argv[])
                     int c = map[i][j+1][k].var_id;
                     int d = map[i][j][k+1].var_id;
                     int e = map[i][j-1][k].var_id;
-                    ls.push_back("1 "+to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-d)+" 0");
-                    ls.push_back("1 "+to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-e)+" 0");
-                    ls.push_back("1 "+to_string(-a)+' '+to_string(-b)+' '+to_string(-d)+' '+to_string(-e)+" 0");
-                    ls.push_back("1 "+to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(d)+" 0");
-                    ls.push_back("1 "+to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(e)+" 0");
-                    ls.push_back("1 "+to_string(-a)+' '+to_string(b)+' '+to_string(d)+' '+to_string(e)+" 0");
-                    ls.push_back("1 "+to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
-                    ls.push_back("1 "+to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-d)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-d)+' '+to_string(-e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(d)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(d)+' '+to_string(e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
+                    ls.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
+                    
+                    if(!i){
+                        lshard1.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-d)+" 0");
+                        lshard1.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-e)+" 0");
+                        lshard1.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-d)+' '+to_string(-e)+" 0");
+                        lshard1.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(d)+" 0");
+                        lshard1.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(e)+" 0");
+                        lshard1.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(d)+' '+to_string(e)+" 0");
+                        lshard1.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
+                        lshard1.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
+                        lssoft1.push_back(to_string(-a)+" 0");
+                    }
+                    else{
+                        lshard2.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-d)+" 0");
+                        lshard2.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-c)+' '+to_string(-e)+" 0");
+                        lshard2.push_back(to_string(-a)+' '+to_string(-b)+' '+to_string(-d)+' '+to_string(-e)+" 0");
+                        lshard2.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(d)+" 0");
+                        lshard2.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(c)+' '+to_string(e)+" 0");
+                        lshard2.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(d)+' '+to_string(e)+" 0");
+                        lshard2.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
+                        lshard2.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
+                        lssoft2.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                    }
                 }
                 else if(map[i][j][k].type == 'S'){
                     //ls.push_back(to_string(map[i][j][k].var_id)+" 0");
-                    if(j == 0)
-                        ls.push_back("1 "+to_string(map[i][j+1][k].var_id)+" 0");
-                    else
-                        ls.push_back("1 "+to_string(map[i][j-1][k].var_id)+" 0");
+                    if(j == 0){
+                        ls.push_back(to_string(map[i][j+1][k].var_id)+" 0");
+                        if(!i){
+                            lshard1.push_back(to_string(map[i][j+1][k].var_id)+" 0");
+                        }
+                        else{
+                            lshard2.push_back(to_string(map[i][j+1][k].var_id)+" 0");
+                        }
+                    }
+                    else{
+                        ls.push_back(to_string(map[i][j-1][k].var_id)+" 0");
+                        if(!i){
+                            lshard1.push_back(to_string(map[i][j-1][k].var_id)+" 0");
+                        }
+                        else{
+                            lshard2.push_back(to_string(map[i][j-1][k].var_id)+" 0");
+                        }
+                    }
                     /*
                         if(j == 0){
                             lsfunc(ls, map, i, j, k, i, j, k, i, j+1, k);
@@ -794,13 +895,29 @@ int main(int argc, const char * argv[])
                     if(i != 0){
                         if(j == 0){ // now
                             for(int l = 0; l < 5; l++){
-                                ls.push_back("1 "+to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
-                                ls.push_back("1 "+to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                ls.push_back(to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                ls.push_back(to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                if(!i){
+                                    lshard1.push_back(to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                    lshard1.push_back(to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                }
+                                else{
+                                    lshard2.push_back(to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                    lshard2.push_back(to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j-1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j+1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                }
                             }
                         }else{
                             for(int l = 0; l < 5; l++){
-                                ls.push_back("1 "+to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
-                                ls.push_back("1 "+to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                ls.push_back(to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                ls.push_back(to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                if(!i){
+                                    lshard1.push_back(to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                    lshard1.push_back(to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                }
+                                else{
+                                    lshard2.push_back(to_string(map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(-map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                    lshard2.push_back(to_string(-map[CPUslot[i-1][CPUslotC].i][CPUslot[i-1][CPUslotC].j+1][CPUslot[i-1][CPUslotC].k].net_id[l])+" "+to_string(map[DDRslot[i-1][DDRslotC].i][DDRslot[i-1][DDRslotC].j-1][DDRslot[i-1][DDRslotC].k].net_id[l])+" 0");
+                                }
                             }
                         }
                         CPUslotC = (CPUslotRev[i-1])?CPUslotC - 1:CPUslotC + 1;
@@ -808,7 +925,13 @@ int main(int argc, const char * argv[])
                     }
                 }
                 else if(map[i][j][k].type == 'B'){
-                    ls.push_back("1 "+to_string(-map[i][j][k].var_id)+" 0");
+                    ls.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                    if(!i){
+                        lshard1.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                    }
+                    else{
+                        lshard2.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                    }
                 }
             }
         }
@@ -840,7 +963,7 @@ int main(int argc, const char * argv[])
                 for(int k = kmin; k < kmax; k++){
                     if(map[i][j][k].type == 'E' && k % 2 == 1){ // |
                         for(int K = k + 2; K < map.at(i).at(0).size(); K+=2){
-                            string tmps = "1 ";
+                            string tmps = "";
                             for(int T = 0; T < 5; T++){
                                 tmps += (temp[T])?(to_string(-map[i][j][k].net_id[T])):(to_string(map[i][j][k].net_id[T]));
                                 tmps += " ";
@@ -851,6 +974,12 @@ int main(int argc, const char * argv[])
                             }
                             tmps += "0";
                             ls.push_back(tmps);
+                            if(!i){
+                                //lshard1.push_back(tmps);
+                            }
+                            else{
+                                lshard2.push_back(tmps);
+                            }
                         }  
                     }
                 }
@@ -863,9 +992,9 @@ int main(int argc, const char * argv[])
 
     TSoffset offset1, offset2;
     offset1.SetUp(4,4,4,4); // offset from RowLeft, RowRight, ColLeft, ColRight *even only*
-    offset2.SetUp(4,4,4,4);
+    offset2.SetUp(8,0,0,0);
     int nxn = 5; // n x n tile structure
-    TileStruct(ls, map, nxn, offset1, offset2, netBox);
+    TileStruct(ls, lshard1, lshard2, map, nxn, offset1, offset2, netBox);
     //drawMap0(map, groupSize, mapsize);
 
     //To match two map's slot order
@@ -885,48 +1014,32 @@ int main(int argc, const char * argv[])
             ls.push_back(to_string(map[a][b][c].net_id[j])+' '+to_string(-map[x][y][z].net_id[j])+" 0");
         }
     }*/
-
-    /* for xcode
-     ofstream file("temp.cnf");
-     if(file.is_open()){
-         file << "c temp.cnf" << endl;
-         file << "p wcnf "<<var_id_counter-1<<' '<<ls.size()<<' '<<1<<endl;
-         for(string l: ls)
-             file << l << endl;
-     }
-     file.close();
-    string command = "./open-wbo  /Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/temp.cnf > output";
-    system(command.c_str());
-    
-    ifstream fil;
-    fil.open("/Users/brian/Library/Developer/Xcode/DerivedData/csproject-ewtkybbytxrmoygdjpvtmhcsgjil/Build/Products/Debug/output", ios::in);
-    string line;
-    int numSize;
-    for(int i=0;i<26;i++){
-        getline(fil, line);
-        if(i == 12){ // fetch num of variables
-            stringstream ss(line);
-            string temp;
-            for(int x = 0; x < 6; x++)
-                ss >> temp;
-            numSize = stoi(temp);
+        cout<<"slotloc\nsize"<<endl;
+        vector<int> slotnet;
+        cout<<CPUslot[0].size()<<endl;
+        for(int i=0;i<CPUslot.size();i++){
+            for(int j=0;j<CPUslot[i].size();j++){
+                for(int k=0;k<5;k++){
+                    if(CPUslot[i][j].j == 0)
+                        slotnet.push_back(map[CPUslot[i][j].i][CPUslot[i][j].j+1][CPUslot[i][j].k].net_id[k]);
+                    else
+                        slotnet.push_back(map[CPUslot[i][j].i][CPUslot[i][j].j-1][CPUslot[i][j].k].net_id[k]);
+                }
+            }
         }
-    }
+        cout<<"lsmapsize\n";
+        cout<<ls.size()<<' ' << lshard1.size()<<' '<<lshard2.size()<<endl;
+        
+    string command, line;
+    int numSize;
     vector<int> num;
-    num.reserve(numSize);
-    char c;
-    fil >> c;
-    int tem, tem2;
-    for(;;){
-        tem2 = tem;
-        fil>>tem;
-        if(tem2 == tem) break;
-        num.push_back(tem);
-    }
-    cout << "num: "<< ls.size() << endl;
-    */
+    //num = phase1_mac(var_id_counter, numSize, ls);
+    //num = phase2_mac(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
+    
+    num = phase1_linux(var_id_counter, numSize, ls);
+    num = phase2_linux(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
 
-    ofstream file("temp.cnf");
+    /*ofstream file("temp.cnf");
     if(file.is_open()){
         file << "c temp.cnf" << endl;
         file << "p wcnf "<<var_id_counter-1<<' '<<ls.size()<<' '<<1<<endl;
@@ -968,8 +1081,10 @@ int main(int argc, const char * argv[])
         num.push_back(tem);
     }
     cout << num.size() << endl;
-        for(int i=0;i<5;i++)
+    for(int i=0;i<5;i++)
         cout << num[map[1][34][29].net_id[i]-1] << " " << num[map[1][34][31].net_id[i]-1]<<endl;
+    //*/
+     
     for(int i = 0; i < set.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
@@ -1008,7 +1123,7 @@ int main(int argc, const char * argv[])
         }
     }
 
-    drawMap(map, cfig.group_name.size()+1, num, mapsize);
+    drawMap(map, (int)cfig.group_name.size()+1, num, mapsize);
 
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
