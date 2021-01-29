@@ -88,8 +88,8 @@ class Edge{
 		}
 };
 
-void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num, vector<pair<int,int>> &mapsize){
-	for(int i = 0; i < groupSize; i++){
+void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num, vector<pair<int,int>> &mapsize, int i){
+	//for(int i = 0; i < groupSize; i++){
 		cout << "\n---Grid map " << i << "---";
 		cout << "(" << mapsize[i].first << " x " << mapsize[i].second << ")" << endl;
 		cout << " ";
@@ -161,7 +161,7 @@ void drawMap(vector<vector<vector<Node>>> &map, int groupSize, vector<int> &num,
 				cout << " ";
 		}
 		cout << endl;
-	}
+	//}
 }
 
 // map before routing

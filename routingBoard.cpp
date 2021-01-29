@@ -1027,18 +1027,24 @@ int main(int argc, const char * argv[])
                 }
             }
         }
-        cout<<"lsmapsize\n";
+        cout<<"ls_size\n";
         cout<<ls.size()<<' ' << lshard1.size()<<' '<<lshard2.size()<<endl;
         
     string command, line;
     int numSize;
     vector<int> num;
-    //num = phase1_mac(var_id_counter, numSize, ls);
-    //num = phase2_mac(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
+    /*num = phase1_mac(var_id_counter, numSize, ls);
+    num = phase2_mac(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
+    draw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
+    num = phase2_mac(var_id_counter, numSize, slotnet, lshard2, lssoft2, num);
+    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);*/
     
     num = phase1_linux(var_id_counter, numSize, ls);
     num = phase2_linux(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
-
+    draw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
+    num = phase2_linux(var_id_counter, numSize, slotnet, lshard2, lssoft2, num);
+    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
+    
     /*ofstream file("temp.cnf");
     if(file.is_open()){
         file << "c temp.cnf" << endl;
@@ -1083,7 +1089,7 @@ int main(int argc, const char * argv[])
     cout << num.size() << endl;
     for(int i=0;i<5;i++)
         cout << num[map[1][34][29].net_id[i]-1] << " " << num[map[1][34][31].net_id[i]-1]<<endl;
-    //*/
+    
      
     for(int i = 0; i < set.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
@@ -1123,7 +1129,7 @@ int main(int argc, const char * argv[])
         }
     }
 
-    drawMap(map, (int)cfig.group_name.size()+1, num, mapsize);
+    drawMap(map, (int)cfig.group_name.size()+1, num, mapsize);*/
 
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
