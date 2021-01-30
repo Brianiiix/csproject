@@ -540,6 +540,47 @@ int main(int argc, const char * argv[])
     // grid map size info
     vector<pair<int,int>> mapsize(groupSize);
 
+    for(int z = 0; z < groupSize; z++){
+        if(z == 0){ // CPU
+            int sum = 0;
+            for(int i = 0; i < netBox.size(); i++)
+                sum += netBox[i].size();
+            P[z].reserve(sum);
+            P_map[z].resize(sum);
+            for(int i = 0; i < netBox.size(); i++){
+                for(int j = 0; j < netBox[i].size(); j++){
+                    P[z].push_back(make_pair(exactgrid(pinBox[i].at(netBox[i].at(j).at(0)).x, GU),exactgrid(pinBox[i].at(netBox[i].at(j).at(0)).y, GU)));
+                }
+            }
+        }else{
+            P[z].reserve(netBox[z-1].size());
+            P_map[z].resize(netBox[z-1].size());
+            for(int i = 0; i < netBox[z-1].size(); i++){
+                P[z].push_back(make_pair(exactgrid(pinBox[z-1].at(netBox[z-1].at(i).at(1)).x, GU),exactgrid(pinBox[z-1].at(netBox[z-1].at(i).at(1)).y, GU)));
+            }
+        }
+        set.at(z) = findBoundary(P[z]);
+        set.at(z).setUp(set.at(z).top + GU, set.at(z).down - GU, set.at(z).left - GU, set.at(z).right + GU);
+        // Pin
+        for(int j = 0; j < P[z].size(); j++){
+            P_map[z][j] = {((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize,(P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize};
+        }
+    }
+        
+        
+        for(int z = 0; z < groupSize; z++){
+            for(int j = 0; j < P_map[z].size(); j++){
+                cout<<z<<' '<<j<<' '<<P_map[z][j].first<<' '<<P_map[z][j].second<<endl;
+            }
+        }
+        P.clear();
+        P_map.clear();
+        set.clear();
+        P.resize(groupSize);
+        P_map.resize(groupSize);
+        set.resize(groupSize);
+        
+        
     // set grid maps
     for(int z = 0; z < groupSize; z++){
         
@@ -1033,17 +1074,17 @@ int main(int argc, const char * argv[])
     string command, line;
     int numSize;
     vector<int> num;
-    /*num = phase1_mac(var_id_counter, numSize, ls);
+    num = phase1_mac(var_id_counter, numSize, ls);
     num = phase2_mac(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
     draw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
     num = phase2_mac(var_id_counter, numSize, slotnet, lshard2, lssoft2, num);
-    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);*/
+    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
     
-    num = phase1_linux(var_id_counter, numSize, ls);
+    /*num = phase1_linux(var_id_counter, numSize, ls);
     num = phase2_linux(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
     draw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
     num = phase2_linux(var_id_counter, numSize, slotnet, lshard2, lssoft2, num);
-    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
+    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);*/
     
     /*ofstream file("temp.cnf");
     if(file.is_open()){
