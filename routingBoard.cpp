@@ -17,8 +17,11 @@
 #include "gridUnit.hpp"
 #include "TileStructure.hpp"
 #include "phase.hpp"
+#include "Layer.hpp"
 
 using namespace std;
+
+int layer_amount;
 
 std::string& trim(std::string &s)
 {
@@ -176,6 +179,7 @@ class config{
                     else if(string_list.at(0) == "USED_LAYER:"){
                         USED_LAYER = atoi(string_list.at(1).c_str());
                         printf("used layer : %d\n",USED_LAYER);
+                        layer_amount = USED_LAYER;
                     }
                     else if(string_list.at(0) == "Skip_Net:"){
                         for(int i = 1; i < string_list.size();i++){
@@ -515,7 +519,7 @@ int main(int argc, const char * argv[])
         netBox.push_back(net);
         pinBox.push_back(pin);
         
-    for(int i=0; i < net.size(); i++){
+    /*for(int i=0; i < net.size(); i++){
         for(int j=0; j<net[i].size();j++){
             cout<<net[i][j]<<endl;
         }
@@ -523,9 +527,9 @@ int main(int argc, const char * argv[])
     }
         for(int i=0; i < pin.size(); i++){
             cout<<pin[i].x<<' '<<pin[i].y<<endl;
-        }
+        }*/
     }
-        netBox[0].erase(netBox[0].begin()+3);
+        
     // *** Grid Unit, 1.default : 800
     int GU = findType("./case/1.brd_input.pCSet" , "DEFAULT", "./case/1.brd_input.sCSet", "DEFAULT");
     // Pin info
@@ -577,20 +581,57 @@ int main(int argc, const char * argv[])
         }
     }
         
-        
-        for(int z = 0; z < groupSize; z++){
+        int layer_num = layer_amount;
+        std::map<int, int> idxToLayer = layer(layer_num, P_map); 
+        for(int z = 0; z < P_map[0].size(); z++) cout << z << ": layer " << idxToLayer[z] << endl;
+        /*for(int z = 0; z < groupSize; z++){
             for(int j = 0; j < P_map[z].size(); j++){
                 cout<<z<<' '<<j<<' '<<P_map[z][j].first<<' '<<P_map[z][j].second<<endl;
             }
+        }*/
+        
+        
+
+        
+        auto netBox_backup = netBox;
+        
+        //int numInEachLayer = (netBox[0].size() % layer_num == 0) ? netBox[0].size()/layer_num : netBox[0].size()/layer_num + 1;
+for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
+    vector<std::vector<int>> newBox;
+    for(int ii = 0; ii < netBox_backup[0].size(); ii++){
+        if(idxToLayer[ii] == layer_idx) {
+            newBox.push_back(netBox_backup[0][ii]);
+
         }
+    }
+    netBox.clear();
+    netBox.push_back(newBox);
+
+
         P.clear();
         P_map.clear();
         set.clear();
+        map.clear();
+        var_id_counter = 1;
+        bsize = 4;
+        CPUslot.clear();
+        DDRslot.clear();
+        CPUslotRev.clear();
+        DDRslotRev.clear();
+        groupnum.clear();
+        mapsize.clear();
         P.resize(groupSize);
         P_map.resize(groupSize);
         set.resize(groupSize);
-        
-        
+        map.resize(groupSize);
+        CPUslot.resize(groupSize-1);
+        DDRslot.resize(groupSize-1);
+        CPUslotRev.resize(groupSize-1);
+        DDRslotRev.resize(groupSize-1);
+        groupnum.resize(groupSize-1);
+        mapsize.resize(groupSize);
+    
+    //netBox[0].erase(netBox[0].begin()+3);    
     // set grid maps
     for(int z = 0; z < groupSize; z++){
         
@@ -1043,7 +1084,7 @@ int main(int argc, const char * argv[])
 
     TSoffset offset1, offset2;
     offset1.SetUp(4,4,4,4); // offset from RowLeft, RowRight, ColLeft, ColRight *even only*
-    offset2.SetUp(8,0,0,0);
+    offset2.SetUp(4,4,4,4);
     int nxn = 5; // n x n tile structure
     TileStruct(ls, lshard1, lshard2, map, nxn, offset1, offset2, netBox);
     //drawMap0(map, groupSize, mapsize);
@@ -1084,17 +1125,17 @@ int main(int argc, const char * argv[])
     string command, line;
     int numSize;
     vector<int> num;
-    num = phase1_mac(var_id_counter, numSize, ls);
+    /*num = phase1_mac(var_id_counter, numSize, ls);
     num = phase2_mac(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
     draw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
     num = phase2_mac(var_id_counter, numSize, slotnet, lshard2, lssoft2, num);
-    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
+    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);*/
     
-    /*num = phase1_linux(var_id_counter, numSize, ls);
+    num = phase1_linux(var_id_counter, numSize, ls);
     num = phase2_linux(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
     draw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
     num = phase2_linux(var_id_counter, numSize, slotnet, lshard2, lssoft2, num);
-    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);*/
+    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
     
     /*ofstream file("temp.cnf");
     if(file.is_open()){
@@ -1190,7 +1231,7 @@ int main(int argc, const char * argv[])
                    cfig.Pin_Obs_list[i].RTx,cfig.Pin_Obs_list[i].RTy,999,cfig.Pin_Obs_list[i].Layer);
         outputpin.push_back(temp);
     }
-
+        }//layer to here
     // *
     string layout_name = "case/1.brd";
     //outputGDS(layout_name, outputpin, outputedge, crossing_line_total);
