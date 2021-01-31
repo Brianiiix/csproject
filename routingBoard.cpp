@@ -510,12 +510,22 @@ int main(int argc, const char * argv[])
     }
     fin.close();
 
-    printf("Loading Input End. #Nets : %d\n", static_cast<int>(net.size()));
-    if (net.size() == 0)
-        continue;
+        printf("Loading Input End. #Nets : %d\n", static_cast<int>(net.size()));
+        if (net.size() == 0) continue;
         netBox.push_back(net);
         pinBox.push_back(pin);
+        
+    for(int i=0; i < net.size(); i++){
+        for(int j=0; j<net[i].size();j++){
+            cout<<net[i][j]<<endl;
+        }
+        cout<<endl;
     }
+        for(int i=0; i < pin.size(); i++){
+            cout<<pin[i].x<<' '<<pin[i].y<<endl;
+        }
+    }
+        netBox[0].erase(netBox[0].begin()+3);
     // *** Grid Unit, 1.default : 800
     int GU = findType("./case/1.brd_input.pCSet" , "DEFAULT", "./case/1.brd_input.sCSet", "DEFAULT");
     // Pin info
