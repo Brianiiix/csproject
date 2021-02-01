@@ -91,7 +91,7 @@ map<int, int> layer(int num, vector< vector< pair<int, int> > > P){
             if(equal(Pin[0][i], P[0][j]) == 1){
                 //cout << i << " " << j << "test" << endl;
                 if(j < P[0].size()%numInEach) ans[i] = 0;
-                else ans[i] = ((j-(P[0].size()%numInEach))/numInEach)+1;
+                else ans[i] = (P[0].size()%numInEach == 0) ? ((j-(P[0].size()%numInEach))/numInEach) : ((j-(P[0].size()%numInEach))/numInEach)+1;
                 break;
             }
         }
