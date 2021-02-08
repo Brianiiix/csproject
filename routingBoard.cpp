@@ -953,7 +953,7 @@ for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
                         lshard2.push_back(to_string(-a)+' '+to_string(b)+' '+to_string(d)+' '+to_string(e)+" 0");
                         lshard2.push_back(to_string(-a)+' '+to_string(-c)+' '+to_string(-d)+' '+to_string(-e)+" 0");
                         lshard2.push_back(to_string(-a)+' '+to_string(c)+' '+to_string(d)+' '+to_string(e)+" 0");
-                        lssoft2.push_back(to_string(-map[i][j][k].var_id)+" 0");
+                        lssoft2.push_back(to_string(-a)+" 0");
                     }
                 }
                 else if(map[i][j][k].type == 'S'){
@@ -1065,9 +1065,9 @@ for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
                                 tmps += " ";
                             }
                             tmps += "0";
-                            ls.push_back(tmps);
+                            //ls.push_back(tmps);
                             if(!i){
-                                //lshard1.push_back(tmps);
+                                lshard1.push_back(tmps);
                             }
                             else{
                                 lshard2.push_back(tmps);
@@ -1086,7 +1086,7 @@ for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
     offset1.SetUp(4,4,4,4); // offset from RowLeft, RowRight, ColLeft, ColRight *even only*
     offset2.SetUp(4,4,4,4);
     int nxn = 5; // n x n tile structure
-    TileStruct(ls, lshard1, lshard2, map, nxn, offset1, offset2, netBox);
+    //TileStruct(ls, lshard1, lshard2, map, nxn, offset1, offset2, netBox);
     //drawMap0(map, groupSize, mapsize);
 
     //To match two map's slot order
@@ -1124,10 +1124,10 @@ for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
     int numSize;
     vector<int> num;
     /*num = phase1_mac(var_id_counter, numSize, ls);
-    num = phase2_mac(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
     draw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
-    num = phase2_mac(var_id_counter, numSize, slotnet, lshard2, lssoft2, num);
-    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);*/
+    cleandraw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
+    draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
+    cleandraw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);*/
     
     num = phase1_linux(var_id_counter, numSize, ls);
     num = phase2_linux(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);

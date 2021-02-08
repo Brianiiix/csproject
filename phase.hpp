@@ -248,12 +248,15 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
         }
     }
     
-    vector<horizontalline> linebox;
+    vector<horizontalline> linebox, linebox2;
     bool checking = false;
     horizontalline temp;
-    int tempk;
-    int cnt = 2;
-    while(cnt--){
+    int tempk = 0;
+    bool snaking = true;
+    
+    while(snaking){
+        snaking = false;
+        //left
         linebox.clear();
         for(int j = 1; j < map.at(i).size(); j+=2){
             for(int k = 2; k < map.at(i).at(0).size(); k+=2){
@@ -276,7 +279,7 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
                 linebox.push_back(temp);
             }
         }
-        auto linebox2 = linebox;
+        linebox2 = linebox;
         for(int a=0; a<linebox.size(); a++){
             for(int b=0; b<linebox2.size(); b++){
                 if(a < b && linebox[a].net == linebox2[b].net){
@@ -297,6 +300,7 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
                                 }
                             }
                             if(noline){
+                                snaking = true;
                                 for(int k=linebox[a].row; k<=linebox2[b].row; k++){
                                     map[i][k][min(linebox[a].right, linebox2[b].right)+1].bit = true;
                                 }
@@ -315,10 +319,8 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
                 }
             }
         }
-    }
     
-    cnt = 2;
-    while(cnt--){
+        //right
         linebox.clear();
         for(int j = 1; j < map.at(i).size(); j+=2){
             for(int k = 2; k < map.at(i).at(0).size(); k+=2){
@@ -341,7 +343,7 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
                 linebox.push_back(temp);
             }
         }
-        auto linebox2 = linebox;
+        linebox2 = linebox;
         for(int a=0; a<linebox.size(); a++){
             for(int b=0; b<linebox2.size(); b++){
                 if(a < b && linebox[a].net == linebox2[b].net){
@@ -362,6 +364,7 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
                                 }
                             }
                             if(noline){
+                                snaking = true;
                                 for(int k=linebox[a].row; k<=linebox2[b].row; k++){
                                     map[i][k][max(linebox[a].left, linebox2[b].left)-1].bit = true;
                                 }
@@ -373,6 +376,132 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
                                 }
                                 for(int k=linebox2[b].right; k>=max(linebox[a].left, linebox2[b].left); k--){
                                     map[i][linebox2[b].row][k].bit = false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //top
+        linebox.clear();
+        for(int k = 1; k < map.at(i).at(0).size(); k+=2){
+            for(int j = map.at(i).size()-1; j >= 2; j-=2){
+                if(!checking && map[i][j][k].bit){
+                    temp.left = j;
+                    temp.row = k;
+                    temp.net = ((num[map[i][j-1][k].net_id[0]-1])>0?1:0)+((num[map[i][j-1][k].net_id[1]-1]>0)?2:0)+((num[map[i][j-1][k].net_id[2]-1]>0)?4:0)+((num[map[i][j-1][k].net_id[3]-1]>0)?8:0)+((num[map[i][j-1][k].net_id[4]-1]>0)?16:0);
+                    checking = true;
+                }
+                if(checking && !map[i][j][k].bit){
+                    temp.right = j+2;
+                    checking = false;
+                    linebox.push_back(temp);
+                }
+                tempk = j;
+            }
+            if(checking){
+                temp.right = tempk;
+                checking = false;
+                linebox.push_back(temp);
+            }
+        }
+        linebox2 = linebox;
+        for(int a=0; a<linebox.size(); a++){
+            for(int b=0; b<linebox2.size(); b++){
+                if(a < b && linebox[a].net == linebox2[b].net){
+                    if(linebox[a].left == linebox2[b].left){
+                        bool hasline = true;
+                        for(int k=linebox[a].row+1; k<linebox2[b].row; k++){
+                            if(!map[i][linebox[a].left+1][k].bit){
+                                hasline = false;
+                                break;
+                            }
+                        }
+                        if(hasline){
+                            bool noline = true;
+                            for(int k=linebox[a].row+1; k<linebox2[b].row; k++){
+                                if(map[i][max(linebox[a].right, linebox2[b].right)-1][k].bit){
+                                    noline = false;
+                                    break;
+                                }
+                            }
+                            if(noline){
+                                snaking = true;
+                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
+                                    map[i][max(linebox[a].right, linebox2[b].right)-1][k].bit = true;
+                                }
+                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
+                                    map[i][linebox[a].left+1][k].bit = false;
+                                }
+                                for(int k=linebox[a].left; k>=max(linebox[a].right, linebox2[b].right); k--){
+                                    map[i][k][linebox[a].row].bit = false;
+                                }
+                                for(int k=linebox2[b].left; k>=max(linebox[a].right, linebox2[b].right); k--){
+                                    map[i][k][linebox2[b].row].bit = false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //bottom
+        linebox.clear();
+        for(int k = 1; k < map.at(i).at(0).size(); k+=2){
+            for(int j = map.at(i).size()-1; j >= 2; j-=2){
+                if(!checking && map[i][j][k].bit){
+                    temp.left = j;
+                    temp.row = k;
+                    temp.net = ((num[map[i][j-1][k].net_id[0]-1])>0?1:0)+((num[map[i][j-1][k].net_id[1]-1]>0)?2:0)+((num[map[i][j-1][k].net_id[2]-1]>0)?4:0)+((num[map[i][j-1][k].net_id[3]-1]>0)?8:0)+((num[map[i][j-1][k].net_id[4]-1]>0)?16:0);
+                    checking = true;
+                }
+                if(checking && !map[i][j][k].bit){
+                    temp.right = j+2;
+                    checking = false;
+                    linebox.push_back(temp);
+                }
+                tempk = j;
+            }
+            if(checking){
+                temp.right = tempk;
+                checking = false;
+                linebox.push_back(temp);
+            }
+        }
+        linebox2 = linebox;
+        for(int a=0; a<linebox.size(); a++){
+            for(int b=0; b<linebox2.size(); b++){
+                if(a < b && linebox[a].net == linebox2[b].net){
+                    if(linebox[a].right == linebox2[b].right){
+                        bool hasline = true;
+                        for(int k=linebox[a].row+1; k<linebox2[b].row; k++){
+                            if(!map[i][linebox[a].right-1][k].bit){
+                                hasline = false;
+                                break;
+                            }
+                        }
+                        if(hasline){
+                            bool noline = true;
+                            for(int k=linebox[a].row+1; k<linebox2[b].row; k++){
+                                if(map[i][min(linebox[a].left, linebox2[b].left)+1][k].bit){
+                                    noline = false;
+                                    break;
+                                }
+                            }
+                            if(noline){
+                                snaking = true;
+                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
+                                    map[i][min(linebox[a].left, linebox2[b].left)+1][k].bit = true;
+                                }
+                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
+                                    map[i][linebox[a].right-1][k].bit = false;
+                                }
+                                for(int k=linebox[a].right; k<=min(linebox[a].left, linebox2[b].left); k++){
+                                    map[i][k][linebox[a].row].bit = false;
+                                }
+                                for(int k=linebox2[b].right; k<=min(linebox[a].left, linebox2[b].left); k++){
+                                    map[i][k][linebox2[b].row].bit = false;
                                 }
                             }
                         }
