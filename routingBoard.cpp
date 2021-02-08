@@ -542,7 +542,8 @@ int main(int argc, const char * argv[])
     vector<vector <vector<Node> > > map;
     int var_id_counter = 1;
     // length between boundary and nearest pin #even only#
-    int bsize = 4;
+    boundary bsize;
+    bsize.setUp(2,2,6,6); // top, down, left, right
     // +1 is for CPU name and node[0] is CPU
     map.resize(groupSize);
     //first vector imply which (slot[0] = DDR1)
@@ -577,7 +578,7 @@ int main(int argc, const char * argv[])
         set.at(z).setUp(set.at(z).top + GU, set.at(z).down - GU, set.at(z).left - GU, set.at(z).right + GU);
         // Pin
         for(int j = 0; j < P[z].size(); j++){
-            P_map[z][j] = {((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize,(P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize};
+            P_map[z][j] = {((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize.top,(P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize.left};
         }
     }
         
@@ -613,7 +614,7 @@ for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
         set.clear();
         map.clear();
         var_id_counter = 1;
-        bsize = 4;
+        //bsize.setUp(4,4,6,6); // top, down, left, right
         CPUslot.clear();
         DDRslot.clear();
         CPUslotRev.clear();
@@ -663,8 +664,8 @@ for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
         int row = (set.at(z).top/GU)-(set.at(z).down/GU)+1-2;
         int column = (set.at(z).right/GU)-(set.at(z).left/GU)+1-2;
         // pin + edge(pin * 2 - 1) + slot/fanout_node(2) = pin * 2 + 1
-        map.at(z).resize(row * 2 + 1 + bsize*2, vector<Node>(column * 2 + 1 + bsize*2));
-        mapsize[z] = make_pair(row * 2 + 1 + bsize*2, column * 2 + 1 + bsize*2);
+        map.at(z).resize(row * 2 + 1 + bsize.top+bsize.down, vector<Node>(column * 2 + 1 + bsize.left+bsize.right));
+        mapsize[z] = make_pair(row * 2 + 1 + bsize.top+bsize.down, column * 2 + 1 + bsize.left+bsize.right);
         for(int j = 0; j < map.at(z).size(); j++){
             for(int k = 0; k < map.at(z).at(0).size(); k++){
                 // set x and y coor (origin is at top-left)
@@ -690,14 +691,14 @@ for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
             //@cout << "coor of the pin is (" << (P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize
             //@    << "," << ((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize << ")" << endl;
             // top/GU-1 and left/GU+1 to elim slots
-            P_map[z][j] = {((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize,(P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize};
-            map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize).type = 'P';
-            map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize).pin_id = j;
+            P_map[z][j] = {((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize.top,(P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize.left};
+            map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize.top).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize.left).type = 'P';
+            map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize.top).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize.left).pin_id = j;
             if(z == 0){
                 if(groupnum[groupnumvar-1] == j){
                     groupnumvar++;
                 }
-                map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize).group = groupnumvar;
+                map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize.top).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize.left).group = groupnumvar;
             }
             int cnt = 0;
             int dec = j;
@@ -715,7 +716,7 @@ for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
 
             while(dec != 0)
             {
-                map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize).net_id[cnt] = (dec % 2);
+                map.at(z).at(((set.at(z).top/GU-1) - P[z][j].second/GU) * 2 + 1+bsize.top).at((P[z][j].first/GU - (set.at(z).left/GU+1)) * 2 + 1+bsize.left).net_id[cnt] = (dec % 2);
                 dec /= 2;
                 cnt++;
             }
