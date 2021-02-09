@@ -166,7 +166,7 @@ vector<int> phase2_linux(int var_id_counter, int &numSize, vector<int> &slotnet,
 }
 
 void draw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vector<vector<pair<int, int>>> &P, vector<boundary> &set,
-          int bsize, int GU, int size, vector<pair<int,int>> &mapsize){
+          boundary bsize, int GU, int size, vector<pair<int,int>> &mapsize){
     //for(int i = 0; i < set.size(); i++){
         for(int j = 0; j < map.at(i).size(); j++){
             for(int k = 0; k < map.at(i).at(0).size(); k++){
@@ -178,8 +178,8 @@ void draw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vector<vec
     // DFS from pin to find redundant cycles
     //for(int i = 0; i < map.size(); i++){
         for(int p = 0; p < P[i].size(); p++){
-            int x = (P[i][p].first/GU - (set[i].left/GU+1)) * 2 + 1 + bsize;
-            int y = ((set[i].top/GU-1) - P[i][p].second/GU) * 2 + 1 + bsize;
+            int x = (P[i][p].first/GU - (set[i].left/GU+1)) * 2 + 1 + bsize.left;
+            int y = ((set[i].top/GU-1) - P[i][p].second/GU) * 2 + 1 + bsize.top;
             while(map[i][y][x].type != 'S'){
                 if(map[i][y+1][x].bit && !map[i][y+1][x].check){ // D
                     map[i][y++][x].check = true;
