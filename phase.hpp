@@ -216,7 +216,7 @@ struct horizontalline{
 };
 
 void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vector<vector<pair<int, int>>> &P, vector<boundary> &set,
-          int bsize, int GU, int size, vector<pair<int,int>> &mapsize){
+          boundary bsize, int GU, int size, vector<pair<int,int>> &mapsize){
     for(int j = 0; j < map.at(i).size(); j++){
         for(int k = 0; k < map.at(i).at(0).size(); k++){
             map[i][j][k].bit = (num[map[i][j][k].var_id-1] > 0) ? true : false;
@@ -225,8 +225,8 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
     
     // DFS from pin to find redundant cycles
     for(int p = 0; p < P[i].size(); p++){
-        int x = (P[i][p].first/GU - (set[i].left/GU+1)) * 2 + 1 + bsize;
-        int y = ((set[i].top/GU-1) - P[i][p].second/GU) * 2 + 1 + bsize;
+        int x = (P[i][p].first/GU - (set[i].left/GU+1)) * 2 + 1 + bsize.left;
+        int y = ((set[i].top/GU-1) - P[i][p].second/GU) * 2 + 1 + bsize.top;
         while(map[i][y][x].type != 'S'){
             if(map[i][y+1][x].bit && !map[i][y+1][x].check){ // D
                 map[i][y++][x].check = true;
@@ -302,16 +302,27 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
                             if(noline){
                                 snaking = true;
                                 for(int k=linebox[a].row; k<=linebox2[b].row; k++){
-                                    map[i][k][min(linebox[a].right, linebox2[b].right)+1].bit = true;
-                                }
-                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
                                     map[i][k][linebox[a].left-1].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][k][linebox[a].left-1].net_id[pos]-1] = false;
                                 }
                                 for(int k=linebox[a].left; k<=min(linebox[a].right, linebox2[b].right); k++){
                                     map[i][linebox[a].row][k].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][linebox[a].row][k].net_id[pos]-1] = false;
                                 }
                                 for(int k=linebox2[b].left; k<=min(linebox[a].right, linebox2[b].right); k++){
                                     map[i][linebox2[b].row][k].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][linebox2[b].row][k].net_id[pos]-1] = false;
+                                }
+                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
+                                    map[i][k][min(linebox[a].right, linebox2[b].right)+1].bit = true;
+                                    int net = linebox[a].net;
+                                    for(int pos=0; pos<5; pos++){
+                                        if(net%2 == 0)
+                                            num[map[i][k][min(linebox[a].right, linebox2[b].right)+1].net_id[pos]-1] = false;
+                                        else
+                                            num[map[i][k][min(linebox[a].right, linebox2[b].right)+1].net_id[pos]-1] = true;
+                                        net /= 2;
+                                    }
                                 }
                             }
                         }
@@ -366,16 +377,27 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
                             if(noline){
                                 snaking = true;
                                 for(int k=linebox[a].row; k<=linebox2[b].row; k++){
-                                    map[i][k][max(linebox[a].left, linebox2[b].left)-1].bit = true;
-                                }
-                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
                                     map[i][k][linebox[a].right+1].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][k][linebox[a].right+1].net_id[pos]-1] = false;
                                 }
                                 for(int k=linebox[a].right; k>=max(linebox[a].left, linebox2[b].left); k--){
                                     map[i][linebox[a].row][k].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][linebox[a].row][k].net_id[pos]-1] = false;
                                 }
                                 for(int k=linebox2[b].right; k>=max(linebox[a].left, linebox2[b].left); k--){
                                     map[i][linebox2[b].row][k].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][linebox2[b].row][k].net_id[pos]-1] = false;
+                                }
+                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
+                                    map[i][k][max(linebox[a].left, linebox2[b].left)-1].bit = true;
+                                    int net = linebox[a].net;
+                                    for(int pos=0; pos<5; pos++){
+                                        if(net%2 == 0)
+                                            num[map[i][k][max(linebox[a].left, linebox2[b].left)-1].net_id[pos]-1] = false;
+                                        else
+                                            num[map[i][k][max(linebox[a].left, linebox2[b].left)-1].net_id[pos]-1] = true;
+                                        net /= 2;
+                                    }
                                 }
                             }
                         }
@@ -429,16 +451,24 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
                             if(noline){
                                 snaking = true;
                                 for(int k=linebox[a].row; k<=linebox2[b].row; k++){
-                                    map[i][max(linebox[a].right, linebox2[b].right)-1][k].bit = true;
-                                }
-                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
                                     map[i][linebox[a].left+1][k].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][linebox[a].left+1][k].net_id[pos]-1] = false;
                                 }
                                 for(int k=linebox[a].left; k>=max(linebox[a].right, linebox2[b].right); k--){
                                     map[i][k][linebox[a].row].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][k][linebox[a].row].net_id[pos]-1] = false;
                                 }
                                 for(int k=linebox2[b].left; k>=max(linebox[a].right, linebox2[b].right); k--){
                                     map[i][k][linebox2[b].row].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][k][linebox2[b].row].net_id[pos]-1] = false;
+                                }
+                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
+                                    map[i][max(linebox[a].right, linebox2[b].right)-1][k].bit = true;
+                                    int net = linebox[a].net;
+                                    for(int pos=0; pos<5; pos++){
+                                        num[map[i][max(linebox[a].right, linebox2[b].right)-1][k].net_id[pos]-1] = (net%2)?true:false;
+                                        net /= 2;
+                                    }
                                 }
                             }
                         }
@@ -492,16 +522,24 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
                             if(noline){
                                 snaking = true;
                                 for(int k=linebox[a].row; k<=linebox2[b].row; k++){
-                                    map[i][min(linebox[a].left, linebox2[b].left)+1][k].bit = true;
-                                }
-                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
                                     map[i][linebox[a].right-1][k].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][linebox[a].right-1][k].net_id[pos]-1] = false;
                                 }
                                 for(int k=linebox[a].right; k<=min(linebox[a].left, linebox2[b].left); k++){
                                     map[i][k][linebox[a].row].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][k][linebox[a].row].net_id[pos]-1] = false;
                                 }
                                 for(int k=linebox2[b].right; k<=min(linebox[a].left, linebox2[b].left); k++){
                                     map[i][k][linebox2[b].row].bit = false;
+                                    for(int pos=0; pos<5; pos++) num[map[i][k][linebox2[b].row].net_id[pos]-1] = false;
+                                }
+                                for(int k=linebox[a].row; k<=linebox2[b].row; k++){
+                                    map[i][min(linebox[a].left, linebox2[b].left)+1][k].bit = true;
+                                    int net = linebox[a].net;
+                                    for(int pos=0; pos<5; pos++){
+                                        num[map[i][min(linebox[a].left, linebox2[b].left)+1][k].net_id[pos]-1] = (net%2)?true:false;
+                                        net /= 2;
+                                    }
                                 }
                             }
                         }
@@ -510,7 +548,6 @@ void cleandraw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vecto
             }
         }
     }
-    
     drawMap(map, size, num, mapsize, i);
 }
 

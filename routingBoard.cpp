@@ -583,6 +583,7 @@ int main(int argc, const char * argv[])
     }
         
         int layer_num = layer_amount;
+        layer_num = 1;
         std::map<int, int> idxToLayer = layer(layer_num, P_map);
         for(int z = 0; z < P_map[0].size(); z++) cout << z << ": layer " << idxToLayer[z] << endl;
         /*for(int z = 0; z < groupSize; z++){
@@ -1131,10 +1132,10 @@ for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
     cleandraw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);*/
     
     num = phase1_linux(var_id_counter, numSize, ls);
-    num = phase2_linux(var_id_counter, numSize, slotnet, lshard1, lssoft1, num);
     draw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
-    num = phase2_linux(var_id_counter, numSize, slotnet, lshard2, lssoft2, num);
+    cleandraw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
     draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
+    cleandraw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
 
 
     for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
