@@ -18,6 +18,7 @@
 #include "TileStructure.hpp"
 #include "phase.hpp"
 #include "Layer.hpp"
+#include "draw.hpp"
 
 using namespace std;
 
@@ -539,7 +540,9 @@ int main(int argc, const char * argv[])
     // boundary info
     vector<boundary> set(groupSize);
     // many m x n 2D vector of vector
-    vector<vector <vector<Node> > > map;
+    vector<vector<vector<Node>>> map;
+    // all maps in diff layers
+    vector<vector<vector<vector<Node>>>> map_box;
     int var_id_counter = 1;
     // length between boundary and nearest pin #even only#
     boundary bsize;
@@ -586,13 +589,19 @@ int main(int argc, const char * argv[])
         layer_num = 1;
         std::map<int, int> idxToLayer = layer(layer_num, P_map);
         for(int z = 0; z < P_map[0].size(); z++) cout << z << ": layer " << idxToLayer[z] << endl;
-        /*for(int z = 0; z < groupSize; z++){
+
+
+        for(int z = 0; z < groupSize; z++){
+            for(int j = 0; j < P[z].size(); j++){
+                cout<<z<<' '<<j<<' '<<P[z][j].first<<' '<<P[z][j].second<<endl;
+            }
+        } 
+        cout<<endl;
+        for(int z = 0; z < groupSize; z++){
             for(int j = 0; j < P_map[z].size(); j++){
                 cout<<z<<' '<<j<<' '<<P_map[z][j].first<<' '<<P_map[z][j].second<<endl;
             }
-        }*/
-        
-        
+        }
 
         
         auto netBox_backup = netBox;
@@ -1134,19 +1143,24 @@ for(int layer_idx = 0; layer_idx < layer_num; layer_idx++){//layer from here
     num = phase1_linux(var_id_counter, numSize, ls);
     draw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
     cleandraw(0, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
+    //draw_Klayout(map, GU, layer_idx);
     draw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
     cleandraw(1, map, num, P, set, bsize, GU, (int)cfig.group_name.size()+1, mapsize);
+    
 
-
-    for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
+    map_box.push_back(map);
+    /*for (int i=0; i<static_cast<int>(cfig.Pin_Obs_list.size()); i++) {
         OutputRect temp;
 
         temp.setup(cfig.Pin_Obs_list[i].LBx,cfig.Pin_Obs_list[i].LBy,
                    cfig.Pin_Obs_list[i].RTx,cfig.Pin_Obs_list[i].RTy,999,cfig.Pin_Obs_list[i].Layer);
         outputpin.push_back(temp);
-    }
-        }//layer to here
+    }*/
+
+    }//layer to here
     // *
+    draw_Klayout(map_box, GU);
+
     string layout_name = "case/1.brd";
     //outputGDS(layout_name, outputpin, outputedge, crossing_line_total);
 

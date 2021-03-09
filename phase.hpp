@@ -190,7 +190,7 @@ void draw(int i, vector<vector<vector<Node>>> &map, vector<int> &num, vector<vec
                 }else if(map[i][y][x-1].bit && !map[i][y][x-1].check){ // R
                     map[i][y][x--].check = true;
                 }else{
-                    cout << "routing from pin has problem!!!" << endl;
+                    cout << "no route from pin" << endl;
                     break;
                 }
             }
