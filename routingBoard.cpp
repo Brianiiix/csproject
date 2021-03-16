@@ -586,7 +586,6 @@ int main(int argc, const char * argv[])
     }
         
         int layer_num = layer_amount;
-        layer_num = 1;
         std::map<int, int> idxToLayer = layer(layer_num, P_map);
         for(int z = 0; z < P_map[0].size(); z++) cout << z << ": layer " << idxToLayer[z] << endl;
 

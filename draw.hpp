@@ -29,15 +29,16 @@ void draw_Klayout(vector<vector<vector<vector<Node>>>> &map, int GU){ // map her
                     //cout << map[i][j][k].type << " ";
                     str += string("b{") + to_string(z) + string(" dt1 xy(");
                     //str += string(" : ") + to_string(map[i][j][k].x) + to_string(map[i][j][k].y) + string(" : ");
-                    str +=               to_string(map[z][i][j][k].x + GU/200);
-                    str += string(" ") + to_string(map[z][i][j][k].y + GU/200);
-                    
-                    str += string(" ") + to_string(map[z][i][j][k].x - GU/200);
-                    str += string(" ") + to_string(map[z][i][j][k].y + GU/200);
-                    str += string(" ") + to_string(map[z][i][j][k].x - GU/200);
-                    str += string(" ") + to_string(map[z][i][j][k].y - GU/200);
-                    str += string(" ") + to_string(map[z][i][j][k].x + GU/200);
-                    str += string(" ") + to_string(map[z][i][j][k].y - GU/200);
+                    // if j is even, edge is -, . if j is odd, edge is |.
+                    int w = 2;
+                    str +=               to_string(map[z][i][j][k].x + GU/200 + ((type=='E'&&j%2==1)?GU/200*w:0));
+                    str += string(" ") + to_string(map[z][i][j][k].y + GU/200 + ((type=='E'&&j%2==0)?GU/200*w:0));
+                    str += string(" ") + to_string(map[z][i][j][k].x - GU/200 - ((type=='E'&&j%2==1)?GU/200*w:0));
+                    str += string(" ") + to_string(map[z][i][j][k].y + GU/200 + ((type=='E'&&j%2==0)?GU/200*w:0));
+                    str += string(" ") + to_string(map[z][i][j][k].x - GU/200 - ((type=='E'&&j%2==1)?GU/200*w:0));
+                    str += string(" ") + to_string(map[z][i][j][k].y - GU/200 - ((type=='E'&&j%2==0)?GU/200*w:0));
+                    str += string(" ") + to_string(map[z][i][j][k].x + GU/200 + ((type=='E'&&j%2==1)?GU/200*w:0));
+                    str += string(" ") + to_string(map[z][i][j][k].y - GU/200 - ((type=='E'&&j%2==0)?GU/200*w:0));
 
                     str += string(")}");
                     str_box.push_back(str);
@@ -92,7 +93,8 @@ void draw_Klayout(vector<vector<vector<vector<Node>>>> &map, int GU){ // map her
 
     
     string name = string("draw");
-    ofstream file(name);
+    string name_gdt = name + string(".gdt");
+    ofstream file(name_gdt);
     if(file.is_open()){
         for(int i=0; i<str_box.size(); i++){
             file << str_box[i] << endl;
